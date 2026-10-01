@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timbr.ai 정보보안 온톨로지 6단계 마스터 플로우차트</title>
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Mermaid.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+    }
+    .mermaid-box {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+    /* Mermaid SVG 스타일 커스텀 */
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+    }
+    .node rect, .node circle, .node polygon {
+      rx: 10px !important;
+      ry: 10px !important;
+      transition: all 0.3s ease;
+    }
+    .node:hover rect {
+      filter: brightness(1.2) drop-shadow(0 0 12px rgba(56, 189, 248, 0.6));
+      cursor: pointer;
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 md:p-8 selection:bg-sky-500 selection:text-white">
+
+  <!-- 상단 헤더 -->
+  <header class="w-full max-w-6xl text-center mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/80 border border-sky-500/30 text-sky-400 text-xs font-semibold tracking-wider uppercase mb-3">
+      <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+      Timbr.ai Bootcamp 2026-09-09 Master Track
+    </div>
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-indigo-300 to-purple-400">
+      정보보안 온톨로지 6단계 마스터 플로우
+    </h1>
+    <p class="text-slate-400 mt-2 text-sm md:text-base max-w-2xl mx-auto">
+      데이터소스 구조 분석부터 시맨틱 매핑, Data Agent NL2SQL 라이브 시연까지 원스톱 교육 파이프라인
+    </p>
+  </header>
+
+  <!-- 메인 다이어그램 뷰어 -->
+  <main class="w-full max-w-6xl flex flex-col gap-6">
+    <div class="mermaid-box rounded-2xl p-6 md:p-10 flex flex-col items-center relative overflow-hidden">
+      <!-- 배경 글로우 효과 -->
+      <div class="absolute -top-24 -left-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- 상단 툴바 -->
+      <div class="w-full flex justify-between items-center mb-6 pb-4 border-b border-slate-800 text-xs text-slate-400">
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Mermaid v10</span>
+          <span>• 6-Step End-to-End Workflow</span>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="window.print()" class="px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition flex items-center gap-1">
+            🖨️ 인쇄 / PDF 저장
+          </button>
+        </div>
+      </div>
+
+      <!-- Mermaid 렌더링 영역 -->
+      <div class="mermaid w-full flex justify-center py-2">
+flowchart TD
+    S1["<b>[1단계] 데이터소스 분석 & 5대 정예 테이블 선별</b><br/>• 방화벽, IDS/IPS, SIEM 경보, NetFlow, WAF 역할 정의<br/>• 데이터 사일로 해소 및 공통 키(src_ip) 발굴"]
+    --> S2["<b>[2단계] 시연 전용 격리 DB 구축 및 데이터 적재</b><br/>• Supabase PostgreSQL 17 'security' 스키마<br/>• 6개 테이블 총 6,812건 무결성 검증 (DBeaver 연동)"]
+    --> S3["<b>[3단계] Knowledge Graph 바인딩</b><br/>• bootcamp260909 온톨로지 ➡️ bootcamp 260909 데이터소스<br/>• 물리 DB와 지식 그래프 1:1 매핑 연결"]
+    --> S4["<b>[4단계] 시맨틱 개념(Concept) & 속성(Property) 모델링</b><br/>• firewall_log, ids_alert, siem_incident, waf_log 정의<br/>• Primary Key, Entity Label 및 비즈니스 설명문 이식"]
+    --> S5["<b>[5단계] 시맨틱 매핑(Mapping) & DDL 원샷 실행</b><br/>• 복사-붙여넣기용 DDL 전문 30초 내 일괄 실행<br/>• critical_siem_incident 등 하위 필터 개념(상속) 자동 생성"]
+    --> S6["<b>[6단계] Data Agent NL2SQL 라이브 검증 & 시연</b><br/>• 시연 질문 3종 (위험 IP Top 5, 차단 이력, 이종 로그 교차 추적)<br/>• 비전문가 자연어 질의 ➡️ 푸시다운 SQL 실시간 컴파일"]
+
+    style S1 fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#eff6ff
+    style S2 fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5
+    style S3 fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#fffbeb
+    style S4 fill:#581c87,stroke:#a855f7,stroke-width:2px,color:#faf5ff
+    style S5 fill:#7c2d12,stroke:#f97316,stroke-width:2px,color:#fff7ed
+    style S6 fill:#881337,stroke:#f43f5e,stroke-width:2px,color:#fff1f2
+      </div>
+    </div>
+
+    <!-- 6단계 상세 정보 카드 그리드 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+      
+      <!-- 카드 1 -->
+      <div class="glass-card rounded-xl p-5 border-t-2 border-blue-500">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded">STEP 01</span>
+          <span class="text-slate-500 text-xs font-mono">Planning</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-base mb-1">데이터소스 정예화</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          이종 보안 로그(방화벽, IDS, SIEM, WAF)의 공통 키인 <code>src_ip</code>와 <code>timestamp</code>를 식별하고 정예 5대 테이블을 선별합니다.
+        </p>
+      </div>
+
+      <!-- 카드 2 -->
+      <div class="glass-card rounded-xl p-5 border-t-2 border-emerald-500">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded">STEP 02</span>
+          <span class="text-slate-500 text-xs font-mono">DB Seeding</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-base mb-1">클라우드 DB 적재</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Supabase PostgreSQL 17 <code>security</code> 스키마에 6개 테이블(총 6,812건)을 고속 적재하고 DBeaver에서 실시간 검증합니다.
+        </p>
+      </div>
+
+      <!-- 카드 3 -->
+      <div class="glass-card rounded-xl p-5 border-t-2 border-amber-500">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded">STEP 03</span>
+          <span class="text-slate-500 text-xs font-mono">Binding</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-base mb-1">온톨로지 바인딩</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          Timbr에서 <code>bootcamp260909</code> 온톨로지와 <code>bootcamp 260909</code> 데이터소스를 매칭하여 시맨틱 기반을 구축합니다.
+        </p>
+      </div>
+
+      <!-- 카드 4 -->
+      <div class="glass-card rounded-xl p-5 border-t-2 border-purple-500">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded">STEP 04</span>
+          <span class="text-slate-500 text-xs font-mono">Concept Modeling</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-base mb-1">개념 & 속성 모델링</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          <code>firewall_log</code>, <code>ids_alert</code>, <code>siem_incident</code>, <code>waf_log</code> 개념을 정의하고 가상 기본키와 라벨을 부여합니다.
+        </p>
+      </div>
+
+      <!-- 카드 5 -->
+      <div class="glass-card rounded-xl p-5 border-t-2 border-orange-500">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-orange-400 bg-orange-950/60 px-2 py-0.5 rounded">STEP 05</span>
+          <span class="text-slate-500 text-xs font-mono">Semantic Mapping</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-base mb-1">원샷 매핑 DDL</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          SQL Lab에서 원샷 DDL을 실행하여 테이블 ➡️ 개념 매핑과 함께 <code>critical_siem_incident</code>(위험도 70+) 하위 개념을 자동 생성합니다.
+        </p>
+      </div>
+
+      <!-- 카드 6 -->
+      <div class="glass-card rounded-xl p-5 border-t-2 border-rose-500">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-rose-400 bg-rose-950/60 px-2 py-0.5 rounded">STEP 06</span>
+          <span class="text-slate-500 text-xs font-mono">NL2SQL Demo</span>
+        </div>
+        <h3 class="font-bold text-slate-100 text-base mb-1">Data Agent NL2SQL</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">
+          "위험 IP Top 5 보여줘" 같은 자연어 질문을 Timbr가 즉시 인식하고, 방화벽과 WAF를 교차 조인하는 푸시다운 SQL을 시연합니다.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 하단 푸터 -->
+    <footer class="text-center text-xs text-slate-500 mt-6 mb-10">
+      <p>Timbr.ai Semantic Knowledge Graph Bootcamp • Built by AI 4-Agent Team</p>
+    </footer>
+  </main>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      securityLevel: 'loose',
+      fontFamily: 'Pretendard',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis'
+      }
+    });
+  </script>
+</body>
+</html>

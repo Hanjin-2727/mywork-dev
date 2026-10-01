@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국 예금토큰(Deposit Token) 생태계 아키텍처 - 프로젝트 한강 2단계</title>
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Mermaid.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            },
+            accent: {
+              teal: '#14b8a6',
+              amber: '#f59e0b',
+              purple: '#a855f7',
+              rose: '#f43f5e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Mermaid diagram custom styling */
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Custom Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+
+    /* Node highlight animation */
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+    }
+
+    .active-flow {
+      animation: pulseRing 1.8s infinite;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300">
+
+  <!-- Header Section -->
+  <header class="sticky top-0 z-50 glass-card border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+          <i data-lucide="layers" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="text-lg font-bold tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+              한국 예금토큰 (Deposit Token) 아키텍처 다이어그램
+            </h1>
+            <span class="text-xs px-2 py-0.5 rounded-full font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-950/80 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-800">
+              프로젝트 한강 2단계
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            한국은행 기관용 CBDC ↔ 9대 시중은행 ↔ 공공재정 및 토큰증권(STO) 연계 구조
+          </p>
+        </div>
+      </div>
+
+      <!-- Action Controls -->
+      <div class="flex items-center space-x-2">
+        <button id="themeToggleBtn" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="다크/라이트 모드 전환">
+          <i data-lucide="moon" id="themeIcon" class="w-4 h-4"></i>
+        </button>
+        <button id="copyMermaidBtn" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition">
+          <i data-lucide="code" class="w-3.5 h-3.5"></i>
+          <span>Mermaid 코드 복사</span>
+        </button>
+        <button id="exportSvgBtn" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 shadow-sm shadow-brand-600/30 transition">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>SVG 저장</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- Scenario Simulator Filter Buttons -->
+    <section class="glass-card rounded-2xl p-4 sm:p-5 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center space-x-2">
+          <span class="inline-flex p-1.5 rounded-md bg-brand-100 dark:bg-brand-950 text-brand-600 dark:text-brand-400">
+            <i data-lucide="play-circle" class="w-4 h-4"></i>
+          </span>
+          <div>
+            <h2 class="text-sm font-bold text-slate-900 dark:text-white">실시간 트랜잭션 시나리오 시뮬레이터</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">시나리오를 선택하면 다이어그램 상의 결제/유통 경로와 핵심 메커니즘이 하이라이트됩니다.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2" id="scenarioBtnGroup">
+          <button data-scenario="all" class="scenario-btn active px-3 py-1.5 text-xs font-semibold rounded-lg border bg-brand-600 text-white border-brand-600 shadow-sm transition">
+            전체 아키텍처 보기
+          </button>
+          <button data-scenario="p2p" class="scenario-btn px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            💸 개인 간(P2P) 송금
+          </button>
+          <button data-scenario="pay" class="scenario-btn px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            🛒 상거래 QR (Auto-Sweep)
+          </button>
+          <button data-scenario="voucher" class="scenario-btn px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            🏛️ 국고 보조금 / 바우처
+          </button>
+          <button data-scenario="sto" class="scenario-btn px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            📈 토큰증권(STO) DvP 동시결제
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagram Viewport Card -->
+    <section class="glass-card rounded-2xl shadow-lg border relative overflow-hidden flex flex-col">
+      <!-- Toolbar on top of Diagram -->
+      <div class="px-5 py-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-100/60 dark:bg-slate-900/60">
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+          <span class="text-xs font-mono text-slate-500 dark:text-slate-400 ml-2">architecture-flow.mermaid</span>
+        </div>
+
+        <div class="flex items-center space-x-1">
+          <button id="zoomInBtn" class="p-1.5 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition" title="확대">
+            <i data-lucide="zoom-in" class="w-4 h-4"></i>
+          </button>
+          <button id="zoomOutBtn" class="p-1.5 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition" title="축소">
+            <i data-lucide="zoom-out" class="w-4 h-4"></i>
+          </button>
+          <button id="zoomResetBtn" class="p-1.5 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition" title="화면 맞춤">
+            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Diagram Canvas -->
+      <div id="diagramContainer" class="p-8 sm:p-12 overflow-x-auto flex justify-center items-center min-h-[380px] bg-white dark:bg-slate-950/70">
+        <div id="mermaidTarget" class="mermaid select-none">
+graph LR
+    %% Subgraph 1: Central Bank Infra
+    subgraph S1["🏛️ 기반 인프라 (한국은행)"]
+        CBDC["기관용 CBDC<br/><b>(Wholesale CBDC)</b>"]
+    end
+
+    %% Subgraph 2: Commercial Banks Issuance & Circulation
+    subgraph S2["🏦 발행 및 유통 (9개 시중은행)"]
+        CBDC -->|1:1 담보 예치 & 분산원장 발행| DT["예금토큰<br/><b>(Deposit Token)</b>"]
+        DT -->|지갑 간 즉시 전송| P2P["개인 간 P2P 송금<br/><b>(50만 명 한도 실증)</b>"]
+        DT -->|가맹점 결제 & 자동 충전| Pay["상거래 QR 결제<br/><b>(Auto-Sweep 연계)</b>"]
+    end
+
+    %% Subgraph 3: Public & Capital Market Link
+    subgraph S3["🚀 공공 및 자본시장 연계"]
+        DT -->|스마트 컨트랙트 프로그래밍| Voucher["정부 보조금 / 디지털 바우처<br/><b>(전기차·복지 국고금 부정수급 방지)</b>"]
+        DT -.->|원장 간 원자적 결제 Atomic Swap| STO["토큰증권 (STO) 동시결제<br/><b>(DvP : Delivery vs Payment)</b>"]
+    end
+
+    %% Node Styling
+    style S1 fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,stroke-dasharray: 4 4
+    style S2 fill:#f0fdf4,stroke:#22c55e,stroke-width:2px
+    style S3 fill:#faf5ff,stroke:#a855f7,stroke-width:2px
+
+    style CBDC fill:#2563eb,stroke:#1d4ed8,stroke-width:2px,color:#ffffff
+    style DT fill:#16a34a,stroke:#15803d,stroke-width:2px,color:#ffffff
+    style P2P fill:#ffffff,stroke:#16a34a,stroke-width:2px,color:#166534
+    style Pay fill:#ffffff,stroke:#16a34a,stroke-width:2px,color:#166534
+    style Voucher fill:#ffffff,stroke:#9333ea,stroke-width:2px,color:#581c87
+    style STO fill:#ffffff,stroke:#9333ea,stroke-width:2px,stroke-dasharray: 5 5,color:#581c87
+        </div>
+      </div>
+
+      <!-- Info Banner at Bottom of Diagram -->
+      <div id="scenarioBanner" class="px-6 py-3 bg-brand-50/80 dark:bg-brand-950/40 border-t border-brand-100 dark:border-brand-900/60 text-xs text-brand-800 dark:text-brand-300 flex items-center justify-between">
+        <span class="flex items-center space-x-2">
+          <i data-lucide="info" class="w-4 h-4 text-brand-600 dark:text-brand-400"></i>
+          <span id="scenarioDescription">전체 생태계 구성: 중앙은행 기관용 CBDC 기반 분산원장에서 9개 은행이 예금토큰을 발행하고, P2P·결제·보조금·STO로 확장되는 전주기 흐름입니다.</span>
+        </span>
+        <span class="font-mono text-[11px] opacity-75">Mermaid v10.9 Rendered</span>
+      </div>
+    </section>
+
+    <!-- 3-Tier Layer Detailed Breakdown Cards -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Tier 1 Card -->
+      <div class="glass-card rounded-2xl p-6 hover:shadow-md transition border-t-4 border-t-blue-500">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Tier 1 · 최상위 청산 인프라</span>
+          <span class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300">
+            <i data-lucide="landmark" class="w-5 h-5"></i>
+          </span>
+        </div>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">한국은행 기관용 CBDC</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+          중앙은행이 발행하는 도매형(Wholesale) 디지털 화폐입니다. 일반 대중에게 직접 발행되지 않고, 금융기관 간 최종 결제자산(Settlement Asset)으로서 예금토큰의 100% 준비금 역할을 수행합니다.
+        </p>
+        <ul class="text-xs space-y-1.5 text-slate-500 dark:text-slate-400 border-t pt-3 dark:border-slate-800">
+          <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 mr-1.5"></i> 은행 간 원장 최종 청산(Settlement)</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-500 mr-1.5"></i> 무위험 중앙은행 자산 기반 신뢰성 확보</li>
+        </ul>
+      </div>
+
+      <!-- Tier 2 Card -->
+      <div class="glass-card rounded-2xl p-6 hover:shadow-md transition border-t-4 border-t-emerald-500">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Tier 2 · 발행 및 실생활 유통</span>
+          <span class="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-300">
+            <i data-lucide="wallet" class="w-5 h-5"></i>
+          </span>
+        </div>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">9개 은행 예금토큰 & 결제</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+          상업은행의 요구불예금을 블록체인 상에 토큰화한 자산입니다. 50만 명을 대상으로 QR 오프라인 결제, P2P 실시간 송금, 잔액 부족 시 계좌 자동전환(Auto-sweep)이 제공됩니다.
+        </p>
+        <ul class="text-xs space-y-1.5 text-slate-500 dark:text-slate-400 border-t pt-3 dark:border-slate-800">
+          <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mr-1.5"></i> 참여: 국민·신한·하나·우리·농협·기업·부산 + iM·경남</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 mr-1.5"></i> FIDO2 생체인증 및 1:1 원화 가치 패깅 보장</li>
+        </ul>
+      </div>
+
+      <!-- Tier 3 Card -->
+      <div class="glass-card rounded-2xl p-6 hover:shadow-md transition border-t-4 border-t-purple-500">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">Tier 3 · 프로그래머블 확장</span>
+          <span class="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </span>
+        </div>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">공공 보조금 & STO DvP</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+          스마트 컨트랙트를 통해 '돈에 목적을 부여'하는 계층입니다. 전기차 보조금 등 국고금의 지정처 사용을 강제하고, 향후 토큰증권(STO)과의 원자적 동시결제(DvP)로 무결점 거래를 완성합니다.
+        </p>
+        <ul class="text-xs space-y-1.5 text-slate-500 dark:text-slate-400 border-t pt-3 dark:border-slate-800">
+          <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 mr-1.5"></i> 보조금 부정수급 및 사후 정산비용 제로화</li>
+          <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-500 mr-1.5"></i> 2027년 STO 제도화 대비 금융결제 인프라</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Source Code Drawer (Collapsible) -->
+    <details class="glass-card rounded-2xl p-5 shadow-sm group">
+      <summary class="flex items-center justify-between cursor-pointer list-none select-none">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="terminal" class="w-4 h-4 text-slate-500"></i>
+          <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Mermaid Raw Source Code & Spec</span>
+        </div>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+      </summary>
+      <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800">
+        <pre class="bg-slate-900 text-slate-200 p-4 rounded-xl text-xs font-mono overflow-x-auto"><code>graph LR
+    subgraph "기반 인프라 (한국은행)"
+        CBDC["기관용 CBDC (도매형)"]
+    end
+
+    subgraph "발행 및 유통 (9개 시중은행)"
+        CBDC --> DT["예금토큰 (Deposit Token)"]
+        DT --> P2P["개인 간 P2P 송금"]
+        DT --> Pay["상거래 QR 결제 (Auto-Sweep)"]
+    end
+
+    subgraph "공공 및 자본시장 연계"
+        DT --> Voucher["정부 보조금 / 디지털 바우처"]
+        DT -.-> STO["토큰증권 (STO) 동시결제 (DvP)"]
+    end</code></pre>
+      </div>
+    </details>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-xs text-slate-400 border-t border-slate-200 dark:border-slate-800 mt-12">
+    <p>한국은행 프로젝트 한강 2단계 실거래 실증 아키텍처 다이어그램 | 생성일: 2026년 9월 30일</p>
+    <p class="mt-1">작업 위치: <code class="font-mono text-slate-500">~/mywork/blockchain/DepositToken/index.html</code></p>
+  </footer>
+
+  <!-- Script for Theme, Mermaid Initialization, Zoom and Interactive Scenarios -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Theme Management
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const isDark = () => document.documentElement.classList.contains('dark');
+
+    function applyTheme(dark) {
+      if (dark) {
+        document.documentElement.classList.add('dark');
+        themeIcon.setAttribute('data-lucide', 'sun');
+      } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    }
+
+    // Default theme based on preference or system
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme(true);
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      applyTheme(!isDark());
+    });
+
+    // Mermaid Initialization
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      flowchart: {
+        htmlLabels: true,
+        curve: 'basis',
+        useMaxWidth: false
+      }
+    });
+
+    // Zoom & Pan Management
+    let currentZoom = 1;
+    const mermaidTarget = document.getElementById('mermaidTarget');
+    const zoomInBtn = document.getElementById('zoomInBtn');
+    const zoomOutBtn = document.getElementById('zoomOutBtn');
+    const zoomResetBtn = document.getElementById('zoomResetBtn');
+
+    function updateZoom(factor) {
+      currentZoom = Math.min(Math.max(0.5, factor), 2.2);
+      const svg = mermaidTarget.querySelector('svg');
+      if (svg) {
+        svg.style.transform = `scale(${currentZoom})`;
+      }
+    }
+
+    zoomInBtn.addEventListener('click', () => updateZoom(currentZoom + 0.15));
+    zoomOutBtn.addEventListener('click', () => updateZoom(currentZoom - 0.15));
+    zoomResetBtn.addEventListener('click', () => updateZoom(1));
+
+    // Copy Mermaid Code
+    const copyMermaidBtn = document.getElementById('copyMermaidBtn');
+    copyMermaidBtn.addEventListener('click', () => {
+      const code = `graph LR
+    subgraph "기반 인프라 (한국은행)"
+        CBDC["기관용 CBDC (도매형)"]
+    end
+
+    subgraph "발행 및 유통 (9개 시중은행)"
+        CBDC --> DT["예금토큰 (Deposit Token)"]
+        DT --> P2P["개인 간 P2P 송금"]
+        DT --> Pay["상거래 QR 결제 (Auto-Sweep)"]
+    end
+
+    subgraph "공공 및 자본시장 연계"
+        DT --> Voucher["정부 보조금 / 디지털 바우처"]
+        DT -.-> STO["토큰증권 (STO) 동시결제 (DvP)"]
+    end`;
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = copyMermaidBtn.innerHTML;
+        copyMermaidBtn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i><span>복사 완료!</span>`;
+        lucide.createIcons();
+        setTimeout(() => {
+          copyMermaidBtn.innerHTML = originalText;
+          lucide.createIcons();
+        }, 2000);
+      });
+    });
+
+    // Export SVG
+    const exportSvgBtn = document.getElementById('exportSvgBtn');
+    exportSvgBtn.addEventListener('click', () => {
+      const svgElement = mermaidTarget.querySelector('svg');
+      if (!svgElement) return;
+      const serializer = new XMLSerializer();
+      let source = serializer.serializeToString(svgElement);
+      if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+        source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+      }
+      const svgBlob = new Blob([source], {type:"image/svg+xml;charset=utf-8"});
+      const svgUrl = URL.createObjectURL(svgBlob);
+      const downloadLink = document.createElement("a");
+      downloadLink.href = svgUrl;
+      downloadLink.download = "deposit_token_architecture.svg";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      URL.revokeObjectURL(svgUrl);
+    });
+
+    // Scenario Simulator Interactivity
+    const scenarioDescriptions = {
+      all: "전체 생태계 구성: 중앙은행 기관용 CBDC 기반 분산원장에서 9개 은행이 예금토큰을 발행하고, P2P·결제·보조금·STO로 확장되는 전주기 흐름입니다.",
+      p2p: "💸 개인 간(P2P) 송금 시나리오: 사용자 지갑 간에 예금토큰이 직접 실시간 이동하며, 수수료 절감 및 야간/주말 즉시 타행 결제가 가능합니다.",
+      pay: "🛒 상거래 QR (Auto-Sweep) 시나리오: 오프라인 가맹점에서 결제 시 토큰 잔액이 부족하면 은행 계좌에서 실시간 자동 환전되어 1초 내 승인됩니다.",
+      voucher: "🏛️ 정부 보조금/바우처 시나리오: 스마트 컨트랙트로 목적 외 사용을 원천 차단하여 전기차 충전 보조금, 복지 지원금의 부정수급을 차단합니다.",
+      sto: "📈 토큰증권(STO) 동시결제(DvP) 시나리오: 분산원장 상에서 조각투자/토큰증권과 예금토큰이 원자적으로 교환(Atomic Swap)되어 결제 실패 리스크가 제로화됩니다."
+    };
+
+    const scenarioBtns = document.querySelectorAll('.scenario-btn');
+    const scenarioBannerDesc = document.getElementById('scenarioDescription');
+
+    scenarioBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        scenarioBtns.forEach(b => {
+          b.classList.remove('bg-brand-600', 'text-white', 'border-brand-600');
+          b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300', 'border-slate-300', 'dark:border-slate-700');
+        });
+        btn.classList.add('bg-brand-600', 'text-white', 'border-brand-600');
+        btn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300');
+
+        const scenarioKey = btn.dataset.scenario;
+        scenarioBannerDesc.textContent = scenarioDescriptions[scenarioKey] || scenarioDescriptions.all;
+
+        // Visual opacity dimming for non-relevant nodes
+        const svg = mermaidTarget.querySelector('svg');
+        if (!svg) return;
+
+        const allNodes = svg.querySelectorAll('.node');
+        allNodes.forEach(node => {
+          node.style.transition = 'opacity 0.3s ease, filter 0.3s ease';
+          node.style.opacity = '1';
+          node.style.filter = 'none';
+        });
+
+        if (scenarioKey !== 'all') {
+          allNodes.forEach(node => {
+            const text = node.textContent || '';
+            let keep = false;
+            if (scenarioKey === 'p2p' && (text.includes('CBDC') || text.includes('예금토큰') || text.includes('P2P'))) keep = true;
+            if (scenarioKey === 'pay' && (text.includes('CBDC') || text.includes('예금토큰') || text.includes('QR'))) keep = true;
+            if (scenarioKey === 'voucher' && (text.includes('CBDC') || text.includes('예금토큰') || text.includes('바우처') || text.includes('보조금'))) keep = true;
+            if (scenarioKey === 'sto' && (text.includes('CBDC') || text.includes('예금토큰') || text.includes('STO') || text.includes('토큰증권'))) keep = true;
+
+            if (!keep) {
+              node.style.opacity = '0.25';
+              node.style.filter = 'grayscale(100%)';
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+================================================================================
+📅 일자: 2026-09-02
+📄 파일명: y260902-1.txt
+🎯 주제: Timbr.ai 지식 그래프 테스트 이슈 분석, 아키텍처 이해 및 클라우드 DB 연동 가이드
+================================================================================
+
+[1] Timbr.ai Knowledge Graph 생성 에러 원인 및 해결
+--------------------------------------------------------------------------------
+- 증상: '3_Manufacture' 온톨로지 생성 시 에러 팝업 발생
+- 에러 내용: "Couldn't setup knowledge graph. Error: Error creating ontology: Ontology already exists. Use 'CREATE OR REPLACE' OR 'ALTER ONTOLOGY'"
+- 원인:
+  * 화면 목록에 이미 '3 manufacture'라는 Knowledge Graph(온톨로지)가 존재함.
+  * Timbr 내부적으로 공백/언더스코어 및 대소문자가 동일한 식별자로 처리되어 중복 충돌 발생.
+- 해결 방안:
+  1) 고유한 다른 이름으로 생성 (예: 3_Manufacture_v2, tom_manufacture 등)
+  2) 기존의 '3 manufacture' 온톨로지를 삭제(Delete) 후 재생성
+  3) 상단 SQL Lab에서 DDL 명령어 실행: CREATE OR REPLACE ONTOLOGY "3_Manufacture";
+
+
+[2] Timbr.ai 아키텍처와 DB 간의 관계 (데이터 가상화 원리)
+--------------------------------------------------------------------------------
+- 구조적 특성:
+  * Timbr는 데이터를 직접 보관하는 저장소(Storage DB)가 아님.
+  * 원본 데이터는 외부 DB(PostgreSQL, MySQL, Snowflake 등)에 그대로 위치함.
+  * Timbr는 JDBC/ODBC 커넥터로 연결하여 그 위에 '시맨틱 레이어(온톨로지/지식 그래프)'를 가상으로 매핑하는 데이터 패브릭 플랫폼.
+- 화면 내 PostgreSQL / MySQL 아이콘의 의미:
+  * 상단 'Datasources' 탭에 연결된 실제 DB 소스를 기반으로, 해당 Knowledge Graph가 어떤 DB 테이블들과 매핑되어 있는지 보여주는 뱃지.
+  * 아이콘이 없는 것은 외부 DB와 아직 매핑되지 않은 순수 온톨로지 개념 모델.
+- 작동 방식:
+  * 사용자가 시맨틱 쿼리(Semantic SQL/그래프 탐색)를 날리면, Timbr가 타깃 DB의 네이티브 SQL로 자동 변환(Pushdown)하여 원본 DB에서 실행 후 결과만 반환.
+
+
+[3] 클라우드 DB 구축 난이도 및 방식 비교
+--------------------------------------------------------------------------------
+1) 무료 서버리스 클라우드 DB (PoC/테스트 시 가장 추천 ⭐️)
+   - 소요시간: 1~3분 (클릭 몇 번으로 완료)
+   - 특징: 서버 관리나 설치가 전혀 필요 없고, 접속용 Host/Port/계정 정보가 즉시 발급됨.
+   - 대표 서비스:
+     * Neon (neon.tech) : 서버리스 PostgreSQL, 표준 5432 포트 제공, 가입 즉시 무료 사용
+     * Supabase (supabase.com) : PostgreSQL 기반, GUI 관리 대시보드 우수
+     * TiDB Cloud (tidbcloud.com) : MySQL 호환 무료 5GB 제공
+
+2) 클라우드 관리형 DB (AWS RDS, GCP Cloud SQL)
+   - 소요시간: 5~10분
+   - 특징: 백업, 패치, 이중화 자동화. 상용 서비스에 적합.
+
+3) 가상머신(EC2/VM) 직접 설치 및 Docker
+   - 소요시간: 15~30분
+   - 명령어: docker run -d --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=... postgres
+   - 주의: 방화벽(Security Group) 포트 개방(5432/3306) 및 외부 접속 허용 설정 필요.
+
+* Timbr.ai 연결 시 필수 체크사항:
+  - Timbr 클라우드(kosena.timbr.ai)가 외부에서 접근할 수 있도록 퍼블릭 액세스(Public IP) 및 인바운드 방화벽 포트 허용 필수.
+
+
+[4] Cloudflare 무료 혜택 및 활용 방안
+--------------------------------------------------------------------------------
+- 무료 혜택: DDoS 방어, 무료 SSL(HTTPS), CDN, DNS, Pages(웹 호스팅) 등 영구 무료 제공.
+- DB 관점 유의사항:
+  * 자체 무료 DB인 Cloudflare D1은 SQLite 기반 웹 API 방식이어서 Timbr의 표준 JDBC 연결에 제약이 있음.
+  * 따라서 Timbr 연동용 무료 DB로는 Neon(Postgres)이나 TiDB Cloud(MySQL)가 더 적합함.
+- 추천 활용법 (Cloudflare Tunnel):
+  * 개인 PC나 사내 PC에 로컬 DB를 설치한 경우, 공인 IP나 포트포워딩 없이 외부 Timbr에서 안전하게 접속할 수 있도록 무료 터널링 제공.
+
+
+[5] 다음 진행 예정 사항 (Next Steps)
+--------------------------------------------------------------------------------
+- [ ] 무료 클라우드 DB(Neon 또는 Supabase) 생성 및 샘플 테이블 데이터 적재
+- [ ] Timbr.ai의 'Datasources' 메뉴에서 DB JDBC 커넥션 생성 및 연결 테스트
+- [ ] 신규 Knowledge Graph 생성 후 DB 테이블과 온톨로지 개념(Concept/Property) 매핑 실습
+================================================================================

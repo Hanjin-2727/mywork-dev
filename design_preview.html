@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESIGN.md 3색 미니멀 디자인 시스템 프리뷰</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #f7f7f8;
+      color: #000000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 40px 20px;
+    }
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #000;
+    }
+    .header p {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.65);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .theme-card {
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Palette Badges */
+    .palette-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .color-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-weight: 600;
+    }
+    .chip-bg { background: #FFFFFF; border: 1px solid #ddd; color: #000; }
+    .chip-fg { background: #000000; color: #fff; }
+
+    /* Section divider */
+    .demo-box {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .demo-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Style 1: Stripe / Modern SaaS (Pretendard / Inter + Indigo) */
+    .style-1 {
+      font-family: 'Pretendard', 'Inter', -apple-system, sans-serif;
+    }
+    .style-1 .accent-chip { background: #635BFF; color: #fff; }
+    .style-1 h2 { font-size: 20px; font-weight: 700; color: #000000; }
+    .style-1 p { font-size: 14px; color: rgba(0, 0, 0, 0.65); line-height: 1.5; }
+    .style-1 .btn-primary {
+      background-color: #635BFF;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+    .style-1 .btn-primary:hover { background-color: #534be0; }
+    .style-1 .btn-secondary {
+      background-color: #FFFFFF;
+      color: #000000;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .style-1 .input-field {
+      border: 1px solid rgba(0,0,0,0.2);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      width: 100%;
+    }
+    .style-1 .input-field:focus {
+      border-color: #635BFF;
+      box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.15);
+    }
+    .style-1 .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #635BFF;
+      border: 1px solid #635BFF;
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    /* Style 2: Neo-Brutalist (Plus Jakarta Sans + Safety Orange) */
+    .style-2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .style-2 .accent-chip { background: #FF4F00; color: #fff; }
+    .style-2 h2 { font-size: 20px; font-weight: 800; color: #000000; letter-spacing: -0.5px; }
+    .style-2 p { font-size: 14px; color: #000000; line-height: 1.5; }
+    .style-2 .demo-box { border: 2px solid #000000; border-radius: 0; box-shadow: 4px 4px 0 #000000; }
+    .style-2 .btn-primary {
+      background-color: #FF4F00;
+      color: #FFFFFF;
+      border: 2px solid #000000;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 #000000;
+      transition: all 0.1s;
+    }
+    .style-2 .btn-primary:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #000000; }
+    .style-2 .btn-secondary {
+      background-color: #FFFFFF;
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 #000000;
+    }
+    .style-2 .input-field {
+      border: 2px solid #000000;
+      padding: 8px 12px;
+      font-size: 14px;
+      outline: none;
+      width: 100%;
+      font-weight: 600;
+    }
+    .style-2 .input-field:focus {
+      background: #FFFFFF;
+      box-shadow: 3px 3px 0 #FF4F00;
+    }
+    .style-2 .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      background: #000000;
+      color: #FFFFFF;
+      padding: 3px 8px;
+      border: 1px solid #000;
+    }
+
+    /* Style 3: Primer / shadcn Zinc (Inter + Action Blue) */
+    .style-3 {
+      font-family: 'Inter', sans-serif;
+    }
+    .style-3 .accent-chip { background: #0969DA; color: #fff; }
+    .style-3 h2 { font-size: 20px; font-weight: 700; color: #18181B; }
+    .style-3 p { font-size: 14px; color: rgba(24, 24, 27, 0.7); line-height: 1.5; }
+    .style-3 .btn-primary {
+      background-color: #0969DA;
+      color: #FFFFFF;
+      border: none;
+      padding: 9px 15px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .style-3 .btn-primary:hover { background-color: #0856b3; }
+    .style-3 .btn-secondary {
+      background-color: #FFFFFF;
+      color: #18181B;
+      border: 1px solid rgba(24, 24, 27, 0.2);
+      padding: 9px 15px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .style-3 .input-field {
+      border: 1px solid rgba(24, 24, 27, 0.2);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      width: 100%;
+    }
+    .style-3 .input-field:focus {
+      border-color: #0969DA;
+      outline: 2px solid rgba(9, 105, 218, 0.3);
+    }
+    .style-3 .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #0969DA;
+      background: rgba(9, 105, 218, 0.08);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🎨 3색 미니멀 디자인 시스템 실시간 프리뷰</h1>
+    <p>흰색 배경(#FFFFFF) + 흑백 모노톤 + 단 1개 대비색(Accent) 조합 비교</p>
+  </div>
+
+  <div class="grid">
+    <!-- 후보 1 -->
+    <div class="theme-card style-1">
+      <div>
+        <span class="badge">후보 1 : Modern SaaS</span>
+        <h2 style="margin-top: 10px;">Stripe / Vercel Light</h2>
+        <div class="palette-row">
+          <span class="color-chip chip-bg">#FFFFFF</span>
+          <span class="color-chip chip-fg">#000000</span>
+          <span class="color-chip accent-chip">#635BFF</span>
+        </div>
+      </div>
+
+      <div class="demo-box">
+        <div class="demo-title">폰트 & UI 컴포넌트</div>
+        <p>Inter 폰트를 사용하여 정교하고 깔끔한 엔터프라이즈 SaaS 감성을 연출합니다.</p>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-primary">결제 진행하기 (CTA)</button>
+          <button class="btn-secondary">자세히 보기</button>
+        </div>
+        <input type="text" class="input-field" placeholder="클릭하여 Focus Ring 확인..." value="포커스 시 #635BFF 테두리">
+      </div>
+    </div>
+
+    <!-- 후보 2 -->
+    <div class="theme-card style-2">
+      <div>
+        <span class="badge">후보 2 : Swiss / Brutalist</span>
+        <h2 style="margin-top: 10px;">Neo-Brutalist Minimal</h2>
+        <div class="palette-row">
+          <span class="color-chip chip-bg">#FFFFFF</span>
+          <span class="color-chip chip-fg">#000000</span>
+          <span class="color-chip accent-chip">#FF4F00</span>
+        </div>
+      </div>
+
+      <div class="demo-box">
+        <div class="demo-title">폰트 & UI 컴포넌트</div>
+        <p>굵은 블랙 외곽선과 Safety Orange로 시각적 강렬함과 팝한 분위기를 전달합니다.</p>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-primary">즉시 시작하기 (CTA)</button>
+          <button class="btn-secondary">취소</button>
+        </div>
+        <input type="text" class="input-field" placeholder="클릭하여 Focus 확인..." value="포커스 시 #FF4F00 그림자">
+      </div>
+    </div>
+
+    <!-- 후보 3 -->
+    <div class="theme-card style-3">
+      <div>
+        <span class="badge">후보 3 : GitHub / shadcn</span>
+        <h2 style="margin-top: 10px;">Primer & Zinc Light</h2>
+        <div class="palette-row">
+          <span class="color-chip chip-bg">#FFFFFF</span>
+          <span class="color-chip chip-fg">#18181B</span>
+          <span class="color-chip accent-chip">#0969DA</span>
+        </div>
+      </div>
+
+      <div class="demo-box">
+        <div class="demo-title">폰트 & UI 컴포넌트</div>
+        <p>가장 표준적이고 눈이 편안한 개발자 친화형 문서 및 대시보드 UI 스타일입니다.</p>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-primary">저장 및 배포 (CTA)</button>
+          <button class="btn-secondary">설정</button>
+        </div>
+        <input type="text" class="input-field" placeholder="클릭하여 Focus 확인..." value="포커스 시 #0969DA 아웃라인">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

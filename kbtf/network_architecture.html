@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네트워크 & 시스템 아키텍처 구성도 (흑백 깔끔형)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800;900&display=swap');
+    body { 
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+      background-color: #ffffff;
+      color: #000000;
+    }
+  </style>
+</head>
+<body class="bg-white text-black min-h-screen p-6 md:p-12 flex flex-col items-center">
+
+  <!-- Header -->
+  <div class="max-w-4xl w-full text-center mb-8 border-b-2 border-black pb-6">
+    <div class="inline-block px-3 py-1 border border-black text-xs font-bold uppercase tracking-widest mb-2 bg-gray-100">
+      SYSTEM NETWORK ARCHITECTURE
+    </div>
+    <h1 class="text-2xl md:text-3xl font-extrabold text-black tracking-tight">
+      Community · AI · Closed Mall · Blockchain 4-Tier 구성도
+    </h1>
+    <p class="text-gray-600 text-sm mt-1">
+      계층별 데이터 전송 프로토콜(HTTPS, WSS, RPC, gRPC, SQL) 및 네트워크 파이프라인
+    </p>
+  </div>
+
+  <!-- Main Architecture Container -->
+  <div class="max-w-4xl w-full flex flex-col items-center">
+
+    <!-- ==================== TIER 1 ==================== -->
+    <div class="w-full bg-white border-2 border-black rounded-lg p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative">
+      <div class="absolute -top-3.5 left-5 bg-black text-white text-xs px-3 py-0.5 font-bold uppercase tracking-wider">
+        TIER 1 · 프레젠테이션 계층 (Presentation / Client Apps)
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+        <div class="bg-white border border-black rounded p-4 text-center">
+          <i class="fa-solid fa-users text-black text-2xl mb-2"></i>
+          <h4 class="font-bold text-black text-base">Community App</h4>
+          <p class="text-xs text-gray-600 mt-1">소셜 피드 · 게시판 · 유저 인터랙션</p>
+        </div>
+        <div class="bg-white border border-black rounded p-4 text-center">
+          <i class="fa-solid fa-robot text-black text-2xl mb-2"></i>
+          <h4 class="font-bold text-black text-base">AI ChatBot</h4>
+          <p class="text-xs text-gray-600 mt-1">지능형 실시간 상담 & 개인화 추천</p>
+        </div>
+        <div class="bg-white border border-black rounded p-4 text-center">
+          <i class="fa-solid fa-store text-black text-2xl mb-2"></i>
+          <h4 class="font-bold text-black text-base">거래몰 (폐쇄형)</h4>
+          <p class="text-xs text-gray-600 mt-1">회원제 커머스 · 토큰/포인트 결제</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CONNECTOR & PROTOCOL 1-2 ==================== -->
+    <div class="w-full flex flex-col items-center my-3">
+      <!-- Big Arrow Top Line -->
+      <div class="w-0.5 h-3 bg-black"></div>
+      
+      <!-- Protocol Box -->
+      <div class="bg-gray-50 border-2 border-black px-6 py-2 rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-center my-1">
+        <div class="flex items-center justify-center gap-2 text-black font-extrabold text-sm tracking-wide">
+          <i class="fa-solid fa-lock"></i>
+          <span>HTTPS (REST) / WSS (Websocket) / JSON-RPC Call</span>
+        </div>
+        <div class="text-[11px] text-gray-600 mt-0.5 font-medium">TLS 1.3 암호화 통신 · 클라이언트 인증 토큰(Bearer JWT / 지갑 서명)</div>
+      </div>
+
+      <!-- Big Arrow Bottom Point -->
+      <div class="flex flex-col items-center -mt-1">
+        <div class="w-0.5 h-3 bg-black"></div>
+        <i class="fa-solid fa-chevron-down text-lg -mt-1 text-black"></i>
+      </div>
+    </div>
+
+    <!-- ==================== TIER 2 ==================== -->
+    <div class="w-full bg-white border-2 border-black rounded-lg p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative">
+      <div class="absolute -top-3.5 left-5 bg-black text-white text-xs px-3 py-0.5 font-bold uppercase tracking-wider">
+        TIER 2 · 게이트웨이 & 인터페이스 계층 (DMZ Area)
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+        <div class="bg-white border border-black rounded p-4 flex items-center gap-4">
+          <div class="p-2.5 border border-black rounded text-black text-2xl bg-gray-50">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-black text-base">REST API Gateway</h4>
+            <p class="text-xs text-gray-600 mt-0.5">JWT 인증 검증 · Rate Limiting · AI 라우팅</p>
+          </div>
+        </div>
+        <div class="bg-white border border-black rounded p-4 flex items-center gap-4">
+          <div class="p-2.5 border border-black rounded text-black text-2xl bg-gray-50">
+            <i class="fa-brands fa-ethereum"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-black text-base">블록체인 API (Web3 Gateway)</h4>
+            <p class="text-xs text-gray-600 mt-0.5">EVM JSON-RPC 릴레이어 · 트랜잭션 수수료(Gas) 관리</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CONNECTOR & PROTOCOL 2-3 ==================== -->
+    <div class="w-full flex flex-col items-center my-3">
+      <!-- Big Arrow Top Line -->
+      <div class="w-0.5 h-3 bg-black"></div>
+      
+      <!-- Protocol Box -->
+      <div class="bg-gray-50 border-2 border-black px-6 py-2 rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-center my-1">
+        <div class="flex items-center justify-center gap-2 text-black font-extrabold text-sm tracking-wide">
+          <i class="fa-solid fa-bolt"></i>
+          <span>gRPC / 내부 REST / Web3 Smart Contract Call (EVM Bytecode)</span>
+        </div>
+        <div class="text-[11px] text-gray-600 mt-0.5 font-medium">내부 보안 사설망 통신 · 트랜잭션 페이로드 실행 & 비즈니스 로직 프로세싱</div>
+      </div>
+
+      <!-- Big Arrow Bottom Point -->
+      <div class="flex flex-col items-center -mt-1">
+        <div class="w-0.5 h-3 bg-black"></div>
+        <i class="fa-solid fa-chevron-down text-lg -mt-1 text-black"></i>
+      </div>
+    </div>
+
+    <!-- ==================== TIER 3 ==================== -->
+    <div class="w-full bg-white border-2 border-black rounded-lg p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative">
+      <div class="absolute -top-3.5 left-5 bg-black text-white text-xs px-3 py-0.5 font-bold uppercase tracking-wider">
+        TIER 3 · 코어 비즈니스 로직 & 온체인 계약 (Private App Core)
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+        <div class="bg-white border border-black rounded p-4">
+          <div class="flex items-center gap-2 mb-1.5">
+            <i class="fa-solid fa-microchip text-black text-lg"></i>
+            <h4 class="font-bold text-black text-base">Application Server (WAS)</h4>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            • 커뮤니티 게시글 / 폐쇄형 몰 주문 트랜잭션<br>
+            • AI 오케스트레이션 / RAG 파이프라인 연계<br>
+            • 비즈니스 무결성 및 회원 권한 관리
+          </p>
+        </div>
+        <div class="bg-white border border-black rounded p-4">
+          <div class="flex items-center gap-2 mb-1.5">
+            <i class="fa-solid fa-file-contract text-black text-lg"></i>
+            <h4 class="font-bold text-black text-base">Smart Contract (온체인 비즈니스)</h4>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            • 포인트 / 리워드 토큰 스마트 컨트랙트 (ERC-20/721)<br>
+            • 몰 에스크로 결제 & 소유권 보증 로직<br>
+            • 위·변조 불가능한 자동 정산 및 감사 증적
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CONNECTOR & PROTOCOL 3-4 ==================== -->
+    <div class="w-full flex flex-col items-center my-3">
+      <!-- Big Arrow Top Line -->
+      <div class="w-0.5 h-3 bg-black"></div>
+      
+      <!-- Protocol Box -->
+      <div class="bg-gray-50 border-2 border-black px-6 py-2 rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-center my-1">
+        <div class="flex items-center justify-center gap-2 text-black font-extrabold text-sm tracking-wide">
+          <i class="fa-solid fa-database"></i>
+          <span>TCP SQL Protocol / Redis RESP / P2P Blockchain Consensus Protocol</span>
+        </div>
+        <div class="text-[11px] text-gray-600 mt-0.5 font-medium">ACID 관계형 트랜잭션 저장 / 분산 P2P 블록 합의 및 원장 동기화 (State DB)</div>
+      </div>
+
+      <!-- Big Arrow Bottom Point -->
+      <div class="flex flex-col items-center -mt-1">
+        <div class="w-0.5 h-3 bg-black"></div>
+        <i class="fa-solid fa-chevron-down text-lg -mt-1 text-black"></i>
+      </div>
+    </div>
+
+    <!-- ==================== TIER 4 ==================== -->
+    <div class="w-full bg-white border-2 border-black rounded-lg p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative">
+      <div class="absolute -top-3.5 left-5 bg-black text-white text-xs px-3 py-0.5 font-bold uppercase tracking-wider">
+        TIER 4 · 영속성 데이터 저장소 & 블록체인 노드 원장 (Storage Layer)
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+        <div class="bg-white border border-black rounded p-4">
+          <div class="flex items-center gap-2 mb-1.5">
+            <i class="fa-solid fa-database text-black text-lg"></i>
+            <h4 class="font-bold text-black text-base">DB Server</h4>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            • <b>PostgreSQL / MySQL</b>: 유저, 몰 상품, 주문 원장<br>
+            • <b>Redis Cache</b>: 고속 세션 및 실시간 랭킹<br>
+            • <b>Vector DB</b>: AI 챗봇 문서 임베딩 지식베이스
+          </p>
+        </div>
+        <div class="bg-white border border-black rounded p-4">
+          <div class="flex items-center gap-2 mb-1.5">
+            <i class="fa-solid fa-cubes text-black text-lg"></i>
+            <h4 class="font-bold text-black text-base">Blockchain Node</h4>
+          </div>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            • <b>EVM / Hyperledger Node</b>: 블록 동기화 & P2P 합의<br>
+            • <b>LevelDB / State Storage</b>: 온체인 잔액/상태 영구 보관<br>
+            • <b>블록체인 감사 로그</b>: 영구 검증 가능한 불변 원장
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

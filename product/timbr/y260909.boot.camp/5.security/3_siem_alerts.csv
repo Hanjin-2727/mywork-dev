@@ -1,0 +1,1089 @@
+timestamp,alert_id,rule_id,rule_name,src_ip,dst_ip,severity,risk_score,status,correlated_events_count,summary
+2026-08-27 13:45:23,ALR-2026-1004,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.53.225,172.16.0.10,MEDIUM,37,CLOSED,7,Certificate expiring within 14 days
+2026-08-27 13:49:24,ALR-2026-1006,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.21.74,172.16.0.10,LOW,15,CLOSED,15,Internal scheduled vulnerability scan traffic
+2026-08-27 13:49:58,ALR-2026-1005,CORR-HOST-02,New Listening Service Port Detected,198.18.29.187,172.16.0.10,MEDIUM,44,SUPPRESSED,7,Container dynamically allocated ephemeral port
+2026-08-27 14:01:45,ALR-2026-1008,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.41.121,172.16.0.10,MEDIUM,50,SUPPRESSED,15,Scheduled backup synchronization burst
+2026-08-27 14:21:20,ALR-2026-1001,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.75.98,172.16.0.10,LOW,30,RESOLVED,11,Public IP flagged on low-severity watchlist
+2026-08-27 14:22:17,ALR-2026-1007,CORR-HOST-02,New Listening Service Port Detected,198.18.64.213,172.16.0.10,MEDIUM,48,AUTO_CLOSED,12,Container dynamically allocated ephemeral port
+2026-08-27 14:29:12,ALR-2026-1002,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.68.45,172.16.0.10,MEDIUM,43,CLOSED,11,Certificate expiring within 14 days
+2026-08-27 14:37:48,ALR-2026-1003,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.32.11,172.16.0.10,MEDIUM,50,SUPPRESSED,14,Scheduled backup synchronization burst
+2026-08-27 14:46:49,ALR-2026-1010,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.52.35,172.16.0.10,MEDIUM,42,SUPPRESSED,8,Certificate expiring within 14 days
+2026-08-27 15:10:31,ALR-2026-1014,CORR-HOST-02,New Listening Service Port Detected,198.18.41.108,172.16.0.10,MEDIUM,43,CLOSED,7,Container dynamically allocated ephemeral port
+2026-08-27 15:10:54,ALR-2026-1013,CORR-HOST-02,New Listening Service Port Detected,198.18.97.226,172.16.0.10,MEDIUM,45,RESOLVED,11,Container dynamically allocated ephemeral port
+2026-08-27 15:29:00,ALR-2026-1012,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.15.48,172.16.0.10,MEDIUM,38,AUTO_CLOSED,12,Certificate expiring within 14 days
+2026-08-27 15:29:10,ALR-2026-1009,CORR-AUTH-01,Single Failed Login Attempt,198.18.93.165,172.16.0.10,LOW,18,CLOSED,9,Normal user typo in login credential
+2026-08-27 15:34:43,ALR-2026-1011,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.100.239,172.16.0.10,MEDIUM,51,RESOLVED,7,Scheduled backup synchronization burst
+2026-08-27 15:49:26,ALR-2026-1015,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.85.107,172.16.0.10,MEDIUM,51,RESOLVED,13,Scheduled backup synchronization burst
+2026-08-27 16:08:36,ALR-2026-1016,CORR-HOST-02,New Listening Service Port Detected,198.18.60.121,172.16.0.10,MEDIUM,40,SUPPRESSED,6,Container dynamically allocated ephemeral port
+2026-08-27 16:14:59,ALR-2026-1018,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.20.133,172.16.0.10,LOW,20,SUPPRESSED,8,Internal scheduled vulnerability scan traffic
+2026-08-27 16:21:06,ALR-2026-1019,CORR-HOST-02,New Listening Service Port Detected,198.18.16.203,172.16.0.10,MEDIUM,43,RESOLVED,14,Container dynamically allocated ephemeral port
+2026-08-27 16:23:38,ALR-2026-1017,CORR-AUTH-01,Single Failed Login Attempt,198.18.70.128,172.16.0.10,LOW,20,RESOLVED,15,Normal user typo in login credential
+2026-08-27 16:46:59,ALR-2026-1026,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.1.235,172.16.0.10,LOW,30,AUTO_CLOSED,8,Public IP flagged on low-severity watchlist
+2026-08-27 17:12:04,ALR-2026-1021,CORR-AUTH-01,Single Failed Login Attempt,198.18.58.244,172.16.0.10,LOW,15,CLOSED,12,Normal user typo in login credential
+2026-08-27 17:16:18,ALR-2026-1020,CORR-HOST-02,New Listening Service Port Detected,198.18.25.129,172.16.0.10,MEDIUM,48,SUPPRESSED,1,Container dynamically allocated ephemeral port
+2026-08-27 17:21:39,ALR-2026-1022,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.68.249,172.16.0.10,MEDIUM,55,SUPPRESSED,4,Scheduled backup synchronization burst
+2026-08-27 17:21:45,ALR-2026-1024,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.35.34,172.16.0.10,LOW,20,CLOSED,2,Internal scheduled vulnerability scan traffic
+2026-08-27 17:23:08,ALR-2026-1025,CORR-HOST-02,New Listening Service Port Detected,198.18.56.234,172.16.0.10,MEDIUM,40,AUTO_CLOSED,6,Container dynamically allocated ephemeral port
+2026-08-27 17:34:24,ALR-2026-1023,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.6.61,172.16.0.10,MEDIUM,46,CLOSED,7,Scheduled backup synchronization burst
+2026-08-27 17:45:56,ALR-2026-1028,CORR-HOST-02,New Listening Service Port Detected,198.18.73.108,172.16.0.10,MEDIUM,42,SUPPRESSED,6,Container dynamically allocated ephemeral port
+2026-08-27 17:48:48,ALR-2026-1030,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.50.106,172.16.0.10,MEDIUM,50,AUTO_CLOSED,3,Scheduled backup synchronization burst
+2026-08-27 18:09:03,ALR-2026-1032,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.46.103,172.16.0.10,LOW,29,SUPPRESSED,1,Public IP flagged on low-severity watchlist
+2026-08-27 18:18:48,ALR-2026-1027,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.55.244,172.16.0.10,LOW,29,AUTO_CLOSED,15,Client crawler hitting deprecated endpoints
+2026-08-27 18:21:05,ALR-2026-1033,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.12.210,172.16.0.10,LOW,25,AUTO_CLOSED,4,Public IP flagged on low-severity watchlist
+2026-08-27 18:24:44,ALR-2026-1034,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.40.219,172.16.0.10,MEDIUM,50,RESOLVED,4,Scheduled backup synchronization burst
+2026-08-27 18:28:52,ALR-2026-1029,CORR-HOST-02,New Listening Service Port Detected,198.18.68.222,172.16.0.10,MEDIUM,44,SUPPRESSED,7,Container dynamically allocated ephemeral port
+2026-08-27 18:36:36,ALR-2026-1031,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.19.148,172.16.0.10,LOW,17,SUPPRESSED,2,Internal scheduled vulnerability scan traffic
+2026-08-27 18:48:51,ALR-2026-1036,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.5.124,172.16.0.10,LOW,24,CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-08-27 18:49:42,ALR-2026-1039,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.97.82,172.16.0.10,LOW,35,CLOSED,15,Public IP flagged on low-severity watchlist
+2026-08-27 18:57:54,ALR-2026-1035,CORR-AUTH-01,Single Failed Login Attempt,198.18.60.68,172.16.0.10,LOW,14,CLOSED,11,Normal user typo in login credential
+2026-08-27 19:19:01,ALR-2026-1038,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.2.157,172.16.0.10,MEDIUM,43,CLOSED,2,Certificate expiring within 14 days
+2026-08-27 19:38:47,ALR-2026-1037,CORR-AUTH-01,Single Failed Login Attempt,198.18.3.187,172.16.0.10,LOW,15,SUPPRESSED,2,Normal user typo in login credential
+2026-08-27 19:45:34,ALR-2026-1047,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.100.225,172.16.0.10,LOW,20,CLOSED,12,Client crawler hitting deprecated endpoints
+2026-08-27 19:46:31,ALR-2026-1042,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.41.151,172.16.0.10,MEDIUM,45,AUTO_CLOSED,9,Certificate expiring within 14 days
+2026-08-27 20:12:43,ALR-2026-1041,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.62.114,172.16.0.10,MEDIUM,53,CLOSED,15,Scheduled backup synchronization burst
+2026-08-27 20:20:08,ALR-2026-1045,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.32.229,172.16.0.10,LOW,27,SUPPRESSED,8,Public IP flagged on low-severity watchlist
+2026-08-27 20:27:42,ALR-2026-1044,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.56.52,172.16.0.10,MEDIUM,52,SUPPRESSED,15,Scheduled backup synchronization burst
+2026-08-27 20:30:14,ALR-2026-1046,CORR-AUTH-01,Single Failed Login Attempt,198.18.23.78,172.16.0.10,LOW,10,AUTO_CLOSED,3,Normal user typo in login credential
+2026-08-27 20:30:53,ALR-2026-1043,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.50.57,172.16.0.10,LOW,25,RESOLVED,13,Internal scheduled vulnerability scan traffic
+2026-08-27 20:32:58,ALR-2026-1040,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.17.98,172.16.0.10,LOW,29,AUTO_CLOSED,11,Client crawler hitting deprecated endpoints
+2026-08-27 20:51:19,ALR-2026-1051,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.80.197,172.16.0.10,LOW,25,SUPPRESSED,8,Public IP flagged on low-severity watchlist
+2026-08-27 21:02:18,ALR-2026-1053,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.96.231,172.16.0.10,LOW,23,RESOLVED,8,Client crawler hitting deprecated endpoints
+2026-08-27 21:07:34,ALR-2026-1049,CORR-HOST-02,New Listening Service Port Detected,198.18.44.212,172.16.0.10,MEDIUM,50,SUPPRESSED,3,Container dynamically allocated ephemeral port
+2026-08-27 21:09:02,ALR-2026-1052,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.94.161,172.16.0.10,MEDIUM,47,CLOSED,3,Scheduled backup synchronization burst
+2026-08-27 21:14:59,ALR-2026-1050,CORR-HOST-02,New Listening Service Port Detected,198.18.82.174,172.16.0.10,MEDIUM,50,SUPPRESSED,1,Container dynamically allocated ephemeral port
+2026-08-27 21:16:48,ALR-2026-1054,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.79.194,172.16.0.10,MEDIUM,50,CLOSED,15,Scheduled backup synchronization burst
+2026-08-27 21:32:44,ALR-2026-1048,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.30.32,172.16.0.10,LOW,21,SUPPRESSED,11,Client crawler hitting deprecated endpoints
+2026-08-27 21:42:57,ALR-2026-1056,CORR-AUTH-01,Single Failed Login Attempt,198.18.35.107,172.16.0.10,LOW,10,RESOLVED,2,Normal user typo in login credential
+2026-08-27 21:43:47,ALR-2026-1058,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.67.121,172.16.0.10,LOW,26,RESOLVED,1,Client crawler hitting deprecated endpoints
+2026-08-27 21:51:11,ALR-2026-1055,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.37.215,172.16.0.10,LOW,24,RESOLVED,14,Internal scheduled vulnerability scan traffic
+2026-08-27 21:55:26,ALR-2026-1057,CORR-AUTH-01,Single Failed Login Attempt,198.18.63.211,172.16.0.10,LOW,16,CLOSED,10,Normal user typo in login credential
+2026-08-27 22:22:19,ALR-2026-1059,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.100,172.16.0.10,LOW,22,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-08-27 23:03:02,ALR-2026-1065,CORR-AUTH-01,Single Failed Login Attempt,198.18.60.30,172.16.0.10,LOW,10,RESOLVED,12,Normal user typo in login credential
+2026-08-27 23:09:39,ALR-2026-1064,CORR-HOST-02,New Listening Service Port Detected,198.18.61.209,172.16.0.10,MEDIUM,41,SUPPRESSED,3,Container dynamically allocated ephemeral port
+2026-08-27 23:12:47,ALR-2026-1060,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.95.18,172.16.0.10,LOW,29,SUPPRESSED,9,Public IP flagged on low-severity watchlist
+2026-08-27 23:16:37,ALR-2026-1067,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.43.214,172.16.0.10,LOW,29,RESOLVED,15,Client crawler hitting deprecated endpoints
+2026-08-27 23:24:12,ALR-2026-1063,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.8.187,172.16.0.10,LOW,26,RESOLVED,12,Client crawler hitting deprecated endpoints
+2026-08-27 23:26:22,ALR-2026-1066,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.59.55,172.16.0.10,LOW,29,CLOSED,1,Public IP flagged on low-severity watchlist
+2026-08-27 23:31:12,ALR-2026-1062,CORR-HOST-02,New Listening Service Port Detected,198.18.27.238,172.16.0.10,MEDIUM,44,RESOLVED,13,Container dynamically allocated ephemeral port
+2026-08-27 23:32:47,ALR-2026-1061,CORR-AUTH-01,Single Failed Login Attempt,198.18.77.67,172.16.0.10,LOW,14,RESOLVED,3,Normal user typo in login credential
+2026-08-27 23:42:20,ALR-2026-1070,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.28.83,172.16.0.10,LOW,20,SUPPRESSED,15,Internal scheduled vulnerability scan traffic
+2026-08-27 23:56:36,ALR-2026-00101,CORR-RECON-01,Automated Port Scanning Sequence Detected,198.51.100.23,172.16.0.10,MEDIUM,45,INVESTIGATING,64,Firewall drops + IDS probe match across multiple ports
+2026-08-28 00:04:00,ALR-2026-1071,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.85.8,172.16.0.10,LOW,31,SUPPRESSED,14,Public IP flagged on low-severity watchlist
+2026-08-28 00:06:47,ALR-2026-1068,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.44.213,172.16.0.10,LOW,25,RESOLVED,6,Internal scheduled vulnerability scan traffic
+2026-08-28 00:16:08,ALR-2026-1074,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.14.131,172.16.0.10,LOW,25,RESOLVED,9,Public IP flagged on low-severity watchlist
+2026-08-28 00:38:10,ALR-2026-1069,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.36.100,172.16.0.10,LOW,24,SUPPRESSED,7,Internal scheduled vulnerability scan traffic
+2026-08-28 00:40:55,ALR-2026-1072,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.47.208,172.16.0.10,MEDIUM,53,CLOSED,11,Scheduled backup synchronization burst
+2026-08-28 00:41:30,ALR-2026-1073,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.54.44,172.16.0.10,LOW,20,RESOLVED,11,Client crawler hitting deprecated endpoints
+2026-08-28 00:48:31,ALR-2026-1077,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.72.64,172.16.0.10,MEDIUM,37,RESOLVED,1,Certificate expiring within 14 days
+2026-08-28 00:50:38,ALR-2026-1078,CORR-HOST-02,New Listening Service Port Detected,198.18.49.118,172.16.0.10,MEDIUM,48,AUTO_CLOSED,15,Container dynamically allocated ephemeral port
+2026-08-28 00:55:40,ALR-2026-1079,CORR-AUTH-01,Single Failed Login Attempt,198.18.32.1,172.16.0.10,LOW,19,AUTO_CLOSED,15,Normal user typo in login credential
+2026-08-28 01:19:43,ALR-2026-1076,CORR-AUTH-01,Single Failed Login Attempt,198.18.92.214,172.16.0.10,LOW,17,RESOLVED,12,Normal user typo in login credential
+2026-08-28 01:34:05,ALR-2026-1075,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.10.52,172.16.0.10,LOW,18,CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-08-28 01:44:11,ALR-2026-1080,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.39.12,172.16.0.10,LOW,26,SUPPRESSED,10,Public IP flagged on low-severity watchlist
+2026-08-28 01:48:05,ALR-2026-1083,CORR-HOST-02,New Listening Service Port Detected,198.18.2.40,172.16.0.10,MEDIUM,46,SUPPRESSED,12,Container dynamically allocated ephemeral port
+2026-08-28 02:04:31,ALR-2026-1087,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.65.248,172.16.0.10,MEDIUM,48,RESOLVED,12,Scheduled backup synchronization burst
+2026-08-28 02:15:26,ALR-2026-1082,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.17.24,172.16.0.10,LOW,30,AUTO_CLOSED,9,Client crawler hitting deprecated endpoints
+2026-08-28 02:16:54,ALR-2026-1085,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.70.195,172.16.0.10,LOW,35,RESOLVED,13,Public IP flagged on low-severity watchlist
+2026-08-28 02:19:59,ALR-2026-1081,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.95.176,172.16.0.10,MEDIUM,40,SUPPRESSED,13,Certificate expiring within 14 days
+2026-08-28 02:25:21,ALR-2026-1084,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.18.156,172.16.0.10,MEDIUM,53,SUPPRESSED,5,Scheduled backup synchronization burst
+2026-08-28 02:38:56,ALR-2026-1086,CORR-HOST-02,New Listening Service Port Detected,198.18.72.88,172.16.0.10,MEDIUM,47,RESOLVED,12,Container dynamically allocated ephemeral port
+2026-08-28 02:45:23,ALR-2026-1088,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.13.150,172.16.0.10,MEDIUM,41,RESOLVED,6,Certificate expiring within 14 days
+2026-08-28 02:52:14,ALR-2026-1089,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.30.96,172.16.0.10,MEDIUM,44,RESOLVED,13,Certificate expiring within 14 days
+2026-08-28 03:15:48,ALR-2026-1090,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.49.124,172.16.0.10,LOW,20,CLOSED,13,Internal scheduled vulnerability scan traffic
+2026-08-28 03:17:49,ALR-2026-1092,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.54.74,172.16.0.10,LOW,25,AUTO_CLOSED,9,Public IP flagged on low-severity watchlist
+2026-08-28 03:20:11,ALR-2026-1091,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.30.204,172.16.0.10,LOW,29,AUTO_CLOSED,4,Client crawler hitting deprecated endpoints
+2026-08-28 03:45:03,ALR-2026-1094,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.19.162,172.16.0.10,LOW,18,CLOSED,2,Internal scheduled vulnerability scan traffic
+2026-08-28 03:53:04,ALR-2026-1095,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.93.51,172.16.0.10,LOW,25,CLOSED,10,Client crawler hitting deprecated endpoints
+2026-08-28 03:56:39,ALR-2026-1098,CORR-HOST-02,New Listening Service Port Detected,198.18.91.147,172.16.0.10,MEDIUM,43,SUPPRESSED,2,Container dynamically allocated ephemeral port
+2026-08-28 03:59:36,ALR-2026-1093,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.30.73,172.16.0.10,LOW,28,AUTO_CLOSED,12,Public IP flagged on low-severity watchlist
+2026-08-28 04:03:47,ALR-2026-1096,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.31.22,172.16.0.10,MEDIUM,38,RESOLVED,11,Certificate expiring within 14 days
+2026-08-28 04:11:44,ALR-2026-1097,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.21.247,172.16.0.10,LOW,35,RESOLVED,2,Public IP flagged on low-severity watchlist
+2026-08-28 05:06:38,ALR-2026-1102,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.33.241,172.16.0.10,LOW,21,SUPPRESSED,15,Internal scheduled vulnerability scan traffic
+2026-08-28 05:23:51,ALR-2026-1104,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.12.82,172.16.0.10,MEDIUM,45,SUPPRESSED,2,Scheduled backup synchronization burst
+2026-08-28 05:24:26,ALR-2026-1099,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.51.74,172.16.0.10,LOW,20,SUPPRESSED,9,Client crawler hitting deprecated endpoints
+2026-08-28 05:25:59,ALR-2026-1100,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.98.155,172.16.0.10,LOW,21,CLOSED,9,Client crawler hitting deprecated endpoints
+2026-08-28 05:29:35,ALR-2026-1103,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.57.43,172.16.0.10,LOW,27,AUTO_CLOSED,15,Public IP flagged on low-severity watchlist
+2026-08-28 05:33:01,ALR-2026-1101,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.26.119,172.16.0.10,MEDIUM,52,SUPPRESSED,13,Scheduled backup synchronization burst
+2026-08-28 05:44:07,ALR-2026-1109,CORR-AUTH-01,Single Failed Login Attempt,198.18.63.218,172.16.0.10,LOW,16,RESOLVED,6,Normal user typo in login credential
+2026-08-28 05:50:02,ALR-2026-1108,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.76.10,172.16.0.10,LOW,33,CLOSED,3,Public IP flagged on low-severity watchlist
+2026-08-28 06:02:04,ALR-2026-1110,CORR-AUTH-01,Single Failed Login Attempt,198.18.77.30,172.16.0.10,LOW,13,AUTO_CLOSED,12,Normal user typo in login credential
+2026-08-28 06:08:03,ALR-2026-1107,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.74.75,172.16.0.10,LOW,25,CLOSED,15,Public IP flagged on low-severity watchlist
+2026-08-28 06:24:14,ALR-2026-1105,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.11.79,172.16.0.10,MEDIUM,44,SUPPRESSED,7,Certificate expiring within 14 days
+2026-08-28 06:40:54,ALR-2026-1106,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.51.117,172.16.0.10,LOW,21,CLOSED,5,Client crawler hitting deprecated endpoints
+2026-08-28 06:51:30,ALR-2026-1116,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.41.8,172.16.0.10,MEDIUM,53,RESOLVED,9,Scheduled backup synchronization burst
+2026-08-28 06:58:57,ALR-2026-1111,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.56.77,172.16.0.10,LOW,25,CLOSED,1,Public IP flagged on low-severity watchlist
+2026-08-28 06:59:55,ALR-2026-1112,CORR-AUTH-01,Single Failed Login Attempt,198.18.4.82,172.16.0.10,LOW,18,SUPPRESSED,8,Normal user typo in login credential
+2026-08-28 07:04:17,ALR-2026-1113,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.40.221,172.16.0.10,LOW,29,SUPPRESSED,5,Client crawler hitting deprecated endpoints
+2026-08-28 07:04:23,ALR-2026-1115,CORR-HOST-02,New Listening Service Port Detected,198.18.57.75,172.16.0.10,MEDIUM,50,CLOSED,2,Container dynamically allocated ephemeral port
+2026-08-28 07:41:22,ALR-2026-1114,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.96.12,172.16.0.10,LOW,30,SUPPRESSED,3,Client crawler hitting deprecated endpoints
+2026-08-28 07:42:37,ALR-2026-1120,CORR-AUTH-01,Single Failed Login Attempt,198.18.54.18,172.16.0.10,LOW,14,SUPPRESSED,14,Normal user typo in login credential
+2026-08-28 07:45:55,ALR-2026-1122,CORR-AUTH-01,Single Failed Login Attempt,198.18.86.35,172.16.0.10,LOW,14,RESOLVED,15,Normal user typo in login credential
+2026-08-28 07:52:11,ALR-2026-1121,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.75.94,172.16.0.10,MEDIUM,53,SUPPRESSED,10,Scheduled backup synchronization burst
+2026-08-28 08:06:45,ALR-2026-1123,CORR-AUTH-01,Single Failed Login Attempt,198.18.15.233,172.16.0.10,LOW,17,CLOSED,15,Normal user typo in login credential
+2026-08-28 08:13:55,ALR-2026-1118,CORR-AUTH-01,Single Failed Login Attempt,198.18.5.123,172.16.0.10,LOW,20,SUPPRESSED,11,Normal user typo in login credential
+2026-08-28 08:16:07,ALR-2026-1117,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.9.12,172.16.0.10,LOW,24,CLOSED,8,Internal scheduled vulnerability scan traffic
+2026-08-28 08:25:45,ALR-2026-1119,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.50.154,172.16.0.10,LOW,27,SUPPRESSED,3,Public IP flagged on low-severity watchlist
+2026-08-28 08:53:42,ALR-2026-1126,CORR-AUTH-01,Single Failed Login Attempt,198.18.98.26,172.16.0.10,LOW,16,RESOLVED,3,Normal user typo in login credential
+2026-08-28 09:07:14,ALR-2026-1128,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.55.242,172.16.0.10,LOW,25,RESOLVED,11,Public IP flagged on low-severity watchlist
+2026-08-28 09:09:30,ALR-2026-1127,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.16.18,172.16.0.10,LOW,30,AUTO_CLOSED,7,Public IP flagged on low-severity watchlist
+2026-08-28 09:26:10,ALR-2026-1125,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.51.17,172.16.0.10,LOW,25,CLOSED,8,Client crawler hitting deprecated endpoints
+2026-08-28 09:29:27,ALR-2026-1130,CORR-AUTH-01,Single Failed Login Attempt,198.18.81.163,172.16.0.10,LOW,18,CLOSED,10,Normal user typo in login credential
+2026-08-28 09:37:09,ALR-2026-1129,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.25.42,172.16.0.10,MEDIUM,48,AUTO_CLOSED,15,Scheduled backup synchronization burst
+2026-08-28 09:38:13,ALR-2026-1124,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.32.60,172.16.0.10,LOW,27,SUPPRESSED,15,Client crawler hitting deprecated endpoints
+2026-08-28 09:43:32,ALR-2026-1135,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.6.86,172.16.0.10,LOW,26,AUTO_CLOSED,3,Client crawler hitting deprecated endpoints
+2026-08-28 09:45:41,ALR-2026-1133,CORR-AUTH-01,Single Failed Login Attempt,198.18.48.254,172.16.0.10,LOW,12,AUTO_CLOSED,6,Normal user typo in login credential
+2026-08-28 09:48:15,ALR-2026-1138,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.40.82,172.16.0.10,MEDIUM,37,RESOLVED,3,Certificate expiring within 14 days
+2026-08-28 09:54:14,ALR-2026-1132,CORR-AUTH-01,Single Failed Login Attempt,198.18.43.215,172.16.0.10,LOW,13,CLOSED,5,Normal user typo in login credential
+2026-08-28 10:01:48,ALR-2026-1134,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.89.15,172.16.0.10,LOW,25,AUTO_CLOSED,2,Public IP flagged on low-severity watchlist
+2026-08-28 10:01:51,ALR-2026-1137,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.74.35,172.16.0.10,LOW,26,RESOLVED,12,Client crawler hitting deprecated endpoints
+2026-08-28 10:19:09,ALR-2026-1136,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.13.228,172.16.0.10,LOW,29,CLOSED,9,Client crawler hitting deprecated endpoints
+2026-08-28 10:28:19,ALR-2026-1131,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.12.170,172.16.0.10,LOW,32,SUPPRESSED,15,Public IP flagged on low-severity watchlist
+2026-08-28 10:46:24,ALR-2026-1140,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.93.130,172.16.0.10,MEDIUM,45,CLOSED,12,Certificate expiring within 14 days
+2026-08-28 11:10:52,ALR-2026-1141,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.97.85,172.16.0.10,MEDIUM,48,CLOSED,13,Scheduled backup synchronization burst
+2026-08-28 11:15:28,ALR-2026-1142,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.11.95,172.16.0.10,LOW,20,AUTO_CLOSED,9,Client crawler hitting deprecated endpoints
+2026-08-28 11:39:06,ALR-2026-1143,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.36.82,172.16.0.10,MEDIUM,37,SUPPRESSED,6,Certificate expiring within 14 days
+2026-08-28 11:41:22,ALR-2026-1139,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.75.228,172.16.0.10,LOW,33,AUTO_CLOSED,3,Public IP flagged on low-severity watchlist
+2026-08-28 11:47:08,ALR-2026-1145,CORR-AUTH-01,Single Failed Login Attempt,198.18.8.144,172.16.0.10,LOW,18,AUTO_CLOSED,2,Normal user typo in login credential
+2026-08-28 11:51:08,ALR-2026-1150,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.66.217,172.16.0.10,MEDIUM,49,RESOLVED,5,Scheduled backup synchronization burst
+2026-08-28 12:07:07,ALR-2026-1147,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.36.46,172.16.0.10,LOW,19,AUTO_CLOSED,1,Internal scheduled vulnerability scan traffic
+2026-08-28 12:07:21,ALR-2026-1149,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.12.52,172.16.0.10,MEDIUM,51,CLOSED,7,Scheduled backup synchronization burst
+2026-08-28 12:12:40,ALR-2026-1148,CORR-AUTH-01,Single Failed Login Attempt,198.18.46.189,172.16.0.10,LOW,14,CLOSED,4,Normal user typo in login credential
+2026-08-28 12:34:46,ALR-2026-1146,CORR-AUTH-01,Single Failed Login Attempt,198.18.94.65,172.16.0.10,LOW,19,SUPPRESSED,13,Normal user typo in login credential
+2026-08-28 12:37:34,ALR-2026-1144,CORR-AUTH-01,Single Failed Login Attempt,198.18.66.236,172.16.0.10,LOW,13,CLOSED,1,Normal user typo in login credential
+2026-08-28 13:02:24,ALR-2026-1151,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.78.91,172.16.0.10,MEDIUM,44,SUPPRESSED,15,Certificate expiring within 14 days
+2026-08-28 13:13:09,ALR-2026-1154,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.23.33,172.16.0.10,MEDIUM,46,RESOLVED,3,Scheduled backup synchronization burst
+2026-08-28 13:22:15,ALR-2026-1155,CORR-HOST-02,New Listening Service Port Detected,198.18.25.156,172.16.0.10,MEDIUM,50,RESOLVED,11,Container dynamically allocated ephemeral port
+2026-08-28 13:34:59,ALR-2026-1153,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.41.145,172.16.0.10,MEDIUM,51,RESOLVED,9,Scheduled backup synchronization burst
+2026-08-28 13:40:43,ALR-2026-1152,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.15.51,172.16.0.10,MEDIUM,40,SUPPRESSED,11,Certificate expiring within 14 days
+2026-08-28 14:00:39,ALR-2026-1159,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.17.96,172.16.0.10,MEDIUM,42,SUPPRESSED,10,Certificate expiring within 14 days
+2026-08-28 14:11:04,ALR-2026-1156,CORR-HOST-02,New Listening Service Port Detected,198.18.38.98,172.16.0.10,MEDIUM,50,RESOLVED,12,Container dynamically allocated ephemeral port
+2026-08-28 14:11:32,ALR-2026-1157,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.54.46,172.16.0.10,MEDIUM,49,CLOSED,10,Scheduled backup synchronization burst
+2026-08-28 14:31:32,ALR-2026-1160,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.3.47,172.16.0.10,LOW,25,RESOLVED,2,Public IP flagged on low-severity watchlist
+2026-08-28 14:33:23,ALR-2026-1158,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.84.33,172.16.0.10,LOW,21,SUPPRESSED,8,Client crawler hitting deprecated endpoints
+2026-08-28 14:42:14,ALR-2026-1162,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.56.211,172.16.0.10,MEDIUM,40,AUTO_CLOSED,8,Certificate expiring within 14 days
+2026-08-28 14:44:32,ALR-2026-1166,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.78.21,172.16.0.10,LOW,28,CLOSED,15,Client crawler hitting deprecated endpoints
+2026-08-28 14:53:02,ALR-2026-1163,CORR-HOST-02,New Listening Service Port Detected,198.18.95.19,172.16.0.10,MEDIUM,44,SUPPRESSED,6,Container dynamically allocated ephemeral port
+2026-08-28 14:54:08,ALR-2026-1167,CORR-AUTH-01,Single Failed Login Attempt,198.18.4.103,172.16.0.10,LOW,16,AUTO_CLOSED,6,Normal user typo in login credential
+2026-08-28 14:59:52,ALR-2026-1165,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.45.157,172.16.0.10,LOW,16,RESOLVED,9,Internal scheduled vulnerability scan traffic
+2026-08-28 15:17:08,ALR-2026-1161,CORR-AUTH-01,Single Failed Login Attempt,198.18.76.55,172.16.0.10,LOW,19,CLOSED,8,Normal user typo in login credential
+2026-08-28 15:29:04,ALR-2026-1164,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.59.5,172.16.0.10,LOW,26,RESOLVED,7,Public IP flagged on low-severity watchlist
+2026-08-28 15:45:49,ALR-2026-1171,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.7.65,172.16.0.10,LOW,22,RESOLVED,13,Internal scheduled vulnerability scan traffic
+2026-08-28 16:11:22,ALR-2026-1172,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.25.232,172.16.0.10,MEDIUM,43,AUTO_CLOSED,9,Certificate expiring within 14 days
+2026-08-28 16:23:02,ALR-2026-1168,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.26.115,172.16.0.10,MEDIUM,44,CLOSED,11,Certificate expiring within 14 days
+2026-08-28 16:24:10,ALR-2026-1169,CORR-AUTH-01,Single Failed Login Attempt,198.18.22.146,172.16.0.10,LOW,15,AUTO_CLOSED,9,Normal user typo in login credential
+2026-08-28 16:33:09,ALR-2026-1170,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.9.53,172.16.0.10,MEDIUM,51,CLOSED,13,Scheduled backup synchronization burst
+2026-08-28 16:56:02,ALR-2026-1174,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.68.82,172.16.0.10,LOW,34,SUPPRESSED,1,Public IP flagged on low-severity watchlist
+2026-08-28 17:00:03,ALR-2026-1176,CORR-HOST-02,New Listening Service Port Detected,198.18.51.254,172.16.0.10,MEDIUM,46,AUTO_CLOSED,1,Container dynamically allocated ephemeral port
+2026-08-28 17:05:48,ALR-2026-1175,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.97.113,172.16.0.10,MEDIUM,35,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-08-28 17:21:15,ALR-2026-1179,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.89.252,172.16.0.10,LOW,25,SUPPRESSED,6,Public IP flagged on low-severity watchlist
+2026-08-28 17:32:36,ALR-2026-1173,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.19.240,172.16.0.10,LOW,34,SUPPRESSED,5,Public IP flagged on low-severity watchlist
+2026-08-28 17:36:21,ALR-2026-1177,CORR-HOST-02,New Listening Service Port Detected,198.18.56.178,172.16.0.10,MEDIUM,48,AUTO_CLOSED,3,Container dynamically allocated ephemeral port
+2026-08-28 17:38:20,ALR-2026-1178,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.34.104,172.16.0.10,MEDIUM,37,CLOSED,6,Certificate expiring within 14 days
+2026-08-28 17:42:51,ALR-2026-1185,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.47.142,172.16.0.10,LOW,29,RESOLVED,11,Client crawler hitting deprecated endpoints
+2026-08-28 17:43:46,ALR-2026-1183,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.50.81,172.16.0.10,MEDIUM,42,CLOSED,5,Certificate expiring within 14 days
+2026-08-28 17:44:52,ALR-2026-1181,CORR-AUTH-01,Single Failed Login Attempt,198.18.40.1,172.16.0.10,LOW,10,AUTO_CLOSED,15,Normal user typo in login credential
+2026-08-28 17:49:05,ALR-2026-1182,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.114,172.16.0.10,LOW,25,AUTO_CLOSED,8,Internal scheduled vulnerability scan traffic
+2026-08-28 18:22:12,ALR-2026-1184,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.17.209,172.16.0.10,MEDIUM,36,AUTO_CLOSED,8,Certificate expiring within 14 days
+2026-08-28 18:27:29,ALR-2026-1180,CORR-HOST-02,New Listening Service Port Detected,198.18.75.52,172.16.0.10,MEDIUM,40,RESOLVED,11,Container dynamically allocated ephemeral port
+2026-08-28 18:46:04,ALR-2026-1189,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.52.125,172.16.0.10,MEDIUM,44,AUTO_CLOSED,3,Certificate expiring within 14 days
+2026-08-28 18:51:10,ALR-2026-1186,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.19.47,172.16.0.10,MEDIUM,53,CLOSED,13,Scheduled backup synchronization burst
+2026-08-28 19:00:30,ALR-2026-1192,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.58.51,172.16.0.10,LOW,34,CLOSED,14,Public IP flagged on low-severity watchlist
+2026-08-28 19:20:45,ALR-2026-1188,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.99.136,172.16.0.10,MEDIUM,44,CLOSED,1,Certificate expiring within 14 days
+2026-08-28 19:21:53,ALR-2026-1190,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.14.234,172.16.0.10,LOW,29,SUPPRESSED,10,Client crawler hitting deprecated endpoints
+2026-08-28 19:26:16,ALR-2026-1191,CORR-AUTH-01,Single Failed Login Attempt,198.18.19.238,172.16.0.10,LOW,19,AUTO_CLOSED,13,Normal user typo in login credential
+2026-08-28 19:26:46,ALR-2026-1187,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.23.134,172.16.0.10,LOW,29,CLOSED,9,Client crawler hitting deprecated endpoints
+2026-08-28 19:49:44,ALR-2026-1196,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.32.220,172.16.0.10,MEDIUM,48,SUPPRESSED,12,Scheduled backup synchronization burst
+2026-08-28 19:49:45,ALR-2026-1194,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.36.65,172.16.0.10,LOW,25,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-08-28 20:22:10,ALR-2026-1193,CORR-AUTH-01,Single Failed Login Attempt,198.18.80.131,172.16.0.10,LOW,13,SUPPRESSED,15,Normal user typo in login credential
+2026-08-28 20:28:51,ALR-2026-1195,CORR-AUTH-01,Single Failed Login Attempt,198.18.65.206,172.16.0.10,LOW,14,RESOLVED,4,Normal user typo in login credential
+2026-08-28 20:37:37,ALR-2026-1197,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.53.224,172.16.0.10,MEDIUM,51,RESOLVED,1,Scheduled backup synchronization burst
+2026-08-28 20:42:47,ALR-2026-1202,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.47.55,172.16.0.10,LOW,22,CLOSED,12,Internal scheduled vulnerability scan traffic
+2026-08-28 20:45:18,ALR-2026-1200,CORR-HOST-02,New Listening Service Port Detected,198.18.4.197,172.16.0.10,MEDIUM,40,CLOSED,12,Container dynamically allocated ephemeral port
+2026-08-28 20:45:32,ALR-2026-1199,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.25.82,172.16.0.10,LOW,17,SUPPRESSED,13,Internal scheduled vulnerability scan traffic
+2026-08-28 21:03:28,ALR-2026-1201,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.28.24,172.16.0.10,MEDIUM,43,SUPPRESSED,4,Certificate expiring within 14 days
+2026-08-28 21:11:50,ALR-2026-1203,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.16.8,172.16.0.10,LOW,25,SUPPRESSED,15,Internal scheduled vulnerability scan traffic
+2026-08-28 21:23:50,ALR-2026-1198,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.1.33,172.16.0.10,LOW,23,CLOSED,14,Internal scheduled vulnerability scan traffic
+2026-08-28 21:38:20,ALR-2026-1204,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.22.175,172.16.0.10,MEDIUM,36,SUPPRESSED,14,Certificate expiring within 14 days
+2026-08-28 21:52:40,ALR-2026-1207,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.66.172,172.16.0.10,MEDIUM,36,RESOLVED,12,Certificate expiring within 14 days
+2026-08-28 21:55:20,ALR-2026-1209,CORR-HOST-02,New Listening Service Port Detected,198.18.77.145,172.16.0.10,MEDIUM,49,RESOLVED,5,Container dynamically allocated ephemeral port
+2026-08-28 21:56:14,ALR-2026-1206,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.91.56,172.16.0.10,MEDIUM,47,AUTO_CLOSED,9,Scheduled backup synchronization burst
+2026-08-28 22:06:48,ALR-2026-1208,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.16.18,172.16.0.10,LOW,20,AUTO_CLOSED,4,Internal scheduled vulnerability scan traffic
+2026-08-28 22:19:40,ALR-2026-1210,CORR-HOST-02,New Listening Service Port Detected,198.18.81.230,172.16.0.10,MEDIUM,47,CLOSED,9,Container dynamically allocated ephemeral port
+2026-08-28 22:41:32,ALR-2026-1205,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.93.190,172.16.0.10,LOW,34,RESOLVED,2,Public IP flagged on low-severity watchlist
+2026-08-28 22:51:17,ALR-2026-1214,CORR-HOST-02,New Listening Service Port Detected,198.18.15.163,172.16.0.10,MEDIUM,43,AUTO_CLOSED,3,Container dynamically allocated ephemeral port
+2026-08-28 23:14:55,ALR-2026-1211,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.7.99,172.16.0.10,MEDIUM,41,AUTO_CLOSED,13,Certificate expiring within 14 days
+2026-08-28 23:35:09,ALR-2026-1213,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.100.110,172.16.0.10,MEDIUM,45,CLOSED,15,Certificate expiring within 14 days
+2026-08-28 23:39:12,ALR-2026-1215,CORR-AUTH-01,Single Failed Login Attempt,198.18.64.128,172.16.0.10,LOW,18,RESOLVED,12,Normal user typo in login credential
+2026-08-28 23:41:27,ALR-2026-1212,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.31.61,172.16.0.10,LOW,19,CLOSED,8,Internal scheduled vulnerability scan traffic
+2026-08-28 23:48:48,ALR-2026-1217,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.17.250,172.16.0.10,LOW,17,AUTO_CLOSED,15,Internal scheduled vulnerability scan traffic
+2026-08-28 23:55:01,ALR-2026-1218,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.93.147,172.16.0.10,MEDIUM,37,SUPPRESSED,9,Certificate expiring within 14 days
+2026-08-29 00:03:27,ALR-2026-1219,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.93.106,172.16.0.10,LOW,28,CLOSED,10,Public IP flagged on low-severity watchlist
+2026-08-29 00:04:56,ALR-2026-1222,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.60.55,172.16.0.10,LOW,27,SUPPRESSED,7,Public IP flagged on low-severity watchlist
+2026-08-29 00:05:44,ALR-2026-1221,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.77.157,172.16.0.10,MEDIUM,45,AUTO_CLOSED,3,Certificate expiring within 14 days
+2026-08-29 00:13:11,ALR-2026-1216,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.24.86,172.16.0.10,MEDIUM,54,RESOLVED,6,Scheduled backup synchronization burst
+2026-08-29 00:18:40,ALR-2026-1220,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.14.108,172.16.0.10,MEDIUM,44,RESOLVED,15,Certificate expiring within 14 days
+2026-08-29 01:06:06,ALR-2026-1223,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.42.58,172.16.0.10,LOW,22,SUPPRESSED,15,Client crawler hitting deprecated endpoints
+2026-08-29 01:16:48,ALR-2026-1227,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.97.182,172.16.0.10,MEDIUM,36,SUPPRESSED,7,Certificate expiring within 14 days
+2026-08-29 01:28:03,ALR-2026-1224,CORR-AUTH-01,Single Failed Login Attempt,198.18.17.55,172.16.0.10,LOW,10,RESOLVED,5,Normal user typo in login credential
+2026-08-29 01:38:33,ALR-2026-1225,CORR-HOST-02,New Listening Service Port Detected,198.18.63.7,172.16.0.10,MEDIUM,40,CLOSED,14,Container dynamically allocated ephemeral port
+2026-08-29 01:39:05,ALR-2026-1226,CORR-HOST-02,New Listening Service Port Detected,198.18.72.176,172.16.0.10,MEDIUM,45,RESOLVED,7,Container dynamically allocated ephemeral port
+2026-08-29 01:43:49,ALR-2026-1231,CORR-AUTH-01,Single Failed Login Attempt,198.18.69.184,172.16.0.10,LOW,20,CLOSED,7,Normal user typo in login credential
+2026-08-29 01:52:34,ALR-2026-1233,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.73.218,172.16.0.10,MEDIUM,47,SUPPRESSED,7,Scheduled backup synchronization burst
+2026-08-29 01:52:45,ALR-2026-1229,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.33.99,172.16.0.10,LOW,23,AUTO_CLOSED,11,Internal scheduled vulnerability scan traffic
+2026-08-29 02:11:23,ALR-2026-1230,CORR-AUTH-01,Single Failed Login Attempt,198.18.4.165,172.16.0.10,LOW,19,CLOSED,11,Normal user typo in login credential
+2026-08-29 02:24:58,ALR-2026-1232,CORR-HOST-02,New Listening Service Port Detected,198.18.1.148,172.16.0.10,MEDIUM,45,SUPPRESSED,12,Container dynamically allocated ephemeral port
+2026-08-29 02:38:31,ALR-2026-1228,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.100.95,172.16.0.10,LOW,35,SUPPRESSED,1,Public IP flagged on low-severity watchlist
+2026-08-29 02:54:36,ALR-2026-1237,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.4.201,172.16.0.10,MEDIUM,52,SUPPRESSED,13,Scheduled backup synchronization burst
+2026-08-29 03:01:02,ALR-2026-1235,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.77.101,172.16.0.10,MEDIUM,40,AUTO_CLOSED,1,Certificate expiring within 14 days
+2026-08-29 03:04:36,ALR-2026-1238,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.133,172.16.0.10,LOW,16,SUPPRESSED,1,Internal scheduled vulnerability scan traffic
+2026-08-29 03:27:45,ALR-2026-1236,CORR-AUTH-01,Single Failed Login Attempt,198.18.52.27,172.16.0.10,LOW,17,CLOSED,6,Normal user typo in login credential
+2026-08-29 03:35:33,ALR-2026-1234,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.23.216,172.16.0.10,LOW,25,AUTO_CLOSED,1,Client crawler hitting deprecated endpoints
+2026-08-29 03:36:11,ALR-2026-1239,CORR-AUTH-01,Single Failed Login Attempt,198.18.89.48,172.16.0.10,LOW,11,AUTO_CLOSED,3,Normal user typo in login credential
+2026-08-29 03:44:18,ALR-2026-1240,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.52.118,172.16.0.10,MEDIUM,39,AUTO_CLOSED,9,Certificate expiring within 14 days
+2026-08-29 03:53:35,ALR-2026-1246,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.48.81,172.16.0.10,LOW,22,CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-08-29 03:59:34,ALR-2026-1241,CORR-HOST-02,New Listening Service Port Detected,198.18.68.55,172.16.0.10,MEDIUM,44,SUPPRESSED,3,Container dynamically allocated ephemeral port
+2026-08-29 04:06:14,ALR-2026-1244,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.81.214,172.16.0.10,MEDIUM,37,RESOLVED,8,Certificate expiring within 14 days
+2026-08-29 04:18:29,ALR-2026-1243,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.68.166,172.16.0.10,MEDIUM,46,CLOSED,11,Scheduled backup synchronization burst
+2026-08-29 04:21:07,ALR-2026-1242,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.52.139,172.16.0.10,MEDIUM,45,SUPPRESSED,14,Certificate expiring within 14 days
+2026-08-29 04:27:10,ALR-2026-1245,CORR-HOST-02,New Listening Service Port Detected,198.18.25.62,172.16.0.10,MEDIUM,41,RESOLVED,15,Container dynamically allocated ephemeral port
+2026-08-29 04:40:40,ALR-2026-1247,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.17.242,172.16.0.10,LOW,30,CLOSED,10,Client crawler hitting deprecated endpoints
+2026-08-29 04:42:59,ALR-2026-1251,CORR-HOST-02,New Listening Service Port Detected,198.18.49.41,172.16.0.10,MEDIUM,40,SUPPRESSED,14,Container dynamically allocated ephemeral port
+2026-08-29 04:47:44,ALR-2026-1252,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.41.42,172.16.0.10,LOW,29,SUPPRESSED,6,Public IP flagged on low-severity watchlist
+2026-08-29 04:48:13,ALR-2026-1248,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.69.205,172.16.0.10,MEDIUM,46,RESOLVED,8,Scheduled backup synchronization burst
+2026-08-29 05:11:19,ALR-2026-1250,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.24.61,172.16.0.10,LOW,31,SUPPRESSED,14,Public IP flagged on low-severity watchlist
+2026-08-29 05:14:52,ALR-2026-1253,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.95.8,172.16.0.10,MEDIUM,52,CLOSED,7,Scheduled backup synchronization burst
+2026-08-29 05:22:29,ALR-2026-1249,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.63.22,172.16.0.10,LOW,33,AUTO_CLOSED,14,Public IP flagged on low-severity watchlist
+2026-08-29 05:43:17,ALR-2026-1257,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.87.100,172.16.0.10,LOW,26,SUPPRESSED,1,Public IP flagged on low-severity watchlist
+2026-08-29 05:47:52,ALR-2026-1259,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.68.123,172.16.0.10,MEDIUM,43,SUPPRESSED,7,Certificate expiring within 14 days
+2026-08-29 05:52:55,ALR-2026-1255,CORR-HOST-02,New Listening Service Port Detected,198.18.59.127,172.16.0.10,MEDIUM,42,SUPPRESSED,5,Container dynamically allocated ephemeral port
+2026-08-29 05:57:13,ALR-2026-1258,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.16.68,172.16.0.10,MEDIUM,43,SUPPRESSED,9,Certificate expiring within 14 days
+2026-08-29 06:07:02,ALR-2026-1254,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.47.142,172.16.0.10,LOW,29,AUTO_CLOSED,8,Client crawler hitting deprecated endpoints
+2026-08-29 06:19:24,ALR-2026-1256,CORR-HOST-02,New Listening Service Port Detected,198.18.15.160,172.16.0.10,MEDIUM,44,AUTO_CLOSED,1,Container dynamically allocated ephemeral port
+2026-08-29 06:59:59,ALR-2026-1266,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.19.95,172.16.0.10,MEDIUM,41,RESOLVED,14,Certificate expiring within 14 days
+2026-08-29 07:13:49,ALR-2026-1260,CORR-AUTH-01,Single Failed Login Attempt,198.18.17.193,172.16.0.10,LOW,17,AUTO_CLOSED,8,Normal user typo in login credential
+2026-08-29 07:14:26,ALR-2026-1262,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.7.116,172.16.0.10,LOW,26,SUPPRESSED,6,Client crawler hitting deprecated endpoints
+2026-08-29 07:19:44,ALR-2026-1261,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.60.216,172.16.0.10,LOW,34,CLOSED,3,Public IP flagged on low-severity watchlist
+2026-08-29 07:32:31,ALR-2026-1263,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.48.171,172.16.0.10,LOW,32,AUTO_CLOSED,6,Public IP flagged on low-severity watchlist
+2026-08-29 07:35:55,ALR-2026-1265,CORR-HOST-02,New Listening Service Port Detected,198.18.30.134,172.16.0.10,MEDIUM,49,AUTO_CLOSED,3,Container dynamically allocated ephemeral port
+2026-08-29 07:40:29,ALR-2026-1264,CORR-HOST-02,New Listening Service Port Detected,198.18.36.160,172.16.0.10,MEDIUM,42,AUTO_CLOSED,13,Container dynamically allocated ephemeral port
+2026-08-29 07:42:23,ALR-2026-1269,CORR-AUTH-01,Single Failed Login Attempt,198.18.28.169,172.16.0.10,LOW,12,AUTO_CLOSED,7,Normal user typo in login credential
+2026-08-29 07:54:10,ALR-2026-1272,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.28.44,172.16.0.10,LOW,16,SUPPRESSED,4,Internal scheduled vulnerability scan traffic
+2026-08-29 07:55:04,ALR-2026-1267,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.23.167,172.16.0.10,MEDIUM,45,SUPPRESSED,9,Certificate expiring within 14 days
+2026-08-29 07:59:01,ALR-2026-1270,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.85.132,172.16.0.10,LOW,24,RESOLVED,3,Client crawler hitting deprecated endpoints
+2026-08-29 08:06:59,ALR-2026-1271,CORR-AUTH-01,Single Failed Login Attempt,198.18.56.213,172.16.0.10,LOW,16,CLOSED,9,Normal user typo in login credential
+2026-08-29 08:26:14,ALR-2026-1268,CORR-HOST-02,New Listening Service Port Detected,198.18.17.147,172.16.0.10,MEDIUM,41,RESOLVED,6,Container dynamically allocated ephemeral port
+2026-08-29 08:41:51,ALR-2026-1275,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.57.6,172.16.0.10,LOW,27,RESOLVED,6,Client crawler hitting deprecated endpoints
+2026-08-29 08:53:11,ALR-2026-1273,CORR-HOST-02,New Listening Service Port Detected,198.18.69.63,172.16.0.10,MEDIUM,41,RESOLVED,7,Container dynamically allocated ephemeral port
+2026-08-29 09:04:58,ALR-2026-1276,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.34.194,172.16.0.10,LOW,30,RESOLVED,9,Public IP flagged on low-severity watchlist
+2026-08-29 09:09:02,ALR-2026-1274,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.27.45,172.16.0.10,LOW,20,CLOSED,10,Internal scheduled vulnerability scan traffic
+2026-08-29 09:11:31,ALR-2026-1277,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.34.33,172.16.0.10,LOW,30,CLOSED,3,Client crawler hitting deprecated endpoints
+2026-08-29 09:52:59,ALR-2026-1279,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.62.94,172.16.0.10,LOW,35,SUPPRESSED,3,Public IP flagged on low-severity watchlist
+2026-08-29 10:15:06,ALR-2026-1281,CORR-HOST-02,New Listening Service Port Detected,198.18.57.133,172.16.0.10,MEDIUM,40,RESOLVED,3,Container dynamically allocated ephemeral port
+2026-08-29 10:24:14,ALR-2026-1282,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.77.204,172.16.0.10,LOW,20,AUTO_CLOSED,3,Client crawler hitting deprecated endpoints
+2026-08-29 10:25:18,ALR-2026-1278,CORR-HOST-02,New Listening Service Port Detected,198.18.3.191,172.16.0.10,MEDIUM,40,AUTO_CLOSED,13,Container dynamically allocated ephemeral port
+2026-08-29 10:33:55,ALR-2026-1280,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.24.69,172.16.0.10,LOW,25,RESOLVED,10,Internal scheduled vulnerability scan traffic
+2026-08-29 11:07:26,ALR-2026-1284,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.1.107,172.16.0.10,MEDIUM,49,SUPPRESSED,14,Scheduled backup synchronization burst
+2026-08-29 11:14:54,ALR-2026-1288,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.68.145,172.16.0.10,MEDIUM,35,SUPPRESSED,7,Certificate expiring within 14 days
+2026-08-29 11:20:02,ALR-2026-1283,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.95.6,172.16.0.10,MEDIUM,51,RESOLVED,12,Scheduled backup synchronization burst
+2026-08-29 11:23:43,ALR-2026-1285,CORR-AUTH-01,Single Failed Login Attempt,198.18.97.129,172.16.0.10,LOW,11,CLOSED,6,Normal user typo in login credential
+2026-08-29 11:30:31,ALR-2026-1286,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.46.68,172.16.0.10,LOW,21,RESOLVED,5,Internal scheduled vulnerability scan traffic
+2026-08-29 11:35:13,ALR-2026-1287,CORR-AUTH-01,Single Failed Login Attempt,198.18.96.252,172.16.0.10,LOW,20,SUPPRESSED,11,Normal user typo in login credential
+2026-08-29 11:42:10,ALR-2026-1290,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.49.239,172.16.0.10,MEDIUM,37,CLOSED,9,Certificate expiring within 14 days
+2026-08-29 11:52:28,ALR-2026-1292,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.22.146,172.16.0.10,LOW,15,RESOLVED,5,Internal scheduled vulnerability scan traffic
+2026-08-29 12:09:02,ALR-2026-1289,CORR-AUTH-01,Single Failed Login Attempt,198.18.38.50,172.16.0.10,LOW,18,CLOSED,15,Normal user typo in login credential
+2026-08-29 12:19:56,ALR-2026-1294,CORR-AUTH-01,Single Failed Login Attempt,198.18.37.171,172.16.0.10,LOW,16,CLOSED,3,Normal user typo in login credential
+2026-08-29 12:32:51,ALR-2026-1293,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.52.227,172.16.0.10,MEDIUM,51,SUPPRESSED,3,Scheduled backup synchronization burst
+2026-08-29 12:39:44,ALR-2026-1291,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.31.72,172.16.0.10,LOW,24,CLOSED,10,Internal scheduled vulnerability scan traffic
+2026-08-29 12:44:50,ALR-2026-1298,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.33.72,172.16.0.10,MEDIUM,51,AUTO_CLOSED,15,Scheduled backup synchronization burst
+2026-08-29 12:58:19,ALR-2026-1296,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.149,172.16.0.10,LOW,16,RESOLVED,10,Internal scheduled vulnerability scan traffic
+2026-08-29 12:59:08,ALR-2026-1297,CORR-AUTH-01,Single Failed Login Attempt,198.18.73.209,172.16.0.10,LOW,16,RESOLVED,6,Normal user typo in login credential
+2026-08-29 13:15:42,ALR-2026-1295,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.67.243,172.16.0.10,MEDIUM,53,RESOLVED,1,Scheduled backup synchronization burst
+2026-08-29 13:31:14,ALR-2026-1299,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.70.21,172.16.0.10,MEDIUM,44,SUPPRESSED,12,Certificate expiring within 14 days
+2026-08-29 14:12:15,ALR-2026-1300,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.51.65,172.16.0.10,LOW,29,RESOLVED,11,Client crawler hitting deprecated endpoints
+2026-08-29 14:12:49,ALR-2026-1304,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.33.226,172.16.0.10,LOW,20,CLOSED,6,Internal scheduled vulnerability scan traffic
+2026-08-29 14:25:21,ALR-2026-1301,CORR-HOST-02,New Listening Service Port Detected,198.18.7.81,172.16.0.10,MEDIUM,45,AUTO_CLOSED,5,Container dynamically allocated ephemeral port
+2026-08-29 14:32:15,ALR-2026-1305,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.38.28,172.16.0.10,LOW,29,AUTO_CLOSED,8,Client crawler hitting deprecated endpoints
+2026-08-29 14:39:16,ALR-2026-1303,CORR-AUTH-01,Single Failed Login Attempt,198.18.48.194,172.16.0.10,LOW,16,AUTO_CLOSED,14,Normal user typo in login credential
+2026-08-29 14:41:03,ALR-2026-1302,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.48.249,172.16.0.10,MEDIUM,38,AUTO_CLOSED,13,Certificate expiring within 14 days
+2026-08-29 14:58:12,ALR-2026-1306,CORR-HOST-02,New Listening Service Port Detected,198.18.99.123,172.16.0.10,MEDIUM,48,RESOLVED,9,Container dynamically allocated ephemeral port
+2026-08-29 14:58:53,ALR-2026-1310,CORR-HOST-02,New Listening Service Port Detected,198.18.100.154,172.16.0.10,MEDIUM,46,AUTO_CLOSED,7,Container dynamically allocated ephemeral port
+2026-08-29 15:08:21,ALR-2026-1307,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.72.139,172.16.0.10,LOW,26,AUTO_CLOSED,8,Public IP flagged on low-severity watchlist
+2026-08-29 15:15:17,ALR-2026-1308,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.84.250,172.16.0.10,LOW,30,CLOSED,13,Client crawler hitting deprecated endpoints
+2026-08-29 15:16:03,ALR-2026-1309,CORR-HOST-02,New Listening Service Port Detected,198.18.27.125,172.16.0.10,MEDIUM,46,SUPPRESSED,9,Container dynamically allocated ephemeral port
+2026-08-29 15:44:53,ALR-2026-1315,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.55.75,172.16.0.10,LOW,35,SUPPRESSED,9,Public IP flagged on low-severity watchlist
+2026-08-29 15:50:13,ALR-2026-1311,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.60.131,172.16.0.10,MEDIUM,41,SUPPRESSED,4,Certificate expiring within 14 days
+2026-08-29 16:17:02,ALR-2026-1313,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.6.231,172.16.0.10,LOW,21,CLOSED,13,Internal scheduled vulnerability scan traffic
+2026-08-29 16:21:36,ALR-2026-1312,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.55.137,172.16.0.10,LOW,28,AUTO_CLOSED,7,Public IP flagged on low-severity watchlist
+2026-08-29 16:25:26,ALR-2026-1314,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.38.51,172.16.0.10,MEDIUM,47,SUPPRESSED,7,Scheduled backup synchronization burst
+2026-08-29 16:44:42,ALR-2026-1318,CORR-AUTH-01,Single Failed Login Attempt,198.18.85.29,172.16.0.10,LOW,12,AUTO_CLOSED,8,Normal user typo in login credential
+2026-08-29 17:12:29,ALR-2026-1319,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.59.40,172.16.0.10,LOW,26,AUTO_CLOSED,15,Public IP flagged on low-severity watchlist
+2026-08-29 17:19:54,ALR-2026-1320,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.34.175,172.16.0.10,MEDIUM,46,AUTO_CLOSED,7,Scheduled backup synchronization burst
+2026-08-29 17:21:14,ALR-2026-1317,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.32.194,172.16.0.10,LOW,20,CLOSED,7,Client crawler hitting deprecated endpoints
+2026-08-29 17:28:47,ALR-2026-1316,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.80.18,172.16.0.10,MEDIUM,48,RESOLVED,1,Scheduled backup synchronization burst
+2026-08-29 17:54:48,ALR-2026-1327,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.70.31,172.16.0.10,MEDIUM,40,RESOLVED,14,Certificate expiring within 14 days
+2026-08-29 18:03:14,ALR-2026-1324,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.97.67,172.16.0.10,LOW,25,AUTO_CLOSED,13,Public IP flagged on low-severity watchlist
+2026-08-29 18:15:51,ALR-2026-1322,CORR-HOST-02,New Listening Service Port Detected,198.18.49.219,172.16.0.10,MEDIUM,43,RESOLVED,6,Container dynamically allocated ephemeral port
+2026-08-29 18:19:13,ALR-2026-1323,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.24.238,172.16.0.10,LOW,19,SUPPRESSED,10,Internal scheduled vulnerability scan traffic
+2026-08-29 18:21:17,ALR-2026-1321,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.15.199,172.16.0.10,MEDIUM,45,CLOSED,6,Certificate expiring within 14 days
+2026-08-29 18:28:43,ALR-2026-1326,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.57.239,172.16.0.10,LOW,33,RESOLVED,1,Public IP flagged on low-severity watchlist
+2026-08-29 18:33:17,ALR-2026-1325,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.41.189,172.16.0.10,MEDIUM,45,AUTO_CLOSED,7,Certificate expiring within 14 days
+2026-08-29 18:46:53,ALR-2026-1334,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.13.235,172.16.0.10,MEDIUM,45,AUTO_CLOSED,5,Certificate expiring within 14 days
+2026-08-29 18:49:44,ALR-2026-1328,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.5.5,172.16.0.10,MEDIUM,54,CLOSED,11,Scheduled backup synchronization burst
+2026-08-29 18:55:26,ALR-2026-1332,CORR-AUTH-01,Single Failed Login Attempt,198.18.12.4,172.16.0.10,LOW,12,SUPPRESSED,5,Normal user typo in login credential
+2026-08-29 19:07:30,ALR-2026-1329,CORR-AUTH-01,Single Failed Login Attempt,198.18.85.114,172.16.0.10,LOW,13,SUPPRESSED,4,Normal user typo in login credential
+2026-08-29 19:11:55,ALR-2026-1331,CORR-HOST-02,New Listening Service Port Detected,198.18.76.96,172.16.0.10,MEDIUM,46,SUPPRESSED,1,Container dynamically allocated ephemeral port
+2026-08-29 19:20:19,ALR-2026-1330,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.57.213,172.16.0.10,LOW,21,RESOLVED,4,Client crawler hitting deprecated endpoints
+2026-08-29 19:23:05,ALR-2026-1335,CORR-AUTH-01,Single Failed Login Attempt,198.18.83.115,172.16.0.10,LOW,12,SUPPRESSED,6,Normal user typo in login credential
+2026-08-29 19:39:12,ALR-2026-1333,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.74.158,172.16.0.10,MEDIUM,52,CLOSED,3,Scheduled backup synchronization burst
+2026-08-29 19:41:42,ALR-2026-1339,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.65.253,172.16.0.10,MEDIUM,44,AUTO_CLOSED,4,Certificate expiring within 14 days
+2026-08-29 20:09:58,ALR-2026-1337,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.3.58,172.16.0.10,LOW,28,AUTO_CLOSED,6,Public IP flagged on low-severity watchlist
+2026-08-29 20:10:06,ALR-2026-1338,CORR-AUTH-01,Single Failed Login Attempt,198.18.17.114,172.16.0.10,LOW,16,RESOLVED,9,Normal user typo in login credential
+2026-08-29 20:10:13,ALR-2026-1340,CORR-AUTH-01,Single Failed Login Attempt,198.18.40.243,172.16.0.10,LOW,17,AUTO_CLOSED,1,Normal user typo in login credential
+2026-08-29 20:22:16,ALR-2026-1336,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.57.138,172.16.0.10,MEDIUM,37,AUTO_CLOSED,8,Certificate expiring within 14 days
+2026-08-29 20:50:12,ALR-2026-1343,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.79.152,172.16.0.10,LOW,30,AUTO_CLOSED,13,Client crawler hitting deprecated endpoints
+2026-08-29 21:10:49,ALR-2026-1341,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.82.33,172.16.0.10,LOW,23,SUPPRESSED,8,Client crawler hitting deprecated endpoints
+2026-08-29 21:13:19,ALR-2026-1342,CORR-HOST-02,New Listening Service Port Detected,198.18.71.191,172.16.0.10,MEDIUM,44,CLOSED,8,Container dynamically allocated ephemeral port
+2026-08-29 21:35:45,ALR-2026-1344,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.36.40,172.16.0.10,MEDIUM,35,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-08-29 21:40:12,ALR-2026-1345,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.85.92,172.16.0.10,LOW,29,AUTO_CLOSED,15,Public IP flagged on low-severity watchlist
+2026-08-29 21:43:13,ALR-2026-1349,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.55.124,172.16.0.10,LOW,26,SUPPRESSED,14,Public IP flagged on low-severity watchlist
+2026-08-29 22:01:57,ALR-2026-1350,CORR-HOST-02,New Listening Service Port Detected,198.18.56.124,172.16.0.10,MEDIUM,50,SUPPRESSED,13,Container dynamically allocated ephemeral port
+2026-08-29 22:10:53,ALR-2026-1346,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.33.165,172.16.0.10,MEDIUM,42,RESOLVED,13,Certificate expiring within 14 days
+2026-08-29 22:17:43,ALR-2026-1347,CORR-AUTH-01,Single Failed Login Attempt,198.18.34.41,172.16.0.10,LOW,14,RESOLVED,15,Normal user typo in login credential
+2026-08-29 22:28:56,ALR-2026-1348,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.65.100,172.16.0.10,LOW,31,AUTO_CLOSED,14,Public IP flagged on low-severity watchlist
+2026-08-29 22:55:55,ALR-2026-1353,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.30.186,172.16.0.10,MEDIUM,53,AUTO_CLOSED,6,Scheduled backup synchronization burst
+2026-08-29 23:00:50,ALR-2026-1351,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.45.67,172.16.0.10,LOW,29,AUTO_CLOSED,12,Public IP flagged on low-severity watchlist
+2026-08-29 23:08:29,ALR-2026-1356,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.10.211,172.16.0.10,LOW,18,RESOLVED,1,Internal scheduled vulnerability scan traffic
+2026-08-29 23:11:16,ALR-2026-1354,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.39.133,172.16.0.10,LOW,23,CLOSED,12,Client crawler hitting deprecated endpoints
+2026-08-29 23:27:29,ALR-2026-1352,CORR-AUTH-01,Single Failed Login Attempt,198.18.95.74,172.16.0.10,LOW,19,CLOSED,9,Normal user typo in login credential
+2026-08-29 23:37:46,ALR-2026-1355,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.19.170,172.16.0.10,MEDIUM,39,CLOSED,14,Certificate expiring within 14 days
+2026-08-29 23:47:41,ALR-2026-1360,CORR-HOST-02,New Listening Service Port Detected,198.18.51.167,172.16.0.10,MEDIUM,44,CLOSED,13,Container dynamically allocated ephemeral port
+2026-08-30 00:09:37,ALR-2026-1361,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.16.180,172.16.0.10,MEDIUM,44,SUPPRESSED,3,Certificate expiring within 14 days
+2026-08-30 00:30:12,ALR-2026-1358,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.15.154,172.16.0.10,LOW,25,AUTO_CLOSED,7,Public IP flagged on low-severity watchlist
+2026-08-30 00:34:52,ALR-2026-1362,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.80.244,172.16.0.10,LOW,20,CLOSED,7,Client crawler hitting deprecated endpoints
+2026-08-30 00:39:44,ALR-2026-1357,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.79.187,172.16.0.10,LOW,22,SUPPRESSED,9,Client crawler hitting deprecated endpoints
+2026-08-30 00:41:18,ALR-2026-1359,CORR-AUTH-01,Single Failed Login Attempt,198.18.23.190,172.16.0.10,LOW,12,CLOSED,7,Normal user typo in login credential
+2026-08-30 00:46:44,ALR-2026-1366,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.59.141,172.16.0.10,MEDIUM,39,AUTO_CLOSED,1,Certificate expiring within 14 days
+2026-08-30 00:47:33,ALR-2026-1363,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.14.53,172.16.0.10,LOW,25,RESOLVED,7,Internal scheduled vulnerability scan traffic
+2026-08-30 01:06:32,ALR-2026-1368,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.25.229,172.16.0.10,LOW,16,RESOLVED,3,Internal scheduled vulnerability scan traffic
+2026-08-30 01:24:49,ALR-2026-1365,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.75.5,172.16.0.10,MEDIUM,43,RESOLVED,12,Certificate expiring within 14 days
+2026-08-30 01:27:13,ALR-2026-1364,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.30.82,172.16.0.10,LOW,22,CLOSED,1,Internal scheduled vulnerability scan traffic
+2026-08-30 01:33:07,ALR-2026-1367,CORR-HOST-02,New Listening Service Port Detected,198.18.1.240,172.16.0.10,MEDIUM,45,CLOSED,10,Container dynamically allocated ephemeral port
+2026-08-30 01:42:57,ALR-2026-1372,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.16.12,172.16.0.10,LOW,22,RESOLVED,14,Internal scheduled vulnerability scan traffic
+2026-08-30 02:07:04,ALR-2026-1370,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.4.124,172.16.0.10,MEDIUM,46,CLOSED,8,Scheduled backup synchronization burst
+2026-08-30 02:17:05,ALR-2026-1373,CORR-AUTH-01,Single Failed Login Attempt,198.18.26.74,172.16.0.10,LOW,15,AUTO_CLOSED,6,Normal user typo in login credential
+2026-08-30 02:32:12,ALR-2026-1369,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.42.155,172.16.0.10,LOW,23,SUPPRESSED,5,Internal scheduled vulnerability scan traffic
+2026-08-30 02:38:58,ALR-2026-1371,CORR-HOST-02,New Listening Service Port Detected,198.18.22.190,172.16.0.10,MEDIUM,50,SUPPRESSED,11,Container dynamically allocated ephemeral port
+2026-08-30 02:52:16,ALR-2026-1380,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.31.33,172.16.0.10,LOW,24,RESOLVED,2,Internal scheduled vulnerability scan traffic
+2026-08-30 02:59:54,ALR-2026-1377,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.85.160,172.16.0.10,LOW,29,RESOLVED,5,Client crawler hitting deprecated endpoints
+2026-08-30 03:04:52,ALR-2026-1378,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.242,172.16.0.10,LOW,23,AUTO_CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-08-30 03:18:37,ALR-2026-1379,CORR-HOST-02,New Listening Service Port Detected,198.18.15.53,172.16.0.10,MEDIUM,48,RESOLVED,2,Container dynamically allocated ephemeral port
+2026-08-30 03:21:32,ALR-2026-1374,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.33.179,172.16.0.10,LOW,20,RESOLVED,1,Internal scheduled vulnerability scan traffic
+2026-08-30 03:21:32,ALR-2026-1375,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.67.90,172.16.0.10,MEDIUM,51,AUTO_CLOSED,13,Scheduled backup synchronization burst
+2026-08-30 03:37:20,ALR-2026-1376,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.78.172,172.16.0.10,MEDIUM,45,SUPPRESSED,5,Certificate expiring within 14 days
+2026-08-30 03:53:09,ALR-2026-1381,CORR-HOST-02,New Listening Service Port Detected,198.18.48.235,172.16.0.10,MEDIUM,46,AUTO_CLOSED,2,Container dynamically allocated ephemeral port
+2026-08-30 03:55:50,ALR-2026-1384,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.34.144,172.16.0.10,LOW,22,RESOLVED,3,Internal scheduled vulnerability scan traffic
+2026-08-30 04:02:36,ALR-2026-00342,CORR-AUTH-03,Brute Force Authentication Burst,198.51.100.23,172.16.0.10,HIGH,75,ESCALATED,35,Continuous HTTP 401 & SSH Auth failures from single external IP
+2026-08-30 04:03:03,ALR-2026-1387,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.46.248,172.16.0.10,MEDIUM,50,RESOLVED,15,Scheduled backup synchronization burst
+2026-08-30 04:06:46,ALR-2026-1383,CORR-HOST-02,New Listening Service Port Detected,198.18.42.179,172.16.0.10,MEDIUM,49,CLOSED,8,Container dynamically allocated ephemeral port
+2026-08-30 04:07:32,ALR-2026-1385,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.38.177,172.16.0.10,LOW,15,CLOSED,4,Internal scheduled vulnerability scan traffic
+2026-08-30 04:10:37,ALR-2026-1386,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.37.97,172.16.0.10,LOW,19,SUPPRESSED,6,Internal scheduled vulnerability scan traffic
+2026-08-30 04:14:17,ALR-2026-1388,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.48.78,172.16.0.10,LOW,32,SUPPRESSED,6,Public IP flagged on low-severity watchlist
+2026-08-30 04:34:12,ALR-2026-1382,CORR-HOST-02,New Listening Service Port Detected,198.18.44.213,172.16.0.10,MEDIUM,46,RESOLVED,11,Container dynamically allocated ephemeral port
+2026-08-30 04:52:28,ALR-2026-1392,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.84.47,172.16.0.10,MEDIUM,49,AUTO_CLOSED,13,Scheduled backup synchronization burst
+2026-08-30 05:09:09,ALR-2026-1394,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.41.73,172.16.0.10,LOW,23,SUPPRESSED,12,Client crawler hitting deprecated endpoints
+2026-08-30 05:13:14,ALR-2026-1393,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.213,172.16.0.10,LOW,22,CLOSED,14,Internal scheduled vulnerability scan traffic
+2026-08-30 05:16:10,ALR-2026-1389,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.39.109,172.16.0.10,LOW,29,RESOLVED,5,Client crawler hitting deprecated endpoints
+2026-08-30 05:24:31,ALR-2026-1390,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.93.13,172.16.0.10,MEDIUM,52,SUPPRESSED,4,Scheduled backup synchronization burst
+2026-08-30 05:39:57,ALR-2026-1391,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.29.26,172.16.0.10,LOW,27,RESOLVED,3,Public IP flagged on low-severity watchlist
+2026-08-30 06:00:55,ALR-2026-1401,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.69.18,172.16.0.10,MEDIUM,47,SUPPRESSED,6,Scheduled backup synchronization burst
+2026-08-30 06:02:06,ALR-2026-1400,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.94.238,172.16.0.10,MEDIUM,48,CLOSED,10,Scheduled backup synchronization burst
+2026-08-30 06:17:46,ALR-2026-1395,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.47.106,172.16.0.10,LOW,20,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-08-30 06:20:07,ALR-2026-1398,CORR-HOST-02,New Listening Service Port Detected,198.18.63.134,172.16.0.10,MEDIUM,42,SUPPRESSED,4,Container dynamically allocated ephemeral port
+2026-08-30 06:25:36,ALR-2026-1397,CORR-HOST-02,New Listening Service Port Detected,198.18.48.27,172.16.0.10,MEDIUM,42,SUPPRESSED,8,Container dynamically allocated ephemeral port
+2026-08-30 06:39:28,ALR-2026-1399,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.55.240,172.16.0.10,MEDIUM,39,RESOLVED,13,Certificate expiring within 14 days
+2026-08-30 06:40:23,ALR-2026-1396,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.13.1,172.16.0.10,MEDIUM,46,CLOSED,1,Scheduled backup synchronization burst
+2026-08-30 06:46:30,ALR-2026-1405,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.58.93,172.16.0.10,MEDIUM,47,CLOSED,6,Scheduled backup synchronization burst
+2026-08-30 07:01:08,ALR-2026-1406,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.27.85,172.16.0.10,MEDIUM,45,CLOSED,4,Certificate expiring within 14 days
+2026-08-30 07:12:29,ALR-2026-1403,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.44.55,172.16.0.10,LOW,30,CLOSED,2,Public IP flagged on low-severity watchlist
+2026-08-30 07:21:03,ALR-2026-1407,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.23.186,172.16.0.10,MEDIUM,39,SUPPRESSED,4,Certificate expiring within 14 days
+2026-08-30 07:27:32,ALR-2026-1404,CORR-AUTH-01,Single Failed Login Attempt,198.18.8.236,172.16.0.10,LOW,17,SUPPRESSED,4,Normal user typo in login credential
+2026-08-30 07:36:00,ALR-2026-1402,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.5.142,172.16.0.10,LOW,24,RESOLVED,5,Internal scheduled vulnerability scan traffic
+2026-08-30 07:51:29,ALR-2026-1408,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.10.126,172.16.0.10,LOW,24,RESOLVED,13,Client crawler hitting deprecated endpoints
+2026-08-30 07:53:16,ALR-2026-1411,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.34.221,172.16.0.10,LOW,18,CLOSED,9,Internal scheduled vulnerability scan traffic
+2026-08-30 07:59:36,ALR-2026-1415,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.45.21,172.16.0.10,MEDIUM,45,RESOLVED,4,Scheduled backup synchronization burst
+2026-08-30 07:59:58,ALR-2026-1414,CORR-AUTH-01,Single Failed Login Attempt,198.18.54.185,172.16.0.10,LOW,12,CLOSED,7,Normal user typo in login credential
+2026-08-30 08:04:47,ALR-2026-1412,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.9.56,172.16.0.10,LOW,18,SUPPRESSED,5,Internal scheduled vulnerability scan traffic
+2026-08-30 08:15:28,ALR-2026-1410,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.18.26,172.16.0.10,LOW,16,RESOLVED,14,Internal scheduled vulnerability scan traffic
+2026-08-30 08:23:18,ALR-2026-1409,CORR-AUTH-01,Single Failed Login Attempt,198.18.3.228,172.16.0.10,LOW,11,RESOLVED,12,Normal user typo in login credential
+2026-08-30 08:25:25,ALR-2026-1413,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.94.39,172.16.0.10,LOW,25,CLOSED,14,Public IP flagged on low-severity watchlist
+2026-08-30 08:43:48,ALR-2026-1422,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.85.28,172.16.0.10,LOW,24,SUPPRESSED,2,Client crawler hitting deprecated endpoints
+2026-08-30 08:45:30,ALR-2026-1423,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.92.87,172.16.0.10,LOW,30,RESOLVED,15,Client crawler hitting deprecated endpoints
+2026-08-30 08:47:43,ALR-2026-1418,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.1.21,172.16.0.10,LOW,22,SUPPRESSED,2,Internal scheduled vulnerability scan traffic
+2026-08-30 09:01:56,ALR-2026-1421,CORR-AUTH-01,Single Failed Login Attempt,198.18.24.77,172.16.0.10,LOW,13,RESOLVED,9,Normal user typo in login credential
+2026-08-30 09:03:42,ALR-2026-1420,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.8.190,172.16.0.10,LOW,18,SUPPRESSED,7,Internal scheduled vulnerability scan traffic
+2026-08-30 09:27:38,ALR-2026-1419,CORR-HOST-02,New Listening Service Port Detected,198.18.96.20,172.16.0.10,MEDIUM,46,AUTO_CLOSED,3,Container dynamically allocated ephemeral port
+2026-08-30 09:35:51,ALR-2026-1416,CORR-AUTH-01,Single Failed Login Attempt,198.18.4.158,172.16.0.10,LOW,15,SUPPRESSED,6,Normal user typo in login credential
+2026-08-30 09:39:01,ALR-2026-1417,CORR-AUTH-01,Single Failed Login Attempt,198.18.77.153,172.16.0.10,LOW,13,AUTO_CLOSED,12,Normal user typo in login credential
+2026-08-30 09:45:57,ALR-2026-1424,CORR-HOST-02,New Listening Service Port Detected,198.18.12.61,172.16.0.10,MEDIUM,43,AUTO_CLOSED,13,Container dynamically allocated ephemeral port
+2026-08-30 09:50:12,ALR-2026-1428,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.63.78,172.16.0.10,LOW,20,AUTO_CLOSED,8,Client crawler hitting deprecated endpoints
+2026-08-30 10:11:51,ALR-2026-1427,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.24.83,172.16.0.10,LOW,16,CLOSED,9,Internal scheduled vulnerability scan traffic
+2026-08-30 10:20:09,ALR-2026-1429,CORR-HOST-02,New Listening Service Port Detected,198.18.82.98,172.16.0.10,MEDIUM,41,SUPPRESSED,15,Container dynamically allocated ephemeral port
+2026-08-30 10:23:57,ALR-2026-1425,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.87.190,172.16.0.10,MEDIUM,54,RESOLVED,2,Scheduled backup synchronization burst
+2026-08-30 10:35:15,ALR-2026-1426,CORR-HOST-02,New Listening Service Port Detected,198.18.33.169,172.16.0.10,MEDIUM,45,SUPPRESSED,9,Container dynamically allocated ephemeral port
+2026-08-30 10:42:14,ALR-2026-1434,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.78.224,172.16.0.10,MEDIUM,43,SUPPRESSED,11,Certificate expiring within 14 days
+2026-08-30 10:51:20,ALR-2026-1431,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.33.172,172.16.0.10,LOW,24,SUPPRESSED,7,Internal scheduled vulnerability scan traffic
+2026-08-30 10:54:05,ALR-2026-1430,CORR-HOST-02,New Listening Service Port Detected,198.18.31.136,172.16.0.10,MEDIUM,46,AUTO_CLOSED,1,Container dynamically allocated ephemeral port
+2026-08-30 11:20:31,ALR-2026-1433,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.3.71,172.16.0.10,LOW,24,RESOLVED,2,Client crawler hitting deprecated endpoints
+2026-08-30 11:33:10,ALR-2026-1432,CORR-HOST-02,New Listening Service Port Detected,198.18.90.173,172.16.0.10,MEDIUM,49,AUTO_CLOSED,7,Container dynamically allocated ephemeral port
+2026-08-30 11:48:47,ALR-2026-1440,CORR-AUTH-01,Single Failed Login Attempt,198.18.14.172,172.16.0.10,LOW,17,SUPPRESSED,6,Normal user typo in login credential
+2026-08-30 12:06:56,ALR-2026-1436,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.49.14,172.16.0.10,LOW,33,RESOLVED,5,Public IP flagged on low-severity watchlist
+2026-08-30 12:12:21,ALR-2026-1439,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.43.121,172.16.0.10,LOW,24,AUTO_CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-08-30 12:17:56,ALR-2026-1438,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.88.211,172.16.0.10,LOW,27,RESOLVED,7,Client crawler hitting deprecated endpoints
+2026-08-30 12:20:06,ALR-2026-1435,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.38.12,172.16.0.10,LOW,31,SUPPRESSED,9,Public IP flagged on low-severity watchlist
+2026-08-30 12:34:15,ALR-2026-1437,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.48.71,172.16.0.10,LOW,15,CLOSED,5,Internal scheduled vulnerability scan traffic
+2026-08-30 12:57:35,ALR-2026-1443,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.94.241,172.16.0.10,MEDIUM,54,AUTO_CLOSED,12,Scheduled backup synchronization burst
+2026-08-30 13:02:10,ALR-2026-1445,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.86.245,172.16.0.10,MEDIUM,50,AUTO_CLOSED,4,Scheduled backup synchronization burst
+2026-08-30 13:14:01,ALR-2026-1447,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.90.42,172.16.0.10,LOW,31,CLOSED,13,Public IP flagged on low-severity watchlist
+2026-08-30 13:14:46,ALR-2026-1441,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.42.254,172.16.0.10,LOW,26,SUPPRESSED,9,Client crawler hitting deprecated endpoints
+2026-08-30 13:22:16,ALR-2026-1442,CORR-HOST-02,New Listening Service Port Detected,198.18.46.17,172.16.0.10,MEDIUM,48,CLOSED,2,Container dynamically allocated ephemeral port
+2026-08-30 13:27:29,ALR-2026-1446,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.58.12,172.16.0.10,LOW,27,CLOSED,11,Public IP flagged on low-severity watchlist
+2026-08-30 13:36:23,ALR-2026-1444,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.29.26,172.16.0.10,MEDIUM,39,CLOSED,8,Certificate expiring within 14 days
+2026-08-30 13:42:36,ALR-2026-1448,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.31.195,172.16.0.10,MEDIUM,44,SUPPRESSED,11,Certificate expiring within 14 days
+2026-08-30 13:54:32,ALR-2026-1449,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.19.207,172.16.0.10,LOW,25,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-08-30 14:22:09,ALR-2026-1450,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.51.175,172.16.0.10,LOW,26,RESOLVED,9,Public IP flagged on low-severity watchlist
+2026-08-30 14:32:23,ALR-2026-1451,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.34.112,172.16.0.10,MEDIUM,41,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-08-30 14:40:54,ALR-2026-1452,CORR-HOST-02,New Listening Service Port Detected,198.18.24.27,172.16.0.10,MEDIUM,47,RESOLVED,1,Container dynamically allocated ephemeral port
+2026-08-30 14:43:18,ALR-2026-1456,CORR-HOST-02,New Listening Service Port Detected,198.18.77.160,172.16.0.10,MEDIUM,41,RESOLVED,13,Container dynamically allocated ephemeral port
+2026-08-30 15:05:52,ALR-2026-1453,CORR-HOST-02,New Listening Service Port Detected,198.18.46.201,172.16.0.10,MEDIUM,44,CLOSED,9,Container dynamically allocated ephemeral port
+2026-08-30 15:27:01,ALR-2026-1458,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.35.31,172.16.0.10,MEDIUM,53,SUPPRESSED,12,Scheduled backup synchronization burst
+2026-08-30 15:29:30,ALR-2026-1457,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.6.7,172.16.0.10,LOW,20,CLOSED,10,Client crawler hitting deprecated endpoints
+2026-08-30 15:36:42,ALR-2026-1454,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.6.242,172.16.0.10,MEDIUM,36,RESOLVED,2,Certificate expiring within 14 days
+2026-08-30 15:37:37,ALR-2026-1455,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.26.228,172.16.0.10,MEDIUM,45,RESOLVED,4,Certificate expiring within 14 days
+2026-08-30 16:01:41,ALR-2026-1461,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.85.228,172.16.0.10,MEDIUM,46,AUTO_CLOSED,12,Scheduled backup synchronization burst
+2026-08-30 16:01:45,ALR-2026-1464,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.96.219,172.16.0.10,LOW,25,AUTO_CLOSED,6,Public IP flagged on low-severity watchlist
+2026-08-30 16:01:59,ALR-2026-1462,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.17.219,172.16.0.10,LOW,20,AUTO_CLOSED,12,Internal scheduled vulnerability scan traffic
+2026-08-30 16:15:54,ALR-2026-1463,CORR-AUTH-01,Single Failed Login Attempt,198.18.96.156,172.16.0.10,LOW,10,SUPPRESSED,5,Normal user typo in login credential
+2026-08-30 16:19:32,ALR-2026-1466,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.56.53,172.16.0.10,LOW,20,AUTO_CLOSED,5,Client crawler hitting deprecated endpoints
+2026-08-30 16:24:02,ALR-2026-1465,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.40.173,172.16.0.10,MEDIUM,54,SUPPRESSED,7,Scheduled backup synchronization burst
+2026-08-30 16:24:07,ALR-2026-1460,CORR-AUTH-01,Single Failed Login Attempt,198.18.27.59,172.16.0.10,LOW,10,CLOSED,7,Normal user typo in login credential
+2026-08-30 16:41:21,ALR-2026-1459,CORR-AUTH-01,Single Failed Login Attempt,198.18.100.101,172.16.0.10,LOW,15,CLOSED,10,Normal user typo in login credential
+2026-08-30 16:45:14,ALR-2026-1472,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.98.171,172.16.0.10,MEDIUM,37,CLOSED,2,Certificate expiring within 14 days
+2026-08-30 16:47:07,ALR-2026-1470,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.2.75,172.16.0.10,LOW,27,CLOSED,2,Public IP flagged on low-severity watchlist
+2026-08-30 17:14:24,ALR-2026-1471,CORR-HOST-02,New Listening Service Port Detected,198.18.99.178,172.16.0.10,MEDIUM,44,AUTO_CLOSED,4,Container dynamically allocated ephemeral port
+2026-08-30 17:22:53,ALR-2026-1467,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.52.87,172.16.0.10,MEDIUM,50,RESOLVED,10,Scheduled backup synchronization burst
+2026-08-30 17:32:22,ALR-2026-1468,CORR-AUTH-01,Single Failed Login Attempt,198.18.31.41,172.16.0.10,LOW,12,RESOLVED,10,Normal user typo in login credential
+2026-08-30 17:38:56,ALR-2026-1469,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.88.40,172.16.0.10,MEDIUM,48,AUTO_CLOSED,1,Scheduled backup synchronization burst
+2026-08-30 17:45:21,ALR-2026-1476,CORR-HOST-02,New Listening Service Port Detected,198.18.53.11,172.16.0.10,MEDIUM,46,CLOSED,11,Container dynamically allocated ephemeral port
+2026-08-30 17:49:17,ALR-2026-1473,CORR-AUTH-01,Single Failed Login Attempt,198.18.37.93,172.16.0.10,LOW,11,SUPPRESSED,15,Normal user typo in login credential
+2026-08-30 18:01:03,ALR-2026-1474,CORR-AUTH-01,Single Failed Login Attempt,198.18.24.129,172.16.0.10,LOW,20,SUPPRESSED,11,Normal user typo in login credential
+2026-08-30 18:17:58,ALR-2026-1475,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.66.254,172.16.0.10,MEDIUM,43,RESOLVED,11,Certificate expiring within 14 days
+2026-08-30 18:23:22,ALR-2026-1477,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.99.145,172.16.0.10,LOW,25,CLOSED,11,Public IP flagged on low-severity watchlist
+2026-08-30 18:48:00,ALR-2026-1482,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.18.248,172.16.0.10,LOW,17,SUPPRESSED,13,Internal scheduled vulnerability scan traffic
+2026-08-30 19:03:58,ALR-2026-1484,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.28.223,172.16.0.10,MEDIUM,45,SUPPRESSED,12,Scheduled backup synchronization burst
+2026-08-30 19:04:31,ALR-2026-1480,CORR-HOST-02,New Listening Service Port Detected,198.18.32.56,172.16.0.10,MEDIUM,50,CLOSED,3,Container dynamically allocated ephemeral port
+2026-08-30 19:17:02,ALR-2026-1478,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.34.37,172.16.0.10,LOW,26,SUPPRESSED,14,Public IP flagged on low-severity watchlist
+2026-08-30 19:33:37,ALR-2026-1483,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.42.94,172.16.0.10,LOW,23,AUTO_CLOSED,13,Client crawler hitting deprecated endpoints
+2026-08-30 19:34:56,ALR-2026-1481,CORR-HOST-02,New Listening Service Port Detected,198.18.63.209,172.16.0.10,MEDIUM,43,AUTO_CLOSED,1,Container dynamically allocated ephemeral port
+2026-08-30 19:38:08,ALR-2026-1479,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.28.217,172.16.0.10,LOW,27,SUPPRESSED,6,Client crawler hitting deprecated endpoints
+2026-08-30 19:57:54,ALR-2026-1488,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.63.131,172.16.0.10,MEDIUM,36,AUTO_CLOSED,15,Certificate expiring within 14 days
+2026-08-30 20:05:00,ALR-2026-1491,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.99.137,172.16.0.10,MEDIUM,37,SUPPRESSED,8,Certificate expiring within 14 days
+2026-08-30 20:06:16,ALR-2026-1490,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.31.67,172.16.0.10,LOW,29,AUTO_CLOSED,10,Client crawler hitting deprecated endpoints
+2026-08-30 20:19:34,ALR-2026-1489,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.9.222,172.16.0.10,LOW,20,SUPPRESSED,14,Client crawler hitting deprecated endpoints
+2026-08-30 20:27:01,ALR-2026-1487,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.12.248,172.16.0.10,LOW,16,RESOLVED,1,Internal scheduled vulnerability scan traffic
+2026-08-30 20:27:48,ALR-2026-1486,CORR-HOST-02,New Listening Service Port Detected,198.18.67.216,172.16.0.10,MEDIUM,45,RESOLVED,4,Container dynamically allocated ephemeral port
+2026-08-30 20:30:47,ALR-2026-1485,CORR-HOST-02,New Listening Service Port Detected,198.18.88.177,172.16.0.10,MEDIUM,47,RESOLVED,9,Container dynamically allocated ephemeral port
+2026-08-30 20:43:23,ALR-2026-1497,CORR-AUTH-01,Single Failed Login Attempt,198.18.94.183,172.16.0.10,LOW,11,RESOLVED,2,Normal user typo in login credential
+2026-08-30 21:06:02,ALR-2026-1494,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.86.129,172.16.0.10,LOW,21,SUPPRESSED,15,Client crawler hitting deprecated endpoints
+2026-08-30 21:06:25,ALR-2026-1492,CORR-AUTH-01,Single Failed Login Attempt,198.18.85.221,172.16.0.10,LOW,16,AUTO_CLOSED,13,Normal user typo in login credential
+2026-08-30 21:34:25,ALR-2026-1496,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.69.6,172.16.0.10,LOW,24,CLOSED,6,Client crawler hitting deprecated endpoints
+2026-08-30 21:35:17,ALR-2026-1493,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.37.186,172.16.0.10,MEDIUM,40,SUPPRESSED,1,Certificate expiring within 14 days
+2026-08-30 21:35:34,ALR-2026-1495,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.23.47,172.16.0.10,LOW,25,RESOLVED,7,Internal scheduled vulnerability scan traffic
+2026-08-30 21:56:28,ALR-2026-1500,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.75.139,172.16.0.10,LOW,26,SUPPRESSED,12,Client crawler hitting deprecated endpoints
+2026-08-30 22:08:08,ALR-2026-1499,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.16.99,172.16.0.10,MEDIUM,55,AUTO_CLOSED,1,Scheduled backup synchronization burst
+2026-08-30 22:25:00,ALR-2026-1498,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.96.165,172.16.0.10,LOW,25,SUPPRESSED,6,Client crawler hitting deprecated endpoints
+2026-08-30 22:29:06,ALR-2026-1501,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.1.19,172.16.0.10,LOW,20,AUTO_CLOSED,6,Client crawler hitting deprecated endpoints
+2026-08-30 22:41:17,ALR-2026-1502,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.16.86,172.16.0.10,MEDIUM,36,SUPPRESSED,14,Certificate expiring within 14 days
+2026-08-30 22:42:45,ALR-2026-1505,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.72.43,172.16.0.10,LOW,34,AUTO_CLOSED,6,Public IP flagged on low-severity watchlist
+2026-08-30 22:54:19,ALR-2026-1504,CORR-HOST-02,New Listening Service Port Detected,198.18.89.13,172.16.0.10,MEDIUM,45,RESOLVED,9,Container dynamically allocated ephemeral port
+2026-08-30 23:06:19,ALR-2026-1507,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.19.217,172.16.0.10,LOW,23,CLOSED,2,Internal scheduled vulnerability scan traffic
+2026-08-30 23:18:35,ALR-2026-1503,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.66.18,172.16.0.10,MEDIUM,37,SUPPRESSED,11,Certificate expiring within 14 days
+2026-08-30 23:33:27,ALR-2026-1506,CORR-HOST-02,New Listening Service Port Detected,198.18.1.176,172.16.0.10,MEDIUM,46,AUTO_CLOSED,15,Container dynamically allocated ephemeral port
+2026-08-30 23:51:37,ALR-2026-1508,CORR-AUTH-01,Single Failed Login Attempt,198.18.63.46,172.16.0.10,LOW,20,AUTO_CLOSED,14,Normal user typo in login credential
+2026-08-30 23:55:36,ALR-2026-1509,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.12.12,172.16.0.10,MEDIUM,45,SUPPRESSED,12,Scheduled backup synchronization burst
+2026-08-31 00:01:02,ALR-2026-1511,CORR-AUTH-01,Single Failed Login Attempt,198.18.78.173,172.16.0.10,LOW,19,AUTO_CLOSED,2,Normal user typo in login credential
+2026-08-31 00:12:10,ALR-2026-1512,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.56.28,172.16.0.10,LOW,25,SUPPRESSED,14,Public IP flagged on low-severity watchlist
+2026-08-31 00:23:32,ALR-2026-1514,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.48.48,172.16.0.10,MEDIUM,49,CLOSED,1,Scheduled backup synchronization burst
+2026-08-31 00:27:29,ALR-2026-1510,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.9.103,172.16.0.10,LOW,26,SUPPRESSED,3,Client crawler hitting deprecated endpoints
+2026-08-31 00:28:50,ALR-2026-1515,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.43.78,172.16.0.10,LOW,18,AUTO_CLOSED,12,Internal scheduled vulnerability scan traffic
+2026-08-31 00:35:13,ALR-2026-1513,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.50.2,172.16.0.10,LOW,23,RESOLVED,3,Client crawler hitting deprecated endpoints
+2026-08-31 00:42:28,ALR-2026-1517,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.43.183,172.16.0.10,LOW,19,SUPPRESSED,14,Internal scheduled vulnerability scan traffic
+2026-08-31 01:02:35,ALR-2026-1516,CORR-AUTH-01,Single Failed Login Attempt,198.18.5.112,172.16.0.10,LOW,15,SUPPRESSED,8,Normal user typo in login credential
+2026-08-31 01:07:46,ALR-2026-1518,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.5.224,172.16.0.10,LOW,22,RESOLVED,13,Client crawler hitting deprecated endpoints
+2026-08-31 01:22:59,ALR-2026-1520,CORR-AUTH-01,Single Failed Login Attempt,198.18.20.163,172.16.0.10,LOW,17,CLOSED,5,Normal user typo in login credential
+2026-08-31 01:32:18,ALR-2026-1519,CORR-HOST-02,New Listening Service Port Detected,198.18.55.119,172.16.0.10,MEDIUM,45,RESOLVED,4,Container dynamically allocated ephemeral port
+2026-08-31 01:36:35,ALR-2026-1521,CORR-AUTH-01,Single Failed Login Attempt,198.18.9.51,172.16.0.10,LOW,10,RESOLVED,1,Normal user typo in login credential
+2026-08-31 01:42:19,ALR-2026-1522,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.50.84,172.16.0.10,MEDIUM,41,SUPPRESSED,9,Certificate expiring within 14 days
+2026-08-31 01:48:57,ALR-2026-1525,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.75.52,172.16.0.10,LOW,29,CLOSED,6,Public IP flagged on low-severity watchlist
+2026-08-31 02:12:58,ALR-2026-1528,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.49.235,172.16.0.10,LOW,23,SUPPRESSED,1,Internal scheduled vulnerability scan traffic
+2026-08-31 02:17:50,ALR-2026-1526,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.67.112,172.16.0.10,MEDIUM,36,RESOLVED,1,Certificate expiring within 14 days
+2026-08-31 02:39:19,ALR-2026-1524,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.12.105,172.16.0.10,LOW,19,SUPPRESSED,2,Internal scheduled vulnerability scan traffic
+2026-08-31 02:41:07,ALR-2026-1523,CORR-HOST-02,New Listening Service Port Detected,198.18.52.46,172.16.0.10,MEDIUM,41,SUPPRESSED,2,Container dynamically allocated ephemeral port
+2026-08-31 02:41:12,ALR-2026-1527,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.53.132,172.16.0.10,MEDIUM,36,CLOSED,9,Certificate expiring within 14 days
+2026-08-31 03:04:29,ALR-2026-1531,CORR-AUTH-01,Single Failed Login Attempt,198.18.19.154,172.16.0.10,LOW,17,AUTO_CLOSED,4,Normal user typo in login credential
+2026-08-31 03:14:19,ALR-2026-1530,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.22.207,172.16.0.10,MEDIUM,55,RESOLVED,8,Scheduled backup synchronization burst
+2026-08-31 03:14:52,ALR-2026-1532,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.79.37,172.16.0.10,MEDIUM,49,CLOSED,12,Scheduled backup synchronization burst
+2026-08-31 03:17:27,ALR-2026-1534,CORR-HOST-02,New Listening Service Port Detected,198.18.61.227,172.16.0.10,MEDIUM,45,CLOSED,13,Container dynamically allocated ephemeral port
+2026-08-31 03:27:59,ALR-2026-1535,CORR-HOST-02,New Listening Service Port Detected,198.18.24.10,172.16.0.10,MEDIUM,48,SUPPRESSED,8,Container dynamically allocated ephemeral port
+2026-08-31 03:32:12,ALR-2026-1533,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.37.169,172.16.0.10,MEDIUM,52,SUPPRESSED,14,Scheduled backup synchronization burst
+2026-08-31 03:38:09,ALR-2026-1529,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.65.72,172.16.0.10,LOW,27,CLOSED,12,Client crawler hitting deprecated endpoints
+2026-08-31 04:14:52,ALR-2026-1537,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.20.238,172.16.0.10,LOW,29,SUPPRESSED,2,Public IP flagged on low-severity watchlist
+2026-08-31 04:23:11,ALR-2026-1536,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.71.168,172.16.0.10,MEDIUM,54,CLOSED,9,Scheduled backup synchronization burst
+2026-08-31 04:24:53,ALR-2026-1540,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.80.177,172.16.0.10,LOW,23,RESOLVED,10,Client crawler hitting deprecated endpoints
+2026-08-31 04:26:29,ALR-2026-1539,CORR-AUTH-01,Single Failed Login Attempt,198.18.78.39,172.16.0.10,LOW,11,CLOSED,4,Normal user typo in login credential
+2026-08-31 04:31:06,ALR-2026-1538,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.1.99,172.16.0.10,MEDIUM,44,AUTO_CLOSED,7,Certificate expiring within 14 days
+2026-08-31 04:33:08,ALR-2026-1541,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.20.134,172.16.0.10,MEDIUM,37,RESOLVED,15,Certificate expiring within 14 days
+2026-08-31 04:53:03,ALR-2026-1542,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.44.201,172.16.0.10,LOW,22,CLOSED,15,Internal scheduled vulnerability scan traffic
+2026-08-31 04:59:31,ALR-2026-1547,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.81.143,172.16.0.10,MEDIUM,37,AUTO_CLOSED,11,Certificate expiring within 14 days
+2026-08-31 05:15:47,ALR-2026-1548,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.21.175,172.16.0.10,LOW,35,RESOLVED,1,Public IP flagged on low-severity watchlist
+2026-08-31 05:16:43,ALR-2026-1543,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.35.172,172.16.0.10,LOW,27,SUPPRESSED,1,Client crawler hitting deprecated endpoints
+2026-08-31 05:25:38,ALR-2026-1545,CORR-AUTH-01,Single Failed Login Attempt,198.18.59.80,172.16.0.10,LOW,14,CLOSED,10,Normal user typo in login credential
+2026-08-31 05:40:41,ALR-2026-1544,CORR-AUTH-01,Single Failed Login Attempt,198.18.79.24,172.16.0.10,LOW,12,RESOLVED,1,Normal user typo in login credential
+2026-08-31 05:41:23,ALR-2026-1546,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.87.190,172.16.0.10,MEDIUM,38,CLOSED,5,Certificate expiring within 14 days
+2026-08-31 05:42:38,ALR-2026-1552,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.12.254,172.16.0.10,LOW,26,AUTO_CLOSED,4,Client crawler hitting deprecated endpoints
+2026-08-31 05:46:31,ALR-2026-1554,CORR-HOST-02,New Listening Service Port Detected,198.18.49.3,172.16.0.10,MEDIUM,40,SUPPRESSED,1,Container dynamically allocated ephemeral port
+2026-08-31 05:46:53,ALR-2026-1551,CORR-HOST-02,New Listening Service Port Detected,198.18.16.35,172.16.0.10,MEDIUM,44,SUPPRESSED,8,Container dynamically allocated ephemeral port
+2026-08-31 05:52:18,ALR-2026-1549,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.28.196,172.16.0.10,LOW,23,RESOLVED,11,Internal scheduled vulnerability scan traffic
+2026-08-31 05:54:35,ALR-2026-1556,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.53.146,172.16.0.10,LOW,32,CLOSED,12,Public IP flagged on low-severity watchlist
+2026-08-31 06:09:08,ALR-2026-1555,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.181,172.16.0.10,LOW,24,CLOSED,15,Internal scheduled vulnerability scan traffic
+2026-08-31 06:17:08,ALR-2026-1553,CORR-HOST-02,New Listening Service Port Detected,198.18.52.164,172.16.0.10,MEDIUM,41,SUPPRESSED,12,Container dynamically allocated ephemeral port
+2026-08-31 06:33:52,ALR-2026-1550,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.97.230,172.16.0.10,MEDIUM,39,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-08-31 06:49:55,ALR-2026-1559,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.21.253,172.16.0.10,LOW,17,SUPPRESSED,10,Internal scheduled vulnerability scan traffic
+2026-08-31 06:54:00,ALR-2026-1564,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.49.9,172.16.0.10,LOW,19,SUPPRESSED,7,Internal scheduled vulnerability scan traffic
+2026-08-31 06:56:12,ALR-2026-1557,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.72.49,172.16.0.10,MEDIUM,55,AUTO_CLOSED,14,Scheduled backup synchronization burst
+2026-08-31 06:59:32,ALR-2026-1558,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.33.103,172.16.0.10,LOW,35,AUTO_CLOSED,9,Public IP flagged on low-severity watchlist
+2026-08-31 07:21:06,ALR-2026-1561,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.61.75,172.16.0.10,LOW,31,AUTO_CLOSED,14,Public IP flagged on low-severity watchlist
+2026-08-31 07:23:02,ALR-2026-1563,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.77.15,172.16.0.10,LOW,25,AUTO_CLOSED,11,Client crawler hitting deprecated endpoints
+2026-08-31 07:25:36,ALR-2026-1562,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.23.125,172.16.0.10,LOW,25,RESOLVED,15,Client crawler hitting deprecated endpoints
+2026-08-31 07:39:15,ALR-2026-1560,CORR-AUTH-01,Single Failed Login Attempt,198.18.71.133,172.16.0.10,LOW,13,SUPPRESSED,13,Normal user typo in login credential
+2026-08-31 07:45:06,ALR-2026-1570,CORR-AUTH-01,Single Failed Login Attempt,198.18.49.171,172.16.0.10,LOW,11,AUTO_CLOSED,8,Normal user typo in login credential
+2026-08-31 07:48:51,ALR-2026-1569,CORR-HOST-02,New Listening Service Port Detected,198.18.99.162,172.16.0.10,MEDIUM,42,SUPPRESSED,2,Container dynamically allocated ephemeral port
+2026-08-31 07:58:07,ALR-2026-1565,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.86.180,172.16.0.10,LOW,33,SUPPRESSED,3,Public IP flagged on low-severity watchlist
+2026-08-31 08:05:16,ALR-2026-1567,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.29.169,172.16.0.10,LOW,23,RESOLVED,6,Internal scheduled vulnerability scan traffic
+2026-08-31 08:08:02,ALR-2026-1566,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.28.186,172.16.0.10,MEDIUM,48,SUPPRESSED,3,Scheduled backup synchronization burst
+2026-08-31 08:30:52,ALR-2026-1571,CORR-HOST-02,New Listening Service Port Detected,198.18.55.109,172.16.0.10,MEDIUM,42,SUPPRESSED,2,Container dynamically allocated ephemeral port
+2026-08-31 08:38:40,ALR-2026-1568,CORR-HOST-02,New Listening Service Port Detected,198.18.24.206,172.16.0.10,MEDIUM,46,SUPPRESSED,4,Container dynamically allocated ephemeral port
+2026-08-31 08:43:42,ALR-2026-1576,CORR-HOST-02,New Listening Service Port Detected,198.18.63.99,172.16.0.10,MEDIUM,41,SUPPRESSED,14,Container dynamically allocated ephemeral port
+2026-08-31 09:10:16,ALR-2026-1573,CORR-AUTH-01,Single Failed Login Attempt,198.18.76.226,172.16.0.10,LOW,13,CLOSED,7,Normal user typo in login credential
+2026-08-31 09:10:54,ALR-2026-1575,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.39.98,172.16.0.10,MEDIUM,45,AUTO_CLOSED,5,Scheduled backup synchronization burst
+2026-08-31 09:18:24,ALR-2026-1574,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.27.134,172.16.0.10,LOW,24,CLOSED,13,Internal scheduled vulnerability scan traffic
+2026-08-31 09:38:16,ALR-2026-1572,CORR-HOST-02,New Listening Service Port Detected,198.18.30.64,172.16.0.10,MEDIUM,44,AUTO_CLOSED,12,Container dynamically allocated ephemeral port
+2026-08-31 10:02:50,ALR-2026-1577,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.15.222,172.16.0.10,LOW,21,AUTO_CLOSED,4,Internal scheduled vulnerability scan traffic
+2026-08-31 10:24:00,ALR-2026-1579,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.14.115,172.16.0.10,LOW,29,CLOSED,9,Client crawler hitting deprecated endpoints
+2026-08-31 10:27:21,ALR-2026-1580,CORR-AUTH-01,Single Failed Login Attempt,198.18.72.85,172.16.0.10,LOW,15,AUTO_CLOSED,9,Normal user typo in login credential
+2026-08-31 10:28:34,ALR-2026-1578,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.15.20,172.16.0.10,LOW,20,AUTO_CLOSED,8,Internal scheduled vulnerability scan traffic
+2026-08-31 10:34:24,ALR-2026-1581,CORR-AUTH-01,Single Failed Login Attempt,198.18.28.158,172.16.0.10,LOW,19,AUTO_CLOSED,12,Normal user typo in login credential
+2026-08-31 10:44:08,ALR-2026-1582,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.1.126,172.16.0.10,MEDIUM,35,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-08-31 10:47:45,ALR-2026-1583,CORR-HOST-02,New Listening Service Port Detected,198.18.44.34,172.16.0.10,MEDIUM,47,RESOLVED,5,Container dynamically allocated ephemeral port
+2026-08-31 11:10:13,ALR-2026-1588,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.85.147,172.16.0.10,MEDIUM,45,RESOLVED,1,Certificate expiring within 14 days
+2026-08-31 11:28:56,ALR-2026-1587,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.56.11,172.16.0.10,MEDIUM,48,CLOSED,13,Scheduled backup synchronization burst
+2026-08-31 11:31:27,ALR-2026-1585,CORR-AUTH-01,Single Failed Login Attempt,198.18.92.184,172.16.0.10,LOW,20,SUPPRESSED,1,Normal user typo in login credential
+2026-08-31 11:31:36,ALR-2026-1586,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.29.156,172.16.0.10,MEDIUM,46,AUTO_CLOSED,14,Scheduled backup synchronization burst
+2026-08-31 11:33:53,ALR-2026-1584,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.29.214,172.16.0.10,LOW,25,AUTO_CLOSED,6,Public IP flagged on low-severity watchlist
+2026-08-31 11:38:09,ALR-2026-1589,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.26.205,172.16.0.10,MEDIUM,42,SUPPRESSED,6,Certificate expiring within 14 days
+2026-08-31 12:02:26,ALR-2026-1594,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.8.146,172.16.0.10,LOW,25,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-08-31 12:04:58,ALR-2026-1595,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.28.130,172.16.0.10,LOW,29,AUTO_CLOSED,4,Client crawler hitting deprecated endpoints
+2026-08-31 12:06:44,ALR-2026-1596,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.82.204,172.16.0.10,MEDIUM,53,AUTO_CLOSED,4,Scheduled backup synchronization burst
+2026-08-31 12:20:14,ALR-2026-1592,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.12.22,172.16.0.10,LOW,23,AUTO_CLOSED,9,Internal scheduled vulnerability scan traffic
+2026-08-31 12:23:14,ALR-2026-1591,CORR-AUTH-01,Single Failed Login Attempt,198.18.73.128,172.16.0.10,LOW,13,SUPPRESSED,15,Normal user typo in login credential
+2026-08-31 12:29:30,ALR-2026-1593,CORR-AUTH-01,Single Failed Login Attempt,198.18.2.166,172.16.0.10,LOW,11,AUTO_CLOSED,4,Normal user typo in login credential
+2026-08-31 12:40:14,ALR-2026-1590,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.31.210,172.16.0.10,LOW,22,SUPPRESSED,3,Internal scheduled vulnerability scan traffic
+2026-08-31 12:41:47,ALR-2026-1598,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.76.106,172.16.0.10,MEDIUM,46,RESOLVED,9,Scheduled backup synchronization burst
+2026-08-31 12:42:25,ALR-2026-1600,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.47.112,172.16.0.10,LOW,29,SUPPRESSED,2,Public IP flagged on low-severity watchlist
+2026-08-31 12:55:10,ALR-2026-1601,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.59.105,172.16.0.10,LOW,28,AUTO_CLOSED,5,Public IP flagged on low-severity watchlist
+2026-08-31 13:00:38,ALR-2026-1597,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.20.189,172.16.0.10,LOW,27,CLOSED,1,Public IP flagged on low-severity watchlist
+2026-08-31 13:02:27,ALR-2026-1603,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.46.212,172.16.0.10,LOW,33,CLOSED,4,Public IP flagged on low-severity watchlist
+2026-08-31 13:03:41,ALR-2026-1602,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.34.116,172.16.0.10,MEDIUM,55,CLOSED,14,Scheduled backup synchronization burst
+2026-08-31 13:15:38,ALR-2026-1599,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.37.176,172.16.0.10,MEDIUM,45,AUTO_CLOSED,8,Certificate expiring within 14 days
+2026-08-31 13:46:58,ALR-2026-1609,CORR-AUTH-01,Single Failed Login Attempt,198.18.73.242,172.16.0.10,LOW,15,CLOSED,3,Normal user typo in login credential
+2026-08-31 13:51:32,ALR-2026-1608,CORR-AUTH-01,Single Failed Login Attempt,198.18.8.41,172.16.0.10,LOW,17,AUTO_CLOSED,2,Normal user typo in login credential
+2026-08-31 13:53:28,ALR-2026-1605,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.24.6,172.16.0.10,MEDIUM,43,SUPPRESSED,8,Certificate expiring within 14 days
+2026-08-31 13:59:06,ALR-2026-1610,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.28.183,172.16.0.10,LOW,22,AUTO_CLOSED,10,Client crawler hitting deprecated endpoints
+2026-08-31 14:00:08,ALR-2026-1606,CORR-HOST-02,New Listening Service Port Detected,198.18.56.65,172.16.0.10,MEDIUM,43,RESOLVED,2,Container dynamically allocated ephemeral port
+2026-08-31 14:03:35,ALR-2026-1607,CORR-HOST-02,New Listening Service Port Detected,198.18.100.80,172.16.0.10,MEDIUM,42,RESOLVED,1,Container dynamically allocated ephemeral port
+2026-08-31 14:17:02,ALR-2026-1604,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.2.68,172.16.0.10,MEDIUM,47,AUTO_CLOSED,12,Scheduled backup synchronization burst
+2026-08-31 14:54:10,ALR-2026-1612,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.84.220,172.16.0.10,MEDIUM,38,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-08-31 15:17:33,ALR-2026-1611,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.36.172,172.16.0.10,LOW,16,CLOSED,3,Internal scheduled vulnerability scan traffic
+2026-08-31 15:22:46,ALR-2026-1614,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.30.213,172.16.0.10,LOW,32,CLOSED,12,Public IP flagged on low-severity watchlist
+2026-08-31 15:28:28,ALR-2026-1613,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.75.93,172.16.0.10,MEDIUM,43,AUTO_CLOSED,6,Certificate expiring within 14 days
+2026-08-31 15:30:50,ALR-2026-1615,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.66.132,172.16.0.10,MEDIUM,45,CLOSED,7,Scheduled backup synchronization burst
+2026-08-31 15:46:29,ALR-2026-1620,CORR-HOST-02,New Listening Service Port Detected,198.18.17.9,172.16.0.10,MEDIUM,45,CLOSED,7,Container dynamically allocated ephemeral port
+2026-08-31 16:03:52,ALR-2026-1619,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.53.238,172.16.0.10,LOW,30,RESOLVED,13,Client crawler hitting deprecated endpoints
+2026-08-31 16:07:09,ALR-2026-1618,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.35.104,172.16.0.10,LOW,15,AUTO_CLOSED,15,Internal scheduled vulnerability scan traffic
+2026-08-31 16:27:17,ALR-2026-1621,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.29.139,172.16.0.10,MEDIUM,54,RESOLVED,13,Scheduled backup synchronization burst
+2026-08-31 16:39:51,ALR-2026-1616,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.28.76,172.16.0.10,LOW,23,AUTO_CLOSED,12,Internal scheduled vulnerability scan traffic
+2026-08-31 16:40:41,ALR-2026-1617,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.64.206,172.16.0.10,LOW,27,CLOSED,7,Client crawler hitting deprecated endpoints
+2026-08-31 16:43:00,ALR-2026-1624,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.1.92,172.16.0.10,MEDIUM,35,SUPPRESSED,2,Certificate expiring within 14 days
+2026-08-31 17:02:20,ALR-2026-1623,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.34.66,172.16.0.10,MEDIUM,39,AUTO_CLOSED,4,Certificate expiring within 14 days
+2026-08-31 17:06:12,ALR-2026-1622,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.85.101,172.16.0.10,LOW,22,CLOSED,8,Client crawler hitting deprecated endpoints
+2026-08-31 17:15:11,ALR-2026-1626,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.26.212,172.16.0.10,MEDIUM,43,SUPPRESSED,12,Certificate expiring within 14 days
+2026-08-31 17:30:45,ALR-2026-1625,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.41.94,172.16.0.10,LOW,30,CLOSED,5,Public IP flagged on low-severity watchlist
+2026-08-31 17:43:25,ALR-2026-1631,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.42.133,172.16.0.10,MEDIUM,44,RESOLVED,5,Certificate expiring within 14 days
+2026-08-31 17:51:02,ALR-2026-1630,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.94.26,172.16.0.10,MEDIUM,41,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-08-31 17:53:06,ALR-2026-1629,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.83.224,172.16.0.10,LOW,34,CLOSED,6,Public IP flagged on low-severity watchlist
+2026-08-31 18:14:48,ALR-2026-1628,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.68.212,172.16.0.10,LOW,35,RESOLVED,6,Public IP flagged on low-severity watchlist
+2026-08-31 18:28:52,ALR-2026-1627,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.16.49,172.16.0.10,LOW,23,RESOLVED,14,Internal scheduled vulnerability scan traffic
+2026-08-31 18:46:23,ALR-2026-1634,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.6.99,172.16.0.10,LOW,15,SUPPRESSED,2,Internal scheduled vulnerability scan traffic
+2026-08-31 19:11:06,ALR-2026-1636,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.75.162,172.16.0.10,LOW,27,AUTO_CLOSED,13,Client crawler hitting deprecated endpoints
+2026-08-31 19:18:07,ALR-2026-1632,CORR-HOST-02,New Listening Service Port Detected,198.18.81.235,172.16.0.10,MEDIUM,46,CLOSED,8,Container dynamically allocated ephemeral port
+2026-08-31 19:19:21,ALR-2026-1637,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.35.170,172.16.0.10,MEDIUM,46,RESOLVED,15,Scheduled backup synchronization burst
+2026-08-31 19:24:43,ALR-2026-1635,CORR-HOST-02,New Listening Service Port Detected,198.18.29.239,172.16.0.10,MEDIUM,41,RESOLVED,11,Container dynamically allocated ephemeral port
+2026-08-31 19:32:55,ALR-2026-1633,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.22.233,172.16.0.10,LOW,23,CLOSED,5,Client crawler hitting deprecated endpoints
+2026-08-31 19:44:34,ALR-2026-1639,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.49.212,172.16.0.10,MEDIUM,37,RESOLVED,13,Certificate expiring within 14 days
+2026-08-31 19:49:39,ALR-2026-1641,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.7.178,172.16.0.10,MEDIUM,50,RESOLVED,10,Scheduled backup synchronization burst
+2026-08-31 19:51:00,ALR-2026-1638,CORR-AUTH-01,Single Failed Login Attempt,198.18.1.122,172.16.0.10,LOW,15,AUTO_CLOSED,13,Normal user typo in login credential
+2026-08-31 19:56:30,ALR-2026-1640,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.48.82,172.16.0.10,LOW,24,RESOLVED,3,Client crawler hitting deprecated endpoints
+2026-08-31 19:56:30,ALR-2026-1642,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.85.25,172.16.0.10,MEDIUM,55,RESOLVED,13,Scheduled backup synchronization burst
+2026-08-31 21:27:46,ALR-2026-1644,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.87.137,172.16.0.10,LOW,28,SUPPRESSED,13,Client crawler hitting deprecated endpoints
+2026-08-31 21:31:10,ALR-2026-1647,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.12.13,172.16.0.10,LOW,26,CLOSED,4,Public IP flagged on low-severity watchlist
+2026-08-31 21:35:53,ALR-2026-1643,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.12.202,172.16.0.10,LOW,21,AUTO_CLOSED,14,Internal scheduled vulnerability scan traffic
+2026-08-31 21:40:32,ALR-2026-1645,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.62.104,172.16.0.10,MEDIUM,55,SUPPRESSED,9,Scheduled backup synchronization burst
+2026-08-31 21:41:08,ALR-2026-1646,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.18.22,172.16.0.10,LOW,18,SUPPRESSED,4,Internal scheduled vulnerability scan traffic
+2026-08-31 21:49:22,ALR-2026-1652,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.14.204,172.16.0.10,MEDIUM,45,SUPPRESSED,12,Certificate expiring within 14 days
+2026-08-31 22:04:07,ALR-2026-1650,CORR-HOST-02,New Listening Service Port Detected,198.18.49.222,172.16.0.10,MEDIUM,45,AUTO_CLOSED,5,Container dynamically allocated ephemeral port
+2026-08-31 22:06:29,ALR-2026-1649,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.36.159,172.16.0.10,LOW,28,AUTO_CLOSED,13,Client crawler hitting deprecated endpoints
+2026-08-31 22:11:52,ALR-2026-1654,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.57.138,172.16.0.10,LOW,21,AUTO_CLOSED,13,Client crawler hitting deprecated endpoints
+2026-08-31 22:29:20,ALR-2026-1653,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.64.221,172.16.0.10,LOW,27,RESOLVED,12,Public IP flagged on low-severity watchlist
+2026-08-31 22:32:44,ALR-2026-1648,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.2.30,172.16.0.10,LOW,17,CLOSED,4,Internal scheduled vulnerability scan traffic
+2026-08-31 22:38:58,ALR-2026-1651,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.57.15,172.16.0.10,LOW,34,RESOLVED,3,Public IP flagged on low-severity watchlist
+2026-08-31 22:39:22,ALR-2026-1655,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.11.213,172.16.0.10,LOW,24,SUPPRESSED,14,Internal scheduled vulnerability scan traffic
+2026-08-31 22:45:58,ALR-2026-1659,CORR-AUTH-01,Single Failed Login Attempt,198.18.26.186,172.16.0.10,LOW,16,SUPPRESSED,7,Normal user typo in login credential
+2026-08-31 22:57:25,ALR-2026-1656,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.9.47,172.16.0.10,LOW,20,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-08-31 23:13:47,ALR-2026-1660,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.63.188,172.16.0.10,LOW,25,AUTO_CLOSED,8,Client crawler hitting deprecated endpoints
+2026-08-31 23:26:12,ALR-2026-1658,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.10.234,172.16.0.10,MEDIUM,42,AUTO_CLOSED,7,Certificate expiring within 14 days
+2026-08-31 23:34:44,ALR-2026-1657,CORR-AUTH-01,Single Failed Login Attempt,198.18.20.215,172.16.0.10,LOW,17,CLOSED,8,Normal user typo in login credential
+2026-08-31 23:48:57,ALR-2026-1666,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.43.25,172.16.0.10,LOW,33,RESOLVED,12,Public IP flagged on low-severity watchlist
+2026-09-01 00:04:28,ALR-2026-1663,CORR-AUTH-01,Single Failed Login Attempt,198.18.6.11,172.16.0.10,LOW,11,AUTO_CLOSED,9,Normal user typo in login credential
+2026-09-01 00:07:56,ALR-2026-1664,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.44.104,172.16.0.10,MEDIUM,51,SUPPRESSED,5,Scheduled backup synchronization burst
+2026-09-01 00:16:29,ALR-2026-1661,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.12.228,172.16.0.10,LOW,29,SUPPRESSED,15,Public IP flagged on low-severity watchlist
+2026-09-01 00:24:59,ALR-2026-1665,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.66.160,172.16.0.10,LOW,28,AUTO_CLOSED,7,Client crawler hitting deprecated endpoints
+2026-09-01 00:40:38,ALR-2026-1662,CORR-HOST-02,New Listening Service Port Detected,198.18.78.140,172.16.0.10,MEDIUM,46,CLOSED,4,Container dynamically allocated ephemeral port
+2026-09-01 00:42:46,ALR-2026-1667,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.9.200,172.16.0.10,MEDIUM,53,AUTO_CLOSED,13,Scheduled backup synchronization burst
+2026-09-01 00:57:55,ALR-2026-1670,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.13.59,172.16.0.10,LOW,27,RESOLVED,1,Public IP flagged on low-severity watchlist
+2026-09-01 01:23:07,ALR-2026-1673,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.16.184,172.16.0.10,LOW,30,RESOLVED,2,Public IP flagged on low-severity watchlist
+2026-09-01 01:25:01,ALR-2026-1672,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.16.127,172.16.0.10,LOW,33,RESOLVED,15,Public IP flagged on low-severity watchlist
+2026-09-01 01:26:33,ALR-2026-1671,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.7.226,172.16.0.10,LOW,18,SUPPRESSED,14,Internal scheduled vulnerability scan traffic
+2026-09-01 01:34:38,ALR-2026-1669,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.9.187,172.16.0.10,LOW,23,AUTO_CLOSED,9,Client crawler hitting deprecated endpoints
+2026-09-01 01:37:55,ALR-2026-1668,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.1.81,172.16.0.10,MEDIUM,41,AUTO_CLOSED,11,Certificate expiring within 14 days
+2026-09-01 01:44:06,ALR-2026-1676,CORR-AUTH-01,Single Failed Login Attempt,198.18.96.53,172.16.0.10,LOW,17,CLOSED,9,Normal user typo in login credential
+2026-09-01 01:54:26,ALR-2026-1678,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.1.50,172.16.0.10,LOW,23,CLOSED,2,Internal scheduled vulnerability scan traffic
+2026-09-01 02:18:33,ALR-2026-1674,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.40.11,172.16.0.10,LOW,19,AUTO_CLOSED,8,Internal scheduled vulnerability scan traffic
+2026-09-01 02:18:45,ALR-2026-1677,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.8.231,172.16.0.10,MEDIUM,42,RESOLVED,7,Certificate expiring within 14 days
+2026-09-01 02:41:21,ALR-2026-1675,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.89.188,172.16.0.10,MEDIUM,53,RESOLVED,8,Scheduled backup synchronization burst
+2026-09-01 02:43:58,ALR-2026-1679,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.9.19,172.16.0.10,MEDIUM,42,CLOSED,5,Certificate expiring within 14 days
+2026-09-01 03:10:57,ALR-2026-1685,CORR-HOST-02,New Listening Service Port Detected,198.18.3.69,172.16.0.10,MEDIUM,43,AUTO_CLOSED,12,Container dynamically allocated ephemeral port
+2026-09-01 03:12:28,ALR-2026-1683,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.56.162,172.16.0.10,MEDIUM,38,CLOSED,2,Certificate expiring within 14 days
+2026-09-01 03:13:30,ALR-2026-1680,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.46.152,172.16.0.10,MEDIUM,53,SUPPRESSED,14,Scheduled backup synchronization burst
+2026-09-01 03:20:13,ALR-2026-1681,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.23.161,172.16.0.10,MEDIUM,45,SUPPRESSED,2,Scheduled backup synchronization burst
+2026-09-01 03:21:30,ALR-2026-1682,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.87.198,172.16.0.10,MEDIUM,39,RESOLVED,11,Certificate expiring within 14 days
+2026-09-01 03:36:52,ALR-2026-1686,CORR-AUTH-01,Single Failed Login Attempt,198.18.81.140,172.16.0.10,LOW,10,SUPPRESSED,9,Normal user typo in login credential
+2026-09-01 03:39:35,ALR-2026-1684,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.43.62,172.16.0.10,MEDIUM,55,SUPPRESSED,5,Scheduled backup synchronization burst
+2026-09-01 03:45:26,ALR-2026-1690,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.15.152,172.16.0.10,LOW,30,RESOLVED,8,Client crawler hitting deprecated endpoints
+2026-09-01 03:48:12,ALR-2026-1688,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.30.28,172.16.0.10,LOW,18,AUTO_CLOSED,8,Internal scheduled vulnerability scan traffic
+2026-09-01 03:49:09,ALR-2026-1692,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.14.162,172.16.0.10,LOW,26,RESOLVED,2,Public IP flagged on low-severity watchlist
+2026-09-01 03:57:24,ALR-2026-1687,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.75.88,172.16.0.10,MEDIUM,40,SUPPRESSED,14,Certificate expiring within 14 days
+2026-09-01 04:06:24,ALR-2026-1693,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.22.54,172.16.0.10,LOW,16,SUPPRESSED,7,Internal scheduled vulnerability scan traffic
+2026-09-01 04:08:02,ALR-2026-1691,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.3.86,172.16.0.10,LOW,27,SUPPRESSED,1,Public IP flagged on low-severity watchlist
+2026-09-01 04:14:43,ALR-2026-1689,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.79.192,172.16.0.10,LOW,27,AUTO_CLOSED,12,Client crawler hitting deprecated endpoints
+2026-09-01 04:44:44,ALR-2026-1698,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.13.21,172.16.0.10,LOW,27,SUPPRESSED,6,Client crawler hitting deprecated endpoints
+2026-09-01 04:58:03,ALR-2026-1696,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.49.205,172.16.0.10,LOW,19,RESOLVED,9,Internal scheduled vulnerability scan traffic
+2026-09-01 05:23:26,ALR-2026-1695,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.50.54,172.16.0.10,LOW,20,CLOSED,1,Internal scheduled vulnerability scan traffic
+2026-09-01 05:24:50,ALR-2026-1694,CORR-HOST-02,New Listening Service Port Detected,198.18.12.151,172.16.0.10,MEDIUM,49,SUPPRESSED,12,Container dynamically allocated ephemeral port
+2026-09-01 05:31:25,ALR-2026-1697,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.5.97,172.16.0.10,LOW,16,AUTO_CLOSED,4,Internal scheduled vulnerability scan traffic
+2026-09-01 05:47:02,ALR-2026-1704,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.59.76,172.16.0.10,LOW,25,RESOLVED,13,Client crawler hitting deprecated endpoints
+2026-09-01 05:49:31,ALR-2026-1705,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.48.244,172.16.0.10,LOW,22,RESOLVED,2,Internal scheduled vulnerability scan traffic
+2026-09-01 05:54:42,ALR-2026-1703,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.81.178,172.16.0.10,LOW,29,RESOLVED,15,Client crawler hitting deprecated endpoints
+2026-09-01 06:09:01,ALR-2026-1701,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.46.179,172.16.0.10,LOW,22,SUPPRESSED,3,Client crawler hitting deprecated endpoints
+2026-09-01 06:21:36,ALR-2026-00588,CORR-EXPLOIT-02,Web Application Exploitation (SQLi),198.51.100.23,172.16.0.10,HIGH,88,ESCALATED,12,SQL injection signatures aligned with HTTP 500 server error
+2026-09-01 06:25:33,ALR-2026-1702,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.79.94,172.16.0.10,LOW,24,AUTO_CLOSED,1,Client crawler hitting deprecated endpoints
+2026-09-01 06:31:06,ALR-2026-1700,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.31.150,172.16.0.10,LOW,30,AUTO_CLOSED,5,Client crawler hitting deprecated endpoints
+2026-09-01 06:35:00,ALR-2026-1699,CORR-AUTH-01,Single Failed Login Attempt,198.18.71.152,172.16.0.10,LOW,12,SUPPRESSED,6,Normal user typo in login credential
+2026-09-01 06:48:01,ALR-2026-1710,CORR-AUTH-01,Single Failed Login Attempt,198.18.10.95,172.16.0.10,LOW,18,AUTO_CLOSED,10,Normal user typo in login credential
+2026-09-01 06:57:02,ALR-2026-1708,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.46.103,172.16.0.10,MEDIUM,48,RESOLVED,12,Scheduled backup synchronization burst
+2026-09-01 07:10:43,ALR-2026-1706,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.89.146,172.16.0.10,LOW,31,RESOLVED,5,Public IP flagged on low-severity watchlist
+2026-09-01 07:28:27,ALR-2026-1712,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.23.74,172.16.0.10,LOW,16,SUPPRESSED,6,Internal scheduled vulnerability scan traffic
+2026-09-01 07:36:03,ALR-2026-1709,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.46.110,172.16.0.10,MEDIUM,37,AUTO_CLOSED,1,Certificate expiring within 14 days
+2026-09-01 07:38:01,ALR-2026-1711,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.7.117,172.16.0.10,MEDIUM,39,AUTO_CLOSED,4,Certificate expiring within 14 days
+2026-09-01 07:40:12,ALR-2026-1707,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.77.144,172.16.0.10,LOW,30,CLOSED,6,Client crawler hitting deprecated endpoints
+2026-09-01 07:45:34,ALR-2026-1720,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.85.238,172.16.0.10,MEDIUM,45,CLOSED,11,Certificate expiring within 14 days
+2026-09-01 07:50:55,ALR-2026-1716,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.34.34,172.16.0.10,LOW,25,CLOSED,3,Internal scheduled vulnerability scan traffic
+2026-09-01 07:51:20,ALR-2026-1714,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.63.227,172.16.0.10,MEDIUM,55,SUPPRESSED,1,Scheduled backup synchronization burst
+2026-09-01 07:58:41,ALR-2026-1719,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.39.13,172.16.0.10,LOW,30,CLOSED,8,Public IP flagged on low-severity watchlist
+2026-09-01 08:03:30,ALR-2026-1715,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.100.124,172.16.0.10,MEDIUM,49,RESOLVED,8,Scheduled backup synchronization burst
+2026-09-01 08:11:27,ALR-2026-1713,CORR-HOST-02,New Listening Service Port Detected,198.18.95.190,172.16.0.10,MEDIUM,44,RESOLVED,12,Container dynamically allocated ephemeral port
+2026-09-01 08:15:00,ALR-2026-1717,CORR-HOST-02,New Listening Service Port Detected,198.18.83.92,172.16.0.10,MEDIUM,50,CLOSED,8,Container dynamically allocated ephemeral port
+2026-09-01 08:39:22,ALR-2026-1718,CORR-AUTH-01,Single Failed Login Attempt,198.18.13.248,172.16.0.10,LOW,10,AUTO_CLOSED,2,Normal user typo in login credential
+2026-09-01 08:57:19,ALR-2026-1726,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.93.106,172.16.0.10,LOW,30,CLOSED,2,Client crawler hitting deprecated endpoints
+2026-09-01 09:03:12,ALR-2026-1723,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.51.7,172.16.0.10,LOW,27,CLOSED,10,Public IP flagged on low-severity watchlist
+2026-09-01 09:15:15,ALR-2026-1725,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.35.101,172.16.0.10,MEDIUM,47,AUTO_CLOSED,5,Scheduled backup synchronization burst
+2026-09-01 09:22:17,ALR-2026-1722,CORR-HOST-02,New Listening Service Port Detected,198.18.90.137,172.16.0.10,MEDIUM,44,CLOSED,3,Container dynamically allocated ephemeral port
+2026-09-01 09:37:34,ALR-2026-1724,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.95.13,172.16.0.10,LOW,35,RESOLVED,9,Public IP flagged on low-severity watchlist
+2026-09-01 09:39:07,ALR-2026-1721,CORR-HOST-02,New Listening Service Port Detected,198.18.33.229,172.16.0.10,MEDIUM,49,RESOLVED,3,Container dynamically allocated ephemeral port
+2026-09-01 09:47:57,ALR-2026-1729,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.43.174,172.16.0.10,MEDIUM,36,SUPPRESSED,3,Certificate expiring within 14 days
+2026-09-01 09:57:17,ALR-2026-1727,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.12.16,172.16.0.10,LOW,27,CLOSED,15,Public IP flagged on low-severity watchlist
+2026-09-01 10:18:32,ALR-2026-1730,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.8.179,172.16.0.10,MEDIUM,35,AUTO_CLOSED,8,Certificate expiring within 14 days
+2026-09-01 10:26:45,ALR-2026-1732,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.72.202,172.16.0.10,LOW,25,CLOSED,11,Client crawler hitting deprecated endpoints
+2026-09-01 10:29:07,ALR-2026-1728,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.88.9,172.16.0.10,MEDIUM,38,SUPPRESSED,9,Certificate expiring within 14 days
+2026-09-01 10:29:51,ALR-2026-1731,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.70.227,172.16.0.10,MEDIUM,43,SUPPRESSED,9,Certificate expiring within 14 days
+2026-09-01 10:44:08,ALR-2026-1738,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.31.189,172.16.0.10,LOW,18,CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-09-01 10:47:57,ALR-2026-1737,CORR-HOST-02,New Listening Service Port Detected,198.18.88.250,172.16.0.10,MEDIUM,45,CLOSED,6,Container dynamically allocated ephemeral port
+2026-09-01 10:48:18,ALR-2026-1735,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.10.39,172.16.0.10,MEDIUM,53,AUTO_CLOSED,7,Scheduled backup synchronization burst
+2026-09-01 11:03:57,ALR-2026-1736,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.77.84,172.16.0.10,LOW,31,CLOSED,7,Public IP flagged on low-severity watchlist
+2026-09-01 11:33:33,ALR-2026-1733,CORR-HOST-02,New Listening Service Port Detected,198.18.58.129,172.16.0.10,MEDIUM,41,RESOLVED,4,Container dynamically allocated ephemeral port
+2026-09-01 11:33:58,ALR-2026-1734,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.61.194,172.16.0.10,LOW,30,RESOLVED,12,Public IP flagged on low-severity watchlist
+2026-09-01 11:53:40,ALR-2026-1741,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.58.180,172.16.0.10,MEDIUM,39,CLOSED,10,Certificate expiring within 14 days
+2026-09-01 11:54:47,ALR-2026-1739,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.43.20,172.16.0.10,LOW,22,AUTO_CLOSED,10,Client crawler hitting deprecated endpoints
+2026-09-01 12:16:07,ALR-2026-1744,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.22.218,172.16.0.10,MEDIUM,52,AUTO_CLOSED,5,Scheduled backup synchronization burst
+2026-09-01 12:17:25,ALR-2026-1743,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.37.156,172.16.0.10,LOW,34,CLOSED,8,Public IP flagged on low-severity watchlist
+2026-09-01 12:21:59,ALR-2026-1740,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.23.210,172.16.0.10,MEDIUM,45,RESOLVED,14,Scheduled backup synchronization burst
+2026-09-01 12:28:42,ALR-2026-1742,CORR-HOST-02,New Listening Service Port Detected,198.18.10.191,172.16.0.10,MEDIUM,49,RESOLVED,10,Container dynamically allocated ephemeral port
+2026-09-01 12:31:49,ALR-2026-1745,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.89.168,172.16.0.10,MEDIUM,43,CLOSED,13,Certificate expiring within 14 days
+2026-09-01 12:54:11,ALR-2026-1748,CORR-AUTH-01,Single Failed Login Attempt,198.18.64.44,172.16.0.10,LOW,12,AUTO_CLOSED,9,Normal user typo in login credential
+2026-09-01 12:54:54,ALR-2026-1746,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.27.112,172.16.0.10,LOW,29,CLOSED,15,Client crawler hitting deprecated endpoints
+2026-09-01 13:05:46,ALR-2026-1751,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.60.67,172.16.0.10,MEDIUM,53,RESOLVED,6,Scheduled backup synchronization burst
+2026-09-01 13:21:55,ALR-2026-1749,CORR-AUTH-01,Single Failed Login Attempt,198.18.66.152,172.16.0.10,LOW,14,CLOSED,8,Normal user typo in login credential
+2026-09-01 13:23:32,ALR-2026-1750,CORR-AUTH-01,Single Failed Login Attempt,198.18.7.200,172.16.0.10,LOW,20,RESOLVED,7,Normal user typo in login credential
+2026-09-01 13:28:02,ALR-2026-1747,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.95.20,172.16.0.10,LOW,24,SUPPRESSED,10,Client crawler hitting deprecated endpoints
+2026-09-01 13:58:54,ALR-2026-1753,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.77.45,172.16.0.10,LOW,29,CLOSED,6,Public IP flagged on low-severity watchlist
+2026-09-01 14:05:32,ALR-2026-1755,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.88.169,172.16.0.10,MEDIUM,37,CLOSED,13,Certificate expiring within 14 days
+2026-09-01 14:12:42,ALR-2026-1754,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.94.137,172.16.0.10,LOW,33,SUPPRESSED,10,Public IP flagged on low-severity watchlist
+2026-09-01 14:27:51,ALR-2026-1752,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.38.223,172.16.0.10,LOW,29,RESOLVED,14,Client crawler hitting deprecated endpoints
+2026-09-01 14:36:15,ALR-2026-1756,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.71.117,172.16.0.10,LOW,21,CLOSED,12,Client crawler hitting deprecated endpoints
+2026-09-01 14:43:39,ALR-2026-1759,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.81.231,172.16.0.10,MEDIUM,49,RESOLVED,11,Scheduled backup synchronization burst
+2026-09-01 14:53:18,ALR-2026-1761,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.69.191,172.16.0.10,LOW,27,SUPPRESSED,8,Client crawler hitting deprecated endpoints
+2026-09-01 15:10:50,ALR-2026-1757,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.26.98,172.16.0.10,LOW,16,RESOLVED,10,Internal scheduled vulnerability scan traffic
+2026-09-01 15:14:17,ALR-2026-1760,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.88.68,172.16.0.10,MEDIUM,39,CLOSED,11,Certificate expiring within 14 days
+2026-09-01 15:23:31,ALR-2026-1758,CORR-AUTH-01,Single Failed Login Attempt,198.18.100.2,172.16.0.10,LOW,18,SUPPRESSED,5,Normal user typo in login credential
+2026-09-01 16:00:51,ALR-2026-1764,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.47.117,172.16.0.10,LOW,17,AUTO_CLOSED,9,Internal scheduled vulnerability scan traffic
+2026-09-01 16:15:53,ALR-2026-1765,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.51.31,172.16.0.10,LOW,23,SUPPRESSED,5,Client crawler hitting deprecated endpoints
+2026-09-01 16:15:59,ALR-2026-1766,CORR-HOST-02,New Listening Service Port Detected,198.18.5.112,172.16.0.10,MEDIUM,44,RESOLVED,8,Container dynamically allocated ephemeral port
+2026-09-01 16:17:07,ALR-2026-1762,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.48.2,172.16.0.10,LOW,30,AUTO_CLOSED,13,Client crawler hitting deprecated endpoints
+2026-09-01 16:34:10,ALR-2026-1767,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.46.41,172.16.0.10,LOW,20,AUTO_CLOSED,7,Client crawler hitting deprecated endpoints
+2026-09-01 16:40:23,ALR-2026-1763,CORR-AUTH-01,Single Failed Login Attempt,198.18.77.43,172.16.0.10,LOW,11,CLOSED,15,Normal user typo in login credential
+2026-09-01 16:46:15,ALR-2026-1772,CORR-AUTH-01,Single Failed Login Attempt,198.18.49.137,172.16.0.10,LOW,13,SUPPRESSED,5,Normal user typo in login credential
+2026-09-01 16:49:47,ALR-2026-1773,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.21.204,172.16.0.10,MEDIUM,38,AUTO_CLOSED,13,Certificate expiring within 14 days
+2026-09-01 16:56:09,ALR-2026-1769,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.29.198,172.16.0.10,LOW,27,CLOSED,3,Public IP flagged on low-severity watchlist
+2026-09-01 16:57:48,ALR-2026-1771,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.54.121,172.16.0.10,MEDIUM,36,CLOSED,3,Certificate expiring within 14 days
+2026-09-01 17:01:48,ALR-2026-1770,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.45.81,172.16.0.10,LOW,34,RESOLVED,9,Public IP flagged on low-severity watchlist
+2026-09-01 17:12:11,ALR-2026-1768,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.42.230,172.16.0.10,MEDIUM,43,CLOSED,2,Certificate expiring within 14 days
+2026-09-01 17:17:22,ALR-2026-1775,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.83.142,172.16.0.10,MEDIUM,43,AUTO_CLOSED,4,Certificate expiring within 14 days
+2026-09-01 17:35:04,ALR-2026-1774,CORR-HOST-02,New Listening Service Port Detected,198.18.90.219,172.16.0.10,MEDIUM,43,AUTO_CLOSED,3,Container dynamically allocated ephemeral port
+2026-09-01 17:43:37,ALR-2026-1778,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.45.83,172.16.0.10,MEDIUM,44,SUPPRESSED,8,Certificate expiring within 14 days
+2026-09-01 17:53:45,ALR-2026-1779,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.27.189,172.16.0.10,LOW,25,RESOLVED,15,Client crawler hitting deprecated endpoints
+2026-09-01 18:03:44,ALR-2026-1782,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.75.71,172.16.0.10,LOW,25,AUTO_CLOSED,7,Client crawler hitting deprecated endpoints
+2026-09-01 18:11:31,ALR-2026-1780,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.10.64,172.16.0.10,LOW,23,AUTO_CLOSED,9,Internal scheduled vulnerability scan traffic
+2026-09-01 18:30:47,ALR-2026-1777,CORR-AUTH-01,Single Failed Login Attempt,198.18.28.73,172.16.0.10,LOW,12,SUPPRESSED,7,Normal user typo in login credential
+2026-09-01 18:33:23,ALR-2026-1783,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.49.158,172.16.0.10,LOW,27,RESOLVED,13,Public IP flagged on low-severity watchlist
+2026-09-01 18:33:51,ALR-2026-1781,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.75.128,172.16.0.10,LOW,29,SUPPRESSED,3,Public IP flagged on low-severity watchlist
+2026-09-01 18:38:53,ALR-2026-1776,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.32.207,172.16.0.10,LOW,29,AUTO_CLOSED,12,Public IP flagged on low-severity watchlist
+2026-09-01 18:43:01,ALR-2026-1791,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.67.105,172.16.0.10,MEDIUM,36,CLOSED,12,Certificate expiring within 14 days
+2026-09-01 18:46:07,ALR-2026-1789,CORR-HOST-02,New Listening Service Port Detected,198.18.9.212,172.16.0.10,MEDIUM,42,AUTO_CLOSED,10,Container dynamically allocated ephemeral port
+2026-09-01 18:58:16,ALR-2026-1784,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.35.146,172.16.0.10,LOW,30,SUPPRESSED,10,Client crawler hitting deprecated endpoints
+2026-09-01 19:08:55,ALR-2026-1787,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.22.160,172.16.0.10,LOW,17,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-09-01 19:16:25,ALR-2026-1786,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.85.28,172.16.0.10,LOW,28,SUPPRESSED,12,Public IP flagged on low-severity watchlist
+2026-09-01 19:17:06,ALR-2026-1788,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.5.246,172.16.0.10,LOW,22,CLOSED,9,Internal scheduled vulnerability scan traffic
+2026-09-01 19:32:48,ALR-2026-1790,CORR-AUTH-01,Single Failed Login Attempt,198.18.19.36,172.16.0.10,LOW,13,AUTO_CLOSED,1,Normal user typo in login credential
+2026-09-01 19:39:07,ALR-2026-1785,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.6.159,172.16.0.10,MEDIUM,35,SUPPRESSED,2,Certificate expiring within 14 days
+2026-09-01 19:52:51,ALR-2026-1799,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.72.209,172.16.0.10,LOW,29,SUPPRESSED,13,Client crawler hitting deprecated endpoints
+2026-09-01 19:55:59,ALR-2026-1794,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.12.169,172.16.0.10,LOW,30,SUPPRESSED,10,Public IP flagged on low-severity watchlist
+2026-09-01 19:57:55,ALR-2026-1798,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.5.209,172.16.0.10,MEDIUM,47,SUPPRESSED,1,Scheduled backup synchronization burst
+2026-09-01 20:00:05,ALR-2026-1796,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.16.155,172.16.0.10,MEDIUM,53,RESOLVED,4,Scheduled backup synchronization burst
+2026-09-01 20:18:20,ALR-2026-1797,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.54.198,172.16.0.10,MEDIUM,45,RESOLVED,6,Certificate expiring within 14 days
+2026-09-01 20:35:39,ALR-2026-1795,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.98.240,172.16.0.10,MEDIUM,40,AUTO_CLOSED,13,Certificate expiring within 14 days
+2026-09-01 20:38:52,ALR-2026-1793,CORR-AUTH-01,Single Failed Login Attempt,198.18.17.178,172.16.0.10,LOW,19,AUTO_CLOSED,4,Normal user typo in login credential
+2026-09-01 20:40:16,ALR-2026-1792,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.40.109,172.16.0.10,LOW,34,SUPPRESSED,4,Public IP flagged on low-severity watchlist
+2026-09-01 20:59:30,ALR-2026-1804,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.24.250,172.16.0.10,LOW,25,SUPPRESSED,3,Client crawler hitting deprecated endpoints
+2026-09-01 21:03:23,ALR-2026-1800,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.66.33,172.16.0.10,MEDIUM,50,SUPPRESSED,13,Scheduled backup synchronization burst
+2026-09-01 21:06:28,ALR-2026-1802,CORR-HOST-02,New Listening Service Port Detected,198.18.56.166,172.16.0.10,MEDIUM,45,CLOSED,10,Container dynamically allocated ephemeral port
+2026-09-01 21:16:21,ALR-2026-1805,CORR-HOST-02,New Listening Service Port Detected,198.18.24.191,172.16.0.10,MEDIUM,46,RESOLVED,5,Container dynamically allocated ephemeral port
+2026-09-01 21:18:19,ALR-2026-1806,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.43.195,172.16.0.10,MEDIUM,49,CLOSED,1,Scheduled backup synchronization burst
+2026-09-01 21:24:13,ALR-2026-1803,CORR-HOST-02,New Listening Service Port Detected,198.18.37.242,172.16.0.10,MEDIUM,44,SUPPRESSED,3,Container dynamically allocated ephemeral port
+2026-09-01 21:24:43,ALR-2026-1801,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.58.3,172.16.0.10,MEDIUM,47,RESOLVED,10,Scheduled backup synchronization burst
+2026-09-01 21:40:59,ALR-2026-1807,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.65.121,172.16.0.10,MEDIUM,36,AUTO_CLOSED,7,Certificate expiring within 14 days
+2026-09-01 21:45:54,ALR-2026-1815,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.11.33,172.16.0.10,LOW,22,SUPPRESSED,4,Internal scheduled vulnerability scan traffic
+2026-09-01 21:46:52,ALR-2026-1812,CORR-HOST-02,New Listening Service Port Detected,198.18.9.206,172.16.0.10,MEDIUM,43,SUPPRESSED,10,Container dynamically allocated ephemeral port
+2026-09-01 21:59:20,ALR-2026-1808,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.83.10,172.16.0.10,LOW,28,CLOSED,3,Client crawler hitting deprecated endpoints
+2026-09-01 22:00:55,ALR-2026-1810,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.74.40,172.16.0.10,MEDIUM,47,CLOSED,10,Scheduled backup synchronization burst
+2026-09-01 22:02:59,ALR-2026-1811,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.51.13,172.16.0.10,MEDIUM,39,AUTO_CLOSED,6,Certificate expiring within 14 days
+2026-09-01 22:15:46,ALR-2026-1814,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.32.121,172.16.0.10,LOW,27,SUPPRESSED,7,Public IP flagged on low-severity watchlist
+2026-09-01 22:31:06,ALR-2026-1813,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.70.179,172.16.0.10,MEDIUM,54,AUTO_CLOSED,14,Scheduled backup synchronization burst
+2026-09-01 22:39:20,ALR-2026-1809,CORR-AUTH-01,Single Failed Login Attempt,198.18.66.62,172.16.0.10,LOW,15,SUPPRESSED,15,Normal user typo in login credential
+2026-09-01 22:44:30,ALR-2026-1817,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.21.230,172.16.0.10,LOW,34,RESOLVED,7,Public IP flagged on low-severity watchlist
+2026-09-01 22:51:23,ALR-2026-1820,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.60.227,172.16.0.10,MEDIUM,39,SUPPRESSED,9,Certificate expiring within 14 days
+2026-09-01 23:04:43,ALR-2026-1818,CORR-AUTH-01,Single Failed Login Attempt,198.18.16.96,172.16.0.10,LOW,15,SUPPRESSED,8,Normal user typo in login credential
+2026-09-01 23:06:17,ALR-2026-1816,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.76.89,172.16.0.10,LOW,25,RESOLVED,7,Client crawler hitting deprecated endpoints
+2026-09-01 23:10:45,ALR-2026-1821,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.48.92,172.16.0.10,MEDIUM,36,SUPPRESSED,13,Certificate expiring within 14 days
+2026-09-01 23:11:08,ALR-2026-1819,CORR-AUTH-01,Single Failed Login Attempt,198.18.2.198,172.16.0.10,LOW,13,AUTO_CLOSED,7,Normal user typo in login credential
+2026-09-01 23:55:10,ALR-2026-1825,CORR-AUTH-01,Single Failed Login Attempt,198.18.93.137,172.16.0.10,LOW,17,AUTO_CLOSED,8,Normal user typo in login credential
+2026-09-01 23:57:27,ALR-2026-1822,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.18.165,172.16.0.10,LOW,27,AUTO_CLOSED,14,Client crawler hitting deprecated endpoints
+2026-09-02 00:13:58,ALR-2026-1824,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.62.254,172.16.0.10,MEDIUM,36,SUPPRESSED,2,Certificate expiring within 14 days
+2026-09-02 00:18:06,ALR-2026-1826,CORR-HOST-02,New Listening Service Port Detected,198.18.33.216,172.16.0.10,MEDIUM,50,AUTO_CLOSED,14,Container dynamically allocated ephemeral port
+2026-09-02 00:24:01,ALR-2026-1823,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.32.36,172.16.0.10,MEDIUM,46,CLOSED,10,Scheduled backup synchronization burst
+2026-09-02 00:46:22,ALR-2026-1833,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.4.106,172.16.0.10,LOW,32,AUTO_CLOSED,12,Public IP flagged on low-severity watchlist
+2026-09-02 00:57:01,ALR-2026-1831,CORR-HOST-02,New Listening Service Port Detected,198.18.51.183,172.16.0.10,MEDIUM,43,RESOLVED,14,Container dynamically allocated ephemeral port
+2026-09-02 00:57:54,ALR-2026-1832,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.46.119,172.16.0.10,MEDIUM,35,AUTO_CLOSED,3,Certificate expiring within 14 days
+2026-09-02 01:05:21,ALR-2026-1828,CORR-HOST-02,New Listening Service Port Detected,198.18.55.117,172.16.0.10,MEDIUM,40,SUPPRESSED,6,Container dynamically allocated ephemeral port
+2026-09-02 01:07:30,ALR-2026-1829,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.14.252,172.16.0.10,LOW,27,AUTO_CLOSED,9,Client crawler hitting deprecated endpoints
+2026-09-02 01:09:18,ALR-2026-1830,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.18.96,172.16.0.10,MEDIUM,55,RESOLVED,3,Scheduled backup synchronization burst
+2026-09-02 01:28:44,ALR-2026-1834,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.94.1,172.16.0.10,LOW,20,RESOLVED,15,Client crawler hitting deprecated endpoints
+2026-09-02 01:36:28,ALR-2026-1827,CORR-HOST-02,New Listening Service Port Detected,198.18.45.196,172.16.0.10,MEDIUM,42,AUTO_CLOSED,2,Container dynamically allocated ephemeral port
+2026-09-02 01:42:43,ALR-2026-1840,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.25.188,172.16.0.10,MEDIUM,44,SUPPRESSED,6,Certificate expiring within 14 days
+2026-09-02 01:43:14,ALR-2026-1841,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.26.194,172.16.0.10,LOW,25,SUPPRESSED,12,Internal scheduled vulnerability scan traffic
+2026-09-02 01:49:16,ALR-2026-1835,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.30.24,172.16.0.10,MEDIUM,39,RESOLVED,5,Certificate expiring within 14 days
+2026-09-02 02:00:22,ALR-2026-1837,CORR-AUTH-01,Single Failed Login Attempt,198.18.74.93,172.16.0.10,LOW,16,CLOSED,13,Normal user typo in login credential
+2026-09-02 02:10:00,ALR-2026-1842,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.44.175,172.16.0.10,LOW,22,AUTO_CLOSED,9,Client crawler hitting deprecated endpoints
+2026-09-02 02:12:55,ALR-2026-1836,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.98.128,172.16.0.10,MEDIUM,45,CLOSED,8,Certificate expiring within 14 days
+2026-09-02 02:16:35,ALR-2026-1838,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.90.216,172.16.0.10,LOW,26,AUTO_CLOSED,9,Client crawler hitting deprecated endpoints
+2026-09-02 02:40:51,ALR-2026-1839,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.26.111,172.16.0.10,LOW,30,SUPPRESSED,1,Public IP flagged on low-severity watchlist
+2026-09-02 02:56:05,ALR-2026-1844,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.62.181,172.16.0.10,MEDIUM,42,CLOSED,15,Certificate expiring within 14 days
+2026-09-02 03:00:17,ALR-2026-1843,CORR-AUTH-01,Single Failed Login Attempt,198.18.71.55,172.16.0.10,LOW,13,AUTO_CLOSED,12,Normal user typo in login credential
+2026-09-02 03:02:37,ALR-2026-1848,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.51.80,172.16.0.10,LOW,26,RESOLVED,14,Public IP flagged on low-severity watchlist
+2026-09-02 03:10:21,ALR-2026-1847,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.25.161,172.16.0.10,LOW,15,AUTO_CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-09-02 03:28:16,ALR-2026-1846,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.33.11,172.16.0.10,MEDIUM,44,CLOSED,12,Certificate expiring within 14 days
+2026-09-02 03:31:47,ALR-2026-1845,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.100.198,172.16.0.10,MEDIUM,47,CLOSED,5,Scheduled backup synchronization burst
+2026-09-02 03:57:31,ALR-2026-1853,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.26.230,172.16.0.10,MEDIUM,44,SUPPRESSED,5,Certificate expiring within 14 days
+2026-09-02 03:58:15,ALR-2026-1850,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.62.122,172.16.0.10,LOW,20,SUPPRESSED,7,Client crawler hitting deprecated endpoints
+2026-09-02 04:03:13,ALR-2026-1849,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.46.100,172.16.0.10,MEDIUM,43,SUPPRESSED,4,Certificate expiring within 14 days
+2026-09-02 04:33:18,ALR-2026-1852,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.9.12,172.16.0.10,LOW,15,AUTO_CLOSED,3,Internal scheduled vulnerability scan traffic
+2026-09-02 04:38:06,ALR-2026-1851,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.16.125,172.16.0.10,MEDIUM,37,SUPPRESSED,6,Certificate expiring within 14 days
+2026-09-02 04:39:32,ALR-2026-1854,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.42.23,172.16.0.10,MEDIUM,48,CLOSED,5,Scheduled backup synchronization burst
+2026-09-02 04:40:59,ALR-2026-1855,CORR-AUTH-01,Single Failed Login Attempt,198.18.73.157,172.16.0.10,LOW,15,CLOSED,5,Normal user typo in login credential
+2026-09-02 04:45:50,ALR-2026-1858,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.3.119,172.16.0.10,LOW,35,CLOSED,5,Public IP flagged on low-severity watchlist
+2026-09-02 04:49:56,ALR-2026-1856,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.14.53,172.16.0.10,LOW,26,CLOSED,14,Client crawler hitting deprecated endpoints
+2026-09-02 04:53:14,ALR-2026-1859,CORR-HOST-02,New Listening Service Port Detected,198.18.26.142,172.16.0.10,MEDIUM,47,AUTO_CLOSED,11,Container dynamically allocated ephemeral port
+2026-09-02 04:58:14,ALR-2026-1861,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.92.18,172.16.0.10,MEDIUM,53,AUTO_CLOSED,6,Scheduled backup synchronization burst
+2026-09-02 05:33:43,ALR-2026-1860,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.19.87,172.16.0.10,LOW,15,CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-09-02 05:34:43,ALR-2026-1857,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.92.192,172.16.0.10,LOW,29,CLOSED,11,Public IP flagged on low-severity watchlist
+2026-09-02 05:45:33,ALR-2026-1865,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.45.12,172.16.0.10,LOW,24,RESOLVED,7,Internal scheduled vulnerability scan traffic
+2026-09-02 05:55:41,ALR-2026-1862,CORR-HOST-02,New Listening Service Port Detected,198.18.56.9,172.16.0.10,MEDIUM,42,SUPPRESSED,15,Container dynamically allocated ephemeral port
+2026-09-02 06:12:31,ALR-2026-1864,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.28.51,172.16.0.10,MEDIUM,43,RESOLVED,1,Certificate expiring within 14 days
+2026-09-02 06:20:54,ALR-2026-1867,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.14.139,172.16.0.10,LOW,26,AUTO_CLOSED,6,Client crawler hitting deprecated endpoints
+2026-09-02 06:23:48,ALR-2026-1863,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.73.3,172.16.0.10,MEDIUM,45,SUPPRESSED,2,Certificate expiring within 14 days
+2026-09-02 06:33:01,ALR-2026-1866,CORR-HOST-02,New Listening Service Port Detected,198.18.40.1,172.16.0.10,MEDIUM,50,RESOLVED,8,Container dynamically allocated ephemeral port
+2026-09-02 06:57:18,ALR-2026-1870,CORR-HOST-02,New Listening Service Port Detected,198.18.79.233,172.16.0.10,MEDIUM,44,CLOSED,10,Container dynamically allocated ephemeral port
+2026-09-02 07:12:35,ALR-2026-1873,CORR-AUTH-01,Single Failed Login Attempt,198.18.88.125,172.16.0.10,LOW,12,CLOSED,1,Normal user typo in login credential
+2026-09-02 07:29:11,ALR-2026-1874,CORR-HOST-02,New Listening Service Port Detected,198.18.74.192,172.16.0.10,MEDIUM,48,RESOLVED,9,Container dynamically allocated ephemeral port
+2026-09-02 07:32:00,ALR-2026-1871,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.21.251,172.16.0.10,LOW,17,AUTO_CLOSED,3,Internal scheduled vulnerability scan traffic
+2026-09-02 07:32:54,ALR-2026-1868,CORR-HOST-02,New Listening Service Port Detected,198.18.71.42,172.16.0.10,MEDIUM,50,AUTO_CLOSED,6,Container dynamically allocated ephemeral port
+2026-09-02 07:39:13,ALR-2026-1872,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.26.154,172.16.0.10,LOW,26,CLOSED,3,Public IP flagged on low-severity watchlist
+2026-09-02 07:41:19,ALR-2026-1869,CORR-AUTH-01,Single Failed Login Attempt,198.18.72.91,172.16.0.10,LOW,16,AUTO_CLOSED,12,Normal user typo in login credential
+2026-09-02 07:46:08,ALR-2026-1879,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.2.208,172.16.0.10,LOW,20,RESOLVED,3,Client crawler hitting deprecated endpoints
+2026-09-02 08:08:20,ALR-2026-1878,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.38.89,172.16.0.10,MEDIUM,35,RESOLVED,14,Certificate expiring within 14 days
+2026-09-02 08:23:11,ALR-2026-1880,CORR-HOST-02,New Listening Service Port Detected,198.18.47.195,172.16.0.10,MEDIUM,49,RESOLVED,2,Container dynamically allocated ephemeral port
+2026-09-02 08:24:43,ALR-2026-1875,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.97.232,172.16.0.10,LOW,28,SUPPRESSED,6,Client crawler hitting deprecated endpoints
+2026-09-02 08:30:20,ALR-2026-1876,CORR-HOST-02,New Listening Service Port Detected,198.18.85.106,172.16.0.10,MEDIUM,50,RESOLVED,9,Container dynamically allocated ephemeral port
+2026-09-02 08:30:50,ALR-2026-1877,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.14.199,172.16.0.10,MEDIUM,35,RESOLVED,13,Certificate expiring within 14 days
+2026-09-02 08:45:00,ALR-2026-1881,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.20.108,172.16.0.10,MEDIUM,50,SUPPRESSED,14,Scheduled backup synchronization burst
+2026-09-02 08:51:44,ALR-2026-1884,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.99.20,172.16.0.10,MEDIUM,47,AUTO_CLOSED,15,Scheduled backup synchronization burst
+2026-09-02 09:04:28,ALR-2026-1885,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.89.18,172.16.0.10,MEDIUM,42,AUTO_CLOSED,5,Certificate expiring within 14 days
+2026-09-02 09:07:01,ALR-2026-1886,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.44.39,172.16.0.10,MEDIUM,36,SUPPRESSED,7,Certificate expiring within 14 days
+2026-09-02 09:09:40,ALR-2026-1882,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.82.188,172.16.0.10,LOW,27,CLOSED,14,Client crawler hitting deprecated endpoints
+2026-09-02 09:21:53,ALR-2026-1883,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.61.160,172.16.0.10,MEDIUM,51,CLOSED,7,Scheduled backup synchronization burst
+2026-09-02 09:24:06,ALR-2026-1887,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.88.166,172.16.0.10,MEDIUM,50,AUTO_CLOSED,15,Scheduled backup synchronization burst
+2026-09-02 09:25:17,ALR-2026-1888,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.66.129,172.16.0.10,MEDIUM,48,CLOSED,12,Scheduled backup synchronization burst
+2026-09-02 09:41:54,ALR-2026-1894,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.39.1,172.16.0.10,LOW,24,AUTO_CLOSED,4,Client crawler hitting deprecated endpoints
+2026-09-02 09:45:51,ALR-2026-1891,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.18.145,172.16.0.10,LOW,26,SUPPRESSED,5,Client crawler hitting deprecated endpoints
+2026-09-02 09:48:01,ALR-2026-1892,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.59.123,172.16.0.10,LOW,22,CLOSED,12,Client crawler hitting deprecated endpoints
+2026-09-02 09:56:21,ALR-2026-1895,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.54.63,172.16.0.10,LOW,30,SUPPRESSED,2,Client crawler hitting deprecated endpoints
+2026-09-02 10:06:42,ALR-2026-1893,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.58.189,172.16.0.10,LOW,32,AUTO_CLOSED,1,Public IP flagged on low-severity watchlist
+2026-09-02 10:18:05,ALR-2026-1890,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.83.217,172.16.0.10,MEDIUM,41,SUPPRESSED,15,Certificate expiring within 14 days
+2026-09-02 10:36:31,ALR-2026-1889,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.86.117,172.16.0.10,LOW,25,SUPPRESSED,6,Public IP flagged on low-severity watchlist
+2026-09-02 10:51:36,ALR-2026-00712,CORR-HOST-09,Unauthorized Root Privilege Escalation,198.51.100.23,172.16.0.10,CRITICAL,95,ACTION_REQUIRED,3,Non-whitelisted origin spawned root interactive shell
+2026-09-02 11:04:17,ALR-2026-1899,CORR-HOST-02,New Listening Service Port Detected,198.18.37.54,172.16.0.10,MEDIUM,45,AUTO_CLOSED,2,Container dynamically allocated ephemeral port
+2026-09-02 11:21:09,ALR-2026-1897,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.85.215,172.16.0.10,MEDIUM,37,CLOSED,9,Certificate expiring within 14 days
+2026-09-02 11:25:17,ALR-2026-1900,CORR-AUTH-01,Single Failed Login Attempt,198.18.44.171,172.16.0.10,LOW,16,AUTO_CLOSED,10,Normal user typo in login credential
+2026-09-02 11:30:40,ALR-2026-1898,CORR-AUTH-01,Single Failed Login Attempt,198.18.94.125,172.16.0.10,LOW,20,RESOLVED,9,Normal user typo in login credential
+2026-09-02 11:35:09,ALR-2026-1896,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.39.111,172.16.0.10,MEDIUM,45,CLOSED,14,Scheduled backup synchronization burst
+2026-09-02 11:51:00,ALR-2026-1901,CORR-HOST-02,New Listening Service Port Detected,198.18.24.119,172.16.0.10,MEDIUM,49,SUPPRESSED,5,Container dynamically allocated ephemeral port
+2026-09-02 12:05:08,ALR-2026-1902,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.66.233,172.16.0.10,MEDIUM,45,SUPPRESSED,1,Certificate expiring within 14 days
+2026-09-02 12:08:16,ALR-2026-1903,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.47.15,172.16.0.10,LOW,24,RESOLVED,10,Internal scheduled vulnerability scan traffic
+2026-09-02 12:10:19,ALR-2026-1904,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.91.85,172.16.0.10,LOW,27,SUPPRESSED,15,Public IP flagged on low-severity watchlist
+2026-09-02 12:16:55,ALR-2026-1905,CORR-HOST-02,New Listening Service Port Detected,198.18.96.42,172.16.0.10,MEDIUM,50,RESOLVED,9,Container dynamically allocated ephemeral port
+2026-09-02 12:57:44,ALR-2026-1906,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.66.118,172.16.0.10,LOW,29,RESOLVED,12,Public IP flagged on low-severity watchlist
+2026-09-02 13:05:48,ALR-2026-1908,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.58.188,172.16.0.10,LOW,25,CLOSED,7,Client crawler hitting deprecated endpoints
+2026-09-02 13:13:24,ALR-2026-1911,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.64.229,172.16.0.10,MEDIUM,52,AUTO_CLOSED,15,Scheduled backup synchronization burst
+2026-09-02 13:22:41,ALR-2026-1907,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.84.34,172.16.0.10,MEDIUM,49,CLOSED,11,Scheduled backup synchronization burst
+2026-09-02 13:26:21,ALR-2026-1909,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.9.206,172.16.0.10,MEDIUM,38,AUTO_CLOSED,15,Certificate expiring within 14 days
+2026-09-02 13:30:33,ALR-2026-1912,CORR-HOST-02,New Listening Service Port Detected,198.18.44.217,172.16.0.10,MEDIUM,44,SUPPRESSED,7,Container dynamically allocated ephemeral port
+2026-09-02 13:34:54,ALR-2026-1913,CORR-HOST-02,New Listening Service Port Detected,198.18.84.83,172.16.0.10,MEDIUM,49,CLOSED,7,Container dynamically allocated ephemeral port
+2026-09-02 13:39:24,ALR-2026-1910,CORR-AUTH-01,Single Failed Login Attempt,198.18.57.160,172.16.0.10,LOW,16,SUPPRESSED,13,Normal user typo in login credential
+2026-09-02 13:50:39,ALR-2026-1916,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.48.134,172.16.0.10,MEDIUM,45,RESOLVED,12,Scheduled backup synchronization burst
+2026-09-02 13:56:07,ALR-2026-1918,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.5.113,172.16.0.10,MEDIUM,49,CLOSED,11,Scheduled backup synchronization burst
+2026-09-02 13:57:26,ALR-2026-1914,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.29.206,172.16.0.10,LOW,32,CLOSED,6,Public IP flagged on low-severity watchlist
+2026-09-02 14:12:01,ALR-2026-1917,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.20.156,172.16.0.10,MEDIUM,54,RESOLVED,15,Scheduled backup synchronization burst
+2026-09-02 14:37:34,ALR-2026-1915,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.76.168,172.16.0.10,MEDIUM,42,CLOSED,2,Certificate expiring within 14 days
+2026-09-02 14:51:25,ALR-2026-1923,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.98.25,172.16.0.10,MEDIUM,42,CLOSED,2,Certificate expiring within 14 days
+2026-09-02 14:51:50,ALR-2026-1920,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.37.243,172.16.0.10,LOW,22,RESOLVED,11,Internal scheduled vulnerability scan traffic
+2026-09-02 15:00:33,ALR-2026-1924,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.26.169,172.16.0.10,MEDIUM,42,RESOLVED,4,Certificate expiring within 14 days
+2026-09-02 15:01:36,ALR-2026-00200,CORR-NET-02,Persistent Suspicious Network Probing,185.220.101.5,172.16.0.10,HIGH,80,INVESTIGATING,18,Repeated suspicious probe and crawlers from external IP (Rank 2)
+2026-09-02 15:02:09,ALR-2026-1922,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.55.41,172.16.0.10,MEDIUM,35,SUPPRESSED,7,Certificate expiring within 14 days
+2026-09-02 15:03:36,ALR-2026-00210,CORR-NET-02,Persistent Suspicious Network Probing,185.220.101.5,172.16.0.10,HIGH,78,INVESTIGATING,44,Repeated suspicious probe and crawlers from external IP (Rank 2)
+2026-09-02 15:05:36,ALR-2026-00220,CORR-NET-02,Persistent Suspicious Network Probing,185.220.101.5,172.16.0.10,HIGH,76,INVESTIGATING,42,Repeated suspicious probe and crawlers from external IP (Rank 2)
+2026-09-02 15:07:36,ALR-2026-00230,CORR-NET-02,Persistent Suspicious Network Probing,185.220.101.5,172.16.0.10,HIGH,74,INVESTIGATING,29,Repeated suspicious probe and crawlers from external IP (Rank 2)
+2026-09-02 15:09:36,ALR-2026-00240,CORR-NET-02,Persistent Suspicious Network Probing,185.220.101.5,172.16.0.10,HIGH,72,INVESTIGATING,32,Repeated suspicious probe and crawlers from external IP (Rank 2)
+2026-09-02 15:11:36,ALR-2026-00300,CORR-NET-03,Persistent Suspicious Network Probing,45.33.32.156,172.16.0.10,HIGH,75,INVESTIGATING,33,Repeated suspicious probe and crawlers from external IP (Rank 3)
+2026-09-02 15:13:36,ALR-2026-00310,CORR-NET-03,Persistent Suspicious Network Probing,45.33.32.156,172.16.0.10,HIGH,73,INVESTIGATING,21,Repeated suspicious probe and crawlers from external IP (Rank 3)
+2026-09-02 15:15:36,ALR-2026-00320,CORR-NET-03,Persistent Suspicious Network Probing,45.33.32.156,172.16.0.10,HIGH,71,INVESTIGATING,16,Repeated suspicious probe and crawlers from external IP (Rank 3)
+2026-09-02 15:17:36,ALR-2026-00330,CORR-NET-03,Persistent Suspicious Network Probing,45.33.32.156,172.16.0.10,HIGH,69,INVESTIGATING,36,Repeated suspicious probe and crawlers from external IP (Rank 3)
+2026-09-02 15:19:36,ALR-2026-00340,CORR-NET-03,Persistent Suspicious Network Probing,45.33.32.156,172.16.0.10,HIGH,67,INVESTIGATING,16,Repeated suspicious probe and crawlers from external IP (Rank 3)
+2026-09-02 15:21:36,ALR-2026-00400,CORR-NET-04,Persistent Suspicious Network Probing,103.251.167.20,172.16.0.10,HIGH,70,INVESTIGATING,41,Repeated suspicious probe and crawlers from external IP (Rank 4)
+2026-09-02 15:23:36,ALR-2026-00410,CORR-NET-04,Persistent Suspicious Network Probing,103.251.167.20,172.16.0.10,HIGH,68,INVESTIGATING,15,Repeated suspicious probe and crawlers from external IP (Rank 4)
+2026-09-02 15:25:24,ALR-2026-1921,CORR-HOST-02,New Listening Service Port Detected,198.18.13.152,172.16.0.10,MEDIUM,48,AUTO_CLOSED,9,Container dynamically allocated ephemeral port
+2026-09-02 15:25:36,ALR-2026-00420,CORR-NET-04,Persistent Suspicious Network Probing,103.251.167.20,172.16.0.10,HIGH,66,INVESTIGATING,22,Repeated suspicious probe and crawlers from external IP (Rank 4)
+2026-09-02 15:27:36,ALR-2026-00430,CORR-NET-04,Persistent Suspicious Network Probing,103.251.167.20,172.16.0.10,HIGH,64,INVESTIGATING,36,Repeated suspicious probe and crawlers from external IP (Rank 4)
+2026-09-02 15:29:36,ALR-2026-00440,CORR-NET-04,Persistent Suspicious Network Probing,103.251.167.20,172.16.0.10,HIGH,62,INVESTIGATING,29,Repeated suspicious probe and crawlers from external IP (Rank 4)
+2026-09-02 15:31:36,ALR-2026-00500,CORR-NET-05,Persistent Suspicious Network Probing,194.26.29.112,172.16.0.10,HIGH,65,INVESTIGATING,37,Repeated suspicious probe and crawlers from external IP (Rank 5)
+2026-09-02 15:33:36,ALR-2026-00510,CORR-NET-05,Persistent Suspicious Network Probing,194.26.29.112,172.16.0.10,HIGH,63,INVESTIGATING,18,Repeated suspicious probe and crawlers from external IP (Rank 5)
+2026-09-02 15:35:36,ALR-2026-00520,CORR-NET-05,Persistent Suspicious Network Probing,194.26.29.112,172.16.0.10,HIGH,61,INVESTIGATING,26,Repeated suspicious probe and crawlers from external IP (Rank 5)
+2026-09-02 15:37:36,ALR-2026-00530,CORR-NET-05,Persistent Suspicious Network Probing,194.26.29.112,172.16.0.10,HIGH,59,INVESTIGATING,31,Repeated suspicious probe and crawlers from external IP (Rank 5)
+2026-09-02 15:39:00,ALR-2026-1919,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.1.223,172.16.0.10,LOW,22,SUPPRESSED,12,Internal scheduled vulnerability scan traffic
+2026-09-02 15:39:36,ALR-2026-00540,CORR-NET-05,Persistent Suspicious Network Probing,194.26.29.112,172.16.0.10,HIGH,57,INVESTIGATING,25,Repeated suspicious probe and crawlers from external IP (Rank 5)
+2026-09-02 15:39:48,ALR-2026-1925,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.12.223,172.16.0.10,LOW,16,RESOLVED,15,Internal scheduled vulnerability scan traffic
+2026-09-02 15:55:45,ALR-2026-1930,CORR-HOST-02,New Listening Service Port Detected,198.18.58.105,172.16.0.10,MEDIUM,48,SUPPRESSED,3,Container dynamically allocated ephemeral port
+2026-09-02 16:00:10,ALR-2026-1927,CORR-HOST-02,New Listening Service Port Detected,198.18.92.86,172.16.0.10,MEDIUM,46,RESOLVED,1,Container dynamically allocated ephemeral port
+2026-09-02 16:20:05,ALR-2026-1929,CORR-HOST-02,New Listening Service Port Detected,198.18.55.123,172.16.0.10,MEDIUM,47,RESOLVED,1,Container dynamically allocated ephemeral port
+2026-09-02 16:24:34,ALR-2026-1928,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.99.236,172.16.0.10,LOW,20,CLOSED,2,Client crawler hitting deprecated endpoints
+2026-09-02 16:38:30,ALR-2026-1926,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.92.127,172.16.0.10,MEDIUM,54,RESOLVED,10,Scheduled backup synchronization burst
+2026-09-02 16:45:35,ALR-2026-1934,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.84.94,172.16.0.10,LOW,27,CLOSED,10,Client crawler hitting deprecated endpoints
+2026-09-02 16:46:36,ALR-2026-00999,CORR-KILLCHAIN-99,Multi-Stage APT Kill-Chain Sequence Detected,198.51.100.23,172.16.0.10,CRITICAL,98,OPEN,105,Reconnaissance -> Brute Force -> SQLi -> Privilege Escalation -> C2 Exfiltration (Top 1 Risk)
+2026-09-02 16:50:03,ALR-2026-1937,CORR-HOST-02,New Listening Service Port Detected,198.18.98.98,172.16.0.10,MEDIUM,48,CLOSED,4,Container dynamically allocated ephemeral port
+2026-09-02 16:53:37,ALR-2026-1933,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.9.95,172.16.0.10,LOW,18,CLOSED,6,Internal scheduled vulnerability scan traffic
+2026-09-02 17:09:51,ALR-2026-1932,CORR-AUTH-01,Single Failed Login Attempt,198.18.60.105,172.16.0.10,LOW,10,CLOSED,10,Normal user typo in login credential
+2026-09-02 17:18:23,ALR-2026-1931,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.56.216,172.16.0.10,LOW,24,SUPPRESSED,14,Client crawler hitting deprecated endpoints
+2026-09-02 17:22:54,ALR-2026-1936,CORR-HOST-02,New Listening Service Port Detected,198.18.96.44,172.16.0.10,MEDIUM,45,AUTO_CLOSED,14,Container dynamically allocated ephemeral port
+2026-09-02 17:26:55,ALR-2026-1935,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.5.247,172.16.0.10,MEDIUM,48,SUPPRESSED,9,Scheduled backup synchronization burst
+2026-09-02 17:45:05,ALR-2026-1944,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.25.187,172.16.0.10,LOW,25,SUPPRESSED,9,Internal scheduled vulnerability scan traffic
+2026-09-02 17:54:39,ALR-2026-1943,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.54.214,172.16.0.10,LOW,22,RESOLVED,6,Client crawler hitting deprecated endpoints
+2026-09-02 18:02:50,ALR-2026-1942,CORR-HOST-02,New Listening Service Port Detected,198.18.23.139,172.16.0.10,MEDIUM,47,CLOSED,12,Container dynamically allocated ephemeral port
+2026-09-02 18:03:56,ALR-2026-1939,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.11.30,172.16.0.10,MEDIUM,36,RESOLVED,15,Certificate expiring within 14 days
+2026-09-02 18:11:21,ALR-2026-1941,CORR-HOST-02,New Listening Service Port Detected,198.18.44.68,172.16.0.10,MEDIUM,41,CLOSED,12,Container dynamically allocated ephemeral port
+2026-09-02 18:24:00,ALR-2026-1938,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.59.58,172.16.0.10,MEDIUM,45,AUTO_CLOSED,12,Certificate expiring within 14 days
+2026-09-02 18:26:08,ALR-2026-1945,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.7.207,172.16.0.10,LOW,26,AUTO_CLOSED,7,Client crawler hitting deprecated endpoints
+2026-09-02 18:35:47,ALR-2026-1940,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.42.162,172.16.0.10,LOW,16,AUTO_CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-09-02 18:52:11,ALR-2026-1946,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.56.238,172.16.0.10,MEDIUM,39,CLOSED,6,Certificate expiring within 14 days
+2026-09-02 19:03:01,ALR-2026-1947,CORR-AUTH-01,Single Failed Login Attempt,198.18.36.98,172.16.0.10,LOW,15,RESOLVED,4,Normal user typo in login credential
+2026-09-02 19:05:20,ALR-2026-1950,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.45.241,172.16.0.10,LOW,32,SUPPRESSED,9,Public IP flagged on low-severity watchlist
+2026-09-02 19:09:15,ALR-2026-1949,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.20.90,172.16.0.10,LOW,30,AUTO_CLOSED,9,Client crawler hitting deprecated endpoints
+2026-09-02 19:26:37,ALR-2026-1948,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.33.134,172.16.0.10,LOW,19,CLOSED,9,Internal scheduled vulnerability scan traffic
+2026-09-02 19:44:10,ALR-2026-1956,CORR-HOST-02,New Listening Service Port Detected,198.18.18.192,172.16.0.10,MEDIUM,41,RESOLVED,5,Container dynamically allocated ephemeral port
+2026-09-02 19:57:03,ALR-2026-1955,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.45.165,172.16.0.10,MEDIUM,50,RESOLVED,4,Scheduled backup synchronization burst
+2026-09-02 19:59:33,ALR-2026-1954,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.29.75,172.16.0.10,LOW,24,SUPPRESSED,7,Internal scheduled vulnerability scan traffic
+2026-09-02 20:16:28,ALR-2026-1951,CORR-AUTH-01,Single Failed Login Attempt,198.18.69.216,172.16.0.10,LOW,12,RESOLVED,11,Normal user typo in login credential
+2026-09-02 20:19:25,ALR-2026-1952,CORR-HOST-02,New Listening Service Port Detected,198.18.80.101,172.16.0.10,MEDIUM,47,AUTO_CLOSED,14,Container dynamically allocated ephemeral port
+2026-09-02 20:27:19,ALR-2026-1953,CORR-HOST-02,New Listening Service Port Detected,198.18.76.165,172.16.0.10,MEDIUM,45,RESOLVED,10,Container dynamically allocated ephemeral port
+2026-09-02 20:42:50,ALR-2026-1962,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.96.180,172.16.0.10,MEDIUM,36,CLOSED,7,Certificate expiring within 14 days
+2026-09-02 20:45:52,ALR-2026-1961,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.72.215,172.16.0.10,MEDIUM,53,RESOLVED,3,Scheduled backup synchronization burst
+2026-09-02 20:56:34,ALR-2026-1959,CORR-AUTH-01,Single Failed Login Attempt,198.18.36.129,172.16.0.10,LOW,15,RESOLVED,2,Normal user typo in login credential
+2026-09-02 21:06:35,ALR-2026-1957,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.36.23,172.16.0.10,MEDIUM,44,CLOSED,6,Certificate expiring within 14 days
+2026-09-02 21:31:28,ALR-2026-1958,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.45.76,172.16.0.10,MEDIUM,36,RESOLVED,12,Certificate expiring within 14 days
+2026-09-02 21:33:46,ALR-2026-1963,CORR-HOST-02,New Listening Service Port Detected,198.18.1.211,172.16.0.10,MEDIUM,50,SUPPRESSED,4,Container dynamically allocated ephemeral port
+2026-09-02 21:38:43,ALR-2026-1960,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.53.150,172.16.0.10,MEDIUM,38,AUTO_CLOSED,5,Certificate expiring within 14 days
+2026-09-02 22:15:53,ALR-2026-1968,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.16.167,172.16.0.10,LOW,25,SUPPRESSED,8,Internal scheduled vulnerability scan traffic
+2026-09-02 22:19:38,ALR-2026-1964,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.96.54,172.16.0.10,MEDIUM,41,CLOSED,2,Certificate expiring within 14 days
+2026-09-02 22:20:32,ALR-2026-1969,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.100.8,172.16.0.10,MEDIUM,39,RESOLVED,2,Certificate expiring within 14 days
+2026-09-02 22:28:21,ALR-2026-1967,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.47.251,172.16.0.10,MEDIUM,54,SUPPRESSED,2,Scheduled backup synchronization burst
+2026-09-02 22:36:53,ALR-2026-1965,CORR-AUTH-01,Single Failed Login Attempt,198.18.68.246,172.16.0.10,LOW,20,AUTO_CLOSED,6,Normal user typo in login credential
+2026-09-02 22:39:23,ALR-2026-1966,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.30.236,172.16.0.10,LOW,20,AUTO_CLOSED,5,Internal scheduled vulnerability scan traffic
+2026-09-02 22:49:47,ALR-2026-1976,CORR-HOST-02,New Listening Service Port Detected,198.18.34.221,172.16.0.10,MEDIUM,44,SUPPRESSED,8,Container dynamically allocated ephemeral port
+2026-09-02 22:54:07,ALR-2026-1974,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.3.119,172.16.0.10,MEDIUM,41,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-09-02 23:00:45,ALR-2026-1971,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.27.142,172.16.0.10,LOW,21,CLOSED,11,Client crawler hitting deprecated endpoints
+2026-09-02 23:03:11,ALR-2026-1972,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.60.172,172.16.0.10,MEDIUM,43,AUTO_CLOSED,7,Certificate expiring within 14 days
+2026-09-02 23:05:12,ALR-2026-1970,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.35.80,172.16.0.10,LOW,20,AUTO_CLOSED,15,Internal scheduled vulnerability scan traffic
+2026-09-02 23:14:47,ALR-2026-1975,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.2.229,172.16.0.10,LOW,18,AUTO_CLOSED,7,Internal scheduled vulnerability scan traffic
+2026-09-02 23:30:23,ALR-2026-1973,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.34.83,172.16.0.10,MEDIUM,38,RESOLVED,7,Certificate expiring within 14 days
+2026-09-02 23:53:27,ALR-2026-1978,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.73.87,172.16.0.10,MEDIUM,43,AUTO_CLOSED,6,Certificate expiring within 14 days
+2026-09-03 00:03:10,ALR-2026-1979,CORR-AUTH-01,Single Failed Login Attempt,198.18.52.168,172.16.0.10,LOW,19,CLOSED,12,Normal user typo in login credential
+2026-09-03 00:05:40,ALR-2026-1981,CORR-HOST-02,New Listening Service Port Detected,198.18.61.161,172.16.0.10,MEDIUM,49,SUPPRESSED,13,Container dynamically allocated ephemeral port
+2026-09-03 00:13:13,ALR-2026-1980,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.74.241,172.16.0.10,LOW,24,RESOLVED,6,Client crawler hitting deprecated endpoints
+2026-09-03 00:38:55,ALR-2026-1982,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.60.63,172.16.0.10,LOW,31,RESOLVED,5,Public IP flagged on low-severity watchlist
+2026-09-03 00:41:19,ALR-2026-1977,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.74.95,172.16.0.10,MEDIUM,48,RESOLVED,15,Scheduled backup synchronization burst
+2026-09-03 00:46:47,ALR-2026-1987,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.17.224,172.16.0.10,MEDIUM,48,SUPPRESSED,14,Scheduled backup synchronization burst
+2026-09-03 00:55:22,ALR-2026-1984,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.39.173,172.16.0.10,LOW,21,AUTO_CLOSED,11,Client crawler hitting deprecated endpoints
+2026-09-03 01:01:20,ALR-2026-1986,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.33.170,172.16.0.10,LOW,31,RESOLVED,3,Public IP flagged on low-severity watchlist
+2026-09-03 01:05:54,ALR-2026-1985,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.48.3,172.16.0.10,MEDIUM,48,CLOSED,4,Scheduled backup synchronization burst
+2026-09-03 01:38:54,ALR-2026-1983,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.14.191,172.16.0.10,MEDIUM,44,RESOLVED,4,Certificate expiring within 14 days
+2026-09-03 01:57:19,ALR-2026-1991,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.100.212,172.16.0.10,LOW,24,CLOSED,3,Client crawler hitting deprecated endpoints
+2026-09-03 02:08:16,ALR-2026-1990,CORR-HOST-02,New Listening Service Port Detected,198.18.79.123,172.16.0.10,MEDIUM,43,RESOLVED,10,Container dynamically allocated ephemeral port
+2026-09-03 02:22:35,ALR-2026-1988,CORR-AUTH-01,Single Failed Login Attempt,198.18.70.11,172.16.0.10,LOW,16,RESOLVED,1,Normal user typo in login credential
+2026-09-03 02:28:30,ALR-2026-1992,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.3.45,172.16.0.10,MEDIUM,38,RESOLVED,7,Certificate expiring within 14 days
+2026-09-03 02:34:04,ALR-2026-1989,CORR-AUTH-01,Single Failed Login Attempt,198.18.55.177,172.16.0.10,LOW,10,CLOSED,8,Normal user typo in login credential
+2026-09-03 02:43:37,ALR-2026-1996,CORR-AUTH-01,Single Failed Login Attempt,198.18.15.115,172.16.0.10,LOW,10,AUTO_CLOSED,7,Normal user typo in login credential
+2026-09-03 02:51:12,ALR-2026-1994,CORR-AUTH-01,Single Failed Login Attempt,198.18.95.249,172.16.0.10,LOW,19,RESOLVED,14,Normal user typo in login credential
+2026-09-03 03:06:52,ALR-2026-1998,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.37.60,172.16.0.10,LOW,16,CLOSED,6,Internal scheduled vulnerability scan traffic
+2026-09-03 03:11:41,ALR-2026-1993,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.31.63,172.16.0.10,LOW,23,CLOSED,15,Internal scheduled vulnerability scan traffic
+2026-09-03 03:14:39,ALR-2026-1999,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.63.231,172.16.0.10,MEDIUM,40,RESOLVED,8,Certificate expiring within 14 days
+2026-09-03 03:27:00,ALR-2026-1995,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.55.218,172.16.0.10,LOW,27,AUTO_CLOSED,10,Client crawler hitting deprecated endpoints
+2026-09-03 03:34:32,ALR-2026-1997,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.81.222,172.16.0.10,LOW,26,SUPPRESSED,11,Client crawler hitting deprecated endpoints
+2026-09-03 03:48:04,ALR-2026-2002,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.52.209,172.16.0.10,MEDIUM,45,AUTO_CLOSED,2,Scheduled backup synchronization burst
+2026-09-03 03:56:38,ALR-2026-2001,CORR-HOST-02,New Listening Service Port Detected,198.18.29.143,172.16.0.10,MEDIUM,47,CLOSED,10,Container dynamically allocated ephemeral port
+2026-09-03 03:58:55,ALR-2026-2000,CORR-AUTH-01,Single Failed Login Attempt,198.18.49.34,172.16.0.10,LOW,15,AUTO_CLOSED,11,Normal user typo in login credential
+2026-09-03 04:01:19,ALR-2026-2005,CORR-AUTH-01,Single Failed Login Attempt,198.18.82.152,172.16.0.10,LOW,20,SUPPRESSED,6,Normal user typo in login credential
+2026-09-03 04:02:38,ALR-2026-2003,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.29.134,172.16.0.10,MEDIUM,36,CLOSED,15,Certificate expiring within 14 days
+2026-09-03 04:27:43,ALR-2026-2004,CORR-AUTH-01,Single Failed Login Attempt,198.18.33.131,172.16.0.10,LOW,17,RESOLVED,12,Normal user typo in login credential
+2026-09-03 04:56:33,ALR-2026-2008,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.36.248,172.16.0.10,LOW,29,SUPPRESSED,1,Public IP flagged on low-severity watchlist
+2026-09-03 04:57:54,ALR-2026-2006,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.87.249,172.16.0.10,MEDIUM,52,RESOLVED,9,Scheduled backup synchronization burst
+2026-09-03 04:58:54,ALR-2026-2009,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.51.249,172.16.0.10,MEDIUM,52,CLOSED,8,Scheduled backup synchronization burst
+2026-09-03 05:04:50,ALR-2026-2007,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.44.53,172.16.0.10,LOW,30,CLOSED,6,Public IP flagged on low-severity watchlist
+2026-09-03 05:36:10,ALR-2026-2010,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.45.234,172.16.0.10,MEDIUM,51,CLOSED,2,Scheduled backup synchronization burst
+2026-09-03 05:59:21,ALR-2026-2012,CORR-AUTH-01,Single Failed Login Attempt,198.18.90.119,172.16.0.10,LOW,20,CLOSED,13,Normal user typo in login credential
+2026-09-03 05:59:30,ALR-2026-2014,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.30.102,172.16.0.10,MEDIUM,53,RESOLVED,14,Scheduled backup synchronization burst
+2026-09-03 06:00:11,ALR-2026-2011,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.43.226,172.16.0.10,MEDIUM,54,AUTO_CLOSED,12,Scheduled backup synchronization burst
+2026-09-03 06:27:28,ALR-2026-2013,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.9.129,172.16.0.10,LOW,16,AUTO_CLOSED,3,Internal scheduled vulnerability scan traffic
+2026-09-03 06:27:52,ALR-2026-2015,CORR-AUTH-01,Single Failed Login Attempt,198.18.20.160,172.16.0.10,LOW,16,RESOLVED,15,Normal user typo in login credential
+2026-09-03 06:45:50,ALR-2026-2020,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.4.43,172.16.0.10,MEDIUM,46,AUTO_CLOSED,7,Scheduled backup synchronization burst
+2026-09-03 07:08:49,ALR-2026-2018,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.73.40,172.16.0.10,MEDIUM,52,RESOLVED,9,Scheduled backup synchronization burst
+2026-09-03 07:20:57,ALR-2026-2017,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.22.10,172.16.0.10,MEDIUM,40,CLOSED,1,Certificate expiring within 14 days
+2026-09-03 07:37:11,ALR-2026-2016,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.55.5,172.16.0.10,MEDIUM,55,SUPPRESSED,8,Scheduled backup synchronization burst
+2026-09-03 07:37:37,ALR-2026-2019,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.38.166,172.16.0.10,MEDIUM,35,CLOSED,11,Certificate expiring within 14 days
+2026-09-03 07:46:35,ALR-2026-2028,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.36.212,172.16.0.10,LOW,22,SUPPRESSED,14,Client crawler hitting deprecated endpoints
+2026-09-03 07:52:52,ALR-2026-2021,CORR-HOST-02,New Listening Service Port Detected,198.18.32.104,172.16.0.10,MEDIUM,50,AUTO_CLOSED,6,Container dynamically allocated ephemeral port
+2026-09-03 07:55:44,ALR-2026-2026,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.88.164,172.16.0.10,MEDIUM,46,RESOLVED,13,Scheduled backup synchronization burst
+2026-09-03 08:10:35,ALR-2026-2025,CORR-HOST-02,New Listening Service Port Detected,198.18.68.203,172.16.0.10,MEDIUM,50,CLOSED,14,Container dynamically allocated ephemeral port
+2026-09-03 08:16:12,ALR-2026-2022,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.43.143,172.16.0.10,LOW,23,CLOSED,1,Internal scheduled vulnerability scan traffic
+2026-09-03 08:28:12,ALR-2026-2027,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.49.173,172.16.0.10,LOW,30,CLOSED,13,Public IP flagged on low-severity watchlist
+2026-09-03 08:34:02,ALR-2026-2024,CORR-AUTH-01,Single Failed Login Attempt,198.18.88.191,172.16.0.10,LOW,17,CLOSED,11,Normal user typo in login credential
+2026-09-03 08:35:12,ALR-2026-2023,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.5.106,172.16.0.10,LOW,23,SUPPRESSED,11,Internal scheduled vulnerability scan traffic
+2026-09-03 08:43:12,ALR-2026-2031,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.31.152,172.16.0.10,LOW,29,RESOLVED,11,Client crawler hitting deprecated endpoints
+2026-09-03 08:57:31,ALR-2026-2030,CORR-NET-01,Unusual High Bandwidth Consumption,198.18.85.43,172.16.0.10,MEDIUM,49,CLOSED,3,Scheduled backup synchronization burst
+2026-09-03 09:04:17,ALR-2026-2032,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.14.250,172.16.0.10,LOW,28,SUPPRESSED,9,Public IP flagged on low-severity watchlist
+2026-09-03 09:10:01,ALR-2026-2033,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.63.228,172.16.0.10,LOW,25,AUTO_CLOSED,2,Client crawler hitting deprecated endpoints
+2026-09-03 09:10:02,ALR-2026-2029,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.29.56,172.16.0.10,LOW,25,RESOLVED,3,Public IP flagged on low-severity watchlist
+2026-09-03 09:14:13,ALR-2026-2035,CORR-AUTH-01,Single Failed Login Attempt,198.18.75.52,172.16.0.10,LOW,12,CLOSED,2,Normal user typo in login credential
+2026-09-03 09:24:41,ALR-2026-2034,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.14.188,172.16.0.10,MEDIUM,37,SUPPRESSED,2,Certificate expiring within 14 days
+2026-09-03 09:47:26,ALR-2026-2036,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.60.45,172.16.0.10,MEDIUM,43,AUTO_CLOSED,7,Certificate expiring within 14 days
+2026-09-03 09:57:10,ALR-2026-2042,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.87.2,172.16.0.10,MEDIUM,45,CLOSED,13,Certificate expiring within 14 days
+2026-09-03 09:59:42,ALR-2026-2043,CORR-HOST-02,New Listening Service Port Detected,198.18.72.178,172.16.0.10,MEDIUM,41,CLOSED,15,Container dynamically allocated ephemeral port
+2026-09-03 10:02:52,ALR-2026-2038,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.44.187,172.16.0.10,LOW,19,RESOLVED,11,Internal scheduled vulnerability scan traffic
+2026-09-03 10:15:18,ALR-2026-2037,CORR-AUTH-01,Single Failed Login Attempt,198.18.71.191,172.16.0.10,LOW,19,AUTO_CLOSED,1,Normal user typo in login credential
+2026-09-03 10:19:57,ALR-2026-2041,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.91.103,172.16.0.10,MEDIUM,41,AUTO_CLOSED,15,Certificate expiring within 14 days
+2026-09-03 10:29:08,ALR-2026-2039,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.78.132,172.16.0.10,LOW,23,RESOLVED,12,Client crawler hitting deprecated endpoints
+2026-09-03 10:37:43,ALR-2026-2040,CORR-INFO-01,Routine Vulnerability Scanner Activity,10.0.42.99,172.16.0.10,LOW,17,AUTO_CLOSED,3,Internal scheduled vulnerability scan traffic
+2026-09-03 10:44:17,ALR-2026-2045,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.1.81,172.16.0.10,MEDIUM,42,AUTO_CLOSED,14,Certificate expiring within 14 days
+2026-09-03 10:54:35,ALR-2026-2046,CORR-AUTH-01,Single Failed Login Attempt,198.18.21.30,172.16.0.10,LOW,13,CLOSED,10,Normal user typo in login credential
+2026-09-03 11:01:07,ALR-2026-2049,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.2.201,172.16.0.10,LOW,21,RESOLVED,9,Client crawler hitting deprecated endpoints
+2026-09-03 11:09:23,ALR-2026-2044,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.26.21,172.16.0.10,MEDIUM,40,AUTO_CLOSED,8,Certificate expiring within 14 days
+2026-09-03 11:30:03,ALR-2026-2048,CORR-AUTH-01,Single Failed Login Attempt,198.18.22.58,172.16.0.10,LOW,15,RESOLVED,13,Normal user typo in login credential
+2026-09-03 11:38:05,ALR-2026-2047,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.18.126,172.16.0.10,LOW,24,RESOLVED,4,Client crawler hitting deprecated endpoints
+2026-09-03 11:42:01,ALR-2026-2057,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.66.192,172.16.0.10,LOW,31,CLOSED,7,Public IP flagged on low-severity watchlist
+2026-09-03 11:50:49,ALR-2026-2052,CORR-AUTH-01,Single Failed Login Attempt,198.18.31.166,172.16.0.10,LOW,12,CLOSED,5,Normal user typo in login credential
+2026-09-03 12:08:04,ALR-2026-2056,CORR-HOST-02,New Listening Service Port Detected,198.18.41.91,172.16.0.10,MEDIUM,45,RESOLVED,7,Container dynamically allocated ephemeral port
+2026-09-03 12:13:23,ALR-2026-2055,CORR-AUTH-01,Single Failed Login Attempt,198.18.88.1,172.16.0.10,LOW,17,RESOLVED,15,Normal user typo in login credential
+2026-09-03 12:20:47,ALR-2026-2053,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.56.60,172.16.0.10,MEDIUM,43,AUTO_CLOSED,10,Certificate expiring within 14 days
+2026-09-03 12:22:22,ALR-2026-2051,CORR-SEC-05,Reputation Feed Match - Low Confidence,198.18.9.224,172.16.0.10,LOW,33,RESOLVED,4,Public IP flagged on low-severity watchlist
+2026-09-03 12:27:51,ALR-2026-2054,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.77.228,172.16.0.10,MEDIUM,42,CLOSED,8,Certificate expiring within 14 days
+2026-09-03 12:32:11,ALR-2026-2050,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.50.40,172.16.0.10,MEDIUM,41,AUTO_CLOSED,1,Certificate expiring within 14 days
+2026-09-03 12:45:16,ALR-2026-2059,CORR-HOST-02,New Listening Service Port Detected,198.18.97.48,172.16.0.10,MEDIUM,41,CLOSED,14,Container dynamically allocated ephemeral port
+2026-09-03 12:50:36,ALR-2026-2061,CORR-INFO-03,SSL/TLS Expiring Certificate Warning,198.18.37.178,172.16.0.10,MEDIUM,35,RESOLVED,3,Certificate expiring within 14 days
+2026-09-03 13:03:45,ALR-2026-2062,CORR-INFO-02,Excessive 404 Not Found Responses,198.18.21.104,172.16.0.10,LOW,24,CLOSED,9,Client crawler hitting deprecated endpoints
+2026-09-03 13:12:29,ALR-2026-2058,CORR-HOST-02,New Listening Service Port Detected,198.18.52.30,172.16.0.10,MEDIUM,44,AUTO_CLOSED,6,Container dynamically allocated ephemeral port
+2026-09-03 13:13:03,ALR-2026-2063,CORR-HOST-02,New Listening Service Port Detected,198.18.39.38,172.16.0.10,MEDIUM,46,AUTO_CLOSED,2,Container dynamically allocated ephemeral port
+2026-09-03 13:41:06,ALR-2026-2060,CORR-HOST-02,New Listening Service Port Detected,198.18.8.55,172.16.0.10,MEDIUM,44,CLOSED,9,Container dynamically allocated ephemeral port

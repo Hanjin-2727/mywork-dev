@@ -1,0 +1,13 @@
+SUBSIDIARY_CODE,SUBSIDIARY_NAME,REGION_CODE,REGION_NAME,CURRENCY_CODE,SITE_TYPE
+VG01,가상법인-북미1,,북미,USD,판매법인(To Site)
+VG02,가상법인-북미2,,북미,USD,판매법인(To Site)
+VG03,가상법인-유럽3,EU,유럽,EUR,판매법인(To Site)
+VG04,가상법인-유럽1,EU,유럽,EUR,판매법인(To Site)
+VG05,가상법인-아시아2,SEA,아시아,USD,판매법인(To Site)
+VG06,가상법인-아시아3,SEA,아시아,USD,판매법인(To Site)
+VG07,가상법인-중아1,MEA,중아,USD,판매법인(To Site)
+VG08,가상법인-중남미2,SCA,중남미,USD,판매법인(To Site)
+VG09,가상법인-중남미3,SCA,중남미,USD,판매법인(To Site)
+VG10,가상법인-인도1,India,인도,USD,판매법인(To Site)
+VG11,가상법인-러시아2,CIS,러시아,USD,판매법인(To Site)
+VG12,가상법인-한국3,KR,한국,KRW,판매법인(To Site)

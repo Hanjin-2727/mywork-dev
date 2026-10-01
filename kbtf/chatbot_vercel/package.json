@@ -1,0 +1,8 @@
+{
+  "name": "kbtf-civil-chatbot",
+  "version": "1.0.0",
+  "description": "K-BTF Smart Housing Civil Complaint AI ChatBot App",
+  "scripts": {
+    "deploy": "vercel --prod"
+  }
+}

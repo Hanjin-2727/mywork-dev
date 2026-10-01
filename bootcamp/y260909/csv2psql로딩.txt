@@ -1,0 +1,146 @@
+================================================================================
+📄 가이드 문서: CSV 데이터를 PostgreSQL로 로딩하는 방법
+================================================================================
+작성일자: 2026-09-03
+파일경로: /home/tomkim/mywork/bootcamp/y260909/csv2psql로딩.txt
+연계대상: 6대 보안 로그 CSV 데이터셋 및 Timbr 지식 그래프 연동
+
+--------------------------------------------------------------------------------
+1단계: PostgreSQL 6개 테이블 스키마 생성 (DDL SQL)
+--------------------------------------------------------------------------------
+PostgreSQL(DBeaver, psql, Neon/Supabase 콘솔 등)의 SQL 편집기에서 
+아래 쿼리를 실행하여 테이블을 먼저 생성합니다.
+
+-- 1. 방화벽 로그 테이블
+CREATE TABLE IF NOT EXISTS tb_firewall (
+    timestamp TIMESTAMP,
+    dev_name VARCHAR(50),
+    src_ip VARCHAR(50),
+    dst_ip VARCHAR(50),
+    dst_port INT,
+    proto VARCHAR(10),
+    action VARCHAR(20),
+    rule VARCHAR(100),
+    bytes BIGINT
+);
+
+-- 2. IDS/IPS 침입탐지 로그 테이블
+CREATE TABLE IF NOT EXISTS tb_ids_ips (
+    timestamp TIMESTAMP,
+    sensor_id VARCHAR(50),
+    src_ip VARCHAR(50),
+    dst_ip VARCHAR(50),
+    sig_name VARCHAR(255),
+    cve_id VARCHAR(50),
+    severity VARCHAR(20),
+    action VARCHAR(20)
+);
+
+-- 3. SIEM 경보 테이블 (Top 5 위험 IP 도출용)
+CREATE TABLE IF NOT EXISTS tb_siem (
+    timestamp TIMESTAMP,
+    alert_id VARCHAR(50),
+    rule_id VARCHAR(50),
+    rule_name VARCHAR(255),
+    src_ip VARCHAR(50),
+    dst_ip VARCHAR(50),
+    severity VARCHAR(20),
+    risk_score INT,
+    status VARCHAR(50),
+    correlated_events_count INT,
+    summary TEXT
+);
+
+-- 4. 네트워크 NetFlow 테이블
+CREATE TABLE IF NOT EXISTS tb_network (
+    timestamp TIMESTAMP,
+    router_id VARCHAR(50),
+    src_ip VARCHAR(50),
+    dst_ip VARCHAR(50),
+    dst_port INT,
+    packets BIGINT,
+    bytes BIGINT,
+    tcp_flags VARCHAR(50),
+    duration_ms INT
+);
+
+-- 5. 서버 시스템/메트릭 로그 테이블
+CREATE TABLE IF NOT EXISTS tb_server (
+    timestamp TIMESTAMP,
+    hostname VARCHAR(100),
+    component VARCHAR(50),
+    pid VARCHAR(20),
+    cpu_pct INT,
+    mem_pct INT,
+    message TEXT
+);
+
+-- 6. 웹/WAF 로그 테이블
+CREATE TABLE IF NOT EXISTS tb_waf (
+    timestamp TIMESTAMP,
+    client_ip VARCHAR(50),
+    method VARCHAR(10),
+    uri TEXT,
+    status_code INT,
+    user_agent TEXT,
+    payload_size INT,
+    waf_action VARCHAR(20)
+);
+
+
+--------------------------------------------------------------------------------
+2단계: CSV 데이터를 PostgreSQL로 적재하는 3가지 실무 방법
+--------------------------------------------------------------------------------
+
+■ [방법 1: 가장 빠르고 표준적인 방법] psql CLI의 \copy 명령어
+- psql 터미널에서 아래 명령을 순서대로 실행합니다.
+- \copy는 로컬 PC에 있는 CSV를 네트워크를 통해 DB로 직접 전송하는 가장 빠른 방식입니다.
+
+\copy tb_firewall FROM '/home/tomkim/mywork/bootcamp/y260909/5.Secuirty/DataSource/1_firewall_logs.csv' WITH (FORMAT csv, HEADER true);
+\copy tb_ids_ips  FROM '/home/tomkim/mywork/bootcamp/y260909/5.Secuirty/DataSource/2_ids_ips_logs.csv'  WITH (FORMAT csv, HEADER true);
+\copy tb_siem     FROM '/home/tomkim/mywork/bootcamp/y260909/5.Secuirty/DataSource/3_siem_alerts.csv'   WITH (FORMAT csv, HEADER true);
+\copy tb_network  FROM '/home/tomkim/mywork/bootcamp/y260909/5.Secuirty/DataSource/4_network_flow_logs.csv' WITH (FORMAT csv, HEADER true);
+\copy tb_server   FROM '/home/tomkim/mywork/bootcamp/y260909/5.Secuirty/DataSource/5_server_system_logs.csv' WITH (FORMAT csv, HEADER true);
+\copy tb_waf      FROM '/home/tomkim/mywork/bootcamp/y260909/5.Secuirty/DataSource/6_waf_web_logs.csv'  WITH (FORMAT csv, HEADER true);
+
+
+■ [방법 2: 10초 주기 자동화 파이프라인용] Python 스크립트 활용
+- 10초마다 로그를 DB로 자동 포팅할 때 가장 유용한 방식입니다.
+- Python psycopg2 라이브러리의 copy_expert 기능을 사용하면 1초 만에 적재됩니다.
+
+[코드 예시]
+import psycopg2
+
+conn = psycopg2.connect("postgresql://<USER>:<PASSWORD>@<HOST>:5432/<DBNAME>")
+cur = conn.cursor()
+
+# 1초 만에 CSV 전체를 PostgreSQL 테이블로 고속 복사
+with open('/home/tomkim/mywork/bootcamp/y260909/5.Secuirty/DataSource/1_firewall_logs.csv', 'r') as f:
+    cur.copy_expert("COPY tb_firewall FROM STDIN WITH (FORMAT csv, HEADER true)", f)
+
+conn.commit()
+cur.close()
+conn.close()
+
+
+■ [방법 3: 마우스 클릭으로 끝내기] DBeaver / pgAdmin / 웹 콘솔 GUI
+- DBeaver 사용 시:
+  1. 좌측 네비게이터에서 생성된 테이블(예: tb_firewall) 마우스 우클릭
+  2. [데이터 가져오기(Import Data)] 선택
+  3. 소스 타입: CSV 선택 ➔ 해당 CSV 파일 경로 지정
+  4. 컬럼 매핑 확인 후 [진행(Proceed)] 클릭 ➔ 완료!
+- Neon / Supabase 클라우드 콘솔 사용 시:
+  1. 웹 대시보드 ➔ Table Editor 메뉴 이동
+  2. [Insert] ➔ [Import data via CSV] 클릭
+  3. CSV 파일 드래그 앤 드롭 ➔ 적재 완료
+
+
+--------------------------------------------------------------------------------
+3단계: 로딩 완료 후 Timbr 지식 그래프 연동 절차
+--------------------------------------------------------------------------------
+PostgreSQL에 6개 테이블 데이터 적재가 완료되면:
+1. Timbr 웹 콘솔 접속 ➔ [Datasources] 메뉴로 이동.
+2. PostgreSQL 연결 소스를 열고 [Refresh Schema] 버튼 클릭.
+3. 생성된 6개 테이블(tb_firewall, tb_ids_ips, tb_siem 등)이 체크박스로 표시됨.
+4. 해당 테이블들을 선택(체크)하면 온톨로지(지식 그래프) 컨셉 매핑 준비가 완료됩니다.
+================================================================================

@@ -1,0 +1,523 @@
+{
+  "video_name": "이듬스튜디오_최종_오프닝_엔딩.mp4",
+  "orig_size_mb": 89.22,
+  "total_extracted_mb": 3.35,
+  "duration_sec": 168.4,
+  "interval_sec": 3.0,
+  "total_frames_extracted": 57,
+  "frames": [
+    {
+      "index": 1,
+      "frame_num": 0,
+      "timestamp_sec": 0.0,
+      "time_label": "00:00",
+      "filename": "timeslot_001_00m00s.webp",
+      "rel_path": "frames_3s/timeslot_001_00m00s.webp",
+      "size_kb": 18.4
+    },
+    {
+      "index": 2,
+      "frame_num": 90,
+      "timestamp_sec": 3.0,
+      "time_label": "00:03",
+      "filename": "timeslot_002_00m03s.webp",
+      "rel_path": "frames_3s/timeslot_002_00m03s.webp",
+      "size_kb": 18.9
+    },
+    {
+      "index": 3,
+      "frame_num": 180,
+      "timestamp_sec": 6.0,
+      "time_label": "00:06",
+      "filename": "timeslot_003_00m06s.webp",
+      "rel_path": "frames_3s/timeslot_003_00m06s.webp",
+      "size_kb": 52.7
+    },
+    {
+      "index": 4,
+      "frame_num": 270,
+      "timestamp_sec": 9.0,
+      "time_label": "00:09",
+      "filename": "timeslot_004_00m09s.webp",
+      "rel_path": "frames_3s/timeslot_004_00m09s.webp",
+      "size_kb": 53.7
+    },
+    {
+      "index": 5,
+      "frame_num": 360,
+      "timestamp_sec": 12.0,
+      "time_label": "00:12",
+      "filename": "timeslot_005_00m12s.webp",
+      "rel_path": "frames_3s/timeslot_005_00m12s.webp",
+      "size_kb": 62.9
+    },
+    {
+      "index": 6,
+      "frame_num": 450,
+      "timestamp_sec": 15.0,
+      "time_label": "00:15",
+      "filename": "timeslot_006_00m15s.webp",
+      "rel_path": "frames_3s/timeslot_006_00m15s.webp",
+      "size_kb": 54.3
+    },
+    {
+      "index": 7,
+      "frame_num": 540,
+      "timestamp_sec": 18.0,
+      "time_label": "00:18",
+      "filename": "timeslot_007_00m18s.webp",
+      "rel_path": "frames_3s/timeslot_007_00m18s.webp",
+      "size_kb": 56.0
+    },
+    {
+      "index": 8,
+      "frame_num": 630,
+      "timestamp_sec": 21.0,
+      "time_label": "00:21",
+      "filename": "timeslot_008_00m21s.webp",
+      "rel_path": "frames_3s/timeslot_008_00m21s.webp",
+      "size_kb": 55.8
+    },
+    {
+      "index": 9,
+      "frame_num": 720,
+      "timestamp_sec": 24.0,
+      "time_label": "00:24",
+      "filename": "timeslot_009_00m24s.webp",
+      "rel_path": "frames_3s/timeslot_009_00m24s.webp",
+      "size_kb": 56.0
+    },
+    {
+      "index": 10,
+      "frame_num": 810,
+      "timestamp_sec": 27.0,
+      "time_label": "00:27",
+      "filename": "timeslot_010_00m27s.webp",
+      "rel_path": "frames_3s/timeslot_010_00m27s.webp",
+      "size_kb": 59.7
+    },
+    {
+      "index": 11,
+      "frame_num": 900,
+      "timestamp_sec": 30.0,
+      "time_label": "00:30",
+      "filename": "timeslot_011_00m30s.webp",
+      "rel_path": "frames_3s/timeslot_011_00m30s.webp",
+      "size_kb": 57.9
+    },
+    {
+      "index": 12,
+      "frame_num": 990,
+      "timestamp_sec": 33.0,
+      "time_label": "00:33",
+      "filename": "timeslot_012_00m33s.webp",
+      "rel_path": "frames_3s/timeslot_012_00m33s.webp",
+      "size_kb": 61.6
+    },
+    {
+      "index": 13,
+      "frame_num": 1080,
+      "timestamp_sec": 36.0,
+      "time_label": "00:36",
+      "filename": "timeslot_013_00m36s.webp",
+      "rel_path": "frames_3s/timeslot_013_00m36s.webp",
+      "size_kb": 63.4
+    },
+    {
+      "index": 14,
+      "frame_num": 1170,
+      "timestamp_sec": 39.0,
+      "time_label": "00:39",
+      "filename": "timeslot_014_00m39s.webp",
+      "rel_path": "frames_3s/timeslot_014_00m39s.webp",
+      "size_kb": 72.2
+    },
+    {
+      "index": 15,
+      "frame_num": 1260,
+      "timestamp_sec": 42.0,
+      "time_label": "00:42",
+      "filename": "timeslot_015_00m42s.webp",
+      "rel_path": "frames_3s/timeslot_015_00m42s.webp",
+      "size_kb": 71.8
+    },
+    {
+      "index": 16,
+      "frame_num": 1350,
+      "timestamp_sec": 45.0,
+      "time_label": "00:45",
+      "filename": "timeslot_016_00m45s.webp",
+      "rel_path": "frames_3s/timeslot_016_00m45s.webp",
+      "size_kb": 72.7
+    },
+    {
+      "index": 17,
+      "frame_num": 1440,
+      "timestamp_sec": 48.0,
+      "time_label": "00:48",
+      "filename": "timeslot_017_00m48s.webp",
+      "rel_path": "frames_3s/timeslot_017_00m48s.webp",
+      "size_kb": 71.7
+    },
+    {
+      "index": 18,
+      "frame_num": 1530,
+      "timestamp_sec": 51.0,
+      "time_label": "00:51",
+      "filename": "timeslot_018_00m51s.webp",
+      "rel_path": "frames_3s/timeslot_018_00m51s.webp",
+      "size_kb": 74.4
+    },
+    {
+      "index": 19,
+      "frame_num": 1620,
+      "timestamp_sec": 54.0,
+      "time_label": "00:54",
+      "filename": "timeslot_019_00m54s.webp",
+      "rel_path": "frames_3s/timeslot_019_00m54s.webp",
+      "size_kb": 74.3
+    },
+    {
+      "index": 20,
+      "frame_num": 1710,
+      "timestamp_sec": 57.0,
+      "time_label": "00:57",
+      "filename": "timeslot_020_00m57s.webp",
+      "rel_path": "frames_3s/timeslot_020_00m57s.webp",
+      "size_kb": 73.2
+    },
+    {
+      "index": 21,
+      "frame_num": 1800,
+      "timestamp_sec": 60.0,
+      "time_label": "01:00",
+      "filename": "timeslot_021_01m00s.webp",
+      "rel_path": "frames_3s/timeslot_021_01m00s.webp",
+      "size_kb": 78.5
+    },
+    {
+      "index": 22,
+      "frame_num": 1890,
+      "timestamp_sec": 63.0,
+      "time_label": "01:03",
+      "filename": "timeslot_022_01m03s.webp",
+      "rel_path": "frames_3s/timeslot_022_01m03s.webp",
+      "size_kb": 78.2
+    },
+    {
+      "index": 23,
+      "frame_num": 1980,
+      "timestamp_sec": 66.0,
+      "time_label": "01:06",
+      "filename": "timeslot_023_01m06s.webp",
+      "rel_path": "frames_3s/timeslot_023_01m06s.webp",
+      "size_kb": 74.2
+    },
+    {
+      "index": 24,
+      "frame_num": 2070,
+      "timestamp_sec": 69.0,
+      "time_label": "01:09",
+      "filename": "timeslot_024_01m09s.webp",
+      "rel_path": "frames_3s/timeslot_024_01m09s.webp",
+      "size_kb": 76.5
+    },
+    {
+      "index": 25,
+      "frame_num": 2160,
+      "timestamp_sec": 72.0,
+      "time_label": "01:12",
+      "filename": "timeslot_025_01m12s.webp",
+      "rel_path": "frames_3s/timeslot_025_01m12s.webp",
+      "size_kb": 76.5
+    },
+    {
+      "index": 26,
+      "frame_num": 2250,
+      "timestamp_sec": 75.0,
+      "time_label": "01:15",
+      "filename": "timeslot_026_01m15s.webp",
+      "rel_path": "frames_3s/timeslot_026_01m15s.webp",
+      "size_kb": 73.8
+    },
+    {
+      "index": 27,
+      "frame_num": 2340,
+      "timestamp_sec": 78.0,
+      "time_label": "01:18",
+      "filename": "timeslot_027_01m18s.webp",
+      "rel_path": "frames_3s/timeslot_027_01m18s.webp",
+      "size_kb": 74.1
+    },
+    {
+      "index": 28,
+      "frame_num": 2430,
+      "timestamp_sec": 81.0,
+      "time_label": "01:21",
+      "filename": "timeslot_028_01m21s.webp",
+      "rel_path": "frames_3s/timeslot_028_01m21s.webp",
+      "size_kb": 73.9
+    },
+    {
+      "index": 29,
+      "frame_num": 2520,
+      "timestamp_sec": 84.0,
+      "time_label": "01:24",
+      "filename": "timeslot_029_01m24s.webp",
+      "rel_path": "frames_3s/timeslot_029_01m24s.webp",
+      "size_kb": 74.3
+    },
+    {
+      "index": 30,
+      "frame_num": 2610,
+      "timestamp_sec": 87.0,
+      "time_label": "01:27",
+      "filename": "timeslot_030_01m27s.webp",
+      "rel_path": "frames_3s/timeslot_030_01m27s.webp",
+      "size_kb": 75.5
+    },
+    {
+      "index": 31,
+      "frame_num": 2700,
+      "timestamp_sec": 90.0,
+      "time_label": "01:30",
+      "filename": "timeslot_031_01m30s.webp",
+      "rel_path": "frames_3s/timeslot_031_01m30s.webp",
+      "size_kb": 77.4
+    },
+    {
+      "index": 32,
+      "frame_num": 2790,
+      "timestamp_sec": 93.0,
+      "time_label": "01:33",
+      "filename": "timeslot_032_01m33s.webp",
+      "rel_path": "frames_3s/timeslot_032_01m33s.webp",
+      "size_kb": 77.7
+    },
+    {
+      "index": 33,
+      "frame_num": 2880,
+      "timestamp_sec": 96.0,
+      "time_label": "01:36",
+      "filename": "timeslot_033_01m36s.webp",
+      "rel_path": "frames_3s/timeslot_033_01m36s.webp",
+      "size_kb": 78.5
+    },
+    {
+      "index": 34,
+      "frame_num": 2970,
+      "timestamp_sec": 99.0,
+      "time_label": "01:39",
+      "filename": "timeslot_034_01m39s.webp",
+      "rel_path": "frames_3s/timeslot_034_01m39s.webp",
+      "size_kb": 77.7
+    },
+    {
+      "index": 35,
+      "frame_num": 3060,
+      "timestamp_sec": 102.0,
+      "time_label": "01:42",
+      "filename": "timeslot_035_01m42s.webp",
+      "rel_path": "frames_3s/timeslot_035_01m42s.webp",
+      "size_kb": 80.7
+    },
+    {
+      "index": 36,
+      "frame_num": 3150,
+      "timestamp_sec": 105.0,
+      "time_label": "01:45",
+      "filename": "timeslot_036_01m45s.webp",
+      "rel_path": "frames_3s/timeslot_036_01m45s.webp",
+      "size_kb": 57.0
+    },
+    {
+      "index": 37,
+      "frame_num": 3240,
+      "timestamp_sec": 108.0,
+      "time_label": "01:48",
+      "filename": "timeslot_037_01m48s.webp",
+      "rel_path": "frames_3s/timeslot_037_01m48s.webp",
+      "size_kb": 60.6
+    },
+    {
+      "index": 38,
+      "frame_num": 3330,
+      "timestamp_sec": 111.0,
+      "time_label": "01:51",
+      "filename": "timeslot_038_01m51s.webp",
+      "rel_path": "frames_3s/timeslot_038_01m51s.webp",
+      "size_kb": 60.7
+    },
+    {
+      "index": 39,
+      "frame_num": 3420,
+      "timestamp_sec": 114.0,
+      "time_label": "01:54",
+      "filename": "timeslot_039_01m54s.webp",
+      "rel_path": "frames_3s/timeslot_039_01m54s.webp",
+      "size_kb": 69.7
+    },
+    {
+      "index": 40,
+      "frame_num": 3510,
+      "timestamp_sec": 117.0,
+      "time_label": "01:57",
+      "filename": "timeslot_040_01m57s.webp",
+      "rel_path": "frames_3s/timeslot_040_01m57s.webp",
+      "size_kb": 72.5
+    },
+    {
+      "index": 41,
+      "frame_num": 3600,
+      "timestamp_sec": 120.0,
+      "time_label": "02:00",
+      "filename": "timeslot_041_02m00s.webp",
+      "rel_path": "frames_3s/timeslot_041_02m00s.webp",
+      "size_kb": 63.1
+    },
+    {
+      "index": 42,
+      "frame_num": 3690,
+      "timestamp_sec": 123.0,
+      "time_label": "02:03",
+      "filename": "timeslot_042_02m03s.webp",
+      "rel_path": "frames_3s/timeslot_042_02m03s.webp",
+      "size_kb": 64.0
+    },
+    {
+      "index": 43,
+      "frame_num": 3780,
+      "timestamp_sec": 126.0,
+      "time_label": "02:06",
+      "filename": "timeslot_043_02m06s.webp",
+      "rel_path": "frames_3s/timeslot_043_02m06s.webp",
+      "size_kb": 35.8
+    },
+    {
+      "index": 44,
+      "frame_num": 3870,
+      "timestamp_sec": 129.0,
+      "time_label": "02:09",
+      "filename": "timeslot_044_02m09s.webp",
+      "rel_path": "frames_3s/timeslot_044_02m09s.webp",
+      "size_kb": 42.8
+    },
+    {
+      "index": 45,
+      "frame_num": 3960,
+      "timestamp_sec": 132.0,
+      "time_label": "02:12",
+      "filename": "timeslot_045_02m12s.webp",
+      "rel_path": "frames_3s/timeslot_045_02m12s.webp",
+      "size_kb": 36.2
+    },
+    {
+      "index": 46,
+      "frame_num": 4050,
+      "timestamp_sec": 135.0,
+      "time_label": "02:15",
+      "filename": "timeslot_046_02m15s.webp",
+      "rel_path": "frames_3s/timeslot_046_02m15s.webp",
+      "size_kb": 38.2
+    },
+    {
+      "index": 47,
+      "frame_num": 4140,
+      "timestamp_sec": 138.0,
+      "time_label": "02:18",
+      "filename": "timeslot_047_02m18s.webp",
+      "rel_path": "frames_3s/timeslot_047_02m18s.webp",
+      "size_kb": 42.1
+    },
+    {
+      "index": 48,
+      "frame_num": 4230,
+      "timestamp_sec": 141.0,
+      "time_label": "02:21",
+      "filename": "timeslot_048_02m21s.webp",
+      "rel_path": "frames_3s/timeslot_048_02m21s.webp",
+      "size_kb": 41.0
+    },
+    {
+      "index": 49,
+      "frame_num": 4320,
+      "timestamp_sec": 144.0,
+      "time_label": "02:24",
+      "filename": "timeslot_049_02m24s.webp",
+      "rel_path": "frames_3s/timeslot_049_02m24s.webp",
+      "size_kb": 60.2
+    },
+    {
+      "index": 50,
+      "frame_num": 4410,
+      "timestamp_sec": 147.0,
+      "time_label": "02:27",
+      "filename": "timeslot_050_02m27s.webp",
+      "rel_path": "frames_3s/timeslot_050_02m27s.webp",
+      "size_kb": 34.6
+    },
+    {
+      "index": 51,
+      "frame_num": 4500,
+      "timestamp_sec": 150.0,
+      "time_label": "02:30",
+      "filename": "timeslot_051_02m30s.webp",
+      "rel_path": "frames_3s/timeslot_051_02m30s.webp",
+      "size_kb": 33.8
+    },
+    {
+      "index": 52,
+      "frame_num": 4590,
+      "timestamp_sec": 153.0,
+      "time_label": "02:33",
+      "filename": "timeslot_052_02m33s.webp",
+      "rel_path": "frames_3s/timeslot_052_02m33s.webp",
+      "size_kb": 34.9
+    },
+    {
+      "index": 53,
+      "frame_num": 4680,
+      "timestamp_sec": 156.0,
+      "time_label": "02:36",
+      "filename": "timeslot_053_02m36s.webp",
+      "rel_path": "frames_3s/timeslot_053_02m36s.webp",
+      "size_kb": 36.0
+    },
+    {
+      "index": 54,
+      "frame_num": 4770,
+      "timestamp_sec": 159.0,
+      "time_label": "02:39",
+      "filename": "timeslot_054_02m39s.webp",
+      "rel_path": "frames_3s/timeslot_054_02m39s.webp",
+      "size_kb": 85.7
+    },
+    {
+      "index": 55,
+      "frame_num": 4860,
+      "timestamp_sec": 162.0,
+      "time_label": "02:42",
+      "filename": "timeslot_055_02m42s.webp",
+      "rel_path": "frames_3s/timeslot_055_02m42s.webp",
+      "size_kb": 95.6
+    },
+    {
+      "index": 56,
+      "frame_num": 4950,
+      "timestamp_sec": 165.0,
+      "time_label": "02:45",
+      "filename": "timeslot_056_02m45s.webp",
+      "rel_path": "frames_3s/timeslot_056_02m45s.webp",
+      "size_kb": 17.0
+    },
+    {
+      "index": 57,
+      "frame_num": 5040,
+      "timestamp_sec": 168.0,
+      "time_label": "02:48",
+      "filename": "timeslot_057_02m48s.webp",
+      "rel_path": "frames_3s/timeslot_057_02m48s.webp",
+      "size_kb": 15.9
+    }
+  ]
+}

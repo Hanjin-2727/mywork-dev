@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-BTF Custodial DID 기반 주민증·수급카드 2-Track 발급 및 운영 시나리오</title>
+  <!-- Pretendard Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Mermaid.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Consolas', 'monospace']
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    };
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'neutral',
+      themeVariables: {
+        fontFamily: 'Pretendard, sans-serif',
+        fontSize: '13px',
+        primaryColor: '#f8fafc',
+        primaryTextColor: '#0f172a',
+        primaryBorderColor: '#cbd5e1',
+        lineColor: '#64748b',
+        noteBkgColor: '#1e293b',
+        noteTextColor: '#f8fafc',
+        noteBorderColor: '#334155',
+        actorBkg: '#ffffff',
+        actorBorder: '#4f46e5',
+        actorTextColor: '#0f172a'
+      }
+    });
+
+    function toggleMermaidView() {
+      const el = document.getElementById('mermaidContainer');
+      const btn = document.getElementById('toggleBtn');
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> 다이어그램 접기';
+      } else {
+        el.classList.add('hidden');
+        btn.innerHTML = '<i class="fa-solid fa-code-branch"></i> Mermaid 다이어그램 펼치기';
+      }
+    }
+  </script>
+
+  <style>
+    /* Crisp Sequence Diagram Note & Actor Styling */
+    .mermaid .note {
+      rx: 6px !important;
+      ry: 6px !important;
+    }
+    .mermaid text.noteText {
+      font-weight: 700 !important;
+      font-size: 13px !important;
+      letter-spacing: -0.2px;
+    }
+    .mermaid .actor {
+      rx: 6px !important;
+      ry: 6px !important;
+    }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+    .shadow-soft {
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+    }
+    @media print {
+      body { background: white !important; }
+      .no-print { display: none !important; }
+      .container { max-width: 100% !important; padding: 0 !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4 md:px-8 lg:px-12 flex flex-col items-center">
+
+  <div class="w-full max-w-5xl">
+
+    <!-- Top Action Bar -->
+    <div class="flex items-center justify-between gap-3 mb-6 no-print">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-900 text-white shadow-sm">
+          <i class="fa-solid fa-id-card-clip"></i> K-BTF 스마트 주거복지
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 border border-blue-200">
+          <i class="fa-solid fa-shield-halved"></i> Custodial DID & Dual-VC
+        </span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-medium rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-print"></i> 인쇄 / PDF 저장
+        </button>
+        <button onclick="toggleMermaidView()" id="toggleBtn" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-eye-slash"></i> 다이어그램 접기
+        </button>
+      </div>
+    </div>
+
+    <!-- Header Banner Card -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-5">
+        <div>
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
+            <i class="fa-solid fa-network-wired"></i> W3C Decentralized Identity Operational Scenario
+          </div>
+          <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+            Custodial DID 기반 2-Track 주민증·수급카드 운영 시나리오
+          </h1>
+          <p class="text-slate-500 text-sm mt-1">
+            스마트폰(PWA + PASS + FIDO2 생체인증) vs 2G 피처폰(실물 NFC 목걸이 태그) 포용적 발급 체계
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <div class="bg-blue-50 border border-blue-200 px-3 py-2 rounded-xl text-center">
+            <div class="text-blue-500 text-[10px] font-medium">지갑 모델</div>
+            <div class="font-extrabold text-blue-800 text-sm">Custodial (수탁형)</div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 px-3 py-2 rounded-xl text-center">
+            <div class="text-emerald-600 text-[10px] font-medium">자격 체계</div>
+            <div class="font-extrabold text-emerald-800 text-sm">Dual-VC (분리 발급)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Concept Pills -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold flex-shrink-0">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-800 text-xs">블록체인 내장 Custodial KMS</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5">고령층의 키 분실 위험 0%. K-BTF 블록체인 내장 HSM에서 개인키 암호화 보관 및 대행 서명</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold flex-shrink-0">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-800 text-xs">낙인 방지 Dual-VC 분리 발급</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5">주민증(거주증명)과 수급카드(무료식사권)를 분리하여 커뮤니티 활동 시 수급사실 미노출</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center text-sm font-bold flex-shrink-0">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-800 text-xs">공개키 0.05초 선확인 & 블록체인 사후 기록</h4>
+            <p class="text-[11px] text-slate-500 mt-0.5">센스 단말 내 공개키로 서명을 즉시 선확인하고, 사후 비동기 신호(Tx)로 블록체인 분산원장 영구 저장</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: 2-Track Architecture Comparison -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-6 bg-blue-600 rounded-full"></span>
+        <h2 class="text-lg font-extrabold text-slate-900">1. 사용자 계층별 2-Track 채널 및 Custodial 매핑 아키텍처</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <!-- Track A: Smartphone PWA -->
+        <div class="border-2 border-blue-200 bg-blue-50/30 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute top-3 right-3 px-2 py-0.5 bg-blue-600 text-white rounded text-[10px] font-bold">Track A</div>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-lg">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm">스마트폰 사용자 (PWA 모바일 앱)</h3>
+              <p class="text-xs text-blue-700 font-semibold">입주민의 약 60% 대상 (비대면 자율 발급)</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-blue-600 mt-0.5"></i>
+              <span><strong>접근 방식</strong>: 웹 링크 또는 단지 내 QR 스캔을 통해 PWA 홈 화면 추가 (앱스토어 불필요)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-blue-600 mt-0.5"></i>
+              <span><strong>본인 확인</strong>: 통신 3사 PASS 간편인증 연동 $\rightarrow$ 암호화된 <strong>CI(연계정보 88B)</strong> 및 DI 확보</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-blue-600 mt-0.5"></i>
+              <span><strong>로컬 보안</strong>: WebAuthn(FIDO2) 지문/FaceID 연동으로 단말기 잠금 및 Custodial 세션 토큰 인가</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-blue-600 mt-0.5"></i>
+              <span><strong>지갑 형태</strong>: Custodial Web Wallet (KMS가 대행 서명하되 단말 생체인증이 마스터 스위치)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Track B: 2G Feature Phone NFC -->
+        <div class="border-2 border-emerald-200 bg-emerald-50/30 rounded-xl p-5 relative overflow-hidden">
+          <div class="absolute top-3 right-3 px-2 py-0.5 bg-emerald-600 text-white rounded text-[10px] font-bold">Track B</div>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg">
+              <i class="fa-solid fa-address-card"></i>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm">2G 피처폰 어르신 (실물 NFC 목걸이 카드)</h3>
+              <p class="text-xs text-emerald-700 font-semibold">디지털 소외계층 420세대 대상 (대면 창구 발급)</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+              <span><strong>접근 방식</strong>: 관리사무소 또는 산남종합사회복지관 현장 방문 시 즉시 실물 카드 수령</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+              <span><strong>본인 확인</strong>: 관리자 대면 신분증 확인 및 행정망(임대계약 DB + 사회보장정보망) 실시간 대조</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+              <span><strong>하드웨어 연동</strong>: 기성품 NFC 태그(ISO 14443A) 고유 UID를 어르신의 Custodial DID와 1:1 바인딩</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-600 mt-0.5"></i>
+              <span><strong>사용 편의</strong>: PIN 번호나 암호 없이 목에 걸고 배식구 리더기에 1초 대기만 하면 완료</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Core Engine: Custodial KMS Box -->
+      <div class="bg-slate-900 text-white rounded-xl p-5">
+        <div class="flex items-center justify-between mb-3 border-b border-slate-700 pb-2">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-blue-400"></i>
+            <span class="font-extrabold text-xs tracking-wider uppercase text-blue-400">Core Security Engine</span>
+            <span class="text-sm font-bold">K-BTF Custodial KMS (Key Management Service) 구조</span>
+          </div>
+          <span class="text-[11px] bg-slate-800 text-slate-300 px-2.5 py-0.5 rounded-full border border-slate-600">개인키 외부 유출 0%</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700">
+            <div class="text-amber-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-key"></i> 1. 비식별 DID 생성
+            </div>
+            <p class="text-slate-300 text-[11px]">PASS CI 또는 주민번호 해시를 솔트와 단방향 해시화하여 비식별 난수 식별자 생성 (<code class="text-blue-300">did:kbtf:resident:pseudo_uid</code>)</p>
+          </div>
+          <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700">
+            <div class="text-emerald-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-vault"></i> 2. KMS 암호화 보관
+            </div>
+            <p class="text-slate-300 text-[11px]">사용자별 Ed25519 서명 키쌍을 서버 HSM 보안 금고에 격리 보관. 인증 성공 시에만 메모리 상에서 대행 서명 수행</p>
+          </div>
+          <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700">
+            <div class="text-cyan-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-network-wired"></i> 3. 온체인 원장 앵커링
+            </div>
+            <p class="text-slate-300 text-[11px]">블록체인 분산원장에는 실명, 동/호수 등 개인정보를 전면 배제하고 DID Document와 상태값만 불변 기록</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Dual-VC Schema Details -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-emerald-600 rounded-full"></span>
+          <h2 class="text-lg font-extrabold text-slate-900">2. 분리 발급되는 2종 Verifiable Credentials (Dual-VC) 구조</h2>
+        </div>
+        <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full border border-emerald-200">
+          W3C VC Data Model v1.1 준수
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- VC 1 Card -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded bg-blue-600 text-white flex items-center justify-center text-xs font-bold">1</span>
+                <h4 class="font-extrabold text-slate-900 text-sm">공공임대 스마트 주민증 VC</h4>
+              </div>
+              <span class="text-[10px] text-blue-600 font-bold bg-blue-50 border border-blue-200 px-2 py-0.5 rounded">ResidentCredential</span>
+            </div>
+            <p class="text-xs text-slate-600 mb-3">
+              정상 거주자격을 증명하는 디지털 신분증. 커뮤니티 활동, 폐쇄몰 중고거래, 입주자대표회의 투표에 사용됩니다.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-slate-200 text-xs font-mono space-y-1.5 text-slate-700">
+              <div class="text-[11px] text-slate-400 font-sans mb-1 font-bold">주요 Claims 속성</div>
+              <div><strong class="text-slate-900">issuer:</strong> "did:kbtf:issuer:housing_corp"</div>
+              <div><strong class="text-slate-900">complexCode:</strong> "CJ-SANNAM-201" (산남주공2단지)</div>
+              <div><strong class="text-slate-900">buildingNo:</strong> "204동" / <strong class="text-slate-900">unitNo:</strong> "502호"</div>
+              <div><strong class="text-slate-900">occupancyStatus:</strong> "ACTIVE_RESIDENT"</div>
+              <div><strong class="text-slate-900">leaseTerm:</strong> "2026-09-01_2028-08-31"</div>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500">
+            <span>🛡️ 프라이버시 보호: 수급 여부 일체 미포함</span>
+            <span class="font-semibold text-blue-600">유효기간 2년</span>
+          </div>
+        </div>
+
+        <!-- VC 2 Card -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">2</span>
+                <h4 class="font-extrabold text-slate-900 text-sm">취약계층 복지수급카드 VC</h4>
+              </div>
+              <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">BeneficiaryDiningCredential</span>
+            </div>
+            <p class="text-xs text-slate-600 mb-3">
+              경로식당 무료급식 자격을 증명하는 복지 카드. 복지관 배식구 1초 태깅 및 지자체 국비 정산에 사용됩니다.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-slate-200 text-xs font-mono space-y-1.5 text-slate-700">
+              <div class="text-[11px] text-slate-400 font-sans mb-1 font-bold">주요 Claims 속성</div>
+              <div><strong class="text-slate-900">issuer:</strong> "did:kbtf:issuer:sannam_welfare"</div>
+              <div><strong class="text-slate-900">welfareCategory:</strong> "BASIC_LIVELIHOOD" (생계급여)</div>
+              <div><strong class="text-slate-900">diningEligibility:</strong> true (무료급식 대상)</div>
+              <div><strong class="text-slate-900">dailyMealLimit:</strong> 1 (1일 1식 한도)</div>
+              <div><strong class="text-slate-900">welfareCenterCode:</strong> "CJ-WELFARE-SN01"</div>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500">
+            <span>🛡️ 프라이버시 보호: 동/호수 등 주거정보 미포함</span>
+            <span class="font-semibold text-emerald-600">유효기간 1년 (연차갱신)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Interactive Mermaid Diagram Container -->
+    <div id="mermaidContainer" class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-6 bg-indigo-600 rounded-full"></span>
+        <h2 class="text-lg font-extrabold text-slate-900">3. 엔드투엔드(End-to-End) 운영 시퀀스 다이어그램</h2>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-wrap gap-2 mb-4 border-b border-slate-200 pb-2">
+        <button onclick="switchDiagram('issuance')" id="tabIssuance" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-indigo-600 text-white shadow-sm">
+          A. 2-Track 통합 발급 시퀀스
+        </button>
+        <button onclick="switchDiagram('nfc')" id="tabNfc" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">
+          B. 실물 NFC 카드 생성 플로우 (상세)
+        </button>
+        <button onclick="switchDiagram('dining')" id="tabDining" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">
+          C. 경로식당 1초 식사패스 플로우
+        </button>
+        <button onclick="switchDiagram('volunteer')" id="tabVolunteer" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200">
+          D. 자원봉사 2자 Multi-Sig & 크레딧 적립
+        </button>
+      </div>
+
+      <!-- Diagram A: Issuance -->
+      <div id="diagIssuance" class="overflow-x-auto">
+        <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Smart as 📱 스마트폰 주민
+    actor Senior as 👴 2G폰 어르신
+    participant Channel as 🌐 채널 (PWA / 관리소 창구)
+    participant PASS as 🏢 통신사 PASS 인증원
+    participant AppServer as 🖥️ 본과제 구축 AppServer
+    participant KBTFChain as ⛓️ K-BTF 블록체인 (DID & Custodial KMS 내장)
+
+    rect rgb(239, 246, 255)
+    Note over Smart,KBTFChain: [Track A] 스마트폰 PWA 비대면 발급
+    Smart->>Channel: PWA 실행 & 생체인증(FIDO2) 등록
+    Smart->>PASS: PASS 본인확인 (PIN/생체)
+    PASS-->>AppServer: CI(연계정보), DI, 실명, 생년월일 반환
+    Note over AppServer: 내부 거주자명부 및 수급자격 테이블 직접 대조<br/>(204동 502호 거주민 & 수급자 확인)
+    AppServer->>KBTFChain: Custodial DID 생성 (did:kbtf:resident:pseudo_uid) 및 KMS 등록
+    AppServer->>AppServer: [VC 1: 주민증] + [VC 2: 수급카드] 암호학적 전자서명
+    AppServer-->>Channel: PWA 화면에 주민증 & 식사패스 카드 즉시 적재
+    end
+
+    rect rgb(236, 253, 245)
+    Note over Senior,KBTFChain: [Track B] 2G폰 어르신 대면 현장 발급
+    Senior->>Channel: 관리사무소 방문 (신분증 제시)
+    Channel->>AppServer: 관리자가 어르신 실명/신원 입력 및 자격 확인
+    AppServer-->>Channel: 거주자 및 수급자격 확인 완료
+    Channel->>AppServer: 공카드 태깅 (NFC 태그 고유 UID 읽기)
+    AppServer->>KBTFChain: 어르신 전용 Custodial DID 생성 및 KMS 등록
+    AppServer->>AppServer: [VC 1: 주민증] + [VC 2: 수급카드] 발급 및 보관
+    AppServer->>AppServer: NFC UID ↔ Custodial DID ↔ 2종 VC 매핑 테이블 저장
+    Channel-->>Senior: 실물 목걸이 카드 전달 ("식사할 때 찍으세요")
+    end
+        </pre>
+      </div>
+
+      <!-- Diagram B: NFC Card Creation Flow (Detailed) -->
+      <div id="diagNfc" class="hidden space-y-6">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <div class="text-xs font-bold text-slate-800 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-diagram-project text-emerald-600"></i> 실물 NFC 카드 단계별 업무 프로세스 (Process Flowchart)
+          </div>
+          <div class="overflow-x-auto">
+            <pre class="mermaid">
+flowchart TD
+    Start(["👴 어르신 창구 방문 (관리사무소/복지관)"]) --> Step1["👩‍💼 신분증 제시 (주민등록증 or 복지카드)"]
+    Step1 --> Step2["🖥️ 관리자 단말에 주민 실명/생년월일 입력"]
+    
+    Step2 --> QueryAppServer{"🖥️ AppServer 내부 DB<br/>거주 및 수급자격 조회"}
+    QueryAppServer -->|불일치| Deny["❌ 발급 불가 안내<br/>(입주민 또는 수급자 아님)"]
+    
+    QueryAppServer -->|일치: 201동 305호 & 생계급여| CheckDup{"기존 발급 카드 확인"}
+    CheckDup -->|분실 재발급 요청| RevokeOld["⚠️ 기존 NFC UID 즉시 폐기(Revoked)<br/>블록체인 상태값 갱신 & 블랙리스트 전파"]
+    RevokeOld --> TagNFC
+    CheckDup -->|최초 신규 발급| TagNFC["📟 기성품 NFC 공카드 리더기 태깅"]
+
+    TagNFC --> ReadUID["카드의 물리 고유 식별자<br/><b>NFC Card UID (7-Byte)</b> 자동 추출"]
+    
+    ReadUID --> ReqKMS["⛓️ K-BTF 블록체인 (Custodial KMS) 호출"]
+    
+    subgraph KBTF_KMS ["⛓️ K-BTF 블록체인 내부 처리 (Custodial KMS)"]
+        GenSeed["UUID + 주민번호해시 + NFC UID + Salt 결합"]
+        GenPseudo["🔑 pseudo_uid (32자 비식별 난수) 생성<br/>did:kbtf:senior:pseudo_uid"]
+        GenKey["🔐 Ed25519 서명 키쌍 생성<br/>(개인키는 KMS 보안금고에 격리 보관)"]
+        AnchorDID["📦 DID Document 온체인 원장 등록<br/>(did:kbtf:senior:pseudo_uid + Public Key)"]
+        GenSeed --> GenPseudo --> GenKey --> AnchorDID
+    end
+    
+    ReqKMS --> KBTF_KMS
+    AnchorDID --> IssueVCs["🖥️ AppServer에서 2종 VC 전자서명 발급"]
+
+    subgraph DualVC_Issuance ["📑 Dual-VC 발급 및 바인딩"]
+        VC1["🏢 [VC 1] 공공임대 스마트 주민증<br/>(동/호수, 거주상태 증명)"]
+        VC2["🥗 [VC 2] 취약계층 복지수급카드<br/>(무료급식 대상코드 TIER_A)"]
+        BindTable["🗄️ 매핑 테이블 저장<br/>NFC UID ↔ Custodial DID ↔ 2종 VC"]
+        VC1 & VC2 --> BindTable
+    end
+
+    IssueVCs --> DualVC_Issuance
+    BindTable --> SyncDining["📡 경로식당 배식구 센스 단말로 실시간 동기화<br/>(Websocket 통해 로컬 캐시 5초 내 푸시)"]
+    
+    SyncDining --> Handover["📇 어르신에게 실물 NFC 목걸이 카드 교부<br/>('식당에서 목에 걸고 찍으시면 됩니다')"]
+    Handover --> Finish(["✅ 발급 완료 (즉시 점심 식사 가능)"])
+            </pre>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <div class="text-xs font-bold text-slate-800 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-timeline text-indigo-600"></i> 창구 ↔ 단말 ↔ 블록체인 ↔ 배식구 리더기 상세 인터랙션 (Sequence)
+          </div>
+          <div class="overflow-x-auto">
+            <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Senior as 👴 어르신 (2G폰 소지자)
+    actor Worker as 👩‍💼 창구 관리자 (복지사/관리소)
+    participant AdminApp as 🖥️ 관리자 전용 등록 단말
+    participant NFCReader as 📟 데스크탑 NFC 리더기
+    participant AppServer as 🖥️ 본과제 구축 AppServer
+    participant KBTFChain as ⛓️ K-BTF 블록체인 (DID & Custodial KMS)
+    participant DiningTerminal as 🗄️ 경로식당 배식구 센스 단말
+
+    Senior->>Worker: 1. 관리사무소 방문 ("식사 카드 만들러 왔어요")
+    Worker->>Senior: 2. 신분증(주민등록증/복지카드) 확인
+    Worker->>AdminApp: 3. 관리자 포털에 주민 성명/생년월일 입력
+    
+    rect rgb(239, 246, 255)
+    Note over Senior,DiningTerminal: [1단계: 신원 조회] 거주자 및 기초생활수급 자격 실시간 대조
+    AdminApp->>AppServer: 4. 내부 거주자 및 수급자격 조회 요청
+    AppServer-->>AdminApp: 5. 거주 및 수급자격 확인 승인 (201동 305호 · TIER_A 수급자)
+    end
+    
+    rect rgb(254, 249, 195)
+    Note over Senior,DiningTerminal: [2단계: NFC 매핑] 기성품 공카드 리더기 태깅 및 7-Byte UID 추출
+    Worker->>NFCReader: 6. 기성품 공카드(NFC 목걸이) 리더기에 태깅
+    NFCReader-->>AdminApp: 7. NFC 물리 카드 UID(7-Byte ISO 14443A) 획득
+    AdminApp->>AppServer: 8. 어르신 식별정보 + NFC UID 전송 (발급 요청)
+    end
+    
+    rect rgb(238, 242, 255)
+    Note over Senior,DiningTerminal: [3단계: 온체인 DID & Dual-VC 발급] Custodial KMS 개인키 보안금고 보관 & 2종 VC 발급
+    AppServer->>KBTFChain: 9. pseudo_uid 도출 및 DID 생성 호출 (NFC UID + Salt)
+    KBTFChain->>KBTFChain: pseudo_uid (32자 난수) 생성 (did:kbtf:senior:pseudo_uid)
+    KBTFChain->>KBTFChain: Ed25519 개인키 생성 및 KMS 보안금고 보관
+    KBTFChain->>KBTFChain: DID Document 온체인 원장 등록 (DID + Public Key)
+    KBTFChain-->>AppServer: 10. 생성된 DID 문자열 반환
+    AppServer->>AppServer: 11. Dual-VC 발급: [VC1: 주민증] + [VC2: 수급카드]
+    AppServer->>AppServer: NFC UID ↔ Custodial DID ↔ 2종 VC 매핑 테이블 저장
+    end
+    
+    rect rgb(236, 253, 245)
+    Note over Senior,DiningTerminal: [4단계: 배식구 센스 단말 실시간 동기화] 로컬 캐시 5초 내 푸시 & 실물 카드 교부
+    AppServer-)DiningTerminal: 12. [Websocket Push] 신규 NFC UID 및 식사 자격 로컬 캐시 전파 (5초 이내)
+    DiningTerminal-->>AppServer: 13. 동기화 완료 Ack 수신
+    AppServer-->>AdminApp: 14. 발급 및 동기화 완료 응답
+    AdminApp-->>Worker: 15. 화면에 "발급 완료 (🟢 녹색)" 표시 및 완료음
+    Worker->>Senior: 16. 실물 목걸이 카드 교부 ("식당 가셔서 찍으시면 바로 식사됩니다")
+    end
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diagram C: Dining Pass -->
+      <div id="diagDining" class="hidden overflow-x-auto">
+        <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Resident as 👥 입주민 (NFC 목걸이 or PWA QR)
+    participant Reader as 📟 배식구 센스 단말 (NFC/QR)
+    participant EdgeKey as 🔑 단말 내 공인 공개키 (Public Key)
+    participant Speaker as 📢 음성/LED 모듈
+    participant AppServer as 🖥️ 본과제 구축 AppServer
+    participant KBTFChain as ⛓️ K-BTF 블록체인 원장
+
+    Note over Resident,KBTFChain: [사전준비] 발급기관 공인 공개키(Public Key) 단말에 로컬 동기화 완료
+    Resident->>Reader: 카드 태깅 또는 스마트폰 접촉
+    
+    rect rgb(239, 246, 255)
+    Note over Resident,KBTFChain: [1단계 : 초고속 선확인] 공인 공개키 기반 서명 검증 (로컬 0.05초 완결)
+    Reader->>EdgeKey: 단말 내 공개키로 VC 전자서명 유효성 즉시 검증
+    EdgeKey-->>Reader: 전자서명 무결성 확인 및 수급자격 검증 성공
+    Reader->>Speaker: 띵동! 반갑습니다. 맛있게 드세요. (🟢 녹색 LED 점등)
+    Note over Resident,Reader: 어르신 즉시 식판 들고 배식구 통과 (대기 지연 0초)
+    end
+
+    rect rgb(236, 253, 245)
+    Note over Resident,KBTFChain: [2단계 : 사후 블록체인 기록] 비동기 신호 발생 및 온체인 영구 저장
+    Reader-)AppServer: [비동기 신호 발생] 식사 인증 이벤트 트랜잭션 전송
+    AppServer-)KBTFChain: [온체인 트랜잭션 발행] 식사패스 실행 Tx 발생 & 원장 영구 저장
+    KBTFChain-->>AppServer: 트랜잭션 해시(Tx Hash) 생성 및 감사 블록 동기화
+    end
+
+    opt 중복 태깅
+        Reader->>Speaker: 이미 식사를 확인하셨습니다. (🟡 황색 LED)
+    end
+    opt 미등록 카드
+        Reader->>Speaker: 안내데스크에 문의해주세요. (🔴 적색 LED)
+    end
+        </pre>
+      </div>
+
+      <!-- Diagram D: Volunteer Multi-Sig Credit Flow -->
+      <div id="diagVolunteer" class="hidden overflow-x-auto">
+        <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Volunteer as 👴 봉사자 (NFC 목걸이 / PWA 지갑)
+    actor Checker as 👩‍💼 확인자 (복지관 직원 / 시설 관리자)
+    participant Tablet as 📱 확인자 관리 태블릿
+    participant AppServer as 🖥️ 본과제 AppServer (PostgreSQL)
+    participant KBTFChain as ⛓️ K-BTF 블록체인 (CSAP: DID/지갑)
+
+    rect rgb(254, 249, 195)
+    Note over Volunteer,KBTFChain: [1단계 : 활동 완료 및 1차 서명] 봉사자 NFC 목걸이 카드 1초 태깅 (Sign_Volunteer)
+    Volunteer->>Tablet: 1. 봉사자 NFC 목걸이 카드 태깅
+    Tablet->>AppServer: 2. 태그 UID 전송 및 챌린지 Nonce 요청
+    AppServer->>Tablet: 3. 봉사자 DID 식별 및 1회용 챌린지 Nonce 반환
+    Note over Volunteer,Tablet: 봉사자 DID 개인키로 1차 전자서명 생성 (Sign_Volunteer)
+    end
+
+    rect rgb(239, 246, 255)
+    Note over Volunteer,KBTFChain: [2단계 : 확인자 검수 및 2차 서명] 봉사 내역 대면 확인 및 PIN/생체인증 승인
+    Tablet-->>Checker: 4. 화면 팝업: "김철수 어르신 · 식당 배식 2시간 · 20 크레딧 승인"
+    Checker->>Tablet: 5. [2nd Sig] 확인자 PIN/생체인증으로 최종 확인 서명 (Sign_Checker)
+    end
+
+    rect rgb(238, 242, 255)
+    Note over Volunteer,KBTFChain: [3단계 : K-BTF CSAP 원장 기록] 2자 Multi-Sig 온체인 부인방지 트랜잭션 확정
+    Tablet->>KBTFChain: 6. Multi-Sig 트랜잭션 제출 (DID_V, Sign_V, DID_C, Sign_C, Nonce)
+    KBTFChain->>KBTFChain: 7. CSAP 전자지갑 모듈에서 2개 서명 동시 검증
+    KBTFChain-->>Tablet: 8. 온체인 트랜잭션 확정 및 tx_id 발급 (0x9c3e...77fa)
+    end
+    
+    rect rgb(236, 253, 245)
+    Note over Volunteer,KBTFChain: [4단계 : AppServer DB 크레딧 생성] tx_id 외래키 연동 및 Append-Only 원장 체이닝
+    Tablet->>AppServer: 9. tx_id 및 봉사 확정 데이터 전송
+    AppServer->>AppServer: 10. PostgreSQL 크레딧 원장에 +20 TC 적립 (tx_id 외래키)
+    AppServer->>AppServer: 11. 이전 행 해시(prev_row_hash) 체이닝 갱신
+    AppServer-->>Tablet: 12. 크레딧 적립 완료 응답 (누적 잔액: 120 TC)
+    end
+    
+    Tablet-->>Volunteer: 13. 📢 "띵동! 20크레딧이 적립되었습니다. 감사합니다."
+        </pre>
+      </div>
+    </div>
+
+    <!-- Section 4: Operational Edge Cases & Lifecycle -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <!-- Section 4 Header -->
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-6 bg-rose-600 rounded-full"></span>
+        <h2 class="text-lg font-extrabold text-slate-900">4. 현장 예외 상황(Edge-Case) 및 수명주기 관리</h2>
+      </div>
+
+      <!-- Hero Exception Card: NFC Tag Absent Fallback -->
+      <div class="mb-6 border-2 border-indigo-200 bg-indigo-50/40 rounded-xl p-5 shadow-sm">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-indigo-100 pb-3 mb-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+              <i class="fa-solid fa-person-circle-exclamation"></i>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-slate-900 text-sm md:text-base">
+                [핵심 현장 예외] NFC Tag 미지참자 즉석 구제 및 4단계 인증 워크플로우
+              </h3>
+              <p class="text-xs text-indigo-700 font-semibold">
+                카드를 집에 두고 온 어르신을 댁으로 돌려보내지 않고, 배식 대기 줄 정체 없이 5초 내 식사 승인 및 블록체인 공증
+              </p>
+            </div>
+          </div>
+          <span class="text-[11px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200 px-3 py-1 rounded-full whitespace-nowrap">
+            서버(PostgreSQL) ↔ 태블릿(In-Memory DB) 0.01초 초성검색
+          </span>
+        </div>
+
+        <!-- 4-Step Interactive Visual Flow Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mb-4 text-xs">
+          <!-- Step 1 -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] font-bold">1</span>
+                <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">수급자 구두 제시</span>
+              </div>
+              <h4 class="font-bold text-slate-900 text-xs mb-1">성함 및 출생년도 제시</h4>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                어르신이 확인자에게 본인 성함과 출생년도를 구두로 알림<br/>
+                <span class="text-indigo-600 font-semibold">"김철수, 48년생이오"</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[10px] font-bold">2</span>
+                <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">확인자 태블릿</span>
+              </div>
+              <h4 class="font-bold text-slate-900 text-xs mb-1">초성 검색 (Choseong)</h4>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                관리자 태블릿 <strong>In-Memory DB</strong>에서 초성 <span class="bg-indigo-100 text-indigo-800 font-bold px-1 rounded">ㄱㅊㅅ</span> 입력 후 0.01초 내 대상자 터치 선택
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px] font-bold">3</span>
+                <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">수급자 셀프 PIN</span>
+              </div>
+              <h4 class="font-bold text-slate-900 text-xs mb-1">생일 4자리 직접 입력</h4>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                화면 대형 숫자패드에 본인 <strong>생일(MMDD, 예: 0514)</strong> 직접 터치 (대리 수급 및 타인 도용 원천 차단)
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bg-white border border-slate-200 rounded-xl p-3.5 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] font-bold">4</span>
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">확인 및 공증</span>
+              </div>
+              <h4 class="font-bold text-slate-900 text-xs mb-1">승인 & 블록체인 기록</h4>
+              <p class="text-slate-600 text-[11px] leading-relaxed">
+                "띵동! 확인되었습니다" 🟢 승인 후, <strong>사후 비동기 트랜잭션</strong>으로 온체인 분산원장에 영구 기록
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded Sequence Diagram for Untagged Fallback -->
+        <div class="bg-white rounded-lg p-3 border border-indigo-100 overflow-x-auto text-xs">
+          <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Senior as 👴 어르신 (수급자, 카드 미지참)
+    actor Checker as 👩‍💼 확인자 (복지관 직원 / 배식 도우미)
+    participant TabletApp as 📱 관리자 태블릿 (In-Memory DB)
+    participant Speaker as 📢 음성/화면 모듈
+    participant AppServer as 🖥️ 본과제 구축 AppServer
+    participant KBTFChain as ⛓️ K-BTF 블록체인 원장
+
+    Senior->>Checker: 1. "카드를 깜빡하고 안 가져왔어요. 김철수, 48년생이오."
+    Checker->>TabletApp: 2. 검색창에 초성 "ㄱㅊㅅ" 입력 (0.01초 인메모리 매칭)
+    TabletApp-->>Checker: 3. 후보 목록 노출 (김철수, 1948년생 선택)
+    TabletApp->>Speaker: 4. 대형 키패드 팝업 ("생일 4자리를 눌러주세요")
+    Senior->>TabletApp: 5. [수급자 직접 입력] 생일 4자리 (0514) 터치
+    TabletApp->>Speaker: 6. "띵동! 확인되었습니다. 맛있게 드세요." (🟢 녹색 승인)
+    Note over Senior: 어르신 식판 들고 배식구 즉시 통과 (소요시간 5초 이내)
+    
+    rect rgb(236, 253, 245)
+    Note over TabletApp,KBTFChain: [사후 블록체인 기록] 비동기 트랜잭션 발행
+    TabletApp-)AppServer: 7. [비동기] 미지참 수동 승인 이벤트 전송
+    AppServer-)KBTFChain: 8. [온체인 기록] MANUAL_PASS_UNTAGGED Tx 발생 및 영구 저장
+    end
+
+    rect rgb(254, 242, 242)
+    Note over TabletApp,AppServer: [14:00 배식 마감] 단말 In-Memory DB 자동 파기 (Zero-out RAM)
+    TabletApp->>TabletApp: 9. 14:00 타이머 트리거 ➔ RAM 명부 완전 소멸 & WIPE_ACK 감사 보고
+    Note over TabletApp: 단말 분실·도난 시에도 입주민 개인정보 유출 0% 원천 차단
+    end
+          </pre>
+        </div>
+
+        <!-- Link to Standalone Interactive Simulator -->
+        <div class="mt-3 flex items-center justify-between text-xs bg-indigo-50 border border-indigo-200 rounded-lg p-2.5">
+          <span class="text-indigo-900 font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-tablet-screen-button text-indigo-600"></i> 14:00 DB 자동 파기 & 4단계 실시간 인터랙티브 시뮬레이터
+          </span>
+          <a href="./nfc_untagged_fallback_procedure.html" target="_blank" class="px-3 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded font-bold text-[11px] transition-all flex items-center gap-1 shadow-sm">
+            <span>단독 시뮬레이터 열기</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="flex items-center gap-2 font-bold text-slate-900 mb-2">
+            <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+            NFC 목걸이 분실 시 재발급 절차
+          </div>
+          <p class="text-slate-600 mb-2 leading-relaxed">
+            어르신이 카드를 분실했을 때 즉시 부정 식사를 차단하고 1분 이내에 재발급합니다.
+          </p>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200 text-slate-700 space-y-1">
+            <div>1. 관리사무소 구두 신고 접수 즉시 기존 NFC UID <span class="text-rose-600 font-bold">REVOKED(폐기)</span> 처리</div>
+            <div>2. 배식구 리더기 로컬 캐시에 폐기 블랙리스트 실시간 소켓 동기화 (5초 이내)</div>
+            <div>3. 신규 공카드 리더기 태깅 후 동일한 Custodial DID에 재바인딩 완료</div>
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="flex items-center gap-2 font-bold text-slate-900 mb-2">
+            <i class="fa-solid fa-arrows-rotate text-blue-500"></i>
+            스마트폰 변경 및 PWA 재설치
+          </div>
+          <p class="text-slate-600 mb-2 leading-relaxed">
+            스마트폰을 교체하거나 앱을 지웠을 때도 복구 코드 없이 본인인증으로 즉각 복원됩니다.
+          </p>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200 text-slate-700 space-y-1">
+            <div>1. 신규 폰에서 PWA 접속 후 통신 3사 PASS 재인증 진행</div>
+            <div>2. 동일한 CI(연계정보)가 반환되므로 백엔드 KMS가 기존 Custodial DID를 자동 조회</div>
+            <div>3. 신규 단말기에 암호화 세션 재부여 및 기존 발급 2종 VC 화면에 즉시 복원</div>
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="flex items-center gap-2 font-bold text-slate-900 mb-2">
+            <i class="fa-solid fa-door-open text-purple-500"></i>
+            단지 외 이사 (퇴거) 시 자격 상실
+          </div>
+          <p class="text-slate-600 mb-2 leading-relaxed">
+            퇴거 행정 완료 시 주민증 자격은 즉시 소멸되며 수급자격은 지자체 정책에 따라 분리 처리됩니다.
+          </p>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200 text-slate-700 space-y-1">
+            <div>1. 주택관리공단 퇴거 행정 완료 시 K-BTF WAS에 퇴거 이벤트 Webhook 수신</div>
+            <div>2. 블록체인 DID 상태 레지스트리에서 <strong>[VC 1: 스마트 주민증]</strong> 즉시 영구 폐기</div>
+            <div>3. 커뮤니티 게시판 및 단지 내 폐쇄몰 접근 권한 자동 차단</div>
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="flex items-center gap-2 font-bold text-slate-900 mb-2">
+            <i class="fa-solid fa-scale-balanced text-emerald-500"></i>
+            수급자격 변동 (소득 증가 등)
+          </div>
+          <p class="text-slate-600 mb-2 leading-relaxed">
+            Dual-VC의 장점으로 주민증은 유지된 채 수급카드만 정밀하게 상태가 갱신됩니다.
+          </p>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200 text-slate-700 space-y-1">
+            <div>1. 본과제 AppServer 내 복지수급자격 데이터 갱신 시 탈락 여부 감지</div>
+            <div>2. <strong>[VC 2: 수급카드]</strong>만 단독 폐기 처리 (거주 주민증은 만기까지 정상 유지)</div>
+            <div>3. 경로식당 태깅 시 "일반 유료 식권 결제" 모드로 전환 안내</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Gov Evaluation Checkpoint (Agent 4 Red Team) -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 text-white shadow-soft">
+      <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-amber-500 rounded-full"></span>
+          <h2 class="text-lg font-extrabold text-white">🏛️ 정부 R&D 평가위원(30년 경력) 사전 감사 핵심 포인트</h2>
+        </div>
+        <span class="text-xs bg-amber-500/20 text-amber-400 font-bold px-3 py-1 rounded-full border border-amber-500/30">
+          IITP / TIPA 만점 획득 기준
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700">
+          <div class="text-amber-400 font-bold mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-universal-access"></i> 1. 디지털 포용성 (40점)
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            스마트폰 미소지 취약계층(420세대)을 배제하지 않고 실물 NFC 목걸이를 통한 완벽한 2-Track 포용 체계를 갖추어 <strong>"디지털 양극화 해소" 국정과제 평가 100% 부합</strong>.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700">
+          <div class="text-emerald-400 font-bold mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-user-shield"></i> 2. 개인정보 컴플라이언스 (30점)
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            주민번호, 실명, 복지등급을 온체인에 올리지 않는 <strong>비식별 난수(`pseudo_uid`) 격리 아키텍처</strong> 및 Dual-VC를 통한 <strong>낙인효과 원천 차단</strong>으로 개인정보보호법 완벽 준수.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700">
+          <div class="text-cyan-400 font-bold mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-stopwatch"></i> 3. 현장 실증성 및 성능 KPI (30점)
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            경로식당 점심 피크시간대 병목을 방지하는 <strong>0.05초 공인 공개키 로컬 선확인</strong> 및 <strong>사후 비동기 블록체인 신호(Tx) 발생</strong>을 통해, 현장 통과 속도 극대화와 위변조 방지 온체인 공증 효력을 동시 입증.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-slate-400 text-xs mt-8 mb-4">
+      K-BTF 스마트 주거복지 플랫폼 사업단 · 주택관리공단 · 산남종합사회복지관 협력 운영
+    </div>
+
+  </div>
+
+  <script>
+    const renderedTabs = new Set();
+
+    async function renderTabDiagram(tabId) {
+      if (renderedTabs.has(tabId)) return;
+      renderedTabs.add(tabId);
+      const diagEl = document.getElementById('diag' + tabId.charAt(0).toUpperCase() + tabId.slice(1));
+      if (!diagEl) return;
+      const mermaidNodes = Array.from(diagEl.querySelectorAll('.mermaid'));
+      if (mermaidNodes.length > 0) {
+        await mermaid.run({ nodes: mermaidNodes });
+      }
+    }
+
+    async function switchDiagram(type) {
+      const diagIssuance = document.getElementById('diagIssuance');
+      const diagNfc = document.getElementById('diagNfc');
+      const diagDining = document.getElementById('diagDining');
+      const diagVolunteer = document.getElementById('diagVolunteer');
+      const tabIssuance = document.getElementById('tabIssuance');
+      const tabNfc = document.getElementById('tabNfc');
+      const tabDining = document.getElementById('tabDining');
+      const tabVolunteer = document.getElementById('tabVolunteer');
+
+      const tabs = [
+        { id: 'issuance', diag: diagIssuance, tab: tabIssuance },
+        { id: 'nfc', diag: diagNfc, tab: tabNfc },
+        { id: 'dining', diag: diagDining, tab: tabDining },
+        { id: 'volunteer', diag: diagVolunteer, tab: tabVolunteer }
+      ];
+
+      for (const t of tabs) {
+        if (t.id === type) {
+          t.diag.classList.remove('hidden');
+          t.tab.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-indigo-600 text-white shadow-sm';
+          // Ensure it renders now that it is visible!
+          await renderTabDiagram(t.id);
+        } else {
+          t.diag.classList.add('hidden');
+          t.tab.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200';
+        }
+      }
+    }
+
+    // Render initially visible diagrams on DOMContentLoaded
+    window.addEventListener('DOMContentLoaded', async () => {
+      const visibleNodes = Array.from(document.querySelectorAll('.mermaid')).filter(el => {
+        return !el.closest('.hidden');
+      });
+      if (visibleNodes.length > 0) {
+        await mermaid.run({ nodes: visibleNodes });
+      }
+      renderedTabs.add('issuance');
+    });
+  </script>
+</body>
+</html>

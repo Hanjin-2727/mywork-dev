@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>피지컬 AI (Physical AI) 4대 풀스택 핵심 기술 아키텍처</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Mermaid.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+        background: '#0f172a',
+        primaryColor: '#1e293b',
+        primaryTextColor: '#f8fafc',
+        primaryBorderColor: '#3b82f6',
+        lineColor: '#60a5fa',
+        secondaryColor: '#334155',
+        tertiaryColor: '#1e293b'
+      },
+      flowchart: {
+        curve: 'basis',
+        padding: 20
+      }
+    });
+  </script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1e1e38 0%, #0a0b14 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    }
+    .glow-blue {
+      box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.3);
+    }
+    .glow-purple {
+      box-shadow: 0 0 35px -5px rgba(168, 85, 247, 0.3);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.3);
+    }
+    .glow-amber {
+      box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.3);
+    }
+    .data-flow-line {
+      stroke-dasharray: 8;
+      animation: flowDash 1.2s linear infinite;
+    }
+    @keyframes flowDash {
+      to { stroke-dashoffset: -16; }
+    }
+    .pulse-badge {
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.04); opacity: 1; filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6)); }
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12">
+
+  <div class="max-w-7xl mx-auto space-y-8">
+    
+    <!-- Header Section -->
+    <header class="glass-card rounded-2xl p-6 md:p-8 border-l-4 border-blue-500 relative overflow-hidden">
+      <div class="absolute -right-12 -top-12 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">
+              대한민국 정부 국가전략 R&D 로드맵
+            </span>
+            <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              K-피지컬 AI 풀스택
+            </span>
+          </div>
+          <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white flex items-center gap-3">
+            <span>피지컬 AI (Physical AI) 4대 풀스택 핵심 기술 체계</span>
+          </h1>
+          <p class="mt-2 text-slate-400 text-sm md:text-base max-w-3xl leading-relaxed">
+            현실 물리 세계의 법칙(중력·마찰·관성)을 인식·이해하고, 온디바이스 연산과 정밀 구동계를 통해 폐루프(Closed-Loop) 자율 행동을 수행하는 차세대 인공지능 아키텍처
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <div class="bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-700">
+            <span class="text-slate-400 block">총괄 거버넌스</span>
+            <span class="font-bold text-slate-200">과기정통부 × 산업통상자원부</span>
+          </div>
+          <div class="bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-700">
+            <span class="text-slate-400 block">제어 지연시간</span>
+            <span class="font-bold text-emerald-400">&le; 10ms (100Hz+)</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Visual Architecture Interactive Cards (4-Layer Flow) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      
+      <!-- Layer 1: Perception -->
+      <div class="glass-card rounded-2xl p-6 border-t-4 border-blue-500 hover:border-blue-400 transition duration-300 relative group flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">Layer 1</span>
+            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">인지 · 감각 계층</h3>
+          <p class="text-xs text-blue-300/80 mb-4 font-medium">Perception & Sensing</p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-blue-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">멀티모달 센서 퓨전</strong>
+                <span class="text-xs text-slate-400">RGB-D 카메라 + 촉각(Tactile) + LiDAR + 6축 F/T 센서 결합</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-blue-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">3D 공간 의미론적 매핑</strong>
+                <span class="text-xs text-slate-400">3D Gaussian Splatting, NeRF, Spatial SLAM 기반 실시간 복원</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+          <span>데이터 산출물</span>
+          <span class="text-blue-400 font-mono">3D PointCloud / Depth Map</span>
+        </div>
+      </div>
+
+      <!-- Layer 2: Brain -->
+      <div class="glass-card rounded-2xl p-6 border-t-4 border-purple-500 hover:border-purple-400 transition duration-300 relative group flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-md border border-purple-500/20">Layer 2</span>
+            <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">두뇌 · 추론 계층</h3>
+          <p class="text-xs text-purple-300/80 mb-4 font-medium">Brain & World Model (핵심)</p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-purple-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">VLA (Vision-Language-Action)</strong>
+                <span class="text-xs text-slate-400">시각 영상+자연어 지시 ➔ 관절 각도/행동 토큰(Action Token) 변환</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-purple-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">물리 법칙 월드 모델 (World Model)</strong>
+                <span class="text-xs text-slate-400">중력/마찰/충돌 예측, 사전 가상 시뮬레이션 기반 실패 예방</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-purple-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">Sim-to-Real 디지털 트윈</strong>
+                <span class="text-xs text-slate-400">가상 환경 강화학습 ➔ 현실 로봇 오차 보정 전이</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+          <span>의사결정 산출물</span>
+          <span class="text-purple-400 font-mono">Action Trajectory / Policy</span>
+        </div>
+      </div>
+
+      <!-- Layer 3: Edge & Compute -->
+      <div class="glass-card rounded-2xl p-6 border-t-4 border-emerald-500 hover:border-emerald-400 transition duration-300 relative group flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">Layer 3</span>
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">신경계 · 연산 계층</h3>
+          <p class="text-xs text-emerald-300/80 mb-4 font-medium">Edge Computing & Network</p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-emerald-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">초저지연 온디바이스 NPU</strong>
+                <span class="text-xs text-slate-400">클라우드 단절 시에도 10ms 이내 즉각 제어 판단 (안전 필수)</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-emerald-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">실시간 결정론적 네트워크</strong>
+                <span class="text-xs text-slate-400">TSN (Time-Sensitive Networking), 5G-A 특화망 무손실 전송</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+          <span>제어 응답 보장</span>
+          <span class="text-emerald-400 font-mono">100Hz ~ 1kHz Loop</span>
+        </div>
+      </div>
+
+      <!-- Layer 4: Actuation -->
+      <div class="glass-card rounded-2xl p-6 border-t-4 border-amber-500 hover:border-amber-400 transition duration-300 relative group flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">Layer 4</span>
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            </div>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">신체 · 실행 계층</h3>
+          <p class="text-xs text-amber-300/80 mb-4 font-medium">Embodiment & Actuation</p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-amber-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">고출력 밀도 스마트 액추에이터</strong>
+                <span class="text-xs text-slate-400">정밀 감속기(사이클로이드/하모닉) + 임피던스/컴플라이언스 유연 제어</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2 bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50">
+              <span class="text-amber-400 font-bold">•</span>
+              <div>
+                <strong class="text-white block text-xs">전신 협응 제어 (Loco-manipulation)</strong>
+                <span class="text-xs text-slate-400">보행·주행 이동과 고정밀 양팔 부품 조립을 동시에 수행</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+          <span>물리적 출력</span>
+          <span class="text-amber-400 font-mono">Torque / Position / Force</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Closed-Loop Feedback Flow Bar -->
+    <div class="glass-card rounded-xl p-4 border border-rose-500/30 bg-rose-950/10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="w-3 h-3 rounded-full bg-rose-500 animate-ping"></span>
+        <span class="font-bold text-rose-400 text-sm tracking-wide">핵심 차별화 포인트: 물리적 폐루프 상호작용 (Closed-Loop Feedback)</span>
+      </div>
+      <div class="text-xs text-slate-300 text-center md:text-right">
+        물리 액추에이터(Layer 4)의 행동 결과(물체 변형, 미끄러짐, 반력)가 <strong>10ms 이내에 감각 센서(Layer 1)로 피드백</strong>되어 두뇌 모델이 정책을 실시간 보정합니다.
+      </div>
+    </div>
+
+    <!-- Mermaid Interactive Diagram Section -->
+    <div class="glass-card rounded-2xl p-6 md:p-8">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>📊 시스템 데이터 흐름 및 폐루프 제어 다이어그램</span>
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">Mermaid 렌더링 기반 데이터 파이프라인 구조</p>
+        </div>
+        <button onclick="window.print()" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          보고서 인쇄 / PDF 저장
+        </button>
+      </div>
+
+      <div class="bg-slate-950/60 rounded-xl p-4 md:p-6 border border-slate-800 overflow-x-auto flex justify-center">
+        <div class="mermaid text-center">
+graph TD
+    classDef l1 fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#fff;
+    classDef l2 fill:#581c87,stroke:#a855f7,stroke-width:2px,color:#fff;
+    classDef l3 fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff;
+    classDef l4 fill:#78350f,stroke:#f59e0b,stroke-width:2px,color:#fff;
+    classDef loop fill:#881337,stroke:#f43f5e,stroke-width:2px,stroke-dasharray: 5 5,color:#fff;
+
+    subgraph Layer1 ["1. 인지 · 감각 계층 (Perception & Sensing)"]
+        S1["멀티모달 센서 퓨전 (비전 + 촉각 + LiDAR + IMU)"]:::l1
+        S2["3D 공간 의미론적 매핑 (Spatial AI / NeRF / 3DGS)"]:::l1
+    end
+
+    subgraph Layer2 ["2. 두뇌 · 추론 계층 (Brain & World Model)"]
+        B1["VLA 모델 (Vision-Language-Action 파운데이션 모델)"]:::l2
+        B2["월드 모델 (물리 법칙 시뮬레이션 및 인과 예측)"]:::l2
+        B3["Sim-to-Real 시뮬레이터 (합성 데이터 전이)"]:::l2
+    end
+
+    subgraph Layer3 ["3. 신경계 · 연산 계층 (Edge & Compute)"]
+        C1["초저지연 온디바이스 NPU / 엣지 AI 반도체"]:::l3
+        C2["결정론적 실시간 제어 통신 (TSN / 특화망 5G)"]:::l3
+    end
+
+    subgraph Layer4 ["4. 신체 · 실행 계층 (Actuation & Control)"]
+        A1["고출력 밀도 스마트 액추에이터 / 정밀 감속기"]:::l4
+        A2["전신 협응 모션 제어 (보행 + 고정밀 파지 조작)"]:::l4
+    end
+
+    Layer1 -->|"환경 인지 데이터"| Layer2
+    Layer2 -->|"행동 궤적/정책 (Policy)"| Layer3
+    Layer3 -->|"실시간 제어 신호 (&le;10ms)"| Layer4
+    Layer4 -.->|"현실 환경 변화 피드백 (Closed-Loop)"| Layer1
+        </div>
+      </div>
+    </div>
+
+    <!-- Evaluation Criteria Card (Government R&D Checklist) -->
+    <div class="glass-card rounded-2xl p-6 md:p-8 border-l-4 border-emerald-500">
+      <h3 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+        <span>🏛️ 정부 R&D 과제(과기정통부·산업부) 평가위원 핵심 심사 기준</span>
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60">
+          <span class="text-emerald-400 font-bold block mb-1">1. 폐루프 제어성 (Closed-Loop)</span>
+          <p class="text-slate-300 leading-relaxed">단순한 명령 전달(Open-Loop)이 아닌, 환경 저항 및 실패를 센서로 피드백받아 실시간으로 보정하는지 검증.</p>
+        </div>
+        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60">
+          <span class="text-purple-400 font-bold block mb-1">2. Sim-to-Real 극복 방안</span>
+          <p class="text-slate-300 leading-relaxed">디지털 트윈 상의 물리 시뮬레이션 결과와 실제 현장 마찰/오차 간의 간극(Reality Gap)을 어떻게 축소할 것인가 제시.</p>
+        </div>
+        <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60">
+          <span class="text-blue-400 font-bold block mb-1">3. 엣지 실시간성 (KPI 수치화)</span>
+          <p class="text-slate-300 leading-relaxed">클라우드 단절 환경에서도 안전사고를 방지하기 위한 제어 주기(예: 100Hz 이상, 10ms 이하)의 정량적 시험성적서 계획.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-slate-500 py-4">
+      작업공간: <code class="text-slate-400">~/mywork/리서치/PhysicalAI/physical_ai_architecture.html</code> &bull; K-Physical AI Research & Strategic Intelligence
+    </footer>
+
+  </div>
+
+</body>
+</html>

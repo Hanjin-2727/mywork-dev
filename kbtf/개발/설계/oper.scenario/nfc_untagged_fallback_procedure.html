@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-BTF 경로식당 NFC Tag 미지참자 현장 구제 및 4단계 인증 절차서</title>
+  <!-- Pretendard Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Mermaid.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Consolas', 'monospace']
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81'
+            }
+          }
+        }
+      }
+    };
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      themeVariables: {
+        fontFamily: 'Pretendard, sans-serif',
+        fontSize: '13px',
+        primaryColor: '#f8fafc',
+        primaryTextColor: '#0f172a',
+        primaryBorderColor: '#cbd5e1',
+        lineColor: '#64748b'
+      }
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+    .shadow-soft {
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+    }
+    @media print {
+      body { background: white !important; }
+      .no-print { display: none !important; }
+      .container { max-width: 100% !important; padding: 0 !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4 md:px-8 lg:px-12 flex flex-col items-center">
+
+  <div class="w-full max-w-5xl">
+
+    <!-- Top Action Bar -->
+    <div class="flex items-center justify-between gap-3 mb-6 no-print">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-900 text-white shadow-sm">
+          <i class="fa-solid fa-utensils"></i> 산남복지관 경로식당 현장
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 border border-indigo-200">
+          <i class="fa-solid fa-id-card-clip"></i> NFC Tag 미지참자 구제 매뉴얼
+        </span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs font-medium rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-print"></i> 인쇄 / PDF 저장
+        </button>
+      </div>
+    </div>
+
+    <!-- Header Banner Card -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-5">
+        <div>
+          <div class="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
+            <i class="fa-solid fa-hospital-user"></i> Digital Inclusive Welfare Protocol
+          </div>
+          <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+            NFC Tag 미지참자 현장 4단계 인증 및 블록체인 기록 절차서
+          </h1>
+          <p class="text-slate-500 text-sm mt-1">
+            서버(PostgreSQL) ↔ 태블릿(In-Memory DB) 0.01초 초성검색 & 어르신 생일 4자리 셀프 PIN & 블록체인 사후 공증
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <div class="bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-xl text-center">
+            <div class="text-indigo-500 text-[10px] font-medium">검색 속도</div>
+            <div class="font-extrabold text-indigo-800 text-sm">&lt; 0.01초 (In-Memory)</div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 px-3 py-2 rounded-xl text-center">
+            <div class="text-emerald-600 text-[10px] font-medium">부정수급 방지</div>
+            <div class="font-extrabold text-emerald-800 text-sm">생일 4자리 Self-PIN</div>
+          </div>
+          <div class="bg-rose-50 border border-rose-200 px-3 py-2 rounded-xl text-center">
+            <div class="text-rose-500 text-[10px] font-medium">배식 마감 (14:00)</div>
+            <div class="font-extrabold text-rose-800 text-sm">In-Memory DB 자동 파기</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem vs Solution Comparison Box -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+        <div class="bg-rose-50 border border-rose-200 rounded-xl p-4">
+          <div class="text-rose-700 font-extrabold mb-1.5 flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-triangle-exclamation"></i> 현장 페인포인트 (As-Is 현상)
+          </div>
+          <ul class="space-y-1.5 text-slate-600 text-[11px] leading-relaxed">
+            <li>• 고령 어르신들이 목걸이 카드를 집에 두고 오시는 사례 빈번 발생 ("집에 두고 왔어")</li>
+            <li>• 카드를 가지러 댁(200미터 엘리베이터 이동)으로 돌려보낼 시 민원 불만 및 낙상 위험</li>
+            <li>• 임의로 식판을 드려 식사를 제공할 경우 지자체 식수 증빙 누락으로 국비 보조금 삭감</li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+          <div class="text-emerald-800 font-extrabold mb-1.5 flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-circle-check"></i> K-BTF 디지털 구제 방안 (To-Be 해결책)
+          </div>
+          <ul class="space-y-1.5 text-slate-700 text-[11px] leading-relaxed">
+            <li>• <strong>성함 + 생년 구두 제시</strong> ➔ 확인자가 태블릿에서 <strong>초성(ㄱㅊㅅ) 0.01초 검색</strong></li>
+            <li>• <strong>어르신 생일 4자리(MMDD) 직접 터치</strong> ➔ 대리 수급 및 타인 도용 100% 원천 차단</li>
+            <li>• 확인 즉시 <strong>사후 블록체인 비동기 트랜잭션 기록</strong> ➔ 감사 증빙 완벽 확보</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: 4-Step Interactive Visual Architecture -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-6 bg-indigo-600 rounded-full"></span>
+        <h2 class="text-lg font-extrabold text-slate-900">1. 현장 4단계 표준 사용자 인터랙션 (UX Flow)</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs mb-6">
+        <!-- Step 1 Card -->
+        <div class="border-2 border-slate-200 bg-slate-50/50 rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
+              <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">1</span>
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-200 px-2 py-0.5 rounded">수급자 구두 제시</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-sm mb-1.5">성함 및 생년 제시</h4>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              배식구 도착 어르신이 본인의 성함과 출생년도를 구두로 알림
+            </p>
+            <div class="mt-3 p-2 bg-white rounded border border-slate-200 text-indigo-700 font-bold font-mono text-center">
+              "김철수, 48년생이오"
+            </div>
+          </div>
+          <div class="mt-3 text-[10px] text-slate-400">⏱️ 소요 시간: 약 1~2초</div>
+        </div>
+
+        <!-- Step 2 Card -->
+        <div class="border-2 border-indigo-200 bg-indigo-50/30 rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 border-b border-indigo-100 pb-2">
+              <span class="w-6 h-6 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xs">2</span>
+              <span class="text-[10px] font-bold text-indigo-600 bg-indigo-100 px-2 py-0.5 rounded">확인자 태블릿</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-sm mb-1.5">한글 초성 검색</h4>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              태블릿 In-Memory DB에서 자모 초성으로 0.01초 내 후보 필터링 후 터치
+            </p>
+            <div class="mt-3 p-2 bg-white rounded border border-indigo-200 text-indigo-900 font-bold font-mono text-center">
+              초성입력: <span class="bg-indigo-600 text-white px-1.5 py-0.5 rounded">ㄱㅊㅅ</span>
+            </div>
+          </div>
+          <div class="mt-3 text-[10px] text-indigo-600 font-medium">⚡ In-Memory 매칭 &lt; 5ms</div>
+        </div>
+
+        <!-- Step 3 Card -->
+        <div class="border-2 border-amber-200 bg-amber-50/30 rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 border-b border-amber-100 pb-2">
+              <span class="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs">3</span>
+              <span class="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">수급자 셀프 PIN</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-sm mb-1.5">생일 4자리 직접 입력</h4>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              화면 대형 키패드에 본인 생일(MMDD) 직접 터치 (대리 수급 원천 차단)
+            </p>
+            <div class="mt-3 p-2 bg-white rounded border border-amber-200 text-amber-800 font-bold font-mono text-center tracking-widest">
+              [ 0 ] [ 5 ] [ 1 ] [ 4 ]
+            </div>
+          </div>
+          <div class="mt-3 text-[10px] text-amber-700 font-medium">🛡️ 대리 수급 100% 방지</div>
+        </div>
+
+        <!-- Step 4 Card -->
+        <div class="border-2 border-emerald-200 bg-emerald-50/30 rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 border-b border-emerald-100 pb-2">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">4</span>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">확인 & 공증</span>
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-sm mb-1.5">승인 & 블록체인 기록</h4>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              "확인되었습니다" 🟢 승인 후 사후 비동기 신호로 온체인 분산원장 영구 기록
+            </p>
+            <div class="mt-3 p-2 bg-white rounded border border-emerald-200 text-emerald-800 font-bold font-mono text-center text-[10px]">
+              Tx: 0x7f4a...9b12 (기록)
+            </div>
+          </div>
+          <div class="mt-3 text-[10px] text-emerald-700 font-medium">📜 국비 보조금 정산 100% 증빙</div>
+        </div>
+      </div>
+
+      <!-- System Architecture Pill Box (4-Columns) -->
+      <div class="bg-slate-900 text-white rounded-xl p-5">
+        <div class="flex items-center justify-between mb-3 border-b border-slate-700 pb-2">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-server text-cyan-400"></i>
+            <span class="font-extrabold text-xs tracking-wider uppercase text-cyan-400">Database & Edge Lifecycle</span>
+            <span class="text-sm font-bold">서버(PostgreSQL) ↔ 태블릿(In-Memory DB) 4단계 데이터 수명주기</span>
+          </div>
+          <span class="text-[11px] bg-slate-800 text-cyan-300 px-2.5 py-0.5 rounded-full border border-slate-600">독립 오프라인 구동 & 14:00 자동 파기</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+          <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700">
+            <div class="text-cyan-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-database"></i> 1. 마스터 DB (PostgreSQL)
+            </div>
+            <p class="text-slate-300 text-[11px]">AppServer의 RDB에 산남2-1단지 전체 입주자 및 기초생활/차상위 수급자 마스터 명부 안전 관리</p>
+          </div>
+          <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700">
+            <div class="text-amber-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-bolt-lightning"></i> 2. 프리패치 (11:00)
+            </div>
+            <p class="text-slate-300 text-[11px]">배식 시작 전 태블릿 메모리로 인덱스를 다운로드하여 와이파이 단절 시에도 0.01초 초성 검색 완결</p>
+          </div>
+          <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700">
+            <div class="text-emerald-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-link"></i> 3. 사후 온체인 앵커링
+            </div>
+            <p class="text-slate-300 text-[11px]">승인 즉시 비동기로 K-BTF 블록체인에 트랜잭션 신호(Tx)를 릴레이하여 식수 위변조 방지 온체인 공증</p>
+          </div>
+          <div class="bg-slate-800/80 rounded-lg p-3 border border-rose-500/50 bg-rose-950/20">
+            <div class="text-rose-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-trash-can"></i> 4. 메모리 자동 파기 (14:00)
+            </div>
+            <p class="text-slate-300 text-[11px]">오후 2시 배식 마감 시 타이머에 의해 In-Memory DB가 완전 영구 소멸(Zero-out)되어 단말 분실 시 유출 0%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Interactive Live Tablet Simulator -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-emerald-600 rounded-full"></span>
+          <h2 class="text-lg font-extrabold text-slate-900">2. 현장 관리자 태블릿 실시간 인터랙티브 시뮬레이터</h2>
+        </div>
+        <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-full border border-emerald-200">
+          직접 조작 체험 (Live Demo)
+        </span>
+      </div>
+
+      <p class="text-xs text-slate-500 mb-4">
+        아래 태블릿 화면에서 <strong>초성(ㄱㅊㅅ)</strong>을 입력하고, 어르신 선택 후 <strong>생일 4자리(0514)</strong>를 눌러 실제 현장 인증 흐름을 테스트해 보실 수 있습니다. 또한 상단의 <strong>[14:00 배식 마감 트리거]</strong>를 눌러 메모리가 자동으로 파기되는 보안 동작을 직접 확인해보세요.
+      </p>
+
+      <!-- Simulation Control Toolbar -->
+      <div class="max-w-xl mx-auto flex flex-wrap items-center justify-between gap-2 p-3 bg-slate-100 rounded-2xl mb-4 border border-slate-200 shadow-sm">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-700">🕒 가상 배식 시뮬레이션:</span>
+          <span id="simCurrentStatusBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+            배식 진행 중 (11:30~13:30)
+          </span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <button onclick="triggerAutoPurge()" id="btnTriggerPurge" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-bold rounded-xl text-xs transition-all flex items-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-clock"></i> 14:00 배식 마감 (DB 자동 파기)
+          </button>
+          <button onclick="rearmPrefetch()" id="btnRearmSync" class="hidden px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-bold rounded-xl text-xs transition-all flex items-center gap-1.5 shadow-sm">
+            <i class="fa-solid fa-rotate"></i> 11:00 배식 준비 (DB 재동기화)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tablet Frame -->
+      <div class="max-w-xl mx-auto bg-slate-900 p-4 md:p-6 rounded-3xl shadow-2xl border-4 border-slate-800">
+        <!-- Tablet Screen -->
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col justify-between min-h-[460px]">
+          
+          <!-- Tablet Header -->
+          <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+            <div class="flex items-center gap-2">
+              <span id="simStatusDot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="font-extrabold text-xs text-slate-800">산남복지관 배식관리 Admin</span>
+            </div>
+            <div class="text-[11px] font-mono text-slate-500 font-semibold" id="simTime">
+              2026-09-29 12:15:30
+            </div>
+          </div>
+
+          <!-- Step 1: Choseong Search View -->
+          <div id="simStep1" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">
+                <i class="fa-solid fa-magnifying-glass text-indigo-600"></i> 수급자 초성 또는 성함 검색
+              </label>
+              <div class="relative">
+                <input type="text" id="simSearchInput" oninput="handleSimSearch()" placeholder="초성 입력 (예: ㄱㅊㅅ, ㅇㅇㅈ)" class="w-full px-3.5 py-2.5 bg-white border-2 border-indigo-200 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:border-indigo-600 transition-all shadow-sm" value="ㄱㅊㅅ" />
+                <button onclick="clearSimSearch()" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 text-xs">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div class="text-[10px] text-slate-400 mt-1 pl-1">
+                * In-Memory DB 색인된 420명 중 0.005초 내 실시간 매칭
+              </div>
+            </div>
+
+            <!-- Search Results List -->
+            <div>
+              <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center justify-between">
+                <span>검색 결과 (후보 터치하여 선택)</span>
+                <span class="text-[10px] text-indigo-600 font-bold" id="simMatchCount">2건 일치</span>
+              </div>
+              <div class="space-y-2 max-h-48 overflow-y-auto" id="simResultList">
+                <!-- Row 1 -->
+                <div onclick="selectSenior('김철수', '1948', '0514', '204동 502호')" class="p-3 bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 rounded-xl cursor-pointer transition-all flex items-center justify-between shadow-sm">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold text-xs flex items-center justify-center">
+                      김
+                    </div>
+                    <div>
+                      <div class="font-extrabold text-xs text-slate-900">김철수 (1948년생, 만 78세)</div>
+                      <div class="text-[10px] text-slate-500">산남2-1단지 204동 502호 · 생계급여(TIER_A)</div>
+                    </div>
+                  </div>
+                  <span class="px-2 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded">선택</span>
+                </div>
+                <!-- Row 2 -->
+                <div onclick="selectSenior('김춘삼', '1948', '0822', '201동 104호')" class="p-3 bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 rounded-xl cursor-pointer transition-all flex items-center justify-between shadow-sm">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 font-extrabold text-xs flex items-center justify-center">
+                      김
+                    </div>
+                    <div>
+                      <div class="font-extrabold text-xs text-slate-900">김춘삼 (1948년생, 만 78세)</div>
+                      <div class="text-[10px] text-slate-500">산남2-1단지 201동 104호 · 의료급여(TIER_A)</div>
+                    </div>
+                  </div>
+                  <span class="px-2 py-1 bg-slate-100 text-slate-700 text-[10px] font-bold rounded">선택</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Birthday Keypad View (Hidden by default) -->
+          <div id="simStep2" class="hidden space-y-4">
+            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-3 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-indigo-600 font-bold">선택된 수급자</span>
+                <div class="font-extrabold text-sm text-slate-900" id="simSelectedName">김철수 (1948년생)</div>
+              </div>
+              <button onclick="backToStep1()" class="text-xs text-slate-500 hover:text-slate-800 px-2 py-1 bg-white rounded border border-slate-200">
+                <i class="fa-solid fa-arrow-left"></i> 재선택
+              </button>
+            </div>
+
+            <div class="text-center">
+              <div class="text-xs font-extrabold text-slate-700 mb-1">
+                👴 어르신 본인 생일 4자리를 눌러주세요 (MMDD)
+              </div>
+              <div class="text-[10px] text-slate-400 mb-2">예: 5월 14일생 ➔ 0514</div>
+              
+              <!-- PIN Display Box -->
+              <div class="flex justify-center gap-2 my-2">
+                <span id="pin0" class="w-10 h-12 bg-white border-2 border-slate-300 rounded-lg flex items-center justify-center text-xl font-bold font-mono text-slate-900 shadow-sm">-</span>
+                <span id="pin1" class="w-10 h-12 bg-white border-2 border-slate-300 rounded-lg flex items-center justify-center text-xl font-bold font-mono text-slate-900 shadow-sm">-</span>
+                <span id="pin2" class="w-10 h-12 bg-white border-2 border-slate-300 rounded-lg flex items-center justify-center text-xl font-bold font-mono text-slate-900 shadow-sm">-</span>
+                <span id="pin3" class="w-10 h-12 bg-white border-2 border-slate-300 rounded-lg flex items-center justify-center text-xl font-bold font-mono text-slate-900 shadow-sm">-</span>
+              </div>
+              <div id="simPinError" class="text-[11px] font-bold text-rose-600 min-h-[16px]"></div>
+            </div>
+
+            <!-- Big Number Keypad -->
+            <div class="grid grid-cols-3 gap-2 max-w-xs mx-auto">
+              <button onclick="pressPin('1')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">1</button>
+              <button onclick="pressPin('2')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">2</button>
+              <button onclick="pressPin('3')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">3</button>
+              <button onclick="pressPin('4')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">4</button>
+              <button onclick="pressPin('5')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">5</button>
+              <button onclick="pressPin('6')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">6</button>
+              <button onclick="pressPin('7')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">7</button>
+              <button onclick="pressPin('8')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">8</button>
+              <button onclick="pressPin('9')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">9</button>
+              <button onclick="clearPin()" class="py-2.5 bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold text-slate-600 active:bg-slate-200">초기화</button>
+              <button onclick="pressPin('0')" class="py-2.5 bg-white border border-slate-200 rounded-xl text-base font-bold text-slate-800 active:bg-slate-100 shadow-sm">0</button>
+              <button onclick="deletePin()" class="py-2.5 bg-slate-100 border border-slate-200 rounded-xl text-sm font-bold text-slate-600 active:bg-slate-200"><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+          </div>
+
+          <!-- Step 3: Success Result View (Hidden by default) -->
+          <div id="simStep3" class="hidden text-center py-6 space-y-4">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto animate-bounce shadow-sm">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+              <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold mb-1">
+                확인 완료 · 식사 승인 (1일 1식 통과)
+              </div>
+              <h3 class="text-xl font-extrabold text-slate-900" id="simApprovedName">김철수 어르신</h3>
+              <p class="text-xs text-slate-500 mt-1">"띵동! 확인되었습니다. 맛있게 드세요."</p>
+            </div>
+
+            <!-- Simulated Blockchain Tx Receipt -->
+            <div class="bg-slate-900 text-white rounded-xl p-3.5 text-left text-[11px] font-mono space-y-1 shadow-inner">
+              <div class="text-cyan-400 font-bold mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-link"></i> 사후 블록체인 온체인 트랜잭션 기록 완료
+              </div>
+              <div class="truncate"><span class="text-slate-400">Tx Hash:</span> 0x7f4a9b128c50e4d9f6a1...</div>
+              <div><span class="text-slate-400">Event:</span> MANUAL_PASS_UNTAGGED</div>
+              <div><span class="text-slate-400">Reason:</span> NFC_TAG_ABSENT (미지참 구제)</div>
+              <div><span class="text-slate-400">Terminal:</span> TABLET_ADMIN_SN01</div>
+            </div>
+
+            <button onclick="resetSimulator()" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs transition-all shadow-md">
+              <i class="fa-solid fa-rotate-right mr-1"></i> 다음 어르신 인증 진행
+            </button>
+          </div>
+
+          <!-- Step 4: 14:00 Purged View (Hidden by default) -->
+          <div id="simPurgedView" class="hidden text-center py-5 space-y-3.5">
+            <div class="w-16 h-16 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-3xl mx-auto shadow-sm">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <div class="inline-block px-3 py-1 bg-rose-100 text-rose-800 rounded-full text-xs font-bold mb-1">
+                14:00 배식 마감 · In-Memory DB 자동 파기 완료
+              </div>
+              <h3 class="text-base font-extrabold text-slate-900">단말기 메모리 상의 수급자 명부가 파기되었습니다</h3>
+              <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto leading-relaxed">
+                개인정보보호법 제21조 및 제29조에 의거하여, 당일 배식 마감(14:00) 즉시 단말기 RAM 상의 명부(420명)가 완전 소멸(Zero-out) 처리되었습니다.
+              </p>
+            </div>
+
+            <!-- Terminal Security Zero-Footprint Receipt -->
+            <div class="bg-slate-900 text-white rounded-xl p-3.5 text-left text-[11px] font-mono space-y-1 shadow-inner">
+              <div class="text-rose-400 font-bold mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-lock"></i> 단말 분실 및 유출 원천 방어 (Zero-Footprint)
+              </div>
+              <div><span class="text-slate-400">RAM Status:</span> 0 records (Zero-filled & Garbage Collected)</div>
+              <div><span class="text-slate-400">Disk Storage:</span> Zero-Footprint (로컬 SSD 비저장 정책)</div>
+              <div><span class="text-slate-400">Audit Signal:</span> WIPE_ACK (Tx: 0x8e2b4c10... 서버 전송 완료)</div>
+              <div><span class="text-slate-400">Next Prefetch:</span> 익일 11:00 AM PostgreSQL 재동기화 대기</div>
+            </div>
+
+            <button onclick="rearmPrefetch()" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-xs transition-all shadow-md">
+              <i class="fa-solid fa-rotate-right mr-1"></i> [체험용] 11:00 배식 시작 상태로 재동기화
+            </button>
+          </div>
+
+          <!-- Tablet Footer -->
+          <div class="border-t border-slate-200 pt-3 mt-4 flex items-center justify-between text-[10px] text-slate-400">
+            <span id="simFooterStatus">단말 상태: 정상 (In-Memory Sync OK · 420건 활성)</span>
+            <span>K-BTF 배식 지원 시스템</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: End-to-End Sequence Diagram -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-6 bg-indigo-600 rounded-full"></span>
+        <h2 class="text-lg font-extrabold text-slate-900">3. 전체 시스템 엔드투엔드 시퀀스 다이어그램</h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor Senior as 👴 어르신 (수급자, 카드 미지참)
+    actor Checker as 👩‍💼 확인자 (복지관 직원 / 배식 도우미)
+    participant TabletApp as 📱 관리자 태블릿 앱
+    participant MemoryDB as ⚡ 단말 In-Memory DB
+    participant Speaker as 📢 음성/화면 모듈
+    participant AppServer as 🖥️ 본과제 구축 AppServer (PostgreSQL)
+    participant KBTFChain as ⛓️ K-BTF 블록체인 원장
+
+    Note over TabletApp,MemoryDB: [사전준비] 매일 11:00 PostgreSQL에서 수급자 명부 In-Memory DB로 동기화 완료
+    
+    Senior->>Checker: 1. "카드를 깜빡하고 안 가져왔어요. 김철수, 48년생이오."
+    Checker->>TabletApp: 2. 검색창에 초성 "ㄱㅊㅅ" 입력
+    TabletApp->>MemoryDB: 3. 초성 인덱스 쿼리 (지연시간 < 5ms)
+    MemoryDB-->>TabletApp: 4. 후보 목록 반환 (김철수, 1948년생 외 1건)
+    Checker->>TabletApp: 5. 해당 입주민(김철수 어르신) 터치 선택
+    
+    TabletApp->>Speaker: 6. 큰 글씨 생일 입력 화면 팝업 ("생일 4자리를 눌러주세요")
+    Senior->>TabletApp: 7. [수급자 직접 입력] 생일 4자리 (예: 0514) 터치
+    
+    TabletApp->>MemoryDB: 8. 생일 4자리 매칭 및 당일 식수 확인
+    MemoryDB-->>TabletApp: 9. 생일 일치 & 당일 미식사 확인 성공
+    
+    TabletApp->>Speaker: 10. "띵동! 확인되었습니다. 맛있게 드세요." 음성 출력 & 🟢 녹색 승인
+    Note over Senior: 어르신 식판 들고 배식구 통과 (현장 소요 시간 5초 이내)
+    
+    rect rgb(236, 253, 245)
+    Note over TabletApp,KBTFChain: [사후 블록체인 공증 기록] 비동기 트랜잭션 전송
+    TabletApp-)AppServer: 11. [비동기] 미지참 수동 승인 이벤트 전송 (did, timestamp, reason)
+    AppServer-)KBTFChain: 12. [온체인 트랜잭션] MANUAL_PASS_UNTAGGED Tx 발생 및 원장 저장
+    KBTFChain-->>AppServer: 13. 블록 트랜잭션 해시(Tx Hash) 생성 및 감사 보관
+    end
+
+    rect rgb(254, 242, 242)
+    Note over TabletApp,AppServer: [14:00 배식 마감 & 개인정보 보호] In-Memory DB 자동 파기
+    TabletApp->>TabletApp: 14. 14:00 크론/타이머 트리거 (배식 마감 및 TTL 만료)
+    TabletApp->>MemoryDB: 15. In-Memory DB 완전 소멸 (Zero-out RAM & 가비지 컬렉션)
+    MemoryDB-->>TabletApp: 16. 단말 내 잔여 개인정보 0건 확인 (메모리 파기 완료)
+    TabletApp-)AppServer: 17. [비동기 보고] 단말 메모리 파기 감사 로그(WIPE_ACK) 전송
+    Note over TabletApp: 단말기 분실·도난 시에도 입주민 개인정보 유출 0% 원천 차단
+    end
+        </pre>
+      </div>
+    </div>
+
+    <!-- Section 4: Field FAQ & Edge Case Defense -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-6 shadow-soft">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-6 bg-slate-900 rounded-full"></span>
+        <h2 class="text-lg font-extrabold text-slate-900">4. 현장 예외 대응 및 부정 방지 질의응답 (FAQ)</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="font-bold text-slate-900 mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-users text-indigo-600"></i> Q1. 동명이인이 여러 명 검색될 때는 어떻게 하나요?
+          </div>
+          <p class="text-slate-600 leading-relaxed text-[11px]">
+            태블릿 화면에 성함과 함께 <strong>출생년도 및 거주 동/호수(204동 5**호)</strong>가 마스킹 표시되므로, 확인자가 구두로 "몇 동에 사시나요?"라고 여쭈어보고 1초 만에 특정할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="font-bold text-slate-900 mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-key text-amber-600"></i> Q2. 어르신이 생일 4자리를 3회 연속 틀리면 어떻게 되나요?
+          </div>
+          <p class="text-slate-600 leading-relaxed text-[11px]">
+            타인 명의 도용 방지를 위해 즉시 해당 이름에 대한 수동 입력이 5분간 잠기며, 현장 복지사 또는 관리소 직원이 복지 전산망(행복e음 연동 원부)을 통해 대면 신분증 확인을 거친 후 예외 승인합니다.
+          </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="font-bold text-slate-900 mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-ban text-rose-600"></i> Q3. 카드를 두고 왔다며 하루에 두 번 식사하려 하면?
+          </div>
+          <p class="text-slate-600 leading-relaxed text-[11px]">
+            In-Memory DB에 당일 식사 이력이 즉각 반영되므로, 생일 4자리가 맞더라도 "오늘 이미 11:45에 식사하셨습니다"라는 황색 중복 알림이 발생하여 중복 무료 급식이 100% 차단됩니다.
+          </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <div class="font-bold text-slate-900 mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-file-shield text-emerald-600"></i> Q4. 지자체나 감사원이 카드 미태깅 식수를 문제 삼지 않나요?
+          </div>
+          <p class="text-slate-600 leading-relaxed text-[11px]">
+            모든 미지참 건은 <code class="text-indigo-600 font-bold">MANUAL_PASS_UNTAGGED</code> 플래그와 승인자 단말기 ID, 블록체인 트랜잭션 해시가 공증되므로, 감사 시 "정당한 입주 수급자 구제 건"임을 데이터로 완벽 방어합니다.
+          </p>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50 md:col-span-2">
+          <div class="font-bold text-slate-900 mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-rose-600"></i> Q5. 태블릿 단말기가 식당 외부로 유출되거나 분실/도난당하면 수급자 개인정보가 유출되지 않나요?
+          </div>
+          <p class="text-slate-600 leading-relaxed text-[11px]">
+            <strong>절대 유출되지 않습니다. (2중 보안 및 Zero-Footprint 아키텍처)</strong><br/>
+            ① <strong>14:00 배식 마감 자동 파기 (Zero-out RAM):</strong> 매일 점심 배식 마감 시간인 <strong>14:00</strong>가 되면 단말 내부 백그라운드 크론/타이머에 의해 In-Memory DB(수급자 명부 420건)가 RAM 상에서 완전 소멸(Zero-fill 및 GC)되며, 단말기 플래시 스토리지(SSD)에는 영구 저장되지 않습니다.<br/>
+            ② <strong>원격 비상 파기 (Remote Wipe):</strong> 분실 발생 즉시 AppServer 관리자가 단말기 세션 토큰을 폐기하고 원격 파기 명령을 전송하여 단말기 내 모든 임시 캐시를 1초 내 강제 삭제합니다. (개인정보보호법 제21조 및 제29조 안전조치의무 100% 준수)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-slate-400 text-xs mt-8 mb-4">
+      K-BTF 스마트 주거복지 플랫폼 사업단 · 주택관리공단 · 산남종합사회복지관 협력 운영
+    </div>
+
+  </div>
+
+  <!-- Live Simulator Script with Audio Synth -->
+  <script>
+    // Mock Database for In-Memory Simulation
+    const mockDB = [
+      { name: '김철수', choseong: 'ㄱㅊㅅ', birthYear: '1948', birthday: '0514', address: '204동 502호', tier: '생계급여(TIER_A)' },
+      { name: '김춘삼', choseong: 'ㄱㅊㅅ', birthYear: '1948', birthday: '0822', address: '201동 104호', tier: '의료급여(TIER_A)' },
+      { name: '이옥자', choseong: 'ㅇㅇㅈ', birthYear: '1945', birthday: '1103', address: '203동 301호', tier: '차상위계층(TIER_B)' },
+      { name: '박영희', choseong: 'ㅂㅇㅎ', birthYear: '1950', birthday: '0219', address: '202동 708호', tier: '생계급여(TIER_A)' }
+    ];
+
+    let currentDB = [...mockDB];
+    let selectedSenior = null;
+    let enteredPin = '';
+    let isMemoryPurged = false;
+
+    // Web Audio API Ding-Dong Chime Synth
+    function playChime() {
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const now = audioCtx.currentTime;
+        
+        // Tone 1: High Bell
+        const osc1 = audioCtx.createOscillator();
+        const gain1 = audioCtx.createGain();
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(880, now); // A5
+        gain1.gain.setValueAtTime(0.3, now);
+        gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+        osc1.connect(gain1);
+        gain1.connect(audioCtx.destination);
+        osc1.start(now);
+        osc1.stop(now + 0.8);
+
+        // Tone 2: Warm Chime
+        const osc2 = audioCtx.createOscillator();
+        const gain2 = audioCtx.createGain();
+        osc2.type = 'triangle';
+        osc2.frequency.setValueAtTime(1174.66, now + 0.15); // D6
+        gain2.gain.setValueAtTime(0.35, now + 0.15);
+        gain2.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+        osc2.connect(gain2);
+        gain2.connect(audioCtx.destination);
+        osc2.start(now + 0.15);
+        osc2.stop(now + 1.2);
+      } catch (e) {
+        console.log('Audio not supported or allowed', e);
+      }
+    }
+
+    function handleSimSearch() {
+      const list = document.getElementById('simResultList');
+      const count = document.getElementById('simMatchCount');
+
+      if (isMemoryPurged || currentDB.length === 0) {
+        count.innerText = '0건 (메모리 파기됨)';
+        list.innerHTML = '<div class="p-4 text-center text-xs text-rose-500 font-bold bg-rose-50 rounded-xl border border-rose-200">🔒 14:00 배식 마감으로 In-Memory DB가 파기되었습니다.</div>';
+        return;
+      }
+
+      const q = document.getElementById('simSearchInput').value.trim();
+      const matches = currentDB.filter(item => 
+        item.name.includes(q) || item.choseong.includes(q) || item.birthYear.includes(q)
+      );
+
+      count.innerText = matches.length + '건 일치';
+      list.innerHTML = '';
+
+      if (matches.length === 0) {
+        list.innerHTML = '<div class="p-4 text-center text-xs text-slate-400">일치하는 수급자가 없습니다.</div>';
+        return;
+      }
+
+      matches.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'p-3 bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 rounded-xl cursor-pointer transition-all flex items-center justify-between shadow-sm';
+        row.onclick = () => selectSenior(item.name, item.birthYear, item.birthday, item.address);
+        row.innerHTML = `
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 font-extrabold text-xs flex items-center justify-center">
+              ${item.name[0]}
+            </div>
+            <div>
+              <div class="font-extrabold text-xs text-slate-900">${item.name} (${item.birthYear}년생)</div>
+              <div class="text-[10px] text-slate-500">${item.address} · ${item.tier}</div>
+            </div>
+          </div>
+          <span class="px-2 py-1 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded">선택</span>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    function clearSimSearch() {
+      document.getElementById('simSearchInput').value = '';
+      handleSimSearch();
+    }
+
+    function selectSenior(name, birthYear, birthday, address) {
+      if (isMemoryPurged) return;
+      selectedSenior = { name, birthYear, birthday, address };
+      document.getElementById('simSelectedName').innerText = `${name} (${birthYear}년생, ${address})`;
+      document.getElementById('simStep1').classList.add('hidden');
+      document.getElementById('simStep2').classList.remove('hidden');
+      enteredPin = '';
+      updatePinDisplay();
+      document.getElementById('simPinError').innerText = '';
+    }
+
+    function backToStep1() {
+      document.getElementById('simStep2').classList.add('hidden');
+      document.getElementById('simStep1').classList.remove('hidden');
+    }
+
+    function pressPin(digit) {
+      if (enteredPin.length < 4) {
+        enteredPin += digit;
+        updatePinDisplay();
+        if (enteredPin.length === 4) {
+          verifyEnteredPin();
+        }
+      }
+    }
+
+    function deletePin() {
+      if (enteredPin.length > 0) {
+        enteredPin = enteredPin.slice(0, -1);
+        updatePinDisplay();
+        document.getElementById('simPinError').innerText = '';
+      }
+    }
+
+    function clearPin() {
+      enteredPin = '';
+      updatePinDisplay();
+      document.getElementById('simPinError').innerText = '';
+    }
+
+    function updatePinDisplay() {
+      for (let i = 0; i < 4; i++) {
+        const span = document.getElementById('pin' + i);
+        if (i < enteredPin.length) {
+          span.innerText = '●';
+          span.className = 'w-10 h-12 bg-indigo-50 border-2 border-indigo-600 rounded-lg flex items-center justify-center text-xl font-bold font-mono text-indigo-700 shadow-sm';
+        } else {
+          span.innerText = '-';
+          span.className = 'w-10 h-12 bg-white border-2 border-slate-300 rounded-lg flex items-center justify-center text-xl font-bold font-mono text-slate-400 shadow-sm';
+        }
+      }
+    }
+
+    function verifyEnteredPin() {
+      if (enteredPin === selectedSenior.birthday) {
+        // Success
+        playChime();
+        document.getElementById('simStep2').classList.add('hidden');
+        document.getElementById('simStep3').classList.remove('hidden');
+        document.getElementById('simApprovedName').innerText = `${selectedSenior.name} 어르신 (${selectedSenior.birthYear}년생)`;
+      } else {
+        // Error
+        document.getElementById('simPinError').innerText = '⚠️ 생일 4자리가 일치하지 않습니다. 다시 눌러주세요.';
+        enteredPin = '';
+        setTimeout(updatePinDisplay, 600);
+      }
+    }
+
+    function resetSimulator() {
+      if (isMemoryPurged) {
+        document.getElementById('simPurgedView').classList.remove('hidden');
+        return;
+      }
+      document.getElementById('simStep3').classList.add('hidden');
+      document.getElementById('simStep1').classList.remove('hidden');
+      clearSimSearch();
+    }
+
+    // 14:00 Mealtime Expire: In-Memory DB Auto-Purge Trigger
+    function triggerAutoPurge() {
+      isMemoryPurged = true;
+      currentDB = []; // Zero-out RAM
+
+      // Update Toolbar Controls
+      document.getElementById('btnTriggerPurge').classList.add('hidden');
+      document.getElementById('btnRearmSync').classList.remove('hidden');
+      const badge = document.getElementById('simCurrentStatusBadge');
+      badge.innerText = '14:00 배식 마감 (DB 파기 완료)';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-200';
+
+      // Update Tablet Screen Header & Footer
+      document.getElementById('simTime').innerText = '2026-09-29 14:00:00 (배식 마감)';
+      document.getElementById('simStatusDot').className = 'w-2.5 h-2.5 rounded-full bg-rose-500';
+      document.getElementById('simFooterStatus').innerText = '단말 상태: In-Memory DB 파기 완료 (0 records)';
+      
+      // Switch view to Purged Screen
+      document.getElementById('simStep1').classList.add('hidden');
+      document.getElementById('simStep2').classList.add('hidden');
+      document.getElementById('simStep3').classList.add('hidden');
+      document.getElementById('simPurgedView').classList.remove('hidden');
+    }
+
+    // 11:00 Prefetch: Re-arm and Sync DB from PostgreSQL
+    function rearmPrefetch() {
+      isMemoryPurged = false;
+      currentDB = [...mockDB]; // Re-fetch 420 records into RAM
+
+      // Update Toolbar Controls
+      document.getElementById('btnRearmSync').classList.add('hidden');
+      document.getElementById('btnTriggerPurge').classList.remove('hidden');
+      const badge = document.getElementById('simCurrentStatusBadge');
+      badge.innerText = '배식 진행 중 (11:30~13:30)';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200';
+
+      // Update Tablet Screen Header & Footer
+      document.getElementById('simTime').innerText = '2026-09-29 12:15:30';
+      document.getElementById('simStatusDot').className = 'w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse';
+      document.getElementById('simFooterStatus').innerText = '단말 상태: 정상 (In-Memory Sync OK · 420건 활성)';
+
+      // Switch view back to Step 1
+      document.getElementById('simPurgedView').classList.add('hidden');
+      document.getElementById('simStep2').classList.add('hidden');
+      document.getElementById('simStep3').classList.add('hidden');
+      document.getElementById('simStep1').classList.remove('hidden');
+      document.getElementById('simSearchInput').value = 'ㄱㅊㅅ';
+      handleSimSearch();
+    }
+  </script>
+</body>
+</html>

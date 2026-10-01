@@ -1,0 +1,79 @@
+# ==============================================================================
+# mywork Repository .gitignore
+# GitHub 용량 초과 방지 및 보안/임시 파일 자동 제외 설정
+# ==============================================================================
+
+# 1. 대용량 패키지 및 설치 파일 (GitHub 50MB/100MB 차단 방지)
+*.deb
+*.rpm
+*.pkg
+*.exe
+*.msi
+*.dmg
+*.AppImage
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+*.iso
+
+# 2. 동영상 및 대용량 미디어 파일
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+
+# 3. 파이썬 가상환경 및 캐시 파일
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+.eggs/
+
+# 4. Node.js 및 빌드 아티팩트
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# 5. OS 및 IDE 임시 파일
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-workspace
+
+# 6. 보안 및 민감 정보 (API 키, 인증서 등)
+.env
+*.env.*
+*.pem
+*.key
+*.cert
+*.pfx
+secrets/
+id_rsa
+id_rsa.pub
+
+# 7. 기타 대용량 데이터베이스 및 덤프 파일
+*.dump
+*.sql.gz
+*.h5
+*.ckpt
+*.safetensors
+*.onnx
