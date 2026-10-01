@@ -77,3 +77,5 @@ id_rsa.pub
 *.ckpt
 *.safetensors
 *.onnx
+gov_pj/
+kbtf/
