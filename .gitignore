@@ -78,4 +78,3 @@ id_rsa.pub
 *.safetensors
 *.onnx
 gov_pj/
-kbtf/

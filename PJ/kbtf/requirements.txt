@@ -1,0 +1,2 @@
+# K-BTF Stage 1 Serverless Dependencies
+# Pure Python Standard Library (Zero-Dependency) for maximum reliability and instant cold-start
