@@ -1,0 +1,1493 @@
+/* ==========================================================================
+   우리단지 ON (Our Village ON) - PWA Design System
+   K-BTF Blockchain DID Smart Housing & Co-production Platform
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --primary-border: #bfdbfe;
+  
+  --secondary: #0f172a;
+  --surface: #ffffff;
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  
+  --text-main: #0f172a;
+  --text-sub: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --warning: #d97706;
+  --warning-light: #fef3c7;
+  --danger: #dc2626;
+  --danger-light: #fee2e2;
+  --purple: #7c3aed;
+  --purple-light: #f3e8ff;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Senior Friendly Typography Base */
+  --base-font-size: 16px;
+  --title-font-size: 20px;
+  --hero-font-size: 26px;
+  --btn-padding: 14px 20px;
+}
+
+/* Senior Accessibility Font Scalers */
+body.font-large {
+  --base-font-size: 19px;
+  --title-font-size: 24px;
+  --hero-font-size: 30px;
+  --btn-padding: 16px 24px;
+}
+
+body.font-xlarge {
+  --base-font-size: 22px;
+  --title-font-size: 28px;
+  --hero-font-size: 36px;
+  --btn-padding: 18px 28px;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+  --background: #000000;
+  --surface: #121212;
+  --card-bg: #1e1e1e;
+  --text-main: #ffffff;
+  --text-sub: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --border: #475569;
+  --primary-light: #1e293b;
+  --primary-border: #3b82f6;
+  --success-light: #064e3b;
+  --warning-light: #78350f;
+  --danger-light: #7f1d1d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  font-size: var(--base-font-size);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+#app-container {
+  width: 100%;
+  max-width: 520px;
+  min-height: 100vh;
+  background: var(--surface);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  #app-container.admin-expanded {
+    max-width: 1100px;
+  }
+}
+
+/* Top Accessibility & Header */
+.top-accessibility-bar {
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85em;
+}
+
+.senior-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pill-sm {
+  background: #334155;
+  color: #fff;
+  border: 1px solid #475569;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.8em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-pill-sm.active, .btn-pill-sm:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.install-pwa-bar {
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  color: white;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9em;
+  box-shadow: var(--shadow-sm);
+}
+
+.install-btn {
+  background: #ffffff;
+  color: #1d4ed8;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+.app-header {
+  padding: 16px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-badge-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.logo-text h1 {
+  font-size: 1.15em;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.logo-sub {
+  font-size: 0.75em;
+  color: var(--primary);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.kbtf-tag {
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7em;
+  font-weight: 800;
+}
+
+/* User Switcher Dropdown */
+.user-select-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Tab Panes */
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Common Cards */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  font-size: var(--title-font-size);
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   1. Resident DID Card Component (투트랙 모바일 안심 주민증)
+   ========================================================================== */
+.resident-id-card {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 24px -6px rgba(37, 99, 235, 0.4);
+  margin-bottom: 20px;
+}
+
+.resident-id-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.id-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.id-card-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.id-card-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.id-photo-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+.id-info h2 {
+  font-size: var(--hero-font-size);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.id-address {
+  font-size: 1.05em;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.id-did-code {
+  font-family: monospace;
+  font-size: 0.75em;
+  opacity: 0.8;
+  word-break: break-all;
+  background: rgba(0,0,0,0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+
+.id-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.id-btn {
+  background: #ffffff;
+  color: #1e40af;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--btn-padding);
+  font-weight: 800;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s, background-color 0.2s;
+}
+
+.id-btn:active {
+  transform: scale(0.97);
+}
+
+.id-btn.btn-nfc-active {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+/* Two Track Selector Switch */
+.two-track-switch {
+  display: flex;
+  background: #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-bottom: 16px;
+}
+
+.two-track-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--text-sub);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.two-track-btn.active {
+  background: #ffffff;
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   2. Vital Signal & Cafeteria (생존신호 & 경로식당 출석)
+   ========================================================================== */
+.vital-status-card {
+  background: var(--success-light);
+  border: 2px solid var(--success);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vital-status-card.warning {
+  background: var(--warning-light);
+  border-color: var(--warning);
+}
+
+.vital-status-card.danger {
+  background: var(--danger-light);
+  border-color: var(--danger);
+}
+
+.vital-icon-pulse {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--success);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.vital-info h3 {
+  font-size: 1.1em;
+  font-weight: 800;
+  color: #14532d;
+}
+
+.vital-info p {
+  font-size: 0.9em;
+  color: #166534;
+  margin-top: 2px;
+}
+
+.meal-menu-card {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.meal-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.meal-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meal-badge {
+  background: #ffffff;
+  border: 1px solid #fcd34d;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #92400e;
+}
+
+/* ==========================================================================
+   3. Time Credit Wallet (시간크레딧 / 상생경제)
+   ========================================================================== */
+.credit-hero-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.credit-balance-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 12px 0 8px;
+}
+
+.credit-number {
+  font-size: 2.4em;
+  font-weight: 900;
+  color: #38bdf8;
+  letter-spacing: -1px;
+}
+
+.credit-unit {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.safe-badge-pill {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+  font-size: 0.8em;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Job & Store Grid */
+.job-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  transition: border-color 0.2s;
+}
+
+.job-item:hover {
+  border-color: var(--primary);
+}
+
+.job-meta h4 {
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.job-reward {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.9em;
+}
+
+.btn-action-sm {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   4. One-Touch Urgent SOS (원터치 긴급 SOS 비상벨)
+   ========================================================================== */
+.sos-container {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.sos-huge-btn {
+  width: 220px;
+  height: 220px;
+  margin: 16px auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ef4444 0%, #dc2626 70%, #991b1b 100%);
+  color: white;
+  border: 8px solid rgba(254, 202, 202, 0.6);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5), inset 0 -8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  animation: pulse-sos 2.5s infinite;
+}
+
+.sos-huge-btn:active {
+  transform: scale(0.92);
+}
+
+@keyframes pulse-sos {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.03); box-shadow: 0 0 0 24px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.sos-btn-icon {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.sos-btn-label {
+  font-size: 1.6em;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+
+.sos-guide-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  color: #991b1b;
+  font-size: 0.9em;
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   5. Integrated Management Dashboard (통합 관제 센터)
+   ========================================================================== */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stat-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-box.safe { border-top: 4px solid var(--success); }
+.stat-box.warn { border-top: 4px solid var(--warning); }
+.stat-box.danger { border-top: 4px solid var(--danger); }
+
+.stat-value {
+  font-size: 1.4em;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.danger-unit-item {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-danger-outline {
+  background: #ffffff;
+  color: #e11d48;
+  border: 1px solid #e11d48;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+.btn-danger-outline:hover {
+  background: #e11d48;
+  color: white;
+}
+
+/* ==========================================================================
+   6. Edeum-Chat AI (이듬챗 AI 어르신 말벗 도우미)
+   ========================================================================== */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 520px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f8fafc;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.95em;
+  line-height: 1.4;
+  position: relative;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: var(--text-main);
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-quick-tags {
+  padding: 8px 12px;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  background: #f1f5f9;
+  border-top: 1px solid var(--border);
+}
+
+.quick-tag {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8em;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.chat-input-row {
+  padding: 10px 14px;
+  display: flex;
+  gap: 8px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.95em;
+  outline: none;
+}
+
+.chat-input:focus {
+  border-color: var(--primary);
+}
+
+.chat-send-btn {
+  width: 42px;
+  height: 42px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* ==========================================================================
+   Bottom Navigation Bar
+   ========================================================================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 4px 10px;
+  z-index: 50;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 1024px) {
+  .bottom-nav.admin-expanded {
+    max-width: 1100px;
+  }
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.72em;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-item.active .nav-icon {
+  transform: translateY(-2px);
+}
+
+.nav-icon {
+  font-size: 22px;
+  transition: transform 0.2s;
+}
+
+.nav-item.nav-sos {
+  color: var(--danger);
+}
+
+.nav-item.nav-sos.active {
+  color: #b91c1c;
+}
+
+/* ==========================================================================
+   Modals & Popups
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+  box-shadow: var(--shadow-xl);
+  animation: modalScale 0.2s ease-out forwards;
+}
+
+@keyframes modalScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-size: 1.25em;
+  font-weight: 800;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/* SOS Countdown Special Modal */
+.sos-modal-box {
+  background: #fef2f2;
+  border: 3px solid #ef4444;
+  text-align: center;
+}
+
+.countdown-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #dc2626;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: 900;
+  margin: 16px auto;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+  animation: pulse-countdown 1s infinite;
+}
+
+@keyframes pulse-countdown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  background: #1e293b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.9em;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: toastIn 0.3s ease-out forwards;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Top 3 Asymmetric Customizable Feature Grid
+   ========================================================================== */
+.top3-section {
+  margin-bottom: 18px;
+}
+
+.top3-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.top3-title {
+  font-size: 0.95em;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-main);
+}
+
+.btn-customize-top3 {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-sub);
+  font-size: 0.75em;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.btn-customize-top3:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary-border);
+}
+
+/* 50% Left (Top 1) & 50% Right Top/Bottom (Top 2 & Top 3) */
+.top3-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+}
+
+.top3-card {
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.top3-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.top3-card:active {
+  transform: scale(0.98);
+}
+
+.top3-card.top1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  background: linear-gradient(145deg, #1d4ed8, #2563eb);
+  color: #ffffff;
+}
+
+.top3-card.top2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background: linear-gradient(145deg, #b45309, #d97706);
+  color: #ffffff;
+}
+
+.top3-card.top3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: linear-gradient(145deg, #6d28d9, #7c3aed);
+  color: #ffffff;
+}
+
+.top3-rank-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.7em;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.top3-icon {
+  font-size: 26px;
+}
+
+.top3-card.top1 .top3-icon {
+  font-size: 36px;
+  margin: 6px 0;
+}
+
+.top3-label {
+  font-size: 1.05em;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.top3-card.top1 .top3-label {
+  font-size: 1.2em;
+}
+
+.top3-desc {
+  font-size: 0.78em;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Anabada Market (아나바다 장터 - 햇살머니 전용)
+   ========================================================================== */
+.market-banner {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.market-banner-text {
+  font-size: 0.85em;
+  color: #92400e;
+  line-height: 1.45;
+}
+
+.market-filter-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.market-filter-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--text-sub);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.market-filter-btn.active {
+  background: #d97706;
+  color: white;
+  border-color: #d97706;
+  box-shadow: var(--shadow-sm);
+}
+
+.market-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.market-item-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.market-item-card:hover {
+  border-color: #f59e0b;
+  box-shadow: var(--shadow-md);
+}
+
+.market-item-thumb {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  flex-shrink: 0;
+}
+
+.market-item-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.market-item-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.market-item-title {
+  font-size: 0.98em;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.market-type-tag {
+  font-size: 0.7em;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.market-type-used { background: #e0f2fe; color: #0369a1; }
+.market-type-free { background: #dcfce7; color: #15803d; }
+.market-type-group { background: #fef3c7; color: #b45309; }
+
+.market-item-meta {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.market-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.market-price {
+  font-size: 1.15em;
+  font-weight: 900;
+  color: #d97706;
+}
+
+.market-price-free {
+  font-size: 1.05em;
+  font-weight: 900;
+  color: #16a34a;
+}
+
+/* ==========================================================================
+   Senior Career Advisor (시니어 커리어 어드바이저)
+   ========================================================================== */
+.advisor-hero-banner {
+  background: linear-gradient(135deg, #2e1065 0%, #4c1d95 60%, #6d28d9 100%);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-md);
+}
+
+.advisor-domain-scroller {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+}
+
+.domain-pill-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 7px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.82em;
+  font-weight: 700;
+  color: var(--text-sub);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.domain-pill-btn.active {
+  background: #7c3aed;
+  color: white;
+  border-color: #7c3aed;
+  box-shadow: var(--shadow-sm);
+}
+
+.advisor-search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.advisor-input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.9em;
+  outline: none;
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+
+.advisor-input:focus {
+  border-color: #7c3aed;
+}
+
+.advisor-card-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+
+.advisor-card-item:hover {
+  border-color: #7c3aed;
+  box-shadow: var(--shadow-md);
+}
+
+.advisor-profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.advisor-avatar-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.advisor-avatar-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f3e8ff;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.advisor-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.adv-keyword-tag {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.74em;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.adv-project-box {
+  background: #faf5ff;
+  border: 1px solid #f3e8ff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 10px 0;
+  font-size: 0.85em;
+  color: #581c87;
+}
+
+.adv-rate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* Contract & Escrow Preview */
+.contract-clause-box {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  font-size: 0.82em;
+  color: var(--text-sub);
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.contract-clause-box strong {
+  color: var(--text-main);
+}
+
+/* Modal Form Controls */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85em;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 0.9em;
+  background: var(--surface);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+}
+
+.form-hint {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Bottom Nav scroll styling for 8 tabs */
+.bottom-nav {
+  gap: 2px;
+  padding: 6px 2px;
+}
+
+.nav-item {
+  padding: 3px 4px;
+  font-size: 0.68em;
+  min-width: 48px;
+}
+
+.nav-icon {
+  font-size: 19px;
+}
+
