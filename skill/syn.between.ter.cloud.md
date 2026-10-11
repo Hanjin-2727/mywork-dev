@@ -22,7 +22,7 @@ flowchart TD
     subgraph NonDevTrack ["🏛️ 2. Google Cloud (Non-Dev) 트랙 : 정부과제/문서 워크스페이스"]
         G_Local["📂 ~/mywork-gov\n(gov_pj, kbtf, HWP, PPTX, PDF, 이미지)"]
         G_Cloud["☁️ Google Drive (dmeta.2727@gmail.com / mywork-gov)\n- 정부 R&D 보안/대외비 준수\n- 대용량 바이너리 보관 & 모바일 열람"]
-        G_Local <== "save / load (Rclone Sync)" ==> G_Cloud
+        G_Local <== "save / load (Rclone Copy 안전 백업)" ==> G_Cloud
     end
 
     User --> DevTrack
@@ -34,9 +34,9 @@ flowchart TD
 | 항목 | 🚀 1. Git (Dev) | 🏛️ 2. Google Cloud (Non-Dev) |
 | :--- | :--- | :--- |
 | **로컬 디렉터리** | **`~/mywork-dev`** | **`~/mywork-gov`** |
-| **원격 클라우드** | **GitHub (`hanjin-2727/mywork-dev`)** | **Google Drive (`dmeta.2727@gmail.com / mywork-gov`)** |
+| **원격 클라우드** | **GitHub (`hanjin-2727/mywork-dev`)** | **Google Drive (`dmeta.2727@gmail.com / mywork-gov`)**<br>- 백업 폴더: `mywork-gov-backup` (`a_(날짜).doc`) |
 | **대상 파일** | `.py`, `.js`, `.html`, `.sh`, 소스코드 전체 | `.hwp`, `.pptx`, `.xlsx`, `.pdf`, 고해상도 이미지 |
-| **동기화 엔진** | **Git (SSH 프로토콜)** | **Rclone (Google Drive API)** |
+| **동기화 엔진** | **Git (SSH 프로토콜)** | **Rclone Copy (단말 간 삭제/덮어쓰기 방지 버전 백업)** |
 | **전용 명령어** | `dev-save` / `dev-load` | `gov-save` / `gov-load` |
 | **스마트 명령어** | 폴더 안에서 **`save`** / **`load`** 치면 자동 감지 | 폴더 안에서 **`save`** / **`load`** 치면 자동 감지 |
 
@@ -106,7 +106,7 @@ rclone config
 mkdir -p ~/mywork-gov
 
 # 구글 드라이브의 mywork-gov 폴더 내용 전체 최초 다운로드
-rclone sync gdrive:mywork-gov ~/mywork-gov -P
+rclone copy gdrive:mywork-gov ~/mywork-gov -P
 ```
 
 ---
@@ -137,17 +137,32 @@ function dev-load() {
     echo "✅ [GitHub] 개발 워크스페이스 최신화 완료!"
 }
 
-# [Track 2: Google Drive] 정부과제 워크스페이스 명시적 동기화
+# [Track 2: Google Drive] 정부과제 워크스페이스 명시적 동기화 (안전 버전 백업 모드)
 function gov-save() {
-    echo "☁️ [Google Drive] ~/mywork-gov -> 구글 드라이브(dmeta.2727@gmail.com) 업로드 동기화 중..."
-    rclone sync ~/mywork-gov gdrive:mywork-gov -P --stats-one-line
-    echo "✅ [Google Drive] 정부과제 업로드 동기화 완료!"
+    local suffix="_($(date +'%Y%m%d_%H%M%S'))"
+    echo "☁️ [Google Drive] ~/mywork-gov -> 구글 드라이브(dmeta.2727@gmail.com) 안전 백업/업로드 중..."
+    # 1. copy -u: 단말 간 파일 삭제 방지
+    # 2. --backup-dir & --suffix: 기존 동일 파일 존재 시 이전 버전을 a_(날짜시간).doc 형태로 mywork-gov-backup에 자동 누적 보존
+    if rclone copy ~/mywork-gov gdrive:mywork-gov \
+        --backup-dir gdrive:mywork-gov-backup \
+        --suffix "$suffix" \
+        --suffix-keep-extension \
+        -P --stats-one-line -u; then
+        echo "✅ [Google Drive] 정부과제 안전 백업 완료! (덮어쓰기 방지: 이전 버전은 mywork-gov-backup에 보존)"
+    else
+        echo "❌ [Google Drive] 정부과제 백업 실패! 에러를 확인해주세요."
+        return 1
+    fi
 }
 
 function gov-load() {
-    echo "☁️ [Google Drive] 구글 드라이브(dmeta.2727@gmail.com) -> ~/mywork-gov 다운로드 동기화 중..."
-    rclone sync gdrive:mywork-gov ~/mywork-gov -P --stats-one-line
-    echo "✅ [Google Drive] 정부과제 최신화 완료!"
+    echo "☁️ [Google Drive] 구글 드라이브(dmeta.2727@gmail.com) -> ~/mywork-gov 최신 문서 다운로드 중..."
+    if rclone copy gdrive:mywork-gov ~/mywork-gov -P --stats-one-line -u; then
+        echo "✅ [Google Drive] 최신 문서 가져오기 완료!"
+    else
+        echo "❌ [Google Drive] 최신 문서 가져오기 실패! 에러를 확인해주세요."
+        return 1
+    fi
 }
 
 # [Smart Auto-Detect] 현재 위치에 따라 자동 판별
@@ -202,17 +217,17 @@ sequenceDiagram
     Note over Me,GD: [정부과제 / 문서 작업 시]
     Me->>Gov: cd ~/mywork-gov
     Me->>Gov: load (최신 문서 당겨오기)
-    Gov->>GD: rclone sync (Download)
+    Gov->>GD: rclone copy (Download)
     Note over Gov: 제안서/PPTX/보고서 작성...
-    Me->>Gov: save (1초 자동 백업)
-    Gov->>GD: rclone sync (Upload)
+    Me->>Gov: save (1초 안전 백업)
+    Gov->>GD: rclone copy (Upload / 누적 보존)
 ```
 
 ### 📋 빠른 사용 요약표
 | 작업 대상 | 작업 시작할 때 | 작업 마칠 때 | 비고 |
 | :--- | :---: | :---: | :--- |
 | **코드 개발** (`cd ~/mywork-dev`) | **`load`** | **`save`** | 🐙 GitHub 자동 연동 (1초 컷) |
-| **정부과제/문서** (`cd ~/mywork-gov`) | **`load`** | **`save`** | ☁️ Google Drive 자동 연동 (180MB+ 지원) |
+| **정부과제/문서** (`cd ~/mywork-gov`) | **`load`** | **`save`** | ☁️ Google Drive 버전 백업 (동일 파일은 `a_(날짜).ext`로 자동 보존) |
 
 *(어느 폴더에 있든 상관없이 언제든지 `dev-save`, `dev-load`, `gov-save`, `gov-load`를 직접 입력할 수도 있습니다.)*
 
@@ -231,4 +246,11 @@ sequenceDiagram
 
 ### Q3. 실수로 파일을 덮어쓰거나 지웠을 때는 어떻게 복구하나요?
 * **Git (Dev)**: Git 히스토리에 모든 시점이 기록되어 있으므로 `git checkout` 또는 `git reset`으로 특정 시간대 코드로 언제든 롤백 가능.
-* **Google Cloud (Non-Dev)**: 구글 드라이브 웹에서 파일 우클릭 ➡️ **[버전 관리]**로 이전 버전 복구 가능, 삭제된 파일은 **[휴지통]**에서 30일간 원클릭 복구 가능.
+* **Google Cloud (Non-Dev)**: 구글 드라이브 웹에서 파일 우클릭 ➡️ **[버전 관리]**로 이전 버전 복구 가능, 삭제된 파일은 **[휴지통]**에서 30일간 원클릭 복구 가능. 또한 변경 전 파일들이 `mywork-gov-backup` 폴더에 `a_(날짜).doc` 형태로 자동 보존되어 있습니다.
+
+### Q4. 단말1에서 작업 후 save하고, 단말2에서 load 없이 같은 이름의 파일(예: a.doc)을 작업 후 save하면 어떻게 되나요?
+* **A**: **기존 단말1 파일이 절대 덮어써지지 않고 `a_(날짜_시간).doc` 형태로 백업 폴더에 안전하게 보존됩니다.**
+* 본 시스템은 `--backup-dir gdrive:mywork-gov-backup` 및 `--suffix`, `--suffix-keep-extension` 옵션을 적용하여:
+  1. `gdrive:mywork-gov` 작업 폴더에는 항상 최신 수정본이 반영됩니다.
+  2. 덮어써질 위험이 있는 이전 작업물은 구글 드라이브 내 `mywork-gov-backup` 폴더로 자동 이동되며, **`a_(20261003_070305).doc`**처럼 확장자 앞에 타임스탬프 번호가 붙어 영구 보존됩니다.
+* 따라서 단말1과 단말2에서 같은 이름의 파일을 작업하더라도 과거 작업 이력이 손실 없이 완벽히 유지됩니다.

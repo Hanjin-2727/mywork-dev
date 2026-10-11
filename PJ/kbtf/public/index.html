@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-BTF 스마트 주거복지 플랫폼 (CSAP '하' Zero-PII)</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%22100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo-group">
+        <h1><span>🏛️</span> K-BTF 스마트 주거복지 플랫폼</h1>
+        <div class="subtitle">우리단지 ON 연계 취약계층 비접촉 자격인증 및 CSAP '하' 등급 Zero-PII 아키텍처</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-csap">🛡️ CSAP '하' Zero-PII</span>
+        <span class="badge badge-stage">🚀 Stage 1: Vercel Live Preview</span>
+        <span class="badge badge-chain">⛓️ Mock Ledger Engine Active</span>
+      </div>
+    </header>
+
+    <!-- Top KPI Metrics -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">활성 Custodial DID 지갑</div>
+        <div class="stat-value" id="kpi-wallets">3<span class="stat-unit">개</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">발급된 익명 VC 풀 (14일)</div>
+        <div class="stat-value" id="kpi-vcs">3<span class="stat-unit">건</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">당일 배식 정상 승인</div>
+        <div class="stat-value" id="kpi-meals" style="color: #34d399;">0<span class="stat-unit">건</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">실시간 부정/중복 차단</div>
+        <div class="stat-value" id="kpi-blocked" style="color: #f59e0b;">0<span class="stat-unit">건</span></div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab-tagging">
+        <span>📟</span> 1. 경로식당 원터치 태깅 (0.05초 선확인)
+      </button>
+      <button class="tab-btn" data-tab="tab-rescue">
+        <span>📱</span> 2. 카드 미지참자 에지 Wi-Fi 구제 (모바일)
+      </button>
+      <button class="tab-btn" data-tab="tab-duplicate">
+        <span>🚫</span> 3. 부정/중복 수령 실시간 차단
+      </button>
+      <button class="tab-btn" data-tab="tab-anchor">
+        <span>⛓️</span> 4. 18시 온체인 앵커링 & 정부 실적 원장
+      </button>
+    </div>
+
+    <!-- TAB 1: 경로식당 원터치 태깅 -->
+    <div class="tab-pane active" id="tab-tagging">
+      <div class="card-grid">
+        <div class="panel-card">
+          <h2><span>📟</span> 경로식당 센스 단말 조작부</h2>
+          <div class="form-group">
+            <label for="select-resident">태깅할 어르신 NFC 목걸이 카드 선택:</label>
+            <select id="select-resident">
+              <option value="04:A1:B2:C3:D4:E5:01" data-type="MEAL">김만석 어르신 (101동 1204호 / 현장식사 대상)</option>
+              <option value="04:B2:C3:D4:E5:F6:02" data-type="BENTO">이영자 어르신 (102동 305호 / 도시락 수령 대상)</option>
+              <option value="04:C3:D4:E5:F6:07:03" data-type="MEAL">박철수 어르신 (103동 708호 / 현장식사 대상)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="select-sensor">배식 센서 라인 선택:</label>
+            <select id="select-sensor">
+              <option value="SENSOR_MEAL_01">Line 1: 현장식사 배식구 (SENSOR_MEAL_01)</option>
+              <option value="SENSOR_BENTO_02">Line 2: 도시락 배부처 (SENSOR_BENTO_02)</option>
+            </select>
+          </div>
+
+          <!-- NFC 태깅 패드 -->
+          <div class="nfc-pad-container" id="nfc-trigger-pad">
+            <div class="nfc-ripple-target">📡</div>
+            <div style="margin-top: 12px; font-weight: 700; font-size: 1.05rem;">[NFC 원터치 태깅 클릭]</div>
+            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">센서에 카드를 터치하여 0.05초 초고속 통과를 체험하세요</div>
+          </div>
+
+          <div class="status-indicator">
+            <div class="led-light" id="reader-led"></div>
+            <span id="speaker-text">대기 중: 카드를 터치해 주세요.</span>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h2><span>🔍</span> 실시간 검증 트랜잭션 모니터 (Zero-PII)</h2>
+          <div style="margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted);">
+            클라우드로 전송된 비식별 난수 페이로드 및 Verifier 암호 검증 응답:
+          </div>
+          <div class="console-viewer" id="tagging-console">// 대기 중... NFC 카드를 태깅하면 실시간 암호 검증 결과가 출력됩니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: 미지참자 에지 Wi-Fi 구제 (모바일 뷰) -->
+    <div class="tab-pane" id="tab-rescue">
+      <div class="card-grid">
+        <div class="panel-card">
+          <h2><span>📱</span> 현장 공익요원/관리자 스마트폰 뷰 (192.168.0.x 에지 사설망)</h2>
+          <div class="mobile-mockup">
+            <div class="mobile-notch"></div>
+            <div style="text-align: center; font-size: 0.8rem; color: #34d399; margin-bottom: 12px; font-weight: 600;">
+              🔒 로컬 에어갭 폐쇄망 연결됨 (192.168.0.50:8000)
+            </div>
+            <div class="form-group">
+              <label for="rescue-dong">동 (Building):</label>
+              <input type="text" id="rescue-dong" value="101동" placeholder="예: 101동">
+            </div>
+            <div class="form-group">
+              <label for="rescue-ho">호수 (Room):</label>
+              <input type="text" id="rescue-ho" value="1204호" placeholder="예: 1204호">
+            </div>
+            <div class="form-group">
+              <label for="rescue-birth">생년월일 6자리 (YYMMDD):</label>
+              <input type="text" id="rescue-birth" value="480514" placeholder="예: 480514">
+            </div>
+            <button class="btn btn-primary" id="btn-rescue-search" style="margin-bottom: 12px;">
+              <span>🔎</span> 1단계: 로컬 명부 구두 확인
+            </button>
+
+            <!-- 매핑 결과 표시 영역 -->
+            <div id="rescue-result-box" style="display: none; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 12px;">
+              <div style="font-size: 0.85rem; color: var(--text-muted);">거주자 확인 완료 (초성 보호):</div>
+              <div style="font-size: 1.2rem; font-weight: 800; color: #fbbf24; margin: 4px 0;" id="rescue-masked-name">ㄱㅁㅅ</div>
+              <div style="font-size: 0.75rem; color: var(--text-dim);">매핑 UID: <span id="rescue-uid-text">-</span></div>
+              <button class="btn btn-primary" id="btn-rescue-approve" style="margin-top: 10px; background: #10b981;">
+                <span>✅</span> 2단계: 배식 승인 (Zero-PII 전송)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h2><span>🛡️</span> 사설망 에어갭(Air-Gap) 보안 증빙</h2>
+          <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
+            <p><strong>• 국정원 보안성 검토 완벽 통과:</strong></p>
+            <p>1. 어르신의 구두 진술(동호수, 생년월일) 검색 트래픽은 관리사무소 로컬 Wi-Fi 사설망 내부에서만 완결 처리됩니다.</p>
+            <p>2. 외부 인터넷(WAN)으로는 어떠한 인적사항도 나가지 않으며, <strong>치환된 익명 난수 UID 1건만 전송</strong>되므로 CSAP '하' 등급이 100% 유지됩니다.</p>
+          </div>
+          <div class="console-viewer" id="rescue-console">// 미지참자 구두 확인 로그가 여기에 기록됩니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: 중복/부정 수령 실시간 차단 -->
+    <div class="tab-pane" id="tab-duplicate">
+      <div class="card-grid">
+        <div class="panel-card">
+          <h2><span>🚫</span> 당일 중복 수령 상호배제 시나리오 테스트</h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+            동일인이 동일 일자에 <strong>현장식사(Line 1)</strong>를 이미 마친 뒤, 30분 후 <strong>도시락 배부처(Line 2)</strong>에서 카드를 다시 태깅할 때의 실시간 차단 메커니즘을 테스트합니다.
+          </p>
+          <div class="form-group">
+            <button class="btn btn-primary" id="btn-sim-meal" style="margin-bottom: 12px;">
+              <span>🍱</span> [1단계] 김만석 어르신 현장식사(Line 1) 완료 처리
+            </button>
+            <button class="btn btn-danger" id="btn-sim-bunker">
+              <span>⚠️</span> [2단계] 동일 카드로 도시락(Line 2) 중복 수령 시도
+            </button>
+          </div>
+          <div class="status-indicator">
+            <div class="led-light" id="bunker-led"></div>
+            <span id="bunker-speaker-text">테스트 대기 중</span>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h2><span>📋</span> Verifier 실시간 판정 원장</h2>
+          <div class="console-viewer" id="bunker-console">// 중복 차단 결과 JSON이 여기에 출력됩니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: 18시 온체인 앵커링 & 정부 실적 원장 -->
+    <div class="tab-pane" id="tab-anchor">
+      <div class="card-grid">
+        <div class="panel-card">
+          <h2><span>⛓️</span> 일일 18시 온체인 배치 앵커러 제어</h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+            매일 18시 당일 발생한 전체 식사 인증 트랜잭션을 Merkle Root 해시로 압축하여 K-BTF 원장에 공증하고, 7일이 경과한 상세 시계열 로그를 자동 영구 파기합니다.
+          </p>
+          <button class="btn btn-primary" id="btn-run-anchor">
+            <span>⚡</span> [일일 18시 배치 앵커링 즉시 실행]
+          </button>
+          <div style="margin-top: 18px; font-size: 0.85rem; color: var(--text-muted);">
+            * Stage 1: 모의(Mock) 암호학적 머클루트 해시 계산 및 가상 블록체인 트랜잭션 해시 증빙 발급.
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <h2><span>📜</span> 블록체인 영구 공증 영수증 (Notarization Receipt)</h2>
+          <div class="console-viewer" id="anchor-console">// 앵커링 영수증이 여기에 출력됩니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Transaction History Table -->
+    <div class="panel-card" style="margin-top: 28px;">
+      <h2><span>📊</span> 최근 검증 트랜잭션 스트림 (Zero-PII 실적 원장)</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>검증 시각</th>
+              <th>센서 ID</th>
+              <th>익명 NFC UID</th>
+              <th>인증 방식</th>
+              <th>판정 결과</th>
+              <th>트랜잭션 ID</th>
+            </tr>
+          </thead>
+          <tbody id="tx-log-tbody">
+            <tr><td colspan="6" style="text-align: center; color: var(--text-dim);">트랜잭션 기록을 불러오는 중...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div>2026 K-BTF 기반 취약계층 스마트 주거복지 플랫폼 (우리단지 ON 연계)</div>
+      <div style="margin-top: 6px; color: var(--text-dim);">
+        공공클라우드 CSAP '하' 등급 인증 준수 | Docs-as-Code: <a href="file:///home/hanginthomaskim/mywork-dev/pj/kbtf/01_prd/PRD.md" style="color: #60a5fa; text-decoration: none;">PRD</a> · <a href="file:///home/hanginthomaskim/mywork-dev/pj/kbtf/02_sequence_diagram/SEQUENCE_DIAGRAMS.md" style="color: #60a5fa; text-decoration: none;">Sequence Diagrams</a> · <a href="file:///home/hanginthomaskim/mywork-dev/pj/kbtf/03_erd/ERD_AND_SCHEMA.md" style="color: #60a5fa; text-decoration: none;">ERD</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

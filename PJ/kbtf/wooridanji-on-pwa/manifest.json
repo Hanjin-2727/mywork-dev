@@ -1,0 +1,26 @@
+{
+  "name": "우리단지 ON - K-BTF 일상안심 상생공동체",
+  "short_name": "우리단지ON",
+  "description": "K-BTF 블록체인 DID 기반 영구임대주택 입주민 일상안심 및 상생공동체 PWA 플랫폼",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["social", "lifestyle", "productivity"],
+  "lang": "ko-KR"
+}

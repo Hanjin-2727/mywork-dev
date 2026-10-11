@@ -58,6 +58,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.sublime-workspace
+.vercel/
 
 # 6. 보안 및 민감 정보 (API 키, 인증서 등)
 .env
@@ -78,4 +79,3 @@ id_rsa.pub
 *.safetensors
 *.onnx
 gov_pj/
-kbtf/
