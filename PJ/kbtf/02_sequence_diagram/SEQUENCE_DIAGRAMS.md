@@ -177,14 +177,14 @@ sequenceDiagram
     participant Verifier as 🔍 Verifier 서버 (정부실적 원장/KPI 로깅)
 
     Note over Senior,Officer: 어르신을 일반 배식 라인 옆 전용 확인석으로 안내 (정체 방지)
-    Senior->>Officer: 1. 구두 신원 제시 ("101동 1204호, 850412, 김철수요.")
-    Officer->>AdminPhone: 2. 화면에 동·호수 / 생년월일 입력
+    Senior->>Officer: 1. 구두 생년월일 제시 ("480514, 김철수요.")
+    Officer->>AdminPhone: 2. 화면에 생년월일 6자리만 간편 입력 (동·호수 질문 생략)
     
     rect rgb(255, 241, 240)
     Note over AdminPhone,LocalPC: [현장 에지 사설망 로컬 조회 (Edge LAN Air-Gap)] 외부 인터넷(WAN) 미경유
     AdminPhone->>LocalPC: 3. 사설 Wi-Fi 내부 HTTP 조회 (http://192.168.0.50:8000/search)
-    Note over LocalPC: 관리사무소 폐쇄망 DB 검색<br/>101동 1204호 거주자 일치 확인 ➡️ 등록된 [NFC UID] 추출
-    LocalPC-->>AdminPhone: 4. 로컬 응답: 성명 초성(ㄱㅊㅅ) 확인 & 매핑된 [NFC UID] 반환
+    Note over LocalPC: 관리사무소 폐쇄망 DB 검색<br/>생년월일 일치자 확인 ➡️ 성명 초성 및 등록된 [NFC UID] 추출
+    LocalPC-->>AdminPhone: 4. 로컬 응답: 성명 초성(ㄱㅊㅅ) & 동호수 확인 및 매핑된 [NFC UID] 반환
     end
     
     Officer->>AdminPhone: 5. 일치 확인 후 화면의 [배식 승인] 터치

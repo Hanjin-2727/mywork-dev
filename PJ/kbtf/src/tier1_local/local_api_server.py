@@ -28,23 +28,23 @@ class LocalRequestHandler(BaseHTTPRequestHandler):
             self._send_json_response(400, {"error": "Invalid JSON"})
             return
 
-        # 1. 미지참자 구두 확인 엔드포인트: /api/residents/search
+        # 1. 미지참자 구두 확인 엔드포인트 (생년월일 단독 확인): /api/residents/search
         if self.path == "/api/residents/search":
-            building_no = req_data.get("building_no", "")
-            room_no = req_data.get("room_no", "")
-            birth_date = req_data.get("birth_date", "")
+            birth_date = str(req_data.get("birth_date", "")).strip()
+            building_no = req_data.get("building_no", "").strip() or None
+            room_no = req_data.get("room_no", "").strip() or None
             officer_name = req_data.get("officer_name", "현장관리자")
 
             result = self.resident_service.verify_oral_identity(
+                birth_date=birth_date,
                 building_no=building_no,
                 room_no=room_no,
-                birth_date=birth_date,
                 officer_name=officer_name
             )
             if result:
                 self._send_json_response(200, result)
             else:
-                self._send_json_response(404, {"status": "NOT_FOUND", "message": "거주자 명부에 일치하는 정보가 없습니다."})
+                self._send_json_response(404, {"status": "NOT_FOUND", "message": "거주자 명부에 일치하는 생년월일 정보가 없습니다."})
 
         # 2. 대면 등록 엔드포인트: /api/residents/register
         elif self.path == "/api/residents/register":

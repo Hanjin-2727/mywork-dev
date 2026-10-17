@@ -149,26 +149,45 @@ function initTab2Rescue() {
 
   let currentRescueUid = null;
 
+  // 퀵 버튼 클릭 시 생년월일 자동 입력
+  document.querySelectorAll(".btn-quick-birth").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const birthInput = document.getElementById("rescue-birth");
+      if (birthInput) {
+        birthInput.value = btn.getAttribute("data-birth");
+        if (btnSearch) btnSearch.click();
+      }
+    });
+  });
+
   if (btnSearch) {
     btnSearch.addEventListener("click", async () => {
-      const dong = document.getElementById("rescue-dong").value.trim();
-      const ho = document.getElementById("rescue-ho").value.trim();
-      const birth = document.getElementById("rescue-birth").value.trim();
+      const birthInput = document.getElementById("rescue-birth");
+      const birth = birthInput ? birthInput.value.trim() : "";
+
+      if (!birth) {
+        alert("어르신의 생년월일 6자리를 입력해 주세요.");
+        return;
+      }
 
       try {
         const res = await fetch("/api/residents/search", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: jsonSafe({ building_no: dong, room_no: ho, birth_date: birth, officer_name: "공익요원(현장)" })
+          body: jsonSafe({ birth_date: birth, officer_name: "공익요원(현장)" })
         });
         const data = await res.json();
 
         if (res.ok && data.status === "MATCHED") {
           currentRescueUid = data.nfc_uid;
-          maskedNameElem.textContent = `${data.masked_name} (자격: ${data.welfare_tier})`;
+          maskedNameElem.textContent = `${data.masked_name}`;
+          const roomInfoElem = document.getElementById("rescue-room-info");
+          if (roomInfoElem) {
+            roomInfoElem.textContent = `${data.building_no || ''} ${data.room_no || ''} (자격: ${data.welfare_tier})`.trim();
+          }
           uidTextElem.textContent = data.nfc_uid;
           resultBox.style.display = "block";
-          rescueConsole.textContent = `[에지 사설 Wi-Fi 192.168.0.x 조회 성공]\n${JSON.stringify(data, null, 2)}`;
+          rescueConsole.textContent = `[에지 사설 Wi-Fi 192.168.0.x 생년월일 단일 조회 성공]\n${JSON.stringify(data, null, 2)}`;
         } else {
           resultBox.style.display = "none";
           rescueConsole.textContent = `[조회 실패] ${data.message || "거주자 명부 불일치"}`;

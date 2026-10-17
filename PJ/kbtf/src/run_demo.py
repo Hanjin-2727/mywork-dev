@@ -120,11 +120,11 @@ def run_full_simulation():
     # -------------------------------------------------------------------------
     # 시퀀스 4: 카드 미지참자 현장 에지 사설망(192.168.0.x) 검증 및 구제
     # -------------------------------------------------------------------------
-    log_step("[시퀀스 4] 카드 미지참자 현장 에지 사설망(Edge LAN) 검증 및 구제")
-    print(f"어르신이 카드를 집에 두고 와 구두로 진술: \"101동 1204호, 480514 김만석이요\"")
-    oral_res = resident_service.verify_oral_identity("101동", "1204호", "480514", "이준호 공익요원")
+    log_step("[시퀀스 4] 카드 미지참자 현장 에지 사설망(Edge LAN) 검증 및 구제 (생년월일 단일 확인)")
+    print(f"어르신이 카드를 집에 두고 와 구두로 생년월일만 진술: \"480514 김씨요\" (동·호수 질문 생략)")
+    oral_res = resident_service.verify_oral_identity(birth_date="480514", officer_name="이준호 공익요원")
     print(f"1. [에지 사설망 Wi-Fi 조회] 관리사무소 로컬 PC 접속 결과:")
-    print(f"   - 확인된 거주자 초성: {YELLOW}{oral_res['masked_name']}{RESET} (성명 원본 노출 차단)")
+    print(f"   - 확인된 거주자 초성: {YELLOW}{oral_res['masked_name']}{RESET} ({oral_res['building_no']} {oral_res['room_no']}, 성명 원본 노출 차단)")
     print(f"   - 매핑된 카드 UID 도출: {oral_res['nfc_uid']}")
     
     # 관리자가 배식 승인 터치 -> 클라우드로 오직 UID만 전송

@@ -65,16 +65,30 @@ class ResidentService:
 
     def verify_oral_identity(
         self,
-        building_no: str,
-        room_no: str,
-        birth_date: str,
+        birth_date: str = "",
+        building_no: Optional[str] = None,
+        room_no: Optional[str] = None,
         officer_name: str = "현장확인관"
     ) -> Optional[Dict[str, Any]]:
         """
-        [시퀀스 4] 카드 미지참자 현장 에지 사설망 구두 확인.
+        [시퀀스 4] 카드 미지참자 현장 에지 사설망 구두 확인 (생년월일 단독 확인으로 단순화).
         관리자 스마트폰 브라우저에 성명 초성과 NFC UID를 반환하여 즉시 배식 승인을 가능하게 함.
         """
-        resident = self.db.find_resident_by_oral_info(building_no, room_no, birth_date)
+        # 하위 호환성 처리: verify_oral_identity("101동", "1204호", "480514") 형태로 호출된 경우
+        if birth_date and ('동' in str(birth_date) or not str(birth_date).isdigit()) and room_no:
+            actual_building = birth_date
+            actual_room = building_no
+            actual_birth = room_no
+        else:
+            actual_birth = birth_date
+            actual_building = building_no
+            actual_room = room_no
+
+        resident = self.db.find_resident_by_oral_info(
+            birth_date=actual_birth,
+            building_no=actual_building,
+            room_no=actual_room
+        )
         if not resident:
             return None
 
@@ -87,5 +101,7 @@ class ResidentService:
             "status": "MATCHED",
             "masked_name": masked_name, # 예: 'ㄱㅊㅅ'
             "nfc_uid": resident["nfc_uid"],
-            "welfare_tier": resident["welfare_tier"]
+            "welfare_tier": resident["welfare_tier"],
+            "building_no": resident["building_no"],
+            "room_no": resident["room_no"]
         }

@@ -74,13 +74,24 @@ class LocalDatabase:
             conn.commit()
         return resident_id
 
-    def find_resident_by_oral_info(self, building_no: str, room_no: str, birth_date: str) -> Optional[Dict[str, Any]]:
+    def find_resident_by_oral_info(
+        self,
+        birth_date: str,
+        building_no: Optional[str] = None,
+        room_no: Optional[str] = None
+    ) -> Optional[Dict[str, Any]]:
         with self._get_connection() as conn:
             cursor = conn.cursor()
-            cursor.execute("""
-            SELECT * FROM local_residents 
-            WHERE building_no = ? AND room_no = ? AND birth_date = ? AND status = 'ACTIVE'
-            """, (building_no, room_no, birth_date))
+            if building_no and room_no:
+                cursor.execute("""
+                SELECT * FROM local_residents 
+                WHERE building_no = ? AND room_no = ? AND birth_date = ? AND status = 'ACTIVE'
+                """, (building_no, room_no, birth_date))
+            else:
+                cursor.execute("""
+                SELECT * FROM local_residents 
+                WHERE birth_date = ? AND status = 'ACTIVE'
+                """, (birth_date,))
             row = cursor.fetchone()
             if row:
                 return dict(row)

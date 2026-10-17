@@ -112,11 +112,13 @@ class TestKBTFEndToEnd(unittest.TestCase):
         self.custodial_agent.register_custodial_identity(nfc_uid)
         self.custodial_agent.process_batch_vc_issuance({"meal_uids": [nfc_uid], "bento_uids": []})
 
-        # 1. 구두 신원 확인
-        oral = self.resident_service.verify_oral_identity("105동", "703호", "491225")
+        # 1. 구두 신원 확인 (동호수 없이 생년월일만으로 확인)
+        oral = self.resident_service.verify_oral_identity(birth_date="491225")
         self.assertIsNotNone(oral)
         self.assertEqual(oral["masked_name"], "ㅊㅅㅈ")
         self.assertEqual(oral["nfc_uid"], nfc_uid)
+        self.assertEqual(oral["building_no"], "105동")
+        self.assertEqual(oral["room_no"], "703호")
 
         # 2. 클라우드로 오직 UID만 전송하여 MANUAL_PASS 승인
         rescue_res = self.verifier_service.verify_dining_access("SENSOR_MEAL_01", oral["nfc_uid"], method="MANUAL_PASS")

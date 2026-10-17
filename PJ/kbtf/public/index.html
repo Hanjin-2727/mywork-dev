@@ -114,27 +114,25 @@
               🔒 로컬 에어갭 폐쇄망 연결됨 (192.168.0.50:8000)
             </div>
             <div class="form-group">
-              <label for="rescue-dong">동 (Building):</label>
-              <input type="text" id="rescue-dong" value="101동" placeholder="예: 101동">
+              <label for="rescue-birth" style="font-weight: 700; font-size: 0.95rem;">🎂 어르신 생년월일 6자리 (YYMMDD):</label>
+              <input type="text" id="rescue-birth" value="480514" placeholder="예: 480514" maxlength="6" style="font-size: 1.15rem; letter-spacing: 2px; text-align: center; font-weight: 700;">
+              <div style="display: flex; gap: 6px; margin-top: 8px;">
+                <button type="button" class="btn-quick-birth" data-birth="480514" style="font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-muted); cursor: pointer;">480514(김만석)</button>
+                <button type="button" class="btn-quick-birth" data-birth="491225" style="font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-muted); cursor: pointer;">491225(최순자)</button>
+                <button type="button" class="btn-quick-birth" data-birth="510312" style="font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.05); color: var(--text-muted); cursor: pointer;">510312(이영자)</button>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="rescue-ho">호수 (Room):</label>
-              <input type="text" id="rescue-ho" value="1204호" placeholder="예: 1204호">
-            </div>
-            <div class="form-group">
-              <label for="rescue-birth">생년월일 6자리 (YYMMDD):</label>
-              <input type="text" id="rescue-birth" value="480514" placeholder="예: 480514">
-            </div>
-            <button class="btn btn-primary" id="btn-rescue-search" style="margin-bottom: 12px;">
-              <span>🔎</span> 1단계: 로컬 명부 구두 확인
+            <button class="btn btn-primary" id="btn-rescue-search" style="margin-bottom: 12px; font-weight: 700;">
+              <span>🔎</span> 1단계: 생년월일 단일 구두 확인
             </button>
 
             <!-- 매핑 결과 표시 영역 -->
             <div id="rescue-result-box" style="display: none; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 12px;">
               <div style="font-size: 0.85rem; color: var(--text-muted);">거주자 확인 완료 (초성 보호):</div>
-              <div style="font-size: 1.2rem; font-weight: 800; color: #fbbf24; margin: 4px 0;" id="rescue-masked-name">ㄱㅁㅅ</div>
-              <div style="font-size: 0.75rem; color: var(--text-dim);">매핑 UID: <span id="rescue-uid-text">-</span></div>
-              <button class="btn btn-primary" id="btn-rescue-approve" style="margin-top: 10px; background: #10b981;">
+              <div style="font-size: 1.25rem; font-weight: 800; color: #fbbf24; margin: 4px 0;" id="rescue-masked-name">ㄱㅁㅅ</div>
+              <div style="font-size: 0.8rem; color: #94a3b8;" id="rescue-room-info">101동 1204호 (자격: TIER_A)</div>
+              <div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 4px;">매핑 UID: <span id="rescue-uid-text">-</span></div>
+              <button class="btn btn-primary" id="btn-rescue-approve" style="margin-top: 10px; background: #10b981; font-weight: 700;">
                 <span>✅</span> 2단계: 배식 승인 (Zero-PII 전송)
               </button>
             </div>
@@ -144,9 +142,9 @@
         <div class="panel-card">
           <h2><span>🛡️</span> 사설망 에어갭(Air-Gap) 보안 증빙</h2>
           <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
-            <p><strong>• 국정원 보안성 검토 완벽 통과:</strong></p>
-            <p>1. 어르신의 구두 진술(동호수, 생년월일) 검색 트래픽은 관리사무소 로컬 Wi-Fi 사설망 내부에서만 완결 처리됩니다.</p>
-            <p>2. 외부 인터넷(WAN)으로는 어떠한 인적사항도 나가지 않으며, <strong>치환된 익명 난수 UID 1건만 전송</strong>되므로 CSAP '하' 등급이 100% 유지됩니다.</p>
+            <p><strong>• 신속성 & 국정원 보안성 검토 완벽 통과:</strong></p>
+            <p>1. 어르신에게 복잡한 동·호수를 묻지 않고 <strong>생년월일(6자리)만으로 즉시 조회</strong>하여 현장 대기열 병목을 원천 방지합니다.</p>
+            <p>2. 검색 트래픽은 관리사무소 로컬 Wi-Fi 사설망 내부에서만 완결 처리되며, 외부 인터넷(WAN)으로는 <strong>치환된 익명 난수 UID 1건만 전송</strong>되므로 CSAP '하' 등급이 100% 유지됩니다.</p>
           </div>
           <div class="console-viewer" id="rescue-console">// 미지참자 구두 확인 로그가 여기에 기록됩니다.</div>
         </div>
