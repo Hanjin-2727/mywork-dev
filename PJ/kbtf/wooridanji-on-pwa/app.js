@@ -256,16 +256,18 @@ function stopSirenSound() {
 
 // --- Text To Speech (TTS) ---
 function speakText(text) {
-  if (!State.ttsEnabled || !('speechSynthesis' in window)) return;
+  if (!State.ttsEnabled || typeof window === 'undefined' || !('speechSynthesis' in window) || !window.speechSynthesis) return;
   try {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'ko-KR';
     utterance.rate = 0.95; // Slightly slower for seniors
     utterance.pitch = 1.0;
+    // Safety timeout in case TTS engine hangs
+    utterance.onerror = () => {};
     window.speechSynthesis.speak(utterance);
   } catch (e) {
-    console.warn('TTS error:', e);
+    console.warn('TTS error ignored:', e);
   }
 }
 
@@ -418,7 +420,7 @@ function applyJob(title, reward) {
 
 function payWithTimeCredit(storeName, cost) {
   if (State.credits < cost) {
-    alert('시간크레딧 잔액이 부족합니다!');
+    showToast('시간크레딧 잔액이 부족합니다!', '⚠️');
     return;
   }
   playCoinChime();
@@ -692,7 +694,7 @@ function saveTop3Settings() {
   const s3 = document.getElementById('top3-select-3').value;
 
   if (s1 === s2 || s1 === s3 || s2 === s3) {
-    alert('Top 1, Top 2, Top 3 기능은 서로 중복되지 않게 선택해 주세요.');
+    showToast('Top 1, Top 2, Top 3 기능은 서로 중복되지 않게 선택해 주세요.', '⚠️');
     return;
   }
 
@@ -800,7 +802,7 @@ function submitMarketItem() {
   const desc = document.getElementById('reg-market-desc').value.trim();
 
   if (!title) {
-    alert('물품명을 입력해 주세요.');
+    showToast('물품명을 입력해 주세요.', '⚠️');
     return;
   }
 
@@ -867,7 +869,7 @@ function executeMarketAction() {
   if (!item) return;
 
   if (item.price > 0 && State.credits < item.price) {
-    alert(`햇살머니 잔액이 부족합니다! (현재 잔액: ${State.credits.toFixed(1)} SM / 필요: ${item.price.toFixed(1)} SM)`);
+    showToast(`햇살머니 잔액이 부족합니다! (현재 잔액: ${State.credits.toFixed(1)} SM / 필요: ${item.price.toFixed(1)} SM)`, '⚠️');
     return;
   }
 
@@ -1037,7 +1039,7 @@ function signAdvisorContract() {
   const total = hours * adv.rate;
 
   if (State.credits < total) {
-    alert(`햇살머니 잔액이 부족합니다! (현재 잔액: ${State.credits.toFixed(1)} SM / 필요 에스크로: ${total.toFixed(1)} SM)`);
+    showToast(`햇살머니 잔액이 부족합니다! (현재 잔액: ${State.credits.toFixed(1)} SM / 필요 에스크로: ${total.toFixed(1)} SM)`, '⚠️');
     return;
   }
 
@@ -1076,7 +1078,7 @@ function submitAdvisorProfile() {
   const rate = parseFloat(document.getElementById('adv-reg-rate').value) || 3.0;
 
   if (!nickname) {
-    alert('공개될 닉네임을 입력해 주세요.');
+    showToast('공개될 닉네임을 입력해 주세요.', '⚠️');
     return;
   }
 
@@ -1219,7 +1221,7 @@ function updateUI() {
 }
 
 // --- App Initialization ---
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   // 1. Render QR codes
   renderMockQRCode('qr-canvas-resident', 'did:kbtf:kr:2026:08:702-KIM-YOUNGSOO');
   renderMockQRCode('qr-canvas-laundry', 'PAY-LAUNDRY-2.0TC-SANAM-103B1');
@@ -1352,5 +1354,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   updateUI();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 

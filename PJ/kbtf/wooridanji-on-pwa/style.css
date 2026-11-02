@@ -844,10 +844,19 @@ body {
   background: var(--surface);
   border-top: 1px solid var(--border);
   display: flex;
-  justify-content: space-around;
-  padding: 8px 4px 10px;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 6px 10px;
   z-index: 50;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.bottom-nav::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 1024px) {
@@ -867,10 +876,11 @@ body {
   font-size: 0.72em;
   font-weight: 700;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 4px 6px;
   border-radius: var(--radius-sm);
   transition: all 0.2s;
-  flex: 1;
+  flex: 0 0 auto;
+  min-width: 52px;
 }
 
 .nav-item.active {
