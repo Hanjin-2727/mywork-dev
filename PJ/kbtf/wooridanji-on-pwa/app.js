@@ -254,16 +254,56 @@ function stopSirenSound() {
   }
 }
 
-// --- Text To Speech (TTS) ---
+// --- Text To Speech (TTS - 고품질 자연스러운 한국어 여성 음성 엔진) ---
+let koreanFemaleVoice = null;
+let currentTtsAudio = null;
+
+function loadKoreanVoices() {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  try {
+    const voices = window.speechSynthesis.getVoices();
+    if (!voices || voices.length === 0) return;
+    let found = voices.find(v => v.lang.startsWith('ko') && v.name.includes('Google'));
+    if (!found) found = voices.find(v => v.lang.startsWith('ko') && (v.name.includes('SunHi') || v.name.includes('Heami') || v.name.includes('Natural')));
+    if (!found) found = voices.find(v => v.lang.startsWith('ko') && (v.name.includes('Yuna') || v.name.includes('Sora')));
+    if (!found) found = voices.find(v => v.lang.startsWith('ko') && !v.name.toLowerCase().includes('espeak') && !v.name.toLowerCase().includes('robot'));
+    if (found) koreanFemaleVoice = found;
+  } catch (e) {}
+}
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  loadKoreanVoices();
+  window.speechSynthesis.onvoiceschanged = loadKoreanVoices;
+}
+
 function speakText(text) {
-  if (!State.ttsEnabled || typeof window === 'undefined' || !('speechSynthesis' in window) || !window.speechSynthesis) return;
+  if (!State.ttsEnabled) return;
+  try {
+    if (currentTtsAudio) {
+      currentTtsAudio.pause();
+      currentTtsAudio = null;
+    }
+    const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ko&client=tw-ob&q=${encodeURIComponent(text)}`;
+    const audio = new Audio(audioUrl);
+    currentTtsAudio = audio;
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => fallbackWebSpeech(text));
+      return;
+    }
+  } catch (e) {}
+  fallbackWebSpeech(text);
+}
+
+function fallbackWebSpeech(text) {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window) || !window.speechSynthesis) return;
   try {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'ko-KR';
-    utterance.rate = 0.95; // Slightly slower for seniors
-    utterance.pitch = 1.0;
-    // Safety timeout in case TTS engine hangs
+    utterance.rate = 0.95;
+    utterance.pitch = 1.05;
+    if (!koreanFemaleVoice) loadKoreanVoices();
+    if (koreanFemaleVoice) utterance.voice = koreanFemaleVoice;
     utterance.onerror = () => {};
     window.speechSynthesis.speak(utterance);
   } catch (e) {
@@ -387,7 +427,7 @@ function checkInCafeteriaMeal() {
   updateUI();
   
   showToast('경로식당 1초 급식 체크인 완료! (식수 누적: ' + State.dailyMealCount + '명)', '🍚');
-  speakText('김영수 어르신, 경로식당 무료 급식 확인 완료되었습니다. 맛있게 드세요!');
+  speakText('김영수님 확인');
 }
 
 // --- Volunteer Lunchbox Delivery Check ---
